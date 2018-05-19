@@ -1,1 +1,1 @@
-# kubesphere.github.io
+# kubesphere.io
