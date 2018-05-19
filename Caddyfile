@@ -1,0 +1,29 @@
+# Copyright 2018 The KubeSphere Authors. All rights reserved.
+# Use of this source code is governed by a Apache license
+# that can be found in the LICENSE file.
+
+https://kubesphere.io {
+    tls appcenter@yunify.com
+    browse
+
+    log stdout
+    errors stdout
+    gzip
+    root /srv/kubesphere.github.io/public
+    hugo /srv/kubesphere.github.io
+
+    gopkg /kubesphere https://github.com/kubesphere/kubesphere
+
+    git {
+            path /srv/kubesphere.github.io
+            repo https://github.com/kubesphere/kubesphere.github.io.git
+            hook /webhook QingCloud
+            hook_type github
+            then hugo --destination=/srv/kubesphere.github.io/public
+            interval 1800
+    }
+}
+
+http://kubesphere.io, https://www.kubesphere.io, http://www.kubesphere.io {
+    redir https://kubesphere.io{uri}
+}
