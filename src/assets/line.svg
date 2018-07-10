@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="112px" height="129px" viewBox="0 0 112 129" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>3</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <ellipse id="path-1" cx="97.781825" cy="113.708122" rx="8.61990425" ry="8.57797352"></ellipse>
+        <filter x="-43.5%" y="-43.7%" width="187.0%" height="187.4%" filterUnits="objectBoundingBox" id="filter-2">
+            <feMorphology radius="1.5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="0" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feMorphology radius="1.5" operator="erode" in="SourceAlpha" result="shadowInner"></feMorphology>
+            <feOffset dx="0" dy="0" in="shadowInner" result="shadowInner"></feOffset>
+            <feComposite in="shadowOffsetOuter1" in2="shadowInner" operator="out" result="shadowOffsetOuter1"></feComposite>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <ellipse id="path-3" cx="97.781825" cy="113.708122" rx="1.03438851" ry="1.02935682"></ellipse>
+        <filter x="-362.5%" y="-364.3%" width="825.1%" height="828.6%" filterUnits="objectBoundingBox" id="filter-4">
+            <feMorphology radius="1.5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="0" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feMorphology radius="1.5" operator="erode" in="SourceAlpha" result="shadowInner"></feMorphology>
+            <feOffset dx="0" dy="0" in="shadowInner" result="shadowInner"></feOffset>
+            <feComposite in="shadowOffsetOuter1" in2="shadowInner" operator="out" result="shadowOffsetOuter1"></feComposite>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-850.000000, -3056.000000)">
+            <g id="Group-26" transform="translate(0.000000, 752.000000)">
+                <g id="Group-6" transform="translate(0.000000, 2170.000000)">
+                    <g id="Group-5" transform="translate(244.000000, 124.000000)">
+                        <g id="Group-3" transform="translate(606.454690, 0.863854)">
+                            <g id="3" transform="translate(-0.000000, 9.666044)">
+                                <ellipse id="Oval-5" fill="#FFFFFF" cx="5.17194255" cy="5.14678411" rx="5.17194255" ry="5.14678411"></ellipse>
+                                <path d="M97.6583252,105 L97.6583252,98.6715113 L97.6583252,82.8698945 C97.6583252,70.1673453 87.3608744,59.8698945 74.6583252,59.8698945 L23,59.8698945 C13.0588745,59.8698945 5,51.81102 5,41.8698945 L5,5" id="Path-5" stroke="#FFFFFF" stroke-width="2"></path>
+                                <g id="Oval-Copy-2">
+                                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                                    <use stroke="#FFFFFF" stroke-width="3" xlink:href="#path-1"></use>
+                                </g>
+                                <g id="Oval-Copy-6">
+                                    <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                                    <use stroke="#FFFFFF" stroke-width="3" xlink:href="#path-3"></use>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

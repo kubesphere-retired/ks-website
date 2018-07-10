@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import classnames from 'classnames';
-import { translate } from "react-i18next";
+import classnames from 'classnames'
+import { translate } from 'react-i18next'
 
 import styles from './index.module.scss'
 
@@ -13,4 +13,4 @@ const Footer = ({ className, t }) => (
   </div>
 )
 
-export default translate("base")(Footer);
+export default translate('base')(Footer)

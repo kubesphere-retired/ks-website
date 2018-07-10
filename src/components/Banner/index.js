@@ -1,6 +1,6 @@
-import Banner from './banner';
-import Item from './item';
+import Banner from './banner'
+import Item from './item'
 
-Banner.Item = Item;
+Banner.Item = Item
 
-export default Banner;
+export default Banner

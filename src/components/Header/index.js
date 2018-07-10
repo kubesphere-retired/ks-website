@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import { translate } from "react-i18next"
+import { translate } from 'react-i18next'
 
 import Logo from '../Logo'
 import styles from './index.module.scss'
@@ -29,25 +29,30 @@ class Header extends React.Component {
     }
   }
 
-  getHeaderRef = (ref) => {
+  getHeaderRef = ref => {
     this.headerRef = ref
   }
 
   render() {
-    const { i18n } = this.props
+    const { i18n, t } = this.props
 
     const lang = getLanguage(i18n.language)
 
     return (
       <div ref={this.getHeaderRef} className={styles.header}>
         <div className={styles.wrapper}>
-          <Logo className={styles.logo}/>
+          <Logo className={styles.logo} />
           <div className={styles.nav}>
-            <Link to="/">首页</Link>
-            <Link to="/">产品</Link>
-            <Link to={`/news/enterprise/${lang}`}>新闻动态</Link>
-            <Link to="/">文档中心</Link>
-            <Link to="/"><img src={githubIcon} />Github</Link>
+            <Link to="/">{t('Home')}</Link>
+            <Link to="/">{t('Product')}</Link>
+            <Link to={`/news/enterprise/${lang}`}>{t('News')}</Link>
+            <Link to="/">{t('Documentation')}</Link>
+            <a
+              href="https://github.com/kubesphere/kubesphere.github.io"
+              target="_blank"
+            >
+              <img src={githubIcon} />Github
+            </a>
           </div>
         </div>
       </div>

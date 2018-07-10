@@ -1,7 +1,8 @@
-import React from "react";
+import React from 'react'
 import Link from 'gatsby-link'
-import { translate } from "react-i18next"
+import { translate } from 'react-i18next'
 
+import '../styles/markdown.scss'
 import './index.scss'
 
 const BreadCrum = ({ location, t }) => {
@@ -11,14 +12,13 @@ const BreadCrum = ({ location, t }) => {
 
   return (
     <div className="breadcrum">
-
       <Link to={path}>{t('Back to list')}</Link>
     </div>
   )
 }
 
 const Article = ({ location, t, data }) => {
-  const post = data.markdownRemark;
+  const post = data.markdownRemark
   return (
     <div className="article">
       <BreadCrum location={location} t={t} />
@@ -29,11 +29,14 @@ const Article = ({ location, t, data }) => {
           <span>{post.frontmatter.author}</span>
           <span>发布时间: {post.frontmatter.date}</span>
         </div>
-        <div className="article-detail" dangerouslySetInnerHTML = {{ __html: post.html }}/>
+        <div
+          className="article-detail md-body"
+          dangerouslySetInnerHTML={{ __html: post.html }}
+        />
       </div>
     </div>
-  );
-};
+  )
+}
 
 export default translate('base')(Article)
 
@@ -48,4 +51,4 @@ export const query = graphql`
       }
     }
   }
-`;
+`

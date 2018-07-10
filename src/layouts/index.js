@@ -14,7 +14,6 @@ import Advise from '../components/Advise/index'
 import Footer from '../components/Footer/index'
 
 const Layout = ({ children, data, location }) => {
-
   const isHome = location.pathname === '/'
 
   const background = {
