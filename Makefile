@@ -8,7 +8,7 @@ caddy:
 	docker run -d -p 80:80 -p 443:443 --restart=always -v /root/.caddy:/root/.caddy kubesphere/kubesphere.github.io
 
 local:
-	gatsby build
+	yarn build
 	docker build -f Dockerfile.local -t kubesphere/kubesphere.github.io.local  --no-cache .
 	docker run --rm -p 2015:2015 kubesphere/kubesphere.github.io.local
 
