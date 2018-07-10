@@ -1,0 +1,137 @@
+@import '../styles/variables';
+
+.news {
+  width: 1160px;
+  margin: 0 auto;
+  padding-top: 184px;
+
+  &-header {
+    .title {
+      margin: 0;
+      font-size: 36px;
+      font-weight: 600;
+      line-height: 50px;
+      color: #ffffff;
+    }
+
+    & > p {
+      margin-top: 32px;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.75;
+      color: #ffffff;
+    }
+  }
+
+  &-wrapper {
+    margin: 100px 0;
+    min-height: 600px;
+  }
+
+  &-types {
+    float: left;
+    width: 260px;
+    list-style: none;
+
+    & > li {      
+      border-radius: 5px;
+
+      & > a {
+        display: block;
+        padding: 16px;
+        line-height: 22px;
+        font-size: 16px;
+        font-weight: 500;
+        color: #fff;
+      }
+
+      & + li {
+        margin-top: 4px;
+      }
+    }
+
+    &-selected {
+      background-color: #55bc8a;
+      box-shadow: 0 2px 4px 0 rgba(85, 188, 138, 0.2);
+    }
+  }
+
+  &-articles {
+    margin-left: 300px;
+    padding: 20px 40px 40px;
+    border-radius: 5px;
+    box-shadow: 0 26px 90px 0 rgba(51, 59, 69, 0.1);
+    background-color: white;
+
+    .article-box {
+      padding: 20px 0;
+      border-bottom: solid 1px #cfd9df;
+
+      .h4 {
+        margin-bottom: 4px;
+      }
+
+      .excerpt {
+        margin-bottom: 4px;
+        font-size: 12px;
+        color: #657d95;
+      }
+
+      .desc {
+        font-size: 12px;
+        font-weight: 300;
+        line-height: 2;
+        color: #7e95ad;
+        span + span {
+          margin-left: 12px;
+        }
+  
+        .link {
+          float: right;
+          color: $primary;
+        }
+      }
+
+    }
+  }
+}
+
+.article {
+  width: 1160px;
+  margin: 0 auto;
+  padding-top: 124px;
+
+  &-content {
+    margin-top: 70px;
+  }
+
+  &-detail {
+    padding: 60px 100px 80px 60px;
+    margin-top: 40px;
+    margin-bottom: 120px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    box-shadow: 0 26px 90px 0 rgba(51, 59, 69, 0.1);
+  }
+
+  .h2 {
+    color: #fff;
+    margin-bottom: 8px;
+  }
+
+  .desc {
+    font-size: 12px;
+    line-height: 2;
+    color: #fff;
+
+    span + span {
+      margin-left: 12px;
+    }
+  }
+
+  .breadcrum {
+    & > a {
+      color: #ffffff;
+    }
+  }
+}

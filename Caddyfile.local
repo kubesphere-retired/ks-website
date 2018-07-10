@@ -8,6 +8,5 @@ log stdout
 errors stdout
 
 root /srv/kubesphere.github.io/public
-on startup hugo
 
 gopkg /kubesphere https://github.com/kubesphere/kubesphere

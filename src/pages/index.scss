@@ -1,0 +1,57 @@
+@import '../styles/variables';
+
+.banner-page {
+  height: 100%;
+  padding-top: 224px;
+  color: #fff;
+}
+
+.features {
+  width: 1160px;
+  margin: 0 auto;
+  padding-bottom: 100px;
+  text-align: center;
+}
+
+.release {
+  background-image: linear-gradient(329deg, rgba(5, 45, 79, 0.61), #111a21);
+
+  &-wrapper {
+    position: relative;
+    height: 410px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: calc(50% - 322px);
+  }
+
+  &-title {
+    padding-top: 44px;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.6;
+    letter-spacing: 0.3px;
+    color: #ffffff;
+    text-align: center;
+  }
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 45px;
+  margin-bottom: 4px;
+  margin-top: 52px;
+}
+
+.versions {
+  width: 1160px;
+  margin: 0 auto;
+  padding-bottom: 200px;
+  text-align: center;
+
+  &-list {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 48px;
+  }
+}

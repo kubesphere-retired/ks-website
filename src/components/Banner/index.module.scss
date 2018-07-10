@@ -1,0 +1,65 @@
+@import '../../styles/variables';
+
+.banner {
+  position: relative;
+}
+
+.selectorWrapper {
+  position: absolute;
+  bottom: 44px;
+  left: 50%;
+  padding: 12px 19px;
+  background-color: rgba(35, 45, 65, 0.2);
+  transform: translateX(-50%);
+}
+
+.selectorPanel {
+  position: relative;
+  width: 1122px;
+  height: 86px;
+  overflow: hidden;
+}
+
+.selector {
+  position: absolute;
+  margin: 0;
+  list-style: none;
+
+  li {
+    display: inline-block;
+    width: 177px;
+    height: 86px;
+    margin: 0;
+    opacity: 0.8;
+    border: solid 2px transparent;
+    box-sizing: border-box;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all $transition-speed ease;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    & + li {
+      margin-left: 12px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .select {
+    opacity: 1;
+    border: solid 2px #55bc8a;
+    box-shadow: 0 2px 4px 0 rgba(85, 188, 138, 0.36);
+  }
+}
+
+.bannerItem {
+  position: relative;
+  height: 700px;
+  text-align: center;
+}

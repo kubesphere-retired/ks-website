@@ -10,7 +10,6 @@ https://kubesphere.io {
     errors stdout
     gzip
     root /srv/kubesphere.github.io/public
-    hugo /srv/kubesphere.github.io
 
     gopkg /kubesphere https://github.com/kubesphere/kubesphere
 
@@ -19,7 +18,7 @@ https://kubesphere.io {
             repo https://github.com/kubesphere/kubesphere.github.io.git
             hook /webhook QingCloud
             hook_type github
-            then hugo --destination=/srv/kubesphere.github.io/public
+            then yarn install && yarn build
             interval 1800
     }
 }

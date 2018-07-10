@@ -1,0 +1,47 @@
+.featureSection {
+  position: relative;
+  min-height: 457px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  .words {
+    width: 558px;
+    text-align: left;
+
+    .title {
+      margin-bottom: 20px;
+  
+      .text {
+        display: inline-block;
+        vertical-align: top;
+      }
+  
+      img {
+        width: 52px;
+        height: 52px;
+        margin-top: 2px;
+        margin-right: 20px;
+        vertical-align: top;
+      }
+    }
+
+    p {
+      color: #485b7f;
+    }
+  }
+
+  .graphic {
+    margin-left: 173px;
+  }
+
+}
+
+.reverse {
+  justify-content: flex-end;
+
+  .graphic {
+    margin-left: 0;
+    margin-right: 173px;
+  }
+}

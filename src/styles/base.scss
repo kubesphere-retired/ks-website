@@ -1,0 +1,60 @@
+html {
+  overflow: visible;  // overwrite overflow from minireset
+  height: 100%;
+}
+
+body {
+  font-family: $font-family;
+  font-size: $body-size;
+  color: $text-color;
+  min-width: 1200px;
+  height: 100%;
+  line-height: 1;
+  margin: 0;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+button, input {
+  font-family: $font-family;
+}
+
+a {
+  color: $text-color;
+  cursor: pointer;
+  &:hover {
+    color: $green;
+  }
+  transition: color $transition-speed ease;
+}
+
+a, a:hover, a:focus, a:active, a:visited {
+  text-decoration: none;
+}
+
+p {
+  line-height: 2;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@each $header, $size in $headings {
+  .#{$header} {
+    display: block;
+    font-size: $size;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 1.4;
+  }
+}
+
+::-moz-selection{background: #369a6a; color: #fff } 
+::selection {background: #369a6a;color: #fff}

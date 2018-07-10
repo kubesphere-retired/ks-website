@@ -1,0 +1,25 @@
+.featureCard {
+  width: 280px;
+
+  img {
+    width: 72px;
+    height: 72px;
+    margin-bottom: 20px;
+  }
+
+  :global .h2 {
+    font-weight: 500;
+    color: #303e5a;
+    margin-bottom: 10px;
+  }
+
+  p {
+    color: #485b7f;
+  }
+}
+
+:global {
+  .header-dark {
+    background-color: #232d41ed !important;
+  }
+}
