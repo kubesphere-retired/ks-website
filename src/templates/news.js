@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import classnames from 'classnames'
-import { translate } from "react-i18next"
+import { translate } from 'react-i18next'
 
 import { NEWS_TYPES } from '../utils/constants'
 
@@ -16,18 +16,16 @@ const Heading = ({ t }) => (
 
 const NewsTypes = ({ t, types, selectType, selectLang }) => (
   <ul className="news-types">
-    {
-      types.map(type => (
-        <li
-          key={type}
-          className={classnames({
-            "news-types-selected": selectType === type
-          })}
-        >
-          <Link to={`/news/${type}/${selectLang}`}>{t(`news_${type}`)}</Link>
-        </li>
-      ))
-    }
+    {types.map(type => (
+      <li
+        key={type}
+        className={classnames({
+          'news-types-selected': selectType === type,
+        })}
+      >
+        <Link to={`/news/${type}/${selectLang}`}>{t(`news_${type}`)}</Link>
+      </li>
+    ))}
   </ul>
 )
 
@@ -41,7 +39,9 @@ const NewsList = ({ data }) => (
           <span>阅读量: 22453(TODO)</span>
           <span>{node.frontmatter.author}</span>
           <span>发布时间: {node.frontmatter.date}</span>
-          <Link className="link" to={node.fields.slug}>阅读全文</Link>
+          <Link className="link" to={node.fields.slug}>
+            阅读全文
+          </Link>
         </div>
       </div>
     ))}
@@ -54,9 +54,9 @@ class News extends React.Component {
 
     this.types = NEWS_TYPES
 
-    const params = props.location.pathname.split('/');
-    this.selectType = params[2];
-    this.selectLang = params[3];
+    const params = props.location.pathname.split('/')
+    this.selectType = params[2]
+    this.selectLang = params[3]
   }
 
   render() {
@@ -64,9 +64,9 @@ class News extends React.Component {
 
     return (
       <div className="news">
-        <Heading t={t}/>
+        <Heading t={t} />
         <div className="news-wrapper">
-          <NewsTypes 
+          <NewsTypes
             t={t}
             types={this.types}
             selectType={this.selectType}
@@ -82,30 +82,46 @@ class News extends React.Component {
 export default translate('base')(News)
 
 export const query = graphql`
-query NewsPageQuery($framework: String!, $type: String!, $language: String!, $limit: Int = 10, $skip: Int = 0) {
-  allMarkdownRemark(filter: {fields: {framework: {eq: $framework}, type: {eq: $type}, language: {eq: $language}}}, limit: $limit, skip: $skip) {
-    totalCount
-    edges {
-      node {
-        id
-        fields {
-          slug
-          framework
-          type
-          language
-          article
+  query NewsPageQuery(
+    $framework: String!
+    $type: String!
+    $language: String!
+    $limit: Int = 10
+    $skip: Int = 0
+  ) {
+    allMarkdownRemark(
+      filter: {
+        fields: {
+          framework: { eq: $framework }
+          type: { eq: $type }
+          language: { eq: $language }
         }
-        frontmatter {
-          title
-          date
-          author
+      }
+      limit: $limit
+      skip: $skip
+    ) {
+      totalCount
+      edges {
+        node {
+          id
+          fields {
+            slug
+            framework
+            type
+            language
+            article
+          }
+          frontmatter {
+            title
+            date
+            author
+          }
+          excerpt
         }
-        excerpt
+      }
+      pageInfo {
+        hasNextPage
       }
     }
-    pageInfo {
-      hasNextPage
-    }
   }
-}
 `

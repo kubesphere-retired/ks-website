@@ -69,20 +69,32 @@
         transform: translateY(-50%);
       }
 
-      &.checked {
-        color: $text-color;
+      &.group {
         text-decoration: none;
-      }
 
-      &.highlight {
-        font-weight: 500;
-        color: $text-color;
-      }
+        span {
+          text-decoration: line-through;
+        }
 
-      &.important {
-        font-weight: 500;
-        color: $primary;
+        .checked {
+          text-decoration: none;
+        }
       }
+    }
+
+    .checked {
+      color: $text-color;
+      text-decoration: none;
+    }
+
+    .highlight {
+      font-weight: 600;
+      color: $text-color;
+    }
+
+    .important {
+      font-weight: 600;
+      color: $primary;
     }
   }
 

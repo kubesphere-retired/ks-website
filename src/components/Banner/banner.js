@@ -11,26 +11,25 @@ class Banner extends React.Component {
   }
 
   constructor(props) {
-    super(props);
-    
-    const firstChild = React.Children.toArray(props.children)[0] || {};
+    super(props)
+
+    const firstChild = React.Children.toArray(props.children)[0] || {}
 
     this.state = {
       current: firstChild.props.name || '',
     }
   }
-  
 
-  handleSelect = (name) => {
+  handleSelect = name => {
     this.setState({ current: name })
   }
 
   render() {
-    const { children } = this.props;
+    const { children } = this.props
 
-    let selectChild = null;
-    const options = React.Children.map(children, (child) => {
-      if(child.props.name === this.state.current) {
+    let selectChild = null
+    const options = React.Children.map(children, child => {
+      if (child.props.name === this.state.current) {
         selectChild = child
       }
 
@@ -39,16 +38,16 @@ class Banner extends React.Component {
 
     return (
       <div className={styles.banner}>
-        <div className={styles.content}>
-          {selectChild}
-        </div>
-        <Selector
-          options={options} 
-          select={this.state.current} 
-          onChange={this.handleSelect}
-        />
+        <div className={styles.content}>{selectChild}</div>
+        {options.length > 1 && (
+          <Selector
+            options={options}
+            select={this.state.current}
+            onChange={this.handleSelect}
+          />
+        )}
       </div>
-    );
+    )
   }
 }
 
