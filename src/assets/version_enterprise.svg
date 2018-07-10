@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="27px" viewBox="0 0 24 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon-Enterprise</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-1064.000000, -3595.000000)">
+            <g id="Group-26" transform="translate(0.000000, 752.000000)">
+                <g id="Group-31" transform="translate(140.000000, 2684.000000)">
+                    <g id="Group-12" transform="translate(900.000000, 125.000000)">
+                        <g id="Group-10" transform="translate(20.000000, 20.000000)">
+                            <g id="Icon-Enterprise" transform="translate(0.000000, 11.000000)">
+                                <polygon id="Bound" points="0 0 32 0 32 32 0 32"></polygon>
+                                <polygon id="Rectangle" fill="#55BC8A" points="8 3.33333333 12 3.33333333 12 7.33333333 8 7.33333333"></polygon>
+                                <polygon id="Rectangle" fill="#55BC8A" points="4 4.66666667 16 4.66666667 16 29.3333333 4 29.3333333"></polygon>
+                                <path d="M22,14 C25.3137085,14 28,16.6862915 28,20 L28,29.3333333 L16,29.3333333 L16,20 C16,16.6862915 18.6862915,14 22,14 Z" id="Shape" fill="#303E5A"></path>
+                                <polygon id="Rectangle" fill="#FFFFFF" points="7.33333333 8.66666667 8.66666667 8.66666667 8.66666667 14 7.33333333 14"></polygon>
+                                <polygon id="Rectangle" fill="#FFFFFF" points="7.33333333 15.3333333 8.66666667 15.3333333 8.66666667 20.6666667 7.33333333 20.6666667"></polygon>
+                                <polygon id="Rectangle" fill="#303E5A" points="8 24.6666667 12 24.6666667 12 29.3333333 8 29.3333333"></polygon>
+                                <polygon id="Rectangle" fill="#FFFFFF" points="11.3333333 8.66666667 12.6666667 8.66666667 12.6666667 14 11.3333333 14"></polygon>
+                                <polygon id="Rectangle" fill="#FFFFFF" points="11.3333333 15.3333333 12.6666667 15.3333333 12.6666667 20.6666667 11.3333333 20.6666667"></polygon>
+                                <path d="M22,22 C23.1045695,22 24,21.1045695 24,20 C24,18.8954305 23.1045695,18 22,18 C20.8954305,18 20,18.8954305 20,20 C20,21.1045695 20.8954305,22 22,22 Z" id="Oval" fill="#FFFFFF"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

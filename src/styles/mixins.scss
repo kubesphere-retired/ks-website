@@ -1,0 +1,35 @@
+@mixin clearfix {
+  zoom: 1;
+
+  &:after {
+    content: ".";
+    display: block;
+    clear: both;
+    overflow: hidden;
+    height: 0;
+    visibility: hidden;
+  }
+}
+
+@mixin ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  overflow: hidden;
+}
+
+@mixin nowrap {
+  white-space: nowrap;
+  word-wrap: normal;
+}
+
+@mixin break-all {
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: normal;
+}
+
+@mixin vertical-center {
+  top: 50%;
+  transform: translateY(-50%);
+}

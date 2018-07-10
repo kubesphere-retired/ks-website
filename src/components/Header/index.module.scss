@@ -1,0 +1,44 @@
+@import '../../styles/variables';
+
+.header {
+  position: fixed;
+  width: 100%;
+  height: 84px;
+  line-height: 84px;
+  background-color: #232d4166;
+  z-index: 1000;
+  transition: background-color $transition-speed ease;
+}
+
+.logo {
+  height: 84px;
+  padding: 22px 0;
+}
+
+.wrapper {
+  width: 1160px;
+  height: 84px;
+  margin: 0 auto;
+}
+
+.nav {
+  float: right;
+  height: 84px;
+  a {
+    color: #fff;
+    font-weight: 500;
+    font-size: 16px;
+    &:hover {
+      color: $green;
+    }
+
+    & + a {
+      margin-left: 40px;
+    }
+
+    img {
+      vertical-align: text-top;
+      margin-right: 10px;
+    }
+  }
+}

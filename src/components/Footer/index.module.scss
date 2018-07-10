@@ -1,0 +1,20 @@
+@import '../../styles/variables';
+
+.footer {
+  width: 100%;
+  background-color: #141f29;
+
+  .wrapper {
+    width: 1160px;
+    margin: 0 auto;
+  }
+
+  .icp {
+    padding: 37px 0;
+    font-weight: 300;
+    font-family: $font-family-id;
+    line-height: 17px;
+    color: #d5dee7;
+    text-align: center;
+  }
+}

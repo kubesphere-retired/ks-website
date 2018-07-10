@@ -1,0 +1,46 @@
+@import '../../styles/variables';
+
+.button {
+  font-size: $size-medium;
+  font-weight: 500;
+  line-height: 1;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  transition: all $transition-speed ease;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.normal {
+  padding: 10px 24px;
+  border-radius: 26.5px;
+}
+
+.large {
+  padding: 18px 30px;
+  border-radius: 28px;
+}
+
+.primary {
+  color: #ffffff;
+  background-color: $primary;
+  box-shadow: 0 10px 24px 0 rgba(85, 188, 138, 0.36);
+
+  &:hover {
+    background-color: lighten($color: $primary, $amount: 5);
+  }
+
+  &:focus {
+    background-color: darken($color: $primary, $amount: 5);
+    box-shadow: 0 10px 24px 0 rgba(85, 188, 138, 0.1);
+  }
+}
+
+.disabled {
+  color: #ffffff;
+  background-color: #cfd9df;
+  text-shadow: 0 4px 8px rgba(72, 91, 127, 0.2);
+}
