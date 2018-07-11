@@ -7,7 +7,6 @@ COPY Caddyfile /etc/Caddyfile
 VOLUME /root/.caddy
 WORKDIR /srv
 
-RUN apk add --update yarn
 
 ENTRYPOINT ["/usr/bin/caddy"]
 CMD ["--conf", "/etc/Caddyfile", "--log", "stdout"]
