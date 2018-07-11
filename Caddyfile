@@ -18,7 +18,6 @@ https://kubesphere.io {
             repo https://github.com/kubesphere/kubesphere.github.io.git
             hook /webhook QingCloud
             hook_type github
-            then yarn install && yarn build
             interval 1800
     }
 }
