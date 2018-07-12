@@ -16,6 +16,7 @@ https://kubesphere.io {
     git {
             path /srv/kubesphere.github.io
             repo https://github.com/kubesphere/kubesphere.github.io.git
+            branch build
             hook /webhook QingCloud
             hook_type github
             interval 1800

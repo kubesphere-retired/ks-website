@@ -36,7 +36,6 @@ const NewsList = ({ data }) => (
         <div className="h4">{node.frontmatter.title}</div>
         <p className="excerpt">{node.excerpt}</p>
         <div className="desc">
-          <span>阅读量: 22453(TODO)</span>
           <span>{node.frontmatter.author}</span>
           <span>发布时间: {node.frontmatter.date}</span>
           <Link className="link" to={node.fields.slug}>

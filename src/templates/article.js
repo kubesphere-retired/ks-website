@@ -25,7 +25,6 @@ const Article = ({ location, t, data }) => {
       <div className="article-content">
         <div className="h2">{post.frontmatter.title}</div>
         <div className="desc">
-          <span>阅读量: 22453(TODO)</span>
           <span>{post.frontmatter.author}</span>
           <span>发布时间: {post.frontmatter.date}</span>
         </div>
