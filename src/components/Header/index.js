@@ -44,9 +44,9 @@ class Header extends React.Component {
           <Logo className={styles.logo} />
           <div className={styles.nav}>
             <Link to="/">{t('Home')}</Link>
-            <Link to="/">{t('Product')}</Link>
+            <Link to="/product">{t('Product')}</Link>
             <Link to={`/news/enterprise/${lang}`}>{t('News')}</Link>
-            <Link to="/">{t('Documentation')}</Link>
+            <Link to="/docs">{t('Documentation')}</Link>
             <a
               href="https://github.com/kubesphere/kubesphere.github.io"
               target="_blank"

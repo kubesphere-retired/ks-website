@@ -1,0 +1,47 @@
+@import '../../styles/variables';
+
+.table {
+  width: 1160px;
+  border-collapse: collapse;
+  border-spacing: 0;
+
+  & > thead > tr > th {
+    width: 240px;
+    padding: 24px 20px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 25px;
+    text-align: left;
+    color: #303e5a;
+
+    &:first-child {
+      width: 200px;
+      border: none;
+    }
+  }
+
+  & > thead > tr > th, & > tbody > tr > td {
+    border: solid 1px #cfd9df;
+  }
+
+  & > tbody > tr {
+    & > td {
+      padding: 20px 26px;
+      line-height: 20px;
+      color: #232d41;
+      text-align: center;
+      
+      &:first-child {
+        text-align: left;
+      }
+    }
+
+    &.group > td {
+      padding: 10px 26px;
+      font-weight: 500;
+      line-height: 20px;
+      color: #232d41;
+      background-color: #eff4f8;
+    }
+  }
+}
