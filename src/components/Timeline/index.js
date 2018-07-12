@@ -33,7 +33,7 @@ const Step = ({ t, title, status, time, reverse = false }) => (
     </span>
     <img src={line} alt="" />
     <span className={styles.stepTime}>
-      {moment(time).format(t('YYYY | MMMM Do'))}
+      {moment(new Date(time)).format(t('YYYY | MMMM Do'))}
     </span>
   </div>
 )

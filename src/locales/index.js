@@ -4,7 +4,8 @@ export default {
       {},
       require('./zh-CN/base'),
       require('./zh-CN/home'),
-      require('./zh-CN/news')
+      require('./zh-CN/news'),
+      require('./zh-CN/product')
     ),
   },
   en: {

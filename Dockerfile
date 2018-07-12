@@ -6,8 +6,7 @@ COPY Caddyfile /etc/Caddyfile
 
 VOLUME /root/.caddy
 WORKDIR /srv
-
-RUN apk add --update yarn
+COPY ./ /srv/kubesphere.github.io/
 
 ENTRYPOINT ["/usr/bin/caddy"]
 CMD ["--conf", "/etc/Caddyfile", "--log", "stdout"]
