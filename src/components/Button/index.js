@@ -9,9 +9,16 @@ const Button = ({
   size = 'normal',
   type = 'primary',
   onClick,
+  ghost = false,
 }) => (
   <button
-    className={classnames(styles.button, styles[type], styles[size], className)}
+    className={classnames(
+      styles.button, 
+      styles[type], 
+      styles[size], 
+      {[styles.ghost]: ghost}, 
+      className
+    )}
     onClick={onClick}
   >
     {children}

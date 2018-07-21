@@ -1,6 +1,7 @@
 html {
   overflow: visible;  // overwrite overflow from minireset
   height: 100%;
+  background-color: rgb(245, 248, 249);
 }
 
 body {
@@ -35,6 +36,7 @@ a, a:hover, a:focus, a:active, a:visited {
 
 p {
   line-height: 2;
+  color: #919aa3;
 }
 
 div {

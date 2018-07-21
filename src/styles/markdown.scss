@@ -1,8 +1,9 @@
 .md-body {
   font-family: Proxima Nova, Arial, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 2;
-  word-wrap: break-word
+  word-wrap: break-word;
+  color: #919aa3;
 }
 
 .md-body::before {
@@ -24,9 +25,9 @@
   margin-bottom: 0 !important
 }
 
-.md-body a:not([href]) {
-  color: #6626AF;
-  text-decoration: none
+.md-body a {
+  color: #55bc8a;
+  text-decoration: none;
 }
 
 .md-body .absent {
@@ -45,7 +46,7 @@
 }
 
 .md-body p,.md-body blockquote,.md-body ul,.md-body ol,.md-body dl,.md-body table,.md-body pre {
-  margin: 0 0 16px;
+  margin: 0 0 12px;
 }
 
 .md-body hr {
@@ -58,8 +59,16 @@
 
 .md-body blockquote {
   padding: 0 1em;
-  color: #6a737d;
-  border-left: 0.25em solid #dfe2e5
+  border-left: 4px solid #cfd9df;
+  font-size: 14px;
+  line-height: 1.71;
+  color: #8f94a1;
+}
+
+.md-body blockquote > p {
+  font-size: 14px;
+  line-height: 1.71;
+  color: #8f94a1;
 }
 
 .md-body blockquote>:first-child {
@@ -85,11 +94,11 @@
 }
 
 .md-body h1,.md-body h2,.md-body h3,.md-body h4,.md-body h5,.md-body h6 {
-  margin-top: 24px;
-  margin-bottom: 16px;
-  font-weight: 500;
-  line-height: 1.25;
-  color: #300E56;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #171c34;
 }
 
 .md-body h1 .octicon-link,.md-body h2 .octicon-link,.md-body h3 .octicon-link,.md-body h4 .octicon-link,.md-body h5 .octicon-link,.md-body h6 .octicon-link {
@@ -117,13 +126,16 @@
 }
 
 .md-body h2 {
-  padding-bottom: 0.3em;
-  font-size: 1.6em;
-  border-bottom: 1px solid #eaecef
+  font-size: 32px;
+  line-height: 1.63;
+  text-align: center;
+  color: #171c34;
+  text-shadow: 0 4px 8px rgba(35, 45, 65, 0.1);
+  margin-bottom: 60px;
 }
 
 .md-body h3 {
-  font-size: 1.4em;
+  font-size: 16px;
 }
 
 .md-body h4 {
@@ -154,7 +166,7 @@
 }
 
 .md-body li {
-  word-wrap: break-all
+  word-wrap: break-word;
 }
 
 .md-body li>p {
@@ -183,13 +195,18 @@
 }
 
 .md-body table {
-  display: block;
+  display: table;
   width: 100%;
-  overflow: auto
+  overflow: auto;
+  border-collapse: collapse;
 }
 
 .md-body table th {
-  font-weight: 600
+  font-weight: 600;
+  border-radius: 3px;
+  background-color: #ecf0f2;
+  border: solid 1px #cfd9df;
+  text-align: left;
 }
 
 .md-body table th,.md-body table td {
@@ -213,7 +230,9 @@
 .md-body img {
   max-width: 100%;
   box-sizing: content-box;
-  background-color: #fff
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 4px 15px 0 rgba(7, 42, 68, 0.1);
 }
 
 .md-body img[align=right] {
@@ -335,17 +354,17 @@
 }
 
 .md-body pre {
-  word-wrap: normal
+  word-wrap: normal;
 }
 
 .md-body pre>code {
-  padding: 0;
-  margin: 0;
-  font-size: 100%;
-  word-break: normal;
+  display: inline-block;
+  padding: 18px 24px;
   white-space: pre;
-  background: transparent;
-  border: 0
+  font-family: Monaco;
+  font-size: 14px;
+  line-height: 1.71;
+  color: #ffffff;
 }
 
 .md-body .highlight {
@@ -358,24 +377,13 @@
 }
 
 .md-body .highlight pre,.md-body pre {
-  padding: 16px;
+  margin-bottom: 20px;
   overflow: auto;
   font-size: 85%;
   line-height: 1.45;
-  background-color: #f6f8fa;
-  border-radius: 3px
-}
-
-.md-body pre code,.md-body pre tt {
-  display: inline;
-  max-width: auto;
-  padding: 0;
-  margin: 0;
-  overflow: visible;
-  line-height: inherit;
-  word-wrap: normal;
-  background-color: transparent;
-  border: 0
+  border-radius: 5px;
+  background-color: #242e42;
+  border: solid 1px #242e42;
 }
 
 .md-body .csv-data td,.md-body .csv-data th {

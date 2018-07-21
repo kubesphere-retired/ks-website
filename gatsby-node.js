@@ -9,26 +9,25 @@ const publicLocales = path.join(__dirname, "/public/locales")
 exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
   const { createNodeField } = boundActionCreators
   if (node.internal.type === `MarkdownRemark`) {
-    const slug = createFilePath({ node, getNode, basePath: `content` })
+    const slug = createFilePath({ node, getNode, basePath: `content/install` })
 
     const parts = slug.split('/').filter(p => !!p)
 
-    if (parts.length !== 4) {
-      throw new Error(`Unexpected node path of length !== 4: ${slug}`)
+    if (parts.length !== 3) {
+      throw new Error(`Unexpected node path of length !== 3: ${slug}`)
     }
 
-    const [framework, type, language, article] = parts
+    const [framework, language, article] = parts
 
     createNodeField({ node, name: `slug`, value: slug, })
     createNodeField({ node, name: `framework`, value: framework })
-    createNodeField({ node, name: `type`, value: type })
     createNodeField({ node, name: `language`, value: language })
     createNodeField({ node, name: `article`, value: article })
   }
 }
 
 exports.createPages = ({ graphql, boundActionCreators }) => {
-  const { createPage, createRedirect } = boundActionCreators
+  const { createPage } = boundActionCreators
   return new Promise(resolve => {
     graphql(`
       {
@@ -38,9 +37,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
               fields {
                 slug
                 framework
-                type
                 language
-                article
               }
             }
           }
@@ -50,27 +47,20 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
       let groups = new Set()
 
       edges.forEach(({ node }) => {
-        const { slug, framework, type, language, article } = node.fields
-
-        groups.add(`${framework}/${type}/${language}`)
-
-        // create article detail page
-        createPage({
-          path: slug,
-          component: path.resolve(`./src/templates/article.js`),
-          context: { slug, framework, type, language, article },
-        })
+        const { framework, language } = node.fields
+        groups.add(`${framework}/${language}`)
       })
 
       groups.forEach(group => {
-        const [framework, type, language] = group.split('/')
+        const [framework, language] = group.split('/')
 
-        // create article list page
-        createPage({
-          path: group,
-          component: path.resolve(`./src/templates/news.js`),
-          context: { framework, type, language },
-        })
+        if(framework === 'install') {
+          createPage({
+            path: group,
+            component: path.resolve(`./src/templates/install.js`),
+            context: { framework, language },
+          })
+        }
       })
 
       resolve()

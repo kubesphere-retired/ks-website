@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="220px" height="407px" viewBox="0 0 220 407" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 22</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="220" height="445"></rect>
+        <path d="M100.448229,271.167916 L287.542547,379.106895 C316.245415,395.666234 352.937685,385.821959 369.497024,357.11909 C374.756939,348.0019 377.525883,337.661429 377.525883,327.135753 L377.525883,111.257797 C377.525883,78.1207117 350.662968,51.2577967 317.525883,51.2577967 C307.000208,51.2577967 296.659736,54.0267409 287.542547,59.2866554 L100.448229,167.225634 C71.7453607,183.784973 61.9010853,220.477243 78.4604248,249.180112 C83.7301205,258.314255 91.314086,265.898221 100.448229,271.167916 Z" id="path-3"></path>
+        <filter x="-26.1%" y="-19.0%" width="152.1%" height="147.6%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="0" dy="16" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="24" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.333333333   0 0 0 0 0.737254902   0 0 0 0 0.541176471  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="首页" transform="translate(0.000000, -708.000000)">
+            <g id="Group-22" transform="translate(0.000000, 681.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Mask"></g>
+                <g mask="url(#mask-2)" opacity="0.9">
+                    <g transform="translate(-248.000000, 30.000000)">
+                        <g id="Combined-Shape" fill="none" transform="translate(224.025883, 219.201819) rotate(-58.000000) translate(-224.025883, -219.201819) ">
+                            <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                            <use fill="#55BC8A" fill-rule="evenodd" xlink:href="#path-3"></use>
+                        </g>
+                        <path d="M441.59381,127.071678 L377.088666,90.434364 C367.484061,84.9791879 355.275697,88.3429644 349.820521,97.9475691 C348.110305,100.958645 347.211196,104.362177 347.211196,107.825039 L347.211196,181.102883 C347.211196,192.148578 356.165501,201.102883 367.211196,201.102883 C370.674314,201.102883 374.078088,200.203641 377.089321,198.493186 L441.594465,161.852656 C451.198864,156.397118 454.562181,144.188627 449.106643,134.584228 C447.325475,131.448507 444.729598,128.852727 441.59381,127.071678 Z" id="Fill-1" fill="#232D41" fill-rule="nonzero"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
