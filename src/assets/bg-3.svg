@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1440px" height="693px" viewBox="0 0 1440 693" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Rectangle 3</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="100%" x2="50%" y2="3.061617e-15%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#EBEEF0" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="首页" transform="translate(0.000000, -2701.000000)" fill="url(#linearGradient-1)">
+            <g id="Group-9" transform="translate(-34.000000, 2701.000000)">
+                <path d="M195.256898,66.0971617 C418.355978,-25.2317264 1217.30188,-31.3037709 1405.69602,107.754163 C1594.09016,246.812097 1656.4643,644.829598 1352.47801,671.248593 C1048.49172,697.667589 134.959899,718.360375 50.5442531,614.847743 C-33.8713927,511.33511 -27.8421811,157.42605 195.256898,66.0971617 Z" id="Rectangle-3"></path>
+            </g>
+        </g>
+    </g>
+</svg>

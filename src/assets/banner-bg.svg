@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="690px" height="470px" viewBox="0 0 690 470" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>应用模板列表页面</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="660" height="440" rx="10"></rect>
+        <filter x="-3.7%" y="-4.7%" width="107.4%" height="111.1%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="4" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="7.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.0274509804   0 0 0 0 0.164705882   0 0 0 0 0.266666667  0 0 0 0.1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <path d="M0,0 L650,0 L650,401 C650,403.761424 647.761424,406 645,406 L5,406 C2.23857625,406 3.38176876e-16,403.761424 0,401 L0,0 Z" id="path-4"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="首页" transform="translate(-625.000000, -199.000000)">
+            <g id="应用模板列表页面" transform="translate(640.000000, 210.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Mask">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-1"></use>
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                </g>
+                <g id="Group-8" mask="url(#mask-2)">
+                    <g transform="translate(15.000000, 11.000000)" id="Oval">
+                        <ellipse fill="#34C749" cx="36.7706633" cy="4.8272741" rx="4.83824518" ry="4.8272741"></ellipse>
+                        <ellipse fill="#FDBC40" cx="20.8044543" cy="4.8272741" rx="4.83824518" ry="4.8272741"></ellipse>
+                        <ellipse fill="#FC605C" cx="4.83824518" cy="4.8272741" rx="4.83824518" ry="4.8272741"></ellipse>
+                    </g>
+                </g>
+                <g mask="url(#mask-2)">
+                    <g transform="translate(5.000000, 28.000000)">
+                        <mask id="mask-5" fill="white">
+                            <use xlink:href="#path-4"></use>
+                        </mask>
+                        <use id="Mask" stroke="none" fill="#ECF0F2" fill-rule="nonzero" xlink:href="#path-4"></use>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

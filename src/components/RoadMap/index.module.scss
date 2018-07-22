@@ -1,0 +1,49 @@
+@import '../../styles/variables';
+
+.roadmap {
+  .item {
+    display: inline-block;
+    vertical-align: top;
+    .tip {
+      margin-bottom: 12px;
+      
+      &.planning {
+        :global {
+          .dot{
+            width: 14px;
+            height: 14px;
+            background-color: #ffffff;
+            border: solid 3px #55bc8a;
+          }
+
+          .line {
+            border: dashed 1.5px #adebb5;
+          }
+        }
+      }
+    }
+
+    .text {
+      line-height: 1.71;
+      font-family: $font-family-id;
+    }
+  }
+}
+
+:global {
+  .dot {
+    display: inline-block;
+    vertical-align: middle;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #55bc8a;
+  }
+  .line {
+    display: inline-block;
+    vertical-align: middle;
+    width: 194px;
+    height: 2px;
+    border: solid 1px #adebb5;
+  }      
+}

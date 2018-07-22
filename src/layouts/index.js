@@ -3,26 +3,19 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
 import '../styles/main.scss'
+import './index.scss'
 
 import '../utils/i18n'
 
-import bodyBg from '../assets/bodybg.png'
-import bodyBg2 from '../assets/bodybg2.png'
-
 import Header from '../components/Header/index'
-import Advise from '../components/Advise/index'
 import Footer from '../components/Footer/index'
 
-const Layout = ({ children, data, location }) => {
-  const isHome = location.pathname === '/'
+import bg1 from '../assets/bg-1.svg'
+import bg2 from '../assets/bg-2.svg'
 
-  const background = {
-    backgroundImage: isHome ? `url(${bodyBg})` : `url(${bodyBg2})`,
-    backgroundSize: 'cover',
-  }
-
+const Layout = ({ children, data }) => {
   return (
-    <div style={background}>
+    <div>
       <Helmet
         title={data.site.siteMetadata.title}
         meta={[
@@ -31,8 +24,9 @@ const Layout = ({ children, data, location }) => {
         ]}
       />
       <Header siteTitle={data.site.siteMetadata.title} />
+      <img className="bg1" src={bg1} alt=""/>
+      <img className="bg2" src={bg2} alt=""/>
       {children()}
-      <Advise />
       <Footer />
     </div>
   )

@@ -1,0 +1,54 @@
+@import '../../../styles/variables';
+
+.card {
+  display: inline-block;
+  width: 360px;
+  height: 150px;
+  padding: 35px 25px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  cursor: pointer;
+  text-align: left;
+  transition: all $transition-speed ease;
+  
+  &:hover {
+    box-shadow: 0 4px 15px 0 rgba(7, 42, 68, 0.1);
+  }
+
+  &:active {
+    box-shadow: 0 2px 4px 0 rgba(7, 42, 68, 0.1);
+  }
+
+  & > img {
+    width: 40px;
+    height: 40px;
+    margin-right: 24px;
+    vertical-align: middle;
+  }
+
+  .text {
+    display: inline-block;
+    vertical-align: middle;
+    width: 246px;
+
+    & > :global(.h3) {
+      font-weight: 600;
+      line-height: 1.5;
+      color: #171c34;
+      margin-bottom: 7px;
+    }
+
+    & > p {
+      line-height: 1.71;
+      color: #8f94a1;
+    }
+  }
+
+  & + .card {
+    margin-left: 40px;
+  }
+
+  &.select {
+    box-shadow: 0 4px 15px 0 rgba(7, 42, 68, 0.1);
+  }
+}

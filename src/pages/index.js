@@ -2,176 +2,128 @@ import React from 'react'
 import Link from 'gatsby-link'
 import { translate } from 'react-i18next'
 
-import Banner from '../components/Banner/index'
-import FeatureCard from '../components/FeatureCard/index'
-import FeatureSection from '../components/FeatureSection/index'
-import VersionCard from '../components/VersionCard/index'
-import Timeline from '../components/Timeline/index'
 import Button from '../components/Button/index'
+import ContribCard from '../components/Card/Contrib/index'
+import RoadMap from '../components/RoadMap/index'
+import Slider from '../components/Slider/index'
 
-import next from '../assets/next.svg'
-import bannerBg from '../assets/bannerbg.png'
-import feature01 from '../assets/feature_01.svg'
-import feature02 from '../assets/feature_02.svg'
-import feature03 from '../assets/feature_03.svg'
-import feature04 from '../assets/feature_04.svg'
-import feature05 from '../assets/feature_05.svg'
-import feature06 from '../assets/feature_06.svg'
-import openpitrix from '../assets/openpitrix.svg'
-import multipartIcon from '../assets/multipart_icon.svg'
-import multipart from '../assets/multipart.svg'
-import releaseBg from '../assets/release_bg.svg'
+import DashboardImage from '../assets/dashboard.png'
+import BannerBg from '../assets/banner-bg.svg'
+import SliderBg from '../assets/slider-bg.svg'
+import EasyUseIcon from '../assets/easyuse.svg'
+import FlexibleIcon from '../assets/flexible.svg'
+import EfficientIcon from '../assets/efficient.svg'
+import bg3 from '../assets/bg-3.svg'
+import BugIcon from '../assets/icon-bug.svg'
+import RoadMapIcon from '../assets/icon-roadmap.svg'
+import DesignIcon from '../assets/icon-design.svg'
+import ChatIcon from '../assets/icon-chat.svg'
 
-import { VERSIONS, VERSION_RELEASE } from '../utils/constants'
+import slider1 from '../assets/slider-1.png'
+import slider2 from '../assets/slider-2.png'
+import slider3 from '../assets/slider-3.png'
 
 import './index.scss'
 
-const Page = () => (
-  <div
-    className="banner-page"
-    style={{
-      background: `url(${bannerBg})`,
-      backgroundSize: 'cover',
-    }}
-  >
-    <div className="h1 font-id font-bold margin-b32">
-      预见未来，遇见KubeSphere
+const Banner = () => (
+  <div style={{ height: 680 }}>
+    <div className="wrapper banner">
+      <div className="banner-desc">
+        <div className="h1">预见未来,<br/>遇见 KubeSphere</div>
+        <p>kubesphere.io 是 KubeSphere 容器管理平台的上游开源项目，整合最新的 CNCF 生态开源项目，为开发者和体验者提供最新最酷的特性，且根据中国用户的特定需求，进行外延性的扩展。</p>
+        <div className="banner-links">
+          <Link to=""><Button type="primary" size="large">获取社区版</Button></Link>
+          <Link to=""><Button type="primary" size="large" ghost>获取商业版</Button></Link>
+        </div>
+      </div>
+      <div className="banner-snapshot">
+        <img src={BannerBg} alt=""/>
+        <img src={DashboardImage} alt="" style={{ position: 'absolute', top: 39, left: 20, width: 650, height: 406}}/>
+      </div>
     </div>
-    <p className="font-xl margin-b32 font-thin font-id">
-      容器化转型第一步，使用 KubeSphere<br />轻松运维 Kubernetes
-      集群，加速迈向微服务
-    </p>
-    <Link to="/more">
-      <Button type="primary" size="large">
-        了解更多 <img src={next} height={10} />
-      </Button>
-    </Link>
   </div>
-)
-
-const Banners = () => (
-  <Banner>
-    <Banner.Item name="page" snapshot={bannerBg}>
-      <Page />
-    </Banner.Item>
-  </Banner>
 )
 
 const Features = () => (
-  <div className="features">
-    <div style={{ paddingBottom: 100 }}>
-      <div className="title">KubeSphere</div>
-      <p className="font-thin text-desc">
-        轻松运维 Kubernetes 集群，加速迈向微服务。
-      </p>
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          marginTop: 68,
-        }}
-      >
-        <FeatureCard
-          icon={feature01}
-          title="统一管理"
-          desc="无基础设施依赖，无 Kubernetes 依赖，支持跨物理机、虚拟机、云平台部署，可以纳管不同版本、不同厂商的 Kubernetes 集群"
-        />
-        <FeatureCard
-          icon={feature02}
-          title="极简体验，向导UI"
-          desc="面向开发、测试、运维友好的 UI ，向导式用户体验，通过 KubeSphere 控制台将 Kubernetes 的能力以一种极简的方式输送给用户"
-        />
-        <FeatureCard
-          icon={feature03}
-          title="易于集成第三方系统"
-          desc="内置镜像仓库、应用仓库，监控、日志模块，用户也可集成企业内已有的监控、日志等系统，实现集中化管理"
-        />
+  <div className="wrapper section feature">
+    <div className="h1">什么是 KubeSphere ？</div>
+    <p>KubeSphere 是一款开源项目，在目前主流容器调度平台 Kubernetes 之上构建的企业级分布式多租户容器管理平台，提供简单易用的操作界面以及向导式操作方式，在降低用户使用容器调度平台学习成本的同时，极大减轻开发、测试、运维的日常工作的复杂度，</p>
+    <div className="feature-cards">
+      <div className="feature-card">
+        <img src={EasyUseIcon} alt=""/>
+        <div className="h2">易用</div>
+        <p>面向开发、测试、运维友好的 UI ，向导式用户体验，通过 KubeSphere 控制台将 Kubernetes 的能力以一种极简的方式输送给用户。</p>
       </div>
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          marginTop: 68,
-        }}
-      >
-        <FeatureCard
-          icon={feature04}
-          title="多场景、整体化解决方案"
-          desc="提供DevOps，微服务治理，应用管理等多场景支持，打通并整合应用开发、管理，CI/CD（持续集成/持续交付），服务治理，发布上线，流量管控等一系列链条"
-        />
-        <FeatureCard
-          icon={feature05}
-          title="多租户 细粒度 资源安全隔离"
-          desc="基于多租户、细粒度安全架构设计，提供资源以及操作级别的权限管控，充分保障资源安全性，并支持AD/LDAP协议，满足集中化认证场景"
-        />
-        <FeatureCard
-          icon={feature06}
-          title="完善的网络和存储"
-          desc="除开源解决方案外，如用户对网络和存储有更高要求，可选用青云作为底层平台，可以使用有服务保障的网络和存储解决方案，集成青云 SDN、块存储和NeonSAN"
-        />
+      <div className="feature-card">
+        <img src={FlexibleIcon} alt=""/>
+        <div className="h2">灵活</div>
+        <p>除开源解决方案外，如用户对网络和存储有更高要求，可选用青云作为底层平台，可以使用有服务保障的网络和存储解决方案，集成青云 SDN、块存储和 NeonSAN。</p>
       </div>
-    </div>
-    <FeatureSection
-      icon={multipartIcon}
-      title="多租户隔离 "
-      secondTitle="一个环境,多个团队,完整的多租户模式"
-      desc="通过划分不同的企业控件，提供完整的组织架构管理与权限管理，充分提高KubeSphere利用率，同时保持跨资源和工作负载的控制，隔离和访问控制。"
-      graphic={multipart}
-      reverse
-    />
-    <FeatureSection
-      icon={feature01}
-      title="OpenPitrix"
-      secondTitle="完整的应用生命周期管理"
-      desc="基于开源的 OpenPitrix 项目，提供应用的全生命周期管理，包含开发，测试，发布，升级，下架等应用相关操作，多应用仓库管理，一键部署应用，并可实现版本控制、计费、审计等高级功能。"
-      graphic={openpitrix}
-    />
-    <FeatureSection
-      icon={feature01}
-      title="NeoSAN"
-      secondTitle="企业级分布式存储 NeonSAN"
-      desc="企业级分布式 SAN (NeonSAN) 是基于全闪存架构提供的分布式 SAN 服务，与超高性能型硬盘相比，单盘存储量更大，最大可达到50TB。以可选插件方式整合青云企业级分布式存储 NeonSAN，提供更经济、可靠、高效的存储保证。"
-      graphic={openpitrix}
-      reverse
-    />
-  </div>
-)
-
-const VersionRelease = ({ t }) => (
-  <div className="release">
-    <div
-      className="release-wrapper"
-      style={{ backgroundImage: `url(${releaseBg})` }}
-    >
-      <div className="wrapper">
-        <div className="release-title">{t('Version Release Plan')}</div>
-        <Timeline data={VERSION_RELEASE} />
+      <div className="feature-card">
+        <img src={EfficientIcon} alt=""/>
+        <div className="h2">高效</div>
+        <p>无基础设施依赖，无 Kubernetes 依赖，支持跨物理机、虚拟机、云平台部署，可以纳管不同版本、不同厂商的 Kubernetes 集群。</p>
       </div>
     </div>
   </div>
 )
 
-const Versions = ({ t }) => (
-  <div className="versions">
-    <div className="title">{t('Get KubeSphere')}</div>
-    <p className="font-thin text-desc">
-      {t('Integrated solution based on open source community')}
-    </p>
-    <div className="versions-list">
-      {VERSIONS &&
-        VERSIONS.map(version => (
-          <VersionCard key={version.title} {...version} />
-        ))}
+const sliders = [slider1, slider2, slider3];
+
+const AppInstall = () => (
+  <div className="wrapper section app-install">
+    <div className="h1">应用一键部署</div>
+    <p>基于开源的 OpenPitrix 项目，提供应用的全生命周期管理，包含开发，测试，发布，升级，下架等应用相关操作，多应用仓库管理，一键部署应用</p>
+    <div className="slider-wrapper">
+      <img src={SliderBg} alt=""/>
+      <Slider className="slider" data={sliders}/>
+    </div>
+  </div>
+)
+
+const ROADMAP = [
+  {name: '社区版alpha', time: '2018年6月30日', status: 'released'},
+  {name: '社区版beta', time: '2018年7月30日', status: 'releasing'},
+  {name: '社区版1.0', time: '2018年8月30日', status: 'planning'},
+]
+
+const Contribution = () => (
+  <div style={{ backgroundImage: `url(${bg3})`, backgroundSize: 'contain', backgroundRepeat: 'no-repeat'}}>
+    <div className="wrapper section contrib">
+      <div className="h1">如何参与贡献</div>
+      <p>积极参与到 KubeSphere 上游的开发中，了解项目进度，以及 Bug 提交，可以通过 GitHub与 Slack 与我们保持联系</p>
+      <div className="contrib-cards">
+        <ContribCard icon={RoadMapIcon} title="RoadMap">
+          <RoadMap data={ROADMAP}/>
+        </ContribCard>
+        <ContribCard icon={BugIcon} title="报告 Bug">
+          <p className="report">KubeSphere 使用 GitHub issue 来管理 bug 跟踪 <Link to="">提交 BUG →</Link></p>
+        </ContribCard>
+        <ContribCard icon={DesignIcon} title="参与开发和设计">
+          <ul className="list">
+            <li>认真阅读 kubesphere <Link to="">贡献者指南</Link></li>
+            <li>fork 项目: <Link to="https://github.com/kubesphere/kubesphere">https://github.com/kubesphere/kubesphere</Link></li>
+            <li><Link to="">阅读《使用手册》</Link></li>
+            <li>参与到Kubesphere的上游项目：kubernetes、Docker、Kata 等</li>
+          </ul>
+        </ContribCard>
+        <ContribCard icon={ChatIcon} title="日常沟通">
+          <ul className="list">
+            <li>在 Slack 频道上找到我们：<Link to="">kubesphere.slack.com</Link></li>
+            <li>在 <Link to="">StackOverflow</Link> 上向我们提问</li>
+          </ul>
+        </ContribCard>
+      </div>
     </div>
   </div>
 )
 
 const IndexPage = props => (
   <div>
-    <Banners {...props} />
-    <Features {...props} />
-    <VersionRelease {...props} />
-    <Versions {...props} />
+    <Banner />
+    <Features />
+    <AppInstall />
+    <Contribution />
   </div>
 )
 

@@ -2,19 +2,60 @@
 
 .footer {
   width: 100%;
-  background-color: #141f29;
+  padding: 118px 0;
 
   .wrapper {
-    width: 1160px;
+    width: 960px;
     margin: 0 auto;
   }
 
   .icp {
-    padding: 37px 0;
-    font-weight: 300;
+    padding-top: 48px;
+    font-weight: 600;
     font-family: $font-family-id;
-    line-height: 17px;
-    color: #d5dee7;
+    line-height: 1.43;
+    letter-spacing: 1.1px;
+    color: #242e42;
     text-align: center;
+  }
+
+  .logo {
+    img {
+      height: 32px;
+    }
+  }
+
+  .links {
+    display: inline-block;
+    margin-left: 140px;
+    font-size: 16px;
+    vertical-align: top;
+
+    & > li {
+      display: inline-block;
+      vertical-align: top;
+
+      & + li {
+        margin-left: 108px;
+      }
+
+      & > :global(.h3) {
+        font-weight: 600;
+        line-height: 1.5;
+        color: #171c34;
+        margin-bottom: 10px;
+      }
+
+      & > a {
+        display: block;
+        line-height: 2;
+        color: #919aa3;
+        font-family: $font-family-id;
+
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
   }
 }
