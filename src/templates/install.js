@@ -24,7 +24,7 @@ const Banner = () => (
 
 const Documents = ({ data, selectCard, onCardChange }) => {
   const edge = data.allMarkdownRemark.edges.find(item => item.node.fields.article === selectCard);
-  
+
   return (
     <div className="docs">
       <div className="docs-cards">
