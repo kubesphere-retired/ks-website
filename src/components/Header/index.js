@@ -23,7 +23,7 @@ class Header extends React.Component {
           <div className={styles.nav}>
             <Link to="/">{t('Home')}</Link>
             <Link to={"/install/"+lang}>{t('Install')}</Link>
-            <Link to="/">{t('Documentation')}</Link>
+            <a href="https://kubesphere.qingcloud.com" target="_blank">{t('Documentation')}</a>
             <Link to="/">{t('Business Edition')}</Link>
           </div>
           <div style={{ float: 'right' }}>
