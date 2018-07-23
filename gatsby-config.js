@@ -12,6 +12,9 @@ module.exports = {
         name: `content`,
         path: `${__dirname}/content/`,
       },
-    }
+    },
+    {
+      resolve: "gatsby-plugin-no-sourcemaps",
+    },
   ],
 }
