@@ -1,0 +1,27 @@
+
+language: node_js
+sudo: false
+dist: trusty
+node_js:
+  - "9"
+
+services:
+  - docker
+
+cache:
+  yarn: true
+  directories:
+    - "node_modules"
+
+install:
+  - yarn
+
+script:
+  - yarn build
+  - docker build -t kubesphere/kubesphere.github.io .
+
+deploy:
+  provider: script
+  script: bash docker_push
+  on:
+    branch: master
