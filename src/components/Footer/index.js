@@ -20,10 +20,10 @@ const Footer = ({ className, t }) => (
           </li>
           <li>
             <div className="h3">相关产品</div>
-            <Link to="">Radon DB</Link>
-            <Link to="">NeonSAN</Link>
-            <Link to="">QingCloud</Link>
-            <Link to="">OpenPitrix</Link>
+            <a href="https://www.qingcloud.com/products/radondb/" target="_blank">Radon DB</a>
+            <a href="https://www.qingcloud.com/products/qingstor-neonsan/" target="_blank">NeonSAN</a>
+            <a href="https://www.qingcloud.com" target="_blank">QingCloud</a>
+            <Link to="https://openpitrix.io/en/">OpenPitrix</Link>
           </li>
           <li>
             <div className="h3">文档中心</div>

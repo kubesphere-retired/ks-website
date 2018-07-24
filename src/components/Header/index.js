@@ -8,7 +8,7 @@ import { getLanguage } from '../../utils/index'
 
 import Button from '../Button/index'
 
-import githubIcon from '../../assets/icon-git.svg'
+import { ReactComponent as GithubIcon } from '../../assets/icon-git.svg'
 
 class Header extends React.Component {
   render() {
@@ -19,7 +19,7 @@ class Header extends React.Component {
     return (
       <div className={styles.header}>
         <div className={styles.wrapper}>
-          <Logo className={styles.logo} />
+          <Link to="/"><Logo className={styles.logo} /></Link>
           <div className={styles.nav}>
             <Link to="/">{t('Home')}</Link>
             <Link to={"/install/"+lang}>{t('Install')}</Link>
@@ -28,11 +28,11 @@ class Header extends React.Component {
           </div>
           <div style={{ float: 'right' }}>
             <a
-              href="https://github.com/kubesphere/kubesphere.github.io"
+              href="https://github.com/kubesphere/kubesphere"
               target="_blank"
             >
               <Button type="default" ghost>
-                <img src={githubIcon} alt=""/>
+                <GithubIcon />
                 Github
               </Button>
             </a>

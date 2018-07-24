@@ -14,6 +14,12 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-svgr',
+      options: {
+        icon: true,
+      },
+    },
+    {
       resolve: "gatsby-plugin-no-sourcemaps",
     },
   ],

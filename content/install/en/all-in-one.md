@@ -1,16 +1,15 @@
-###  All-in-one Mode
+##  All-in-one Mode
 
 
 **`All-in-one`** mode means single node deployment,  can be deployed to a single system for a test or development environment only, it is just recommended to get familiar with installation process or learn about KubeSphere features by following with All-in-one mode, which means it can help you to get KubeSphere platform up and running to try out for the first time.  All-in-one mode is not considered a production environment. For production environment, it is recommended to select **`Multi-node`** instead.
-****
 
-#### Step 1: Provision Linux Host
+### Step 1: Provision Linux Host
 
-##### Prerequisites
+#### Prerequisites
 
 The following section identifies the hardware specifications and system-level requirements of one host within KubeSphere platform environment. To get started with All-in-one mode, you may need to prepare only one host refer to the following specification.
 
-##### Hardware Recommendations
+#### Hardware Recommendations
 
 | System | Minimum Requirements |  Recommendations |
 | --- | --- | --- |
@@ -25,7 +24,7 @@ All components of the platform are distributed and installed from the same host,
 
 
 
-####  Step 2: Provision Installation Files
+###  Step 2: Provision Installation Files
 
 **1.**  **KubeSphere** official download address：
 
@@ -65,13 +64,13 @@ All components of the platform are distributed and installed from the same host,
  
 
 
-####  Step 3: Get Started With Deployment
+###  Step 3: Get Started With Deployment
 
 The environment and file monitoring, dependent software installation of KubeSphere, automated installation of Kubernetes and etcd, and automated storage configuration, all of these procedures will be automatically processing in this deployment.
 
 The KubeSphere installation package will automatically install the relevant dependent software as following table described.
 
-##### Software Recommendations
+#### Software Recommendations
 
 | **Dependent Software** | **Supported Version** |
 | --- | --- |
@@ -97,7 +96,18 @@ $ ./install.sh
 ```
 
 **3.** Enter`1` to select `All-in-one` mode to start：
-![](../images/pic06.png)
+```
+##################################################
+KubeSphere Installer Menu
+##################################################
+*  1）All-in-one
+*  2）Multi-node
+*  3）Quit
+##################################################
+Https://kubesphere.io/                  2018-07-27
+##################################################
+Please Select An Option: 
+```
 
 **Attention：** <br/>
 
@@ -108,12 +118,23 @@ $ ./install.sh
 
 **(1).**If you can see the following "Successful" result being returned after `install.sh` completed, that means KubuSphere installation is ready.
 
-![](../images/pic01.png)
+```
+Play Rep  ****************************************
+KubeSphere   : ok=69 changed=68 unreachable=0 
+failed=0
+Succesful!
+##################################################
+KubeSphere is running！
+Matser IP: 121.10.121.111
+Ks-console-nodeport: 32117
+Ks-apiserver-nodeport 32002
+##################################################
+```
 
 **(2).**Then you will be able to access KubeSphere login page with the IP address of the host and correct port. The port number will be automatically generated in the result page as above screenshot showing "ks-console-nodeport:32117". <br/>
 **Example**： [http://139.198.121.143:31413](http://139.198.121.143:31413)
 <br/>
-![](../images/pic02.png)
+![](/pic02.png)
 
-####  Summary
+###  Summary
 When KubeSphere is deployed successfully ，you will be able to follow with [*"<u>KubeSphere User Guide</u>"*](www.qingcloud.com)，then log in to KubeSphere and learn how to get started with it！

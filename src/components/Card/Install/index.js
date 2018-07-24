@@ -21,7 +21,7 @@ const InstallCard = ({
     data-type={type}
     onClick={onClick}
   >
-    <img src={icon} alt=""/>
+    {icon}
     <div className={styles.text}>
       <div className="h3">{title}</div>
       <p>{desc}</p>
