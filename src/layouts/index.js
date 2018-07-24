@@ -24,8 +24,8 @@ const Layout = ({ children, data }) => {
         ]}
       />
       <Header siteTitle={data.site.siteMetadata.title} />
-      <img className="bg1" src={bg1} alt=""/>
-      <img className="bg2" src={bg2} alt=""/>
+      <img className="bg1" src={bg1} alt="" />
+      <img className="bg2" src={bg2} alt="" />
       {children()}
       <Footer />
     </div>

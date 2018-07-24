@@ -10,12 +10,12 @@ const InstallCard = ({
   title,
   desc,
   selected,
-  onClick
+  onClick,
 }) => (
   <div
     className={classnames(
       styles.card,
-      {[styles.select]: selected},
+      { [styles.select]: selected },
       className
     )}
     data-type={type}

@@ -19,18 +19,19 @@ class Header extends React.Component {
     return (
       <div className={styles.header}>
         <div className={styles.wrapper}>
-          <Link to="/"><Logo className={styles.logo} /></Link>
+          <Link to="/">
+            <Logo className={styles.logo} />
+          </Link>
           <div className={styles.nav}>
             <Link to="/">{t('Home')}</Link>
-            <Link to={"/install/"+lang}>{t('Install')}</Link>
-            <a href="https://kubesphere.qingcloud.com" target="_blank">{t('Documentation')}</a>
+            <Link to={'/install/' + lang}>{t('Install')}</Link>
+            <a href="https://kubesphere.qingcloud.com" target="_blank">
+              {t('Documentation')}
+            </a>
             <Link to="/">{t('Business Edition')}</Link>
           </div>
           <div style={{ float: 'right' }}>
-            <a
-              href="https://github.com/kubesphere/kubesphere"
-              target="_blank"
-            >
+            <a href="https://github.com/kubesphere/kubesphere" target="_blank">
               <Button type="default" ghost>
                 <GithubIcon />
                 Github

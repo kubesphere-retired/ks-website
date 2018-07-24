@@ -9,22 +9,22 @@ export default class Slider extends React.Component {
   }
 
   componentDidMount() {
-    const { data } = this.props;
+    const { data } = this.props
 
     this.timer = setInterval(() => {
-      this.setState(({select}) => ({
-        select: select + 1 > data.length - 1 ? 0 : select + 1
+      this.setState(({ select }) => ({
+        select: select + 1 > data.length - 1 ? 0 : select + 1,
       }))
-    }, 5000);
-  }
-  
-  componentWillUnmount() {
-    clearInterval(this.timer);
+    }, 5000)
   }
 
-  handleClick = (e) => {
+  componentWillUnmount() {
+    clearInterval(this.timer)
+  }
+
+  handleClick = e => {
     this.setState({
-      select: Number(e.target.dataset.index)
+      select: Number(e.target.dataset.index),
     })
   }
 
@@ -37,24 +37,24 @@ export default class Slider extends React.Component {
 
     return (
       <div className={classnames(styles.slider, className)}>
-        <ul style={{ width, transform: `translateX(${translateX}px)`}}>
-          {
-            data.map((item, index) => (
-              <li key={index}><img src={item} alt=""/></li>
-            ))
-          }
+        <ul style={{ width, transform: `translateX(${translateX}px)` }}>
+          {data.map((item, index) => (
+            <li key={index}>
+              <img src={item} alt="" />
+            </li>
+          ))}
         </ul>
         <div className={styles.dots}>
-          {
-            data.map((_, index) => (
-              <div
-                key={index}
-                className={classnames(styles.dot, {[styles.select]: select === index})}
-                data-index={index}
-                onClick={this.handleClick}
-              />
-            ))
-          }
+          {data.map((_, index) => (
+            <div
+              key={index}
+              className={classnames(styles.dot, {
+                [styles.select]: select === index,
+              })}
+              data-index={index}
+              onClick={this.handleClick}
+            />
+          ))}
         </div>
       </div>
     )
