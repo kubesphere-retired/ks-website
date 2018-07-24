@@ -3,7 +3,7 @@
 # that can be found in the LICENSE file.
 
 https://kubesphere.io {
-    tls appcenter@yunify.com
+    tls off
     browse
 
     log stdout
@@ -12,15 +12,6 @@ https://kubesphere.io {
     root /srv/kubesphere.github.io/public
 
     gopkg /kubesphere https://github.com/kubesphere/kubesphere
-
-    git {
-            path /srv/kubesphere.github.io
-            repo https://github.com/kubesphere/kubesphere.github.io.git
-            branch build
-            hook /webhook QingCloud
-            hook_type github
-            interval 1800
-    }
 }
 
 http://kubesphere.io, https://www.kubesphere.io, http://www.kubesphere.io {
