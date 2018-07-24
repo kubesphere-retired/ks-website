@@ -7,6 +7,8 @@ import ContribCard from '../components/Card/Contrib/index'
 import RoadMap from '../components/RoadMap/index'
 import Slider from '../components/Slider/index'
 
+import { getLanguage } from '../utils/index'
+
 import DashboardImage from '../assets/dashboard.png'
 import BannerBg from '../assets/banner-bg.svg'
 import SliderBg from '../assets/slider-bg.svg'
@@ -25,24 +27,28 @@ import slider3 from '../assets/slider-3.png'
 
 import './index.scss'
 
-const Banner = () => (
-  <div style={{ height: 680 }}>
-    <div className="wrapper banner">
-      <div className="banner-desc">
-        <div className="h1">预见未来,<br/>遇见 KubeSphere</div>
-        <p>kubesphere.io 是 KubeSphere 容器管理平台的上游开源项目，整合最新的 CNCF 生态开源项目，为开发者和体验者提供最新最酷的特性，且根据中国用户的特定需求，进行外延性的扩展。</p>
-        <div className="banner-links">
-          <Link to=""><Button type="primary" size="large">获取社区版</Button></Link>
-          <Link to=""><Button type="primary" size="large" ghost>获取商业版</Button></Link>
+const Banner = ({ i18n }) => {
+  const lang = getLanguage(i18n.language)
+
+  return (
+    <div style={{ height: 680 }}>
+      <div className="wrapper banner">
+        <div className="banner-desc">
+          <div className="h1">预见未来,<br/>遇见 KubeSphere</div>
+          <p>kubesphere.io 是 KubeSphere 容器管理平台的上游开源项目，整合最新的 CNCF 生态开源项目，为开发者和体验者提供最新最酷的特性，且根据中国用户的特定需求，进行外延性的扩展。</p>
+          <div className="banner-links">
+            <Link to={"/install/" + lang}><Button type="primary" size="large">获取社区版</Button></Link>
+            <Link to=""><Button type="primary" size="large" ghost>获取商业版</Button></Link>
+          </div>
+        </div>
+        <div className="banner-snapshot">
+          <img src={BannerBg} alt=""/>
+          <img src={DashboardImage} alt="" style={{ position: 'absolute', top: 39, left: 20, width: 650, height: 406}}/>
         </div>
       </div>
-      <div className="banner-snapshot">
-        <img src={BannerBg} alt=""/>
-        <img src={DashboardImage} alt="" style={{ position: 'absolute', top: 39, left: 20, width: 650, height: 406}}/>
-      </div>
     </div>
-  </div>
-)
+  );
+}
 
 const Features = () => (
   <div className="wrapper section feature">
@@ -97,7 +103,10 @@ const Contribution = () => (
           <RoadMap data={ROADMAP}/>
         </ContribCard>
         <ContribCard icon={BugIcon} title="报告 Bug">
-          <p className="report">KubeSphere 使用 GitHub issue 来管理 bug 跟踪 <Link to="">提交 BUG →</Link></p>
+          <p className="report">
+            KubeSphere 使用 GitHub issue 来管理 bug 跟踪
+            <a href="https://github.com/kubesphere/kubesphere/issues" target="_blank">提交 BUG →</a>
+          </p>
         </ContribCard>
         <ContribCard icon={DesignIcon} title="参与开发和设计">
           <ul className="list">
@@ -109,7 +118,7 @@ const Contribution = () => (
         </ContribCard>
         <ContribCard icon={ChatIcon} title="日常沟通">
           <ul className="list">
-            <li>在 Slack 频道上找到我们：<Link to="">kubesphere.slack.com</Link></li>
+            <li>在 Slack 频道上找到我们：<a href="https://kubesphere.slack.com" target="_blank">kubesphere.slack.com</a></li>
             <li>在 <Link to="">StackOverflow</Link> 上向我们提问</li>
           </ul>
         </ContribCard>
@@ -120,7 +129,7 @@ const Contribution = () => (
 
 const IndexPage = props => (
   <div>
-    <Banner />
+    <Banner {...props}/>
     <Features />
     <AppInstall />
     <Contribution />

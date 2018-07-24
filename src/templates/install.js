@@ -1,13 +1,14 @@
 import React from 'react'
-import Link from 'gatsby-link'
 import { translate } from 'react-i18next'
 
 import Button from '../components/Button/index'
 import InstallCard from '../components/Card/Install/index'
 
-import githubIcon from '../assets/icon-git-green.svg'
-import NodeIcon from '../assets/icon-node.svg'
-import MultiNodeIcon from '../assets/icon-multi-node.svg'
+import { ReactComponent as GithubIcon } from '../assets/icon-git.svg'
+import { ReactComponent as NodeIcon } from '../assets/icon-node.svg'
+import { ReactComponent as MultiNodeIcon } from '../assets/icon-multi-node.svg'
+import { ReactComponent as VolumeIcon } from '../assets/icon-volume.svg'
+import { ReactComponent as AppendixIcon } from '../assets/icon-appendix.svg'
 
 import '../styles/markdown.scss'
 import './index.scss'
@@ -17,34 +18,66 @@ const Banner = () => (
     <div className="h1">KubeSphere 安装</div>
     <p>KubeSphere 部署支持 All-in-one 和 Multi-node 两种部署模式， KubeSphere Installer采用 Ansible 对部署目标机器及部署流程进行集中化管理配置。 采用预配置模板，可以在部署前通过对相关配置文件进行自定义实现对部署过程的预配置，以适应不同的IT环境，帮助您快速部署 KubeSphere 。</p>
     <div style={{ textAlign: 'center' }}>
-      <Link to=""><Button type="primary" ghost size="large"><img src={githubIcon} alt=""/>Github</Button></Link>
+      <a href="https://github.com/kubesphere/kubesphere" target="_blank">
+        <Button type="primary" ghost size="large"><GithubIcon />Github</Button>
+      </a>
     </div>
   </div>
 )
 
+const INSTALL_CARDS = [
+  {
+    type: "all-in-one",
+    icon: <NodeIcon />,
+    title: "All-in-One 单节点部署",
+    desc: "仅建议您用来了解 KubeSphere 功能特性",
+  },
+  {
+    type: "multi-node",
+    icon: <MultiNodeIcon />,
+    title: "Multi-Node多节点集群部署",
+    desc: "Multi-Node 模式支持您在生产环境部署 KubeSphere",
+  },
+  {
+    type: "storage",
+    icon: <VolumeIcon />,
+    title: "存储配置",
+    desc: "可使用 GlusterFS、CephRBD 作为持久化存储，需提前准备相关存储服务端",
+  },
+  {
+    type: "appendix",
+    icon: <AppendixIcon />,
+    title: "附录",
+    desc: "包含 pip 源配置、离线安装说明文档以及其他相关说明",
+  }
+]
+
 const Documents = ({ data, selectCard, onCardChange }) => {
   const edge = data.allMarkdownRemark.edges.find(item => item.node.fields.article === selectCard);
+
+  const selectInstallCard = INSTALL_CARDS.find(card => card.type === selectCard);
 
   return (
     <div className="docs">
       <div className="docs-cards">
-        <InstallCard 
-          type="all-in-one"
-          icon={NodeIcon}
-          title="All-in-One 单节点部署"
-          desc="仅建议您用来了解 KubeSphere 功能特性"
-          onClick={onCardChange}
-          selected={selectCard === 'all-in-one'}
-        />
-        <InstallCard 
-          type="multi-node"
-          icon={MultiNodeIcon}
-          title="Multi-Node多节点集群部署"
-          desc="Multi-Node 模式支持您在生产环境部署 KubeSphere"
-          onClick={onCardChange}
-          selected={selectCard === 'multi-node'}
-        />
+        {
+          INSTALL_CARDS.map(card => (
+            <InstallCard
+              className="docs-card"
+              {...card}
+              key={card.type}
+              onClick={onCardChange}
+              selected={selectCard === card.type}
+            />
+          ))
+        }
       </div>
+      {
+        selectInstallCard && 
+        <div className="select-icon">
+          {selectInstallCard.icon}
+        </div>
+      }
       <div className="markdown md-body" dangerouslySetInnerHTML={{
         __html: edge.node.html
       }}/>

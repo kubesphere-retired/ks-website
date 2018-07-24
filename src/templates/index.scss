@@ -27,7 +27,26 @@
   }
 
   .docs-cards {
+    width: 760px;
+    margin: 0 auto;
     text-align: center;
+    .docs-card {
+      margin-bottom: 40px;
+      &:nth-of-type(2n+2) {
+        margin-left: 40px;
+      }
+    }
+  }
+
+  .select-icon {
+    text-align: center;
+    margin-top: 20px;
+
+    & > svg {
+      width: 40px;
+      height: 40px;
+      color: #55BC8A;
+    }
   }
 
   .markdown {

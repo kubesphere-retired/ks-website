@@ -19,7 +19,7 @@
     box-shadow: 0 2px 4px 0 rgba(7, 42, 68, 0.1);
   }
 
-  & > img {
+  & > svg {
     width: 40px;
     height: 40px;
     margin-right: 24px;
@@ -44,11 +44,11 @@
     }
   }
 
-  & + .card {
-    margin-left: 40px;
-  }
-
   &.select {
     box-shadow: 0 4px 15px 0 rgba(7, 42, 68, 0.1);
+
+    & > svg {
+      color: #55BC8A;
+    }
   }
 }

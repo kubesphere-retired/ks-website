@@ -2,9 +2,8 @@
 # Use of this source code is governed by a Apache license
 # that can be found in the LICENSE file.
 
-https://kubesphere.io {
+http://kubesphere.io {
     tls off
-    browse
 
     log stdout
     errors stdout
@@ -14,6 +13,6 @@ https://kubesphere.io {
     gopkg /kubesphere https://github.com/kubesphere/kubesphere
 }
 
-http://kubesphere.io, https://www.kubesphere.io, http://www.kubesphere.io {
-    redir https://kubesphere.io{uri}
+https://www.kubesphere.io, http://www.kubesphere.io {
+    redir http://kubesphere.io{uri}
 }
