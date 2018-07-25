@@ -7,9 +7,9 @@ import InstallCard from '../components/Card/Install/index'
 import { ReactComponent as GithubIcon } from '../assets/icon-git.svg'
 import { ReactComponent as NodeIcon } from '../assets/icon-node.svg'
 import { ReactComponent as MultiNodeIcon } from '../assets/icon-multi-node.svg'
-import { ReactComponent as VolumeIcon } from '../assets/icon-volume.svg'
 
 import '../styles/markdown.scss'
+import './b16-tomorrow-dark.css'
 import './index.scss'
 
 const Banner = () => (

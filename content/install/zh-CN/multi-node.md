@@ -8,15 +8,21 @@
 
 | 操作系统 | 最小配置 | 推荐配置 |
 | --- | --- | --- |
-| ubuntu 16.04 LTS 64bit | CPU：8 核 <br/> 内存：12G <br/> 磁盘：40G | CPU：16 核 <br/> 内存：32G <br/> 磁盘：100G |
+| ubuntu 16.04 LTS 64bit | CPU：8 核 <br/> 内存：12 G <br/> 磁盘：40 G | CPU：16 核 <br/> 内存：32 G <br/> 磁盘：100 G |
 
-此示例准备了 3 台主机，假设主机信息为 192.168.0.10 (node1) / 192.168.0.20 (node2) / 192.168.0.30 (node3)，以 node1 作为任务执行机 taskbox，各节点主机名可由用户自定义。
+以下用一个示例介绍 multi-node 模式部署多节点，此示例准备了 3 台主机，以主机名为 master 的节点作为任务执行机 taskbox，各节点主机名可由用户自定义。假设主机信息如下所示：
 
-**集群架构：** 单master 单 etcd 多 node
+| 主机IP | 主机名 | 集群角色 |
+| --- | --- | --- |
+|192.168.0.10|master|master, etcd, node|
+|192.168.0.20|node1|node|
+|192.168.0.30|node2|node|
+
+**集群架构：** 单 master 单 etcd 多 node
 
 ![](/pic04.png)
 
-> `etcd` 作为一个高可用键值存储系统, etcd 节点个数至少需要 1 个，但部署多个 etcd 能够使集群更可靠，etcd 节点个数建议设置为`奇数个`，在当前 KubeSphere Express 版本暂支持单个 etcd 节点，将会在下一个 Advanced Edition 版本中支持 etcd 多节点部署。
+> `etcd` 作为一个高可用键值存储系统, etcd 节点个数至少需要 1 个，部署多个 etcd 能够使集群更可靠，etcd 节点个数建议设置为`奇数个`，在当前 KubeSphere Express 版本暂支持单个 etcd 节点，将会在下一个 Advanced Edition 版本中支持 etcd 多节点部署。
 
 ### 第二步: 准备 KubeSphere 安装包
 
@@ -24,13 +30,13 @@
 
 **2.** 获取 KubeSphere 安装包后，执行以下命令解压安装包：
 
-```
+```bash
 $ tar -zxvf kubesphere-all-express-1.0.0-alpha.tar.gz
 ```
 
 **3.** 进入 “`kubesphere-all-express-1.0.0-alpha`” 文件夹
 
-```
+```bash
 $ cd kubesphere-all-express-1.0.0-alpha
 ```
 
@@ -40,7 +46,7 @@ $ cd kubesphere-all-express-1.0.0-alpha
 
 **示例：**
 
-```
+```ini
 [all]
 maser  ansible_connection=local local_release_dir={{ansible_env.HOME}}/releases ansible_user=ubuntu ansible_become=yes ansible_become_user=root ansible_become_pass=password
 node1  ansible_host=192.168.0.20 ip=192.168.0.20 ansible_user=ubuntu ansible_become=yes ansible_become_user=root ansible_become_pass=password
@@ -84,7 +90,8 @@ kube-master
 > - 网络：默认插件 `calico`
 > - 支持存储类型：`GlusterFS、CephRBD`， 存储配置相关的详细信息请参考 [存储配置](#存储配置)
 > - 通常情况您需要配置持久化存储，multi-node 不支持 local storage，因此把 local storage 的配置修改为 false，然后配置持久化存储如 GlusterFS, CephRBD 等。如下图所示配置 CephRBD。
->  ```
+>
+>  ```yaml
 >  # Local volume provisioner deployment(Only all-in-one)
 >  local_volume_provisioner_enabled: false
 >  local_volume_provisioner_storage_class: local
@@ -94,9 +101,9 @@ kube-master
 >  ceph_rbd_is_default_class: true
 >  ceph_rbd_storage_class: rbd
 >  # e.g. ceph_rbd_monitors:
->      - 172.24.0.1:6789
->      - 172.24.0.2:6789
->      - 172.24.0.3:6789
+>  #   - 172.24.0.1:6789
+>  #   - 172.24.0.2:6789
+>  #   - 172.24.0.3:6789
 >  ceph_rbd_monitors:
 >    - 192.168.100.8:6789
 >  ceph_rbd_admin_id: admin
@@ -118,30 +125,29 @@ KubeSphere 多节点部署会自动化地进行环境和文件监测、平台依
 
 **1.** 进入 `scripts` 目录
 
-```
+```bash
 $ cd scripts
 ```
 
 **2.** 执行 `install.sh` 脚本：
 
-```
+```bash
 $ ./install.sh
 ```
 
 **3.** 输入数字 `2` 选择第二种 multi-node 模式开始部署：
 
-```
-##################################################
-KubeSphere Installer Menu
-##################################################
-*  1）All-in-one
-*  2）Multi-node
-*  3）Quit
-##################################################
-Https://kubesphere.io/                  2018-07-27
-##################################################
-Please Select An Option: 2
-2
+```bash
+################################################
+         KubeSphere Installer Menu
+################################################
+*   1) All-in-one
+*   2) Multi-node
+*   3) Quit
+################################################
+https://kubesphere.io/               2018-07-27
+################################################
+Please input an option: 2
 ```
 
 **提示：**
@@ -149,25 +155,27 @@ Please Select An Option: 2
 > - 安装程序会提示您是否已经配置过存储，若未配置请输入 "no"，返回目录继续配置存储并参考 [存储配置](#存储配置)
 > - taskbox 需配置与待部署集群中所有节点的 `ssh 免密登录`，若还未配置 ssh 免密登录，在执行 `install.sh` 安装脚本时会提示用户是否已经配置免密登录，输入 "no" 安装程序将会帮您自动配置 ssh 免密登录，如下图所示:
 
-```
-##################################################
-KubeSphere Installer Menu
-##################################################
-*  1）All-in-one
-*  2）Multi-node
-*  3）Quit
-##################################################
-Https://kubesphere.io/                  2018-07-27
-##################################################
-Please Select An Option: 2
+```bash
+######################################################################
+         KubeSphere Installer Menu
+######################################################################
+*   1) All-in-one
+*   2) Multi-node
+*   3) Quit
+######################################################################
+https://kubesphere.io/                                      2018-07-27
+######################################################################
+Please input an option: 2
 2
-Have you configured storage parameters in conf/vars.yaml yes ?  (yes/no) yes
-Password-less SSH comunication is necessary, have you configured yet? If not, it will be created automatically. (yes/no) no
-Generating public/private rsa key pari.
+Have you configured storage parameters in conf/vars.yml yet?  (yes/no) 
+yes
+Password-less SSH communication is necessary，have you configured yet? 
+If not, it will be created automatically. (yes/no) 
+no 
+Generating public/private rsa key pair.
 Created directory '/home/ubuntu/.ssh'.
 Your identification has been saved in /home/ubuntu/.ssh/id_rsa.
 Your public key has been saved in /home/ubuntu/.ssh/id_rsa.pub.
-The key fingerprint is:
 ```
 
 
@@ -176,17 +184,16 @@ The key fingerprint is:
 **(1)** 待 `install.sh` 执行完后，当看到如下 "Successful" 界面，则说明 KubeSphere 安装成功：
 
 
-```
-Play Rep  ****************************************
-KubeSphere   : ok=69 changed=68 unreachable=0 
-failed=0
+```bash
+PLAY RECAP *********************************************
+KubeSphere     : ok=69 changed=68 unreachable=0 failed=0
 Succesful!
-##################################################
+########################################################
 KubeSphere is running！
-Matser IP: 10.160.6.6
-Ks-console-nodeport: 32117
-Ks-apiserver-nodeport 32002
-##################################################
+Matser IP: 121.10.121.111
+ks-console-nodeport: 32117
+ks-apiserver-nodeport: 32002
+########################################################
 ```
 
 **(2)** 您可以通过浏览器，使用集群中任一节点的 IP 地址和端口号（端口号将显示在脚本执行完之后的界面 "ks-console-nodeport" 处），也可以通过公网 IP 及端口转发的方式访问控制台，如：[http://139.198.121.143:8080](http://139.198.121.143:8080), 即可进入 KubeSphere 登录界面，能看到如下用户界面说明 KubeSphere 能够正常访问和使用：

@@ -16,13 +16,13 @@
 
 **2.** 获取 KubeSphere 安装包后，执行以下命令解压安装包：
 
-```
+```bash
 $ tar -zxvf kubesphere-all-express-1.0.0-alpha.tar.gz
 ```
 
 **3.** 进入 “`kubesphere-all-express-1.0.0-alpha`” 文件夹
 
-```
+```bash
 $ cd kubesphere-all-express-1.0.0-alpha
 ```
 
@@ -40,46 +40,45 @@ KubeSphere 部署过程中将会自动化地进行环境和文件监测、平台
 
 **1.** 进入 `scripts` 目录
 
-```
+```bash
 $ cd scripts
 ```
 
 **2.** 执行 `install.sh` 脚本：
 
-```
+```bash
 $ ./install.sh
 ```
 
 **3.** 输入数字 `1` 选择第一种 all-in-one 模式开始部署：
 
-```
-##################################################
-KubeSphere Installer Menu
-##################################################
-*  1）All-in-one
-*  2）Multi-node
-*  3）Quit
-##################################################
-Https://kubesphere.io/                  2018-07-27
-##################################################
-Please Select An Option: 
+```bash
+################################################
+         KubeSphere Installer Menu
+################################################
+*   1) All-in-one
+*   2) Multi-node
+*   3) Quit
+################################################
+https://kubesphere.io/               2018-07-27
+################################################
+Please input an option: 1
 ```
 
 **4.** 测试 KubeSphere 单节点部署是否成功：
 
 **(1)** 待 install.sh 执行完后，当看到如下 `"Successful"` 界面，则说明 KubeSphere 安装成功：
 
-```
-Play Rep  ****************************************
-KubeSphere   : ok=69 changed=68 unreachable=0 
-failed=0
+```bash
+PLAY RECAP *********************************************
+KubeSphere     : ok=69 changed=68 unreachable=0 failed=0
 Succesful!
-##################################################
+########################################################
 KubeSphere is running！
 Matser IP: 121.10.121.111
-Ks-console-nodeport: 32117
-Ks-apiserver-nodeport 32002
-##################################################
+ks-console-nodeport: 32117
+ks-apiserver-nodeport: 32002
+########################################################
 ```
 
 **(2)** 您可以通过浏览器，使用集群中任一节点的 IP 地址和端口号（端口号将显示在脚本执行完之后的界面 "ks-console-nodeport" 处），也可以通过公网 IP 及端口转发的方式访问控制台，如：[http://139.198.121.143:8080](http://139.198.121.143:8080), 即可进入 KubeSphere 登录界面，能看到如下用户界面说明 KubeSphere 能够正常访问和使用：
