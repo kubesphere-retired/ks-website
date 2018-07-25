@@ -24,7 +24,7 @@ class Header extends React.Component {
           </Link>
           <div className={styles.nav}>
             <Link to="/">{t('Home')}</Link>
-            <Link to={'/install/' + lang}>{t('Install')}</Link>
+            <Link to={'/install/' + 'zh-CN'}>{t('Install')}</Link>
             <Link to="/building">{t('Documentation')}</Link>
             <Link to="/building">{t('Business Edition')}</Link>
           </div>

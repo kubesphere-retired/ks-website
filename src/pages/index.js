@@ -43,7 +43,7 @@ const Banner = ({ i18n }) => {
             生态开源项目，为开发者和体验者提供最新最酷的特性，且根据中国用户的特定需求，进行外延性的扩展。
           </p>
           <div className="banner-links">
-            <Link to={'/install/' + lang}>
+            <Link to={'/install/' + 'zh-CN'}>
               <Button type="primary" size="large">
                 获取社区版
               </Button>
