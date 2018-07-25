@@ -13,10 +13,10 @@ const Button = ({
 }) => (
   <button
     className={classnames(
-      styles.button, 
-      styles[type], 
-      styles[size], 
-      {[styles.ghost]: ghost}, 
+      styles.button,
+      styles[type],
+      styles[size],
+      { [styles.ghost]: ghost },
       className
     )}
     onClick={onClick}

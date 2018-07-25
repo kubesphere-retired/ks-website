@@ -12,7 +12,4 @@ local:
 	docker build -f Dockerfile.local -t kubesphere/kubesphere.github.io.local  --no-cache .
 	docker run --rm -p 2015:2015 kubesphere/kubesphere.github.io.local
 
-favicon:
-	png2ico static/favicon.ico static/logo-small.png
-
 clean:
