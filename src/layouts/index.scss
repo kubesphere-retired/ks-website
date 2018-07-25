@@ -1,9 +1,14 @@
+@import '../styles/variables';
 
 .bg1 {
   position: absolute;
   top: 0;
   right: 0;
   z-index: -1;
+  
+  @media only screen and (max-width: $mobile-max-width) {
+    display: none;
+  }
 }
 
 .bg2 {
@@ -11,4 +16,9 @@
   top: 763px;
   left: 0;
   z-index: -1;
+
+  @media only screen and (max-width: $mobile-max-width) {
+    top: 46px;
+    height: 181px;
+  }
 }

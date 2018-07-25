@@ -5,6 +5,19 @@
   height: $header-height;
   line-height: $header-height;
   background-color: transparent;
+  
+  @media only screen and (max-width: $mobile-max-width) {
+    position: fixed;
+    width: 100vw;
+    height: $mobile-header-height;
+    line-height: $mobile-header-height;
+    padding: 0 12px;
+    background-color: rgba(245, 248, 249, 0.95);
+
+    &:global(.header-shadow) {
+      box-shadow: 0 4px 8px 0 rgba(36, 46, 66, 0.06);
+    }
+  }
 }
 
 .logo {
@@ -12,19 +25,36 @@
   img {
     height: 32px;
   }
+
+  @media only screen and (max-width: $mobile-max-width) {
+    padding: 12px 0;
+  }
 }
 
 .wrapper {
   width: 1160px;
   height: $header-height;
   margin: 0 auto;
+
+  @media only screen and (max-width: $mobile-max-width) {
+    width: 100%;
+    height: $mobile-header-height;
+  }
 }
 
-.nav {
+.navsWrapper {
   display: inline-block;
-  height: $header-height;
-  margin-left: 60px;
   vertical-align: top;
+  margin-left: 60px;
+  width: calc(100% - 213px);
+
+  @media only screen and (max-width: $mobile-max-width) {
+    display: none;
+  }
+}
+
+.nav {  
+  height: $header-height;
 
   a {
     color: #242e42;
@@ -37,6 +67,80 @@
 
     & + a {
       margin-left: 48px;
+    }
+  }
+
+  .github {
+    float: right;
+  }
+
+  @media only screen and (max-width: $mobile-max-width) {
+    display: block;
+    position: fixed;
+    top: 210px;
+    left: 20px;
+    width: calc(100vw - 40px);
+    height: auto;
+    margin: 0;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px 0 rgba(36, 46, 66, 0.16);
+    background-color: #fff;
+    z-index: 3;
+    
+    a {
+      display: block;
+      border-radius: 24px;
+      line-height: 2;
+      padding: 8px;
+      text-align: center;
+
+      &:hover,
+      &:active {
+        color: #fff;
+        background-color: #55bc8a;
+        font-weight: 600;
+      }
+
+      & + a {
+        margin: 0;
+      }
+    }
+
+    .github {
+      float: none;
+    }
+  }
+}
+
+.showModal {
+  display: none;
+  float: right;
+  margin-top: 14px;
+
+  @media only screen and (max-width: $mobile-max-width) {
+    display: block;
+  }
+}
+
+:global {
+  .v-line {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: #657d95;
+
+    & + .v-line {
+      margin-top: 6px;
+    }
+  }
+}
+
+
+:global {
+  .ReactModal__Body--open {
+    .main {
+      filter: blur(2px);
     }
   }
 }

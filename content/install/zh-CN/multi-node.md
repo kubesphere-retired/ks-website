@@ -20,7 +20,7 @@
 
 **集群架构：** 单 master 单 etcd 多 node
 
-![](/pic04.png)
+![](/pic04.svg)
 
 > `etcd` 作为一个高可用键值存储系统, etcd 节点个数至少需要 1 个，部署多个 etcd 能够使集群更可靠，etcd 节点个数建议设置为`奇数个`，在当前 KubeSphere Express 版本暂支持单个 etcd 节点，将会在下一个 Advanced Edition 版本中支持 etcd 多节点部署。
 
@@ -90,32 +90,35 @@ kube-master
 > - 网络：默认插件 `calico`
 > - 支持存储类型：`GlusterFS、CephRBD`， 存储配置相关的详细信息请参考 [存储配置](#存储配置)
 > - 通常情况您需要配置持久化存储，multi-node 不支持 local storage，因此把 local storage 的配置修改为 false，然后配置持久化存储如 GlusterFS, CephRBD 等。如下图所示配置 CephRBD。
->
->  ```yaml
->  # Local volume provisioner deployment(Only all-in-one)
->  local_volume_provisioner_enabled: false
->  local_volume_provisioner_storage_class: local
->  local_volume_is_default: true
->  # Ceph_rbd deployment
->  ceph_rbd_enabled: true
->  ceph_rbd_is_default_class: true
->  ceph_rbd_storage_class: rbd
->  # e.g. ceph_rbd_monitors:
->  #   - 172.24.0.1:6789
->  #   - 172.24.0.2:6789
->  #   - 172.24.0.3:6789
->  ceph_rbd_monitors:
->    - 192.168.100.8:6789
->  ceph_rbd_admin_id: admin
->  # e.g. ceph_rbd_admin_secret: AQCU00Zb5YYZAxAA9Med5rbkZT+pA91vMYM0Jg==
->  ceph_rbd_admin_secret: AQCU00Zb5YYZAxAA9Med5rbkZT+pA91vMYM0Jg==
->  ceph_rbd_poll: rbd
->  ceph_rbd_user_id: admin
->  # e.g. ceph_rbd_user_secret: AQCU00Zb5YYZAxAA9Med5rbkZT+pA91vMYM0Jg==
->  ceph_rbd_user_secret: AQCU00Zb5YYZAxAA9Med5rbkZT+pA91vMYM0Jg==
->  ceph_rbd_fsType: ext4
->  ceph_rbd_imageFormat: 1
->  ```
+
+ 
+```yaml
+# Local volume provisioner deployment(Only all-in-one)
+local_volume_provisioner_enabled: false
+local_volume_provisioner_storage_class: local
+local_volume_is_default_class: false
+
+
+# Ceph_rbd  deployment
+ceph_rbd_enabled: true
+ceph_rbd_is_default_class: true
+ceph_rbd_storage_class: rbd
+# e.g. ceph_rbd_monitors:
+#   - 172.24.0.1:6789
+#   - 172.24.0.2:6789
+#   - 172.24.0.3:6789
+ceph_rbd_monitors:
+  - 192.168.100.8:6789
+ceph_rbd_admin_id: admin
+# e.g. ceph_rbd_admin_secret: AQAnwihbXo+uDxAAD0HmWziVgTaAdai90IzZ6Q==
+ceph_rbd_admin_secret: AQCU00Zb5YYZAxAA9Med5rbKZT+pA91vMYM0Jg==
+ceph_rbd_pool: rbd
+ceph_rbd_user_id: admin
+# e.g. ceph_rbd_user_secret: AQAnwihbXo+uDxAAD0HmWziVgTaAdai90IzZ6Q==
+ceph_rbd_user_secret: AQCU00Zb5YYZAxAA9Med5rbKZT+pA91vMYM0Jg==
+ceph_rbd_fsType: ext4
+ceph_rbd_imageFormat: 1
+```
 
 ### 第三步: 安装 KubeSphere
 
@@ -200,4 +203,10 @@ ks-apiserver-nodeport: 32002
 
 ![](/pic02.png)
 
-KubeSphere 部署成功后，请参考[《KubeSphere 用户指南》](https://kubesphere.qingcloud.com)。
+KubeSphere 部署成功后，可以使用以下的用户名和密码登录 KubeSphere 控制台体验：
+
+> Account: admin@kubesphere.io 
+
+> Password: passw0rd
+
+详情请参考 [《KubeSphere 用户指南》](https://kubesphere.qingcloud.com)。

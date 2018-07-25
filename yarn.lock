@@ -3838,7 +3838,7 @@ executable@^1.0.0:
   dependencies:
     meow "^3.1.0"
 
-exenv@^1.2.1:
+exenv@^1.2.0, exenv@^1.2.1:
   version "1.2.2"
   resolved "http://registry.npm.taobao.org/exenv/download/exenv-1.2.2.tgz#2ae78e85d9894158670b03d47bec1f03bd91bb9d"
 
@@ -8844,6 +8844,19 @@ react-i18next@^7.7.0:
     hoist-non-react-statics "^2.3.1"
     html-parse-stringify2 "2.0.1"
     prop-types "^15.6.0"
+
+react-lifecycles-compat@^3.0.0:
+  version "3.0.4"
+  resolved "http://registry.npm.taobao.org/react-lifecycles-compat/download/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
+
+react-modal@^3.5.1:
+  version "3.5.1"
+  resolved "http://registry.npm.taobao.org/react-modal/download/react-modal-3.5.1.tgz#33d38527def90ea324848f7d63e53acc4468a451"
+  dependencies:
+    exenv "^1.2.0"
+    prop-types "^15.5.10"
+    react-lifecycles-compat "^3.0.0"
+    warning "^3.0.0"
 
 react-proxy@^3.0.0-alpha.0:
   version "3.0.0-alpha.1"

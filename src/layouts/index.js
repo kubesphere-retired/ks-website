@@ -15,7 +15,7 @@ import bg2 from '../assets/bg-2.svg'
 
 const Layout = ({ children, data }) => {
   return (
-    <div>
+    <div className="main">
       <Helmet
         title={data.site.siteMetadata.title}
         meta={[

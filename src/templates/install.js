@@ -1,15 +1,18 @@
 import React from 'react'
 import { translate } from 'react-i18next'
 
+import { getScrollTop } from '../utils/index';
+
 import Button from '../components/Button/index'
 import InstallCard from '../components/Card/Install/index'
+import InstallCardSelect from '../components/Card/Install/select'
 
 import { ReactComponent as GithubIcon } from '../assets/icon-git.svg'
 import { ReactComponent as NodeIcon } from '../assets/icon-node.svg'
 import { ReactComponent as MultiNodeIcon } from '../assets/icon-multi-node.svg'
 
 import '../styles/markdown.scss'
-import './b16-tomorrow-dark.css'
+import './b16-tomorrow-dark.scss'
 import './index.scss'
 
 const Banner = () => (
@@ -46,7 +49,7 @@ const INSTALL_CARDS = [
   }
 ]
 
-const Documents = ({ data, selectCard, onCardChange }) => {
+const Documents = ({ data, selectCard, selectorRef, onCardChange }) => {
   const edge = data.allMarkdownRemark.edges.find(
     item => item.node.fields.article === selectCard
   )
@@ -66,6 +69,9 @@ const Documents = ({ data, selectCard, onCardChange }) => {
           />
         ))}
       </div>
+      <div className="docs-cards-select" ref={selectorRef}>
+        <InstallCardSelect value={selectCard} options={INSTALL_CARDS} onChange={onCardChange}/>
+      </div>
       {selectInstallCard && (
         <div className="select-icon">{selectInstallCard.icon}</div>
       )}
@@ -80,8 +86,32 @@ const Documents = ({ data, selectCard, onCardChange }) => {
 }
 
 class InstallPage extends React.Component {
-  state = {
-    selectCard: 'all-in-one',
+  constructor(props) {
+    super(props)
+    
+    this.state = {
+      selectCard: 'all-in-one',
+    }
+  }
+  
+  componentDidMount() {
+    document.addEventListener('scroll', this.handleScroll)
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('scroll', this.handleScroll)
+  }
+
+  handleScroll = () => {
+    const scrollTop = getScrollTop()
+    const classes = this.selectorRef.classList
+    const selectorFixed = classes.contains('selector-fixed')
+
+    if (scrollTop >= 610 && !selectorFixed) {
+      classes.add('selector-fixed')
+    } else if (scrollTop < 610 && selectorFixed) {
+      classes.remove('selector-fixed')
+    }
   }
 
   handleCardChange = e => {
@@ -97,6 +127,7 @@ class InstallPage extends React.Component {
           {...this.props}
           selectCard={selectCard}
           onCardChange={this.handleCardChange}
+          selectorRef={(ref) => {this.selectorRef = ref;}}
         />
       </div>
     )

@@ -8,7 +8,7 @@ import './index.scss'
 
 const IndexPage = props => (
   <div className="wrapper building">
-    <div className="h1">正在努力 Coading …</div>
+    <div className="h1">正在努力 Coding …</div>
     <img src={buildingSVG} alt=""/>
   </div>
 )

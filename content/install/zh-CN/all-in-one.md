@@ -85,4 +85,10 @@ ks-apiserver-nodeport: 32002
 
 ![](/pic02.png)
 
-KubeSphere 部署成功后，请参考[《KubeSphere 用户指南》](https://kubesphere.qingcloud.com)。
+KubeSphere 部署成功后，可以使用以下的用户名和密码登录 KubeSphere 控制台体验：
+
+> Account: admin@kubesphere.io 
+
+> Password: passw0rd
+
+详情请参考 [《KubeSphere 用户指南》](https://kubesphere.qingcloud.com)。
