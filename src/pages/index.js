@@ -48,7 +48,7 @@ const Banner = ({ i18n }) => {
                 获取社区版
               </Button>
             </Link>
-            <Link to="">
+            <Link to="/building">
               <Button type="primary" size="large" ghost>
                 获取商业版
               </Button>
@@ -188,9 +188,6 @@ const Contribution = () => (
               >
                 kubesphere.slack.com
               </a>
-            </li>
-            <li>
-              在 <Link to="">StackOverflow</Link> 上向我们提问
             </li>
           </ul>
         </ContribCard>
