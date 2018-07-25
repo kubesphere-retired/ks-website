@@ -3,9 +3,16 @@
 .wrapper {
   width: 1160px;
   margin: 0 auto;
+  @media only screen and (max-width: $mobile-max-width) {
+    width: 100%;
+  }
 }
 
 .install {
+  @media only screen and (max-width: $mobile-max-width) {
+    padding-top: 136px;
+  }
+
   &-banner {
     padding: 160px 0 100px 0;
 
@@ -15,6 +22,11 @@
       color: #171c34;
       text-shadow: 0 8px 16px rgba(35, 45, 65, 0.16);
       margin-bottom: 30px;
+
+      @media only screen and (max-width: $mobile-max-width) {
+        margin-bottom: 12px;
+        padding: 0 38px;
+      }
     }
 
     & > p {
@@ -23,6 +35,18 @@
       font-size: 16px;
       color: #919aa3;
       margin-bottom: 40px;
+
+      @media only screen and (max-width: $mobile-max-width) {
+        width: auto;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  .docs {
+    @media only screen and (max-width: $mobile-max-width) {
+      padding: 20px;
+      overflow-x: hidden;
     }
   }
 
@@ -30,11 +54,34 @@
     width: 760px;
     margin: 0 auto;
     text-align: center;
+    
+    @media only screen and (max-width: $mobile-max-width) {
+      display: none;
+    }
+
     .docs-card {
       margin-bottom: 40px;
-      &:nth-of-type(2n+2) {
+
+      & + .docs-card {
         margin-left: 40px;
       }
+    }
+  }
+
+  .docs-cards-select {
+    display: none;
+
+    @media only screen and (max-width: $mobile-max-width) {
+      display: block;
+      margin-top: 80px;
+      margin-bottom: 20px;
+    }
+
+    &.selector-fixed {
+      position: fixed;
+      top: 64px;
+      width: calc(100vw - 40px);
+      margin: 0;
     }
   }
 
@@ -47,11 +94,20 @@
       height: 40px;
       color: #55BC8A;
     }
+
+    @media only screen and (max-width: $mobile-max-width) {
+      display: none;
+    }
   }
 
   .markdown {
     width: 760px;
     margin: 0 auto;
     padding-top: 20px;
+
+    @media only screen and (max-width: $mobile-max-width) {
+      width: auto;
+      overflow-x: scroll;
+    }
   }
 }

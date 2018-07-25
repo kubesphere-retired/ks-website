@@ -17,10 +17,12 @@
     "gatsby-transformer-remark": "^1.7.44",
     "i18next": "^11.3.3",
     "i18next-browser-languagedetector": "^2.2.0",
+    "lodash": "^4.17.10",
     "moment-mini": "^2.22.1",
     "prismjs": "^1.15.0",
     "react-helmet": "^5.2.0",
-    "react-i18next": "^7.7.0"
+    "react-i18next": "^7.7.0",
+    "react-modal": "^3.5.1"
   },
   "keywords": [
     "kubesphere",

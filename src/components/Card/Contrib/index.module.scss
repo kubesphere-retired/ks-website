@@ -1,12 +1,16 @@
 @import '../../../styles/variables';
 
 .card {
-  width: 760px;
+  width: 100%;
   padding: 40px;
   border-radius: 8px;
   background-color: #ffffff;
   transition: all $transition-speed ease;
   text-align: left;
+
+  @media only screen and (max-width: $mobile-max-width) {
+    padding: 28px 20px;
+  }
 
   &:hover {
     box-shadow: 0 4px 15px 0 rgba(7, 42, 68, 0.1);
@@ -25,10 +29,18 @@
       margin-right: 12px;
       vertical-align: text-top;
     }
+
+    @media only screen and (max-width: $mobile-max-width) {
+      margin-bottom: 20px;
+    }
   }
 
   .content {
     padding-left: 40px;
+
+    @media only screen and (max-width: $mobile-max-width) {
+      padding: 0;
+    }
   }
 
   & + .card {

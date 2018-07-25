@@ -6,6 +6,13 @@
     vertical-align: top;
     .tip {
       margin-bottom: 12px;
+
+      @media only screen and (max-width: $mobile-max-width) {
+        display: inline-block;
+        vertical-align: top;
+        margin-bottom: 0;
+        transform: translateY(4px);
+      }
       
       &.planning {
         :global {
@@ -26,6 +33,12 @@
     .text {
       line-height: 1.71;
       font-family: $font-family-id;
+
+      @media only screen and (max-width: $mobile-max-width) {
+        display: inline-block;
+        vertical-align: top;
+        margin-left: 20px;
+      }
     }
   }
 }
@@ -45,5 +58,17 @@
     width: 194px;
     height: 2px;
     border: solid 1px #adebb5;
-  }      
+  }
+  
+  @media only screen and (max-width: $mobile-max-width) {
+    .dot {
+      display: block;
+    }
+    .line {
+      display: block;
+      width: 2px;
+      height: 31px;
+      margin-left: 5px;
+    }
+  }
 }

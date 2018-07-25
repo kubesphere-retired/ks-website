@@ -52,3 +52,72 @@
     }
   }
 }
+
+.cardSelect {
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 15px 0 rgba(7, 42, 68, 0.1);
+
+  :global(.h3) {
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: normal;
+    line-height: 1.5;
+    color: #242e42;
+  }
+
+  svg {
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+  }
+
+  .cardControl {
+    position: relative;
+    padding: 28px 20px;
+    cursor: pointer;
+
+    & > svg {
+      margin-right: 20px;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+
+      &.open {
+        transform: translateY(-50%) rotate(180deg);
+      }
+    }
+
+    :global(.h3) {
+      font-weight: 600;
+    }
+  }
+
+  .cardOptions {
+    padding: 0 8px 20px 8px;
+  }
+
+  .cardOption {
+    padding: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+
+    & > svg {
+      margin-right: 20px;
+    }
+
+    &:hover,
+    &:active,
+    &.select {
+      background-color: #ecf0f2;
+    }
+
+    & + .cardOption {
+      margin-top: 4px;
+    }
+  }
+}

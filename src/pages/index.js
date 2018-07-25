@@ -31,44 +31,36 @@ const Banner = ({ i18n }) => {
   const lang = getLanguage(i18n.language)
 
   return (
-    <div style={{ height: 680 }}>
-      <div className="wrapper banner">
-        <div className="banner-desc">
-          <div className="h1">
-            预见未来,<br />遇见 KubeSphere
-          </div>
-          <p>
-            kubesphere.io 是 KubeSphere 容器管理平台的上游开源项目，整合最新的
-            CNCF
-            生态开源项目，为开发者和体验者提供最新最酷的特性，且根据中国用户的特定需求，进行外延性的扩展。
-          </p>
-          <div className="banner-links">
-            <Link to={'/install/' + 'zh-CN'}>
-              <Button type="primary" size="large">
-                获取社区版
-              </Button>
-            </Link>
-            <Link to="/building">
-              <Button type="primary" size="large" ghost>
-                获取商业版
-              </Button>
-            </Link>
-          </div>
+    <div className="wrapper banner">
+      <div className="banner-desc">
+        <div className="h1">
+          预见未来,<br />遇见 KubeSphere
         </div>
-        <div className="banner-snapshot">
-          <img src={BannerBg} alt="" />
-          <img
-            src={DashboardImage}
-            alt=""
-            style={{
-              position: 'absolute',
-              top: 39,
-              left: 20,
-              width: 650,
-              height: 406,
-            }}
-          />
+        <p>
+          kubesphere.io 是 KubeSphere 容器管理平台的上游开源项目，整合最新的
+          CNCF
+          生态开源项目，为开发者和体验者提供最新最酷的特性，且根据中国用户的特定需求，进行外延性的扩展。
+        </p>
+        <div className="banner-links">
+          <Link to={'/install/' + lang}>
+            <Button type="primary" size="large">
+              获取社区版
+            </Button>
+          </Link>
+          <a href="https://kubesphere.qingcloud.com/" target="_blank">
+            <Button type="primary" size="large" ghost>
+              获取商业版
+            </Button>
+          </a>
         </div>
+      </div>
+      <div className="banner-snapshot">
+        <img src={BannerBg} alt="" />
+        <img
+          src={DashboardImage}
+          alt=""
+          className="banner-snapshot-sub"
+        />
       </div>
     </div>
   )
@@ -123,6 +115,7 @@ const AppInstall = () => (
     <div className="slider-wrapper">
       <img src={SliderBg} alt="" />
       <Slider className="slider" data={sliders} />
+      <img className="slider1" src={slider1} alt=""/>
     </div>
   </div>
 )

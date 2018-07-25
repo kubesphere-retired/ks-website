@@ -15,8 +15,10 @@ const Footer = ({ className, t }) => (
         <ul className={styles.links}>
           <li>
             <div className="h3">产品</div>
-            <Link to="">KubeSphere 社区版</Link>
-            <Link to="">KubeSphere 商业版</Link>
+            <Link to="">社区版</Link>
+            <a href="https://kubesphere.qingcloud.com/" target="_blank">
+              {t('Business Edition')}
+            </a>
           </li>
           <li>
             <div className="h3">相关产品</div>
