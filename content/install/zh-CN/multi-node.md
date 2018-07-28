@@ -26,7 +26,7 @@
 
 ### 第二步: 准备 KubeSphere 安装包
 
-**1.** 下载 [KubeSphere Installer](https://drive.yunify.com/s/nI0A2NfFQNywsbU)。
+**1.** 下载 [KubeSphere Installer](https://drive.yunify.com/s/DZ8FAIEaKfU98JT)。
 
 **2.** 获取 KubeSphere 安装包后，执行以下命令解压安装包：
 
