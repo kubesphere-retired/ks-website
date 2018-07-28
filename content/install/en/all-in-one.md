@@ -20,7 +20,7 @@ The following section identifies the hardware specifications and system-level re
 
 ###  Step 2: Provision Installation Files
 
-**1.**  Download [KubeSphere Installer](https://drive.yunify.com/s/nI0A2NfFQNywsbU)
+**1.**  Download [KubeSphere Installer](https://drive.yunify.com/s/DZ8FAIEaKfU98JT)
 
 
 **2.**  When you get the installation package, please execute following command to unzip the package.
