@@ -4,6 +4,7 @@ import classnames from 'classnames'
 import { translate } from 'react-i18next'
 
 import Logo from '../Logo'
+import Language from '../Language/index'
 
 import styles from './index.module.scss'
 
@@ -11,47 +12,52 @@ const Footer = ({ className, t }) => (
   <div className={classnames(styles.footer, className)}>
     <div className={styles.wrapper}>
       <div className={styles.info}>
-        <Logo className={styles.logo} />
-        <ul className={styles.links}>
-          <li>
-            <div className="h3">产品</div>
-            <Link to="">社区版</Link>
-            <a href="https://kubesphere.qingcloud.com/" target="_blank">
-              {t('Business Edition')}
-            </a>
-          </li>
-          <li>
-            <div className="h3">相关产品</div>
-            <a
-              href="https://www.qingcloud.com/products/radondb/"
-              target="_blank"
-            >
-              Radon DB
-            </a>
-            <a
-              href="https://www.qingcloud.com/products/qingstor-neonsan/"
-              target="_blank"
-            >
-              NeonSAN
-            </a>
-            <a href="https://www.qingcloud.com" target="_blank">
-              QingCloud
-            </a>
-            <a href="https://openpitrix.io" target="_blank">
-              OpenPitrix
-            </a>
-          </li>
-          <li>
-            <div className="h3">文档中心</div>
-            <Link to="">Installer</Link>
-            <Link to="">Tutorial</Link>
-          </li>
-          <li>
-            <div className="h3">关于</div>
-            <Link to="">关于我们</Link>
-            <Link to="">加入我们</Link>
-          </li>
-        </ul>
+        <div style={{ display: 'inline-block' }}>
+          <Logo className={styles.logo} />
+          <Language />
+        </div>
+        <div className={styles.links}>
+          <ul>
+            <li>
+              <div className="h3">{t('Products')}</div>
+              <Link to="">{t('Community Edition')}</Link>
+              <a href="https://kubesphere.qingcloud.com/" target="_blank">
+                {t('Commercial Edition')}
+              </a>
+            </li>
+            <li>
+              <div className="h3">{t('Related Products')}</div>
+              <a
+                href="https://www.qingcloud.com/products/radondb/"
+                target="_blank"
+              >
+                Radon DB
+              </a>
+              <a
+                href="https://www.qingcloud.com/products/qingstor-neonsan/"
+                target="_blank"
+              >
+                NeonSAN
+              </a>
+              <a href="https://www.qingcloud.com" target="_blank">
+                QingCloud
+              </a>
+              <a href="https://openpitrix.io" target="_blank">
+                OpenPitrix
+              </a>
+            </li>
+            <li>
+              <div className="h3">{t('KubeSphere Docs')}</div>
+              <Link to="">Installer</Link>
+              <Link to="">Tutorial</Link>
+            </li>
+            <li>
+              <div className="h3">{t('About')}</div>
+              <Link to="">{t('About us')}</Link>
+              <Link to="">{t('Careers')}</Link>
+            </li>
+          </ul>
+        </div>
       </div>
       <p className={styles.icp}>KubeSphere powered by Yunify Inc.</p>
     </div>

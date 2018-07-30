@@ -17,12 +17,12 @@ Modal.defaultStyles.overlay = Object.assign({}, Modal.defaultStyles.overlay, {
   width: '100vw',
   height: '100vh',
   backgroundColor: 'rgba(36, 46, 66, 0.06)',
-});
+})
 
 Modal.defaultStyles.content = {
   position: 'relative',
   margin: '0 auto',
-};
+}
 
 class Header extends React.Component {
   state = {
@@ -67,11 +67,11 @@ class Header extends React.Component {
 
     return (
       <div className={styles.nav} onClick={this.handleCloseModal}>
-        <Link to="/">{t('Home')}</Link>
-        <Link to={'/install/' + lang}>{t('Install')}</Link>
-        <Link to="/building">{t('Documentation')}</Link>
+        <Link to="/">{t('Homepage')}</Link>
+        <Link to={'/install/' + lang}>{t('Installation')}</Link>
+        <Link to="/building">{t('KubeSphere Docs')}</Link>
         <a href="https://kubesphere.qingcloud.com/" target="_blank">
-          {t('Business Edition')}
+          {t('Commercial Edition')}
         </a>
         <div className={styles.github}>
           <a href="https://github.com/kubesphere/kubesphere" target="_blank">
@@ -87,20 +87,26 @@ class Header extends React.Component {
 
   render() {
     return (
-      <div className={styles.header} ref={(ref) => {this.headerRef = ref;}}>
+      <div
+        className={styles.header}
+        ref={ref => {
+          this.headerRef = ref
+        }}
+      >
         <div className={styles.wrapper}>
           <Link to="/">
             <Logo className={styles.logo} />
           </Link>
-          <div className={styles.navsWrapper}>
-            {this.renderNav()}
+          <div className={styles.navsWrapper}>{this.renderNav()}</div>
+          <div
+            className={classnames(styles.showModal)}
+            onClick={this.handleOpenModal}
+          >
+            <span className="v-line" />
+            <span className="v-line" />
+            <span className="v-line" />
           </div>
-          <div className={classnames(styles.showModal)} onClick={this.handleOpenModal}>
-            <span className="v-line"/>
-            <span className="v-line"/>
-            <span className="v-line"/>
-          </div>
-          <Modal 
+          <Modal
             isOpen={this.state.showModal}
             shouldCloseOnOverlayClick
             ariaHideApp={false}

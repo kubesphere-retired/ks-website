@@ -10,6 +10,7 @@
   cursor: pointer;
   text-align: left;
   transition: all $transition-speed ease;
+  vertical-align: top;
   
   &:hover {
     box-shadow: 0 4px 15px 0 rgba(7, 42, 68, 0.1);

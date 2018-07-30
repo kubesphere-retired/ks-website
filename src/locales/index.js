@@ -4,16 +4,10 @@ export default {
       {},
       require('./zh-CN/base'),
       require('./zh-CN/home'),
-      require('./zh-CN/news'),
-      require('./zh-CN/product')
+      require('./zh-CN/install')
     ),
   },
   en: {
-    base: Object.assign(
-      {},
-      require('./zh-CN/base'),
-      require('./zh-CN/home'),
-      require('./zh-CN/news')
-    ),
+    base: Object.assign({}, require('./en/base')),
   },
 }
