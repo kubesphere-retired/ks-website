@@ -7,7 +7,7 @@ import './index.scss'
 
 const IndexPage = props => (
   <div className="wrapper building">
-    <div className="h1">正在努力 Coding …</div>
+    <div className="h1">{t('Working hard Coding')} …</div>
     <img src={buildingSVG} alt="" />
   </div>
 )
