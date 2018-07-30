@@ -5,7 +5,7 @@ import buildingSVG from '../assets/building.svg'
 
 import './index.scss'
 
-const IndexPage = props => (
+const IndexPage = ({ t }) => (
   <div className="wrapper building">
     <div className="h1">{t('Working hard Coding')} …</div>
     <img src={buildingSVG} alt="" />
