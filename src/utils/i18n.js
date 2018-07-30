@@ -7,7 +7,7 @@ i18n
   .use(LanguageDetector)
   .use(reactI18nextModule)
   .init({
-    fallbackLng: 'zh-CN',
+    fallbackLng: 'en',
     ns: ['base'],
     defaultNS: 'base',
     debug: false,

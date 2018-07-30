@@ -11,4 +11,5 @@ module.exports = {
   About: '关于',
   'About us': '关于我们',
   Careers: '加入我们',
+  'Working hard Coding': '正在努力 Coding'
 }
