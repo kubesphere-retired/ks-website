@@ -13,6 +13,7 @@
     line-height: $mobile-header-height;
     padding: 0 12px;
     background-color: rgba(245, 248, 249, 0.95);
+    z-index: 1000;
 
     &:global(.header-shadow) {
       box-shadow: 0 4px 8px 0 rgba(36, 46, 66, 0.06);

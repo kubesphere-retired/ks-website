@@ -4,10 +4,9 @@ import { reactI18nextModule } from 'react-i18next'
 import localeResources from '../locales'
 
 i18n
-  // .use(LanguageDetector)
+  .use(LanguageDetector)
   .use(reactI18nextModule)
   .init({
-    lng: 'zh-CN',
     fallbackLng: 'zh-CN',
     ns: ['base'],
     defaultNS: 'base',
