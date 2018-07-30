@@ -37,7 +37,9 @@ const Footer = ({ className, t }) => (
             <a href="https://www.qingcloud.com" target="_blank">
               QingCloud
             </a>
-            <Link to="https://openpitrix.io/en/">OpenPitrix</Link>
+            <a href="https://openpitrix.io" target="_blank">
+              OpenPitrix
+            </a>
           </li>
           <li>
             <div className="h3">文档中心</div>
