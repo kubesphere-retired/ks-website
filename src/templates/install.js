@@ -50,9 +50,11 @@ const INSTALL_CARDS = [
   },
 ]
 
-const Documents = ({ data, selectCard, selectorRef, onCardChange }) => {
+const Documents = ({ data, selectCard, selectorRef, onCardChange, i18n }) => {
   const edge = data.allMarkdownRemark.edges.find(
-    item => item.node.fields.article === selectCard
+    item =>
+      item.node.fields.article === selectCard &&
+      item.node.fields.language === i18n.language
   )
 
   const selectInstallCard = INSTALL_CARDS.find(card => card.type === selectCard)
@@ -96,14 +98,6 @@ class InstallPage extends React.Component {
 
     this.state = {
       selectCard: 'all-in-one',
-    }
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.i18n.language !== nextProps.pathContext.language) {
-      navigateTo(
-        `/${nextProps.pathContext.framework}/${nextProps.i18n.language}`
-      )
     }
   }
 
@@ -152,12 +146,8 @@ class InstallPage extends React.Component {
 export default translate('base')(InstallPage)
 
 export const query = graphql`
-  query InstallPageQuery($framework: String!, $language: String!) {
-    allMarkdownRemark(
-      filter: {
-        fields: { framework: { eq: $framework }, language: { eq: $language } }
-      }
-    ) {
+  query InstallPageQuery($framework: String!) {
+    allMarkdownRemark(filter: { fields: { framework: { eq: $framework } } }) {
       edges {
         node {
           id

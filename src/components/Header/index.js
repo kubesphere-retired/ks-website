@@ -6,7 +6,7 @@ import classnames from 'classnames'
 import Logo from '../Logo'
 import Modal from 'react-modal'
 import styles from './index.module.scss'
-import { getLanguage, getScrollTop } from '../../utils/index'
+import { getScrollTop } from '../../utils/index'
 
 import Button from '../Button/index'
 
@@ -62,13 +62,12 @@ class Header extends React.Component {
   }
 
   renderNav() {
-    const { i18n, t } = this.props
-    const lang = getLanguage(i18n.language)
+    const { t } = this.props
 
     return (
       <div className={styles.nav} onClick={this.handleCloseModal}>
         <Link to="/">{t('Homepage')}</Link>
-        <Link to={'/install/' + lang}>{t('Installation')}</Link>
+        <Link to={'/install'}>{t('Installation')}</Link>
         <Link to="/building">{t('KubeSphere Docs')}</Link>
         <a href="https://kubesphere.qingcloud.com/" target="_blank">
           {t('Commercial Edition')}

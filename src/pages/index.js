@@ -7,8 +7,6 @@ import ContribCard from '../components/Card/Contrib/index'
 import RoadMap from '../components/RoadMap/index'
 import Slider from '../components/Slider/index'
 
-import { getLanguage } from '../utils/index'
-
 import DashboardImage from '../assets/dashboard.png'
 import BannerBg from '../assets/banner-bg.svg'
 import SliderBg from '../assets/slider-bg.svg'
@@ -27,9 +25,7 @@ import slider3 from '../assets/slider-3.png'
 
 import './index.scss'
 
-const Banner = ({ i18n, t }) => {
-  const lang = getLanguage(i18n.language)
-
+const Banner = ({ t }) => {
   return (
     <div className="wrapper banner">
       <div className="banner-desc">
@@ -47,7 +43,7 @@ const Banner = ({ i18n, t }) => {
           )}
         </p>
         <div className="banner-links">
-          <Link to={'/install/' + lang}>
+          <Link to={'/install'}>
             <Button type="primary" size="large">
               {t('Get Community Edition')}
             </Button>

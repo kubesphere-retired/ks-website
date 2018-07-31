@@ -35,9 +35,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           edges {
             node {
               fields {
-                slug
                 framework
-                language
               }
             }
           }
@@ -47,18 +45,17 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
       let groups = new Set()
 
       edges.forEach(({ node }) => {
-        const { framework, language } = node.fields
-        groups.add(`${framework}/${language}`)
+        const { framework } = node.fields
+        groups.add(framework)
       })
 
-      groups.forEach(group => {
-        const [framework, language] = group.split('/')
+      groups.forEach(framework => {
 
         if(framework === 'install') {
           createPage({
-            path: group,
+            path: framework,
             component: path.resolve(`./src/templates/install.js`),
-            context: { framework, language },
+            context: { framework },
           })
         }
       })
