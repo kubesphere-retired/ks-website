@@ -1,6 +1,5 @@
 import React from 'react'
 import { translate } from 'react-i18next'
-import { navigateTo } from 'gatsby-link'
 
 import { getScrollTop } from '../utils/index'
 
@@ -21,7 +20,7 @@ const Banner = ({ t }) => (
     <div className="h1">{t('KubeSphere Installation')}</div>
     <p>
       {t(
-        'KubeSphere supports both all-in-one and multi-node mode to meet your installation demands. KubeSphere adopts Ansible to realize centralized management configuration on the target machine(s), as well as deployment procedures automation. With pre-configured templates, you are able to pre-configure the deployment procedures by customizing related configuration files before deployment, which means it is able to adapt to different IT environments and help you to deploy KubeSphere in a quick way.'
+        'KubeSphere supports both all-in-one mode and multi-node mode to meet your installation demands. KubeSphere adopts Ansible to realize centralized management configuration on the target machine(s), as well as deployment procedures automation. With pre-configured templates, you are able to pre-configure the deployment procedures by customizing related configuration files before deployment, which means it is able to adapt to different IT environments and help you to deploy KubeSphere in a quick way.'
       )}
     </p>
     <div style={{ textAlign: 'center' }}>
