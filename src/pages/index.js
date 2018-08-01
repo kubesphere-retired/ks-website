@@ -126,7 +126,7 @@ const AppInstall = ({ t }) => (
 const ROADMAP = [
   { name: 'Community Alpha Edition', time: '2018-6-30', status: 'released' },
   { name: 'Community Beta Edition', time: '2018-7-30', status: 'releasing' },
-  { name: 'Community Edition 1.0', time: '2018-8-30', status: 'planning' },
+  { name: 'Community Edition 1.0.0', time: '2018-8-30', status: 'planning' },
 ]
 
 const Contribution = ({ t }) => (
