@@ -87,7 +87,7 @@ const Features = ({ t }) => (
         <p
           dangerouslySetInnerHTML={{
             __html: t(
-              'Besides the open source solutions, if users would like to realize higher demands for network and storage, <a href="https://www.qingcloud.com" target="_blank">QingCloud</a> can be used as the underlying platform to integrate QingCloud SDN, block storage and NeonSAN with service-guaranteed network and storage solutions.'
+              'Besides the open source solutions, if users would like to realize higher demands for network and storage, <a href="//www.qingcloud.com" target="_blank">QingCloud</a> can be used as the underlying platform to integrate QingCloud SDN, block storage and NeonSAN with service-guaranteed network and storage solutions.'
             ),
           }}
         />
