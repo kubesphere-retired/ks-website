@@ -124,9 +124,9 @@ const AppInstall = ({ t }) => (
 )
 
 const ROADMAP = [
-  { name: 'Community Alpha Edition', time: '2018-6-30', status: 'released' },
-  { name: 'Community Beta Edition', time: '2018-7-30', status: 'releasing' },
-  { name: 'Community Edition 1.0', time: '2018-8-30', status: 'planning' },
+  { name: 'Community Edition 1.0.0 Alpha', time: '2018-6-30', status: 'Released' },
+  { name: 'Community Edition 1.0.0 Beta', time: '2018-7-31', status: 'In Progress' },
+  { name: 'Community Edition 1.0.0 GA', time: '2018-8-31', status: 'Planning' },
 ]
 
 const Contribution = ({ t }) => (
@@ -187,7 +187,7 @@ const Contribution = ({ t }) => (
             </li>
             <li>
               {t(
-                'Participate in the upstream projects of KubeSphere: Kubernetes, Docker, Kata, etc.'
+                'Participate in the upstream projects of KubeSphere such as Kubernetes, Docker, Kata, etc.'
               )}
             </li>
           </ul>
