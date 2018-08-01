@@ -12,8 +12,8 @@ module.exports = {
   'KubeSphere providing friendly UI and wizard-design experience to users who work at development, testing or operation. Kubernetes’ powerful features could be delivered to users in an easiest way through the KubeSphere console.':
     '面向开发、测试、运维友好的 UI，向导式用户体验，通过 KubeSphere 控制台将 Kubernetes 的能力以一种极简的方式输送给用户。',
   Flexible: '灵活',
-  'Besides the open source solutions, if users would like to realize higher demands for network and storage, <a href="https://www.qingcloud.com" target="_blank">QingCloud</a> can be used as the underlying platform to integrate QingCloud SDN, block storage and NeonSAN with service-guaranteed network and storage solutions.':
-    '除开源解决方案外，如用户对网络和存储有更高要求，可选用 <a href="https://www.qingcloud.com" target="_blank">青云 QingCloud</a> 作为底层平台，可以使用商业化的网络和存储解决方案，集成青云 SDN、块存储和 NeonSAN。',
+  'Besides the open source solutions, if users would like to realize higher demands for network and storage, <a href="//www.qingcloud.com" target="_blank">QingCloud</a> can be used as the underlying platform to integrate QingCloud SDN, block storage and NeonSAN with service-guaranteed network and storage solutions.':
+    '除开源解决方案外，如用户对网络和存储有更高要求，可选用 <a href="//www.qingcloud.com" target="_blank">青云 QingCloud</a> 作为底层平台，可以使用商业化的网络和存储解决方案，集成青云 SDN、块存储和 NeonSAN。',
   Efficient: '高效',
   'No infrastructure dependencies, no Kubernetes dependencies, support for deployment across physical machines, virtual machines, cloud platforms, and enables Kubernetes clusters of different versions and vendors management.':
     '无基础设施依赖，无 Kubernetes 依赖，支持跨物理机、虚拟机、云平台部署，可以纳管不同版本、不同厂商的 Kubernetes 集群。',
