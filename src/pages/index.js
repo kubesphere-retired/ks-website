@@ -84,11 +84,13 @@ const Features = ({ t }) => (
       <div className="feature-card">
         <img src={FlexibleIcon} alt="" />
         <div className="h2">{t('Flexible')}</div>
-        <p>
-          {t(
-            'Besides the open source solutions, if users would like to realize higher demands for network and storage, QingCloud can be used as the underlying platform to integrate QingCloud SDN, block storage and NeonSAN with service-guaranteed network and storage solutions.'
-          )}
-        </p>
+        <p
+          dangerouslySetInnerHTML={{
+            __html: t(
+              'Besides the open source solutions, if users would like to realize higher demands for network and storage, <a href="https://www.qingcloud.com" target="_blank">QingCloud</a> can be used as the underlying platform to integrate QingCloud SDN, block storage and NeonSAN with service-guaranteed network and storage solutions.'
+            ),
+          }}
+        />
       </div>
       <div className="feature-card">
         <img src={EfficientIcon} alt="" />
@@ -124,8 +126,16 @@ const AppInstall = ({ t }) => (
 )
 
 const ROADMAP = [
-  { name: 'Community Edition 1.0.0 Alpha', time: '2018-6-30', status: 'Released' },
-  { name: 'Community Edition 1.0.0 Beta', time: '2018-7-31', status: 'In Progress' },
+  {
+    name: 'Community Edition 1.0.0 Alpha',
+    time: '2018-6-30',
+    status: 'Released',
+  },
+  {
+    name: 'Community Edition 1.0.0 Beta',
+    time: '2018-7-31',
+    status: 'In Progress',
+  },
   { name: 'Community Edition 1.0.0 GA', time: '2018-8-31', status: 'Planning' },
 ]
 

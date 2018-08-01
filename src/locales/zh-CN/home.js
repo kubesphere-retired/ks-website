@@ -2,7 +2,7 @@ module.exports = {
   'Foreseeing the future. <br/>Going forward with KubeSphere':
     '预见未来, <br/>遇见 KubeSphere',
   'Kubesphere.io is an upstream project of the KubeSphere container management platform, integrates the latest CNCF eco open source projects to provide developers and users with the latest and coolest features, also expands according to the specific demands of users.':
-    'kubesphere.io 是 KubeSphere 容器管理平台的上游开源项目，整合最新的 CNCF 生态开源项目，为开发者和体验者提供最新最酷的特性，且根据中国用户的特定需求，进行外延性的扩展。',
+    'kubesphere.io 是 KubeSphere 容器管理平台的上游开源项目，愿景是基于 Kubernetes 为个人和企业提供更易用，更友好，更强大的分布式容器管理平台，满足更多的业务场景需求，帮助更多的用户能够更快更好的去使用 Kubernetes',
   'Get Community Edition': '获取社区版',
   'Get Commercial Edition': '获取商业版',
   'What is KubeSphere': '什么是 KubeSphere ？',
@@ -12,7 +12,7 @@ module.exports = {
   'KubeSphere providing friendly UI and wizard-design experience to users who work at development, testing or operation. Kubernetes’ powerful features could be delivered to users in an easiest way through the KubeSphere console.':
     '面向开发、测试、运维友好的 UI，向导式用户体验，通过 KubeSphere 控制台将 Kubernetes 的能力以一种极简的方式输送给用户。',
   Flexible: '灵活',
-  'Besides the open source solutions, if users would like to realize higher demands for network and storage, QingCloud can be used as the underlying platform to integrate QingCloud SDN, block storage and NeonSAN with service-guaranteed network and storage solutions.':
+  'Besides the open source solutions, if users would like to realize higher demands for network and storage, <a href="https://www.qingcloud.com" target="_blank">QingCloud</a> can be used as the underlying platform to integrate QingCloud SDN, block storage and NeonSAN with service-guaranteed network and storage solutions.':
     '除开源解决方案外，如用户对网络和存储有更高要求，可选用 <a href="https://www.qingcloud.com" target="_blank">青云 QingCloud</a> 作为底层平台，可以使用商业化的网络和存储解决方案，集成青云 SDN、块存储和 NeonSAN。',
   Efficient: '高效',
   'No infrastructure dependencies, no Kubernetes dependencies, support for deployment across physical machines, virtual machines, cloud platforms, and enables Kubernetes clusters of different versions and vendors management.':
