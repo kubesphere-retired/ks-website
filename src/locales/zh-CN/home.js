@@ -1,7 +1,7 @@
 module.exports = {
   'Foreseeing the future. <br/>Going forward with KubeSphere':
     '预见未来, <br/>遇见 KubeSphere',
-  'Kubesphere.io is an upstream project of the KubeSphere container management platform, integrates the latest CNCF eco open source projects to provide developers and users with the latest and coolest features, also expands according to the specific demands of users.':
+  'Kubesphere.io is an upstream project of the KubeSphere container management platform. Our vision is to provide an easier, more friendly and more powerful distributed management platform for individuals and enterprises based on Kubernetes,  as well as meet more business demands and help more users to use Kubernetes faster and better.':
     'kubesphere.io 是 KubeSphere 容器管理平台的上游开源项目，愿景是基于 Kubernetes 为个人和企业提供更易用，更友好，更强大的分布式容器管理平台，满足更多的业务场景需求，帮助更多的用户能够更快更好的去使用 Kubernetes',
   'Get Community Edition': '获取社区版',
   'Get Commercial Edition': '获取商业版',

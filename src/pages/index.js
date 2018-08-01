@@ -39,7 +39,7 @@ const Banner = ({ t }) => {
         />
         <p>
           {t(
-            'Kubesphere.io is an upstream project of the KubeSphere container management platform, integrates the latest CNCF eco open source projects to provide developers and users with the latest and coolest features, also expands according to the specific demands of users.'
+            'Kubesphere.io is an upstream project of the KubeSphere container management platform. Our vision is to provide an easier, more friendly and more powerful distributed management platform for individuals and enterprises based on Kubernetes,  as well as meet more business demands and help more users to use Kubernetes faster and better.'
           )}
         </p>
         <div className="banner-links">
