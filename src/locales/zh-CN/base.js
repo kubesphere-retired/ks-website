@@ -3,7 +3,7 @@ module.exports = {
   Installation: '安装',
   'Commercial Edition': '商业版',
   'KubeSphere Docs': '文档中心',
-  'MMM DD YYYY': 'YYYY年MM月DD日',
+  'MMM DD YYYY': 'YYYY 年 MM 月 DD 日',
   Products: '产品',
   'Community Edition': '社区版',
   'Related Products': '相关产品',
