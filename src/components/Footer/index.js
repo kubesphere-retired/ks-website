@@ -59,7 +59,6 @@ const Footer = ({ className, t }) => (
           </ul>
         </div>
       </div>
-      <p className={styles.icp}>KubeSphere powered by Yunify Inc.</p>
     </div>
   </div>
 )
