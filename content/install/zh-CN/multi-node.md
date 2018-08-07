@@ -26,7 +26,7 @@
 
 ### 第二步: 准备 KubeSphere 安装包
 
-**1.** 下载 [KubeSphere Installer](https://drive.yunify.com/s/DZ8FAIEaKfU98JT)。
+**1.** 下载 <a href="https://drive.yunify.com/s/DZ8FAIEaKfU98JT" target="_blank">KubeSphere Installer</a>。
 
 **2.** 获取 KubeSphere 安装包后，执行以下命令解压安装包：
 
@@ -83,12 +83,12 @@ kube-master
 > - ansible\_become\_user: 权限升级用户（root） 
 > - ansible\_become\_pass: 待连接主机的密码. 
 
-**5.** Multi-Node 模式进行多节点部署时，您需要预先准备好对应的存储服务器，再参考[存储配置](#存储配置) 配置集群的存储类型。网络、存储等相关内容需在 ` conf/vars.yml` 配置文件中指定或修改。
+**5.** Multi-Node 模式进行多节点部署时，您需要预先准备好对应的存储服务器，再参考<a href="https://docs.kubesphere.io/express/zh-CN/KubeSphere-Installer-Guide/#附录1：存储配置说明" target="_blank">存储配置</a> 配置集群的存储类型。网络、存储等相关内容需在 ` conf/vars.yml` 配置文件中指定或修改。
 
 > 说明：
 > - 根据配置文件按需修改相关配置项，未做修改将以默认参数执行。
 > - 网络：默认插件 `calico`
-> - 支持存储类型：`GlusterFS、CephRBD`， 存储配置相关的详细信息请参考 [存储配置](#存储配置)
+> - 支持存储类型：`GlusterFS、CephRBD`， 存储配置相关的详细信息请参考 <a href="https://docs.kubesphere.io/express/zh-CN/KubeSphere-Installer-Guide/#附录1：存储配置说明" target="_blank">存储配置</a>
 > - 通常情况您需要配置持久化存储，multi-node 不支持 local storage，因此把 local storage 的配置修改为 false，然后配置持久化存储如 GlusterFS, CephRBD 等。如下图所示配置 CephRBD。
 
  
@@ -155,7 +155,7 @@ Please input an option: 2
 
 **提示：**
 
-> - 安装程序会提示您是否已经配置过存储，若未配置请输入 "no"，返回目录继续配置存储并参考 [存储配置](#存储配置)
+> - 安装程序会提示您是否已经配置过存储，若未配置请输入 "no"，返回目录继续配置存储并参考 <a href="https://docs.kubesphere.io/express/zh-CN/KubeSphere-Installer-Guide/#附录1：存储配置说明" target="_blank">存储配置</a>
 > - taskbox 需配置与待部署集群中所有节点的 `ssh 免密登录`，若还未配置 ssh 免密登录，在执行 `install.sh` 安装脚本时会提示用户是否已经配置免密登录，输入 "no" 安装程序将会帮您自动配置 ssh 免密登录，如下图所示:
 
 ```bash
@@ -209,4 +209,4 @@ KubeSphere 部署成功后，可以使用以下的用户名和密码登录 KubeS
 
 > Password: passw0rd
 
-详情请参考 [《KubeSphere 用户指南》](https://kubesphere.qingcloud.com)。
+详情请参考 <a href="https://docs.kubesphere.io/express/zh-CN/user-case/" target="_blank">《KubeSphere 用户指南》</a>。

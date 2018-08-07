@@ -20,7 +20,7 @@ The following section identifies the hardware specifications and system-level re
 
 ###  Step 2: Provision Installation Files
 
-**1.**  Download [KubeSphere Installer](https://drive.yunify.com/s/DZ8FAIEaKfU98JT)
+**1.**  Download <a href="https://drive.yunify.com/s/DZ8FAIEaKfU98JT" target="_blank">KubeSphere Installer</a>
 
 
 **2.**  When you get the installation package, please execute following command to unzip the package.
@@ -50,7 +50,7 @@ The environment and file monitoring, dependent software installation of KubeSphe
 
 > - Network：KubeSphere supports `calico` by default**
 
-> - Supported Storage Classes：`GlusterFS、CephRBD、local\_volume(Default)`. For details on storage configuration, please refer to [Storage Configuration Instructions](#storage-configuration-instructions)
+> - Supported Storage Classes：`GlusterFS、CephRBD、local\_volume(Default)`. For details on storage configuration, please refer to <a href="https://docs.kubesphere.io/express/zh-CN/KubeSphere-Installer-Guide/#附录1：存储配置说明" target="_blank">Storage Configuration Instructions</a>
 
 > - All-in-One uses local storage as the storage class by default. Since local storage does not support dynamic provisioning, users may need to create a persistent volume (PV) in advance when creating volumes in the KubeSphere console, installer pre-creates 8 available 10G PVs for testing.
 
@@ -117,5 +117,5 @@ When KubeSphere is deployed successfully ，you will be able to use following ac
 
 > Password: passw0rd
 
-For details, please refer to [*"KubeSphere User Guide"*](https://kubesphere.qingcloud.com)， and learn how to get started with it！
+For details, please refer to <a href="https://docs.kubesphere.io/express/zh-CN/user-case/" target="_blank">KubeSphere User Guide</a>， and learn how to get started with it！
 
