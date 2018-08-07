@@ -44,7 +44,7 @@ Single master, Single etcd, Multiple nodes
 ###  Step 2: Provision Installation Files
 
 
-**1.**  Download [KubeSphere Installer](https://drive.yunify.com/s/DZ8FAIEaKfU98JT)
+**1.**  Download <a href="https://drive.yunify.com/s/DZ8FAIEaKfU98JT" target="_blank">KubeSphere Installer</a>
 
 **2.**  When you get the installation package, please execute following command to unzip the package.
 
@@ -106,7 +106,7 @@ kube-master
 > - ansible_become_pass: Allows you to set the privilege escalation password.
 
 
-**5.** It is required to prepare a server for storage service before multi-node deployment. Then you will need to specify the storage class parameters in  `vars.yml` . Then reference the details on storage configuration, please go to [Storage Configuration Instructions](#storage-configuration-instructions).
+**5.** It is required to prepare a server for storage service before multi-node deployment. Then you will need to specify the storage class parameters in  `vars.yml` . Then reference the details on storage configuration, please go to <a href="https://docs.kubesphere.io/express/zh-CN/KubeSphere-Installer-Guide/#附录1：存储配置说明" target="_blank">Storage Configuration Instructions</a>.
 
 
 **Note：**  <br/>
@@ -115,7 +115,7 @@ kube-master
 
 > - Network：KubeSphere supports `calico` by default.
 
-> - Supported Storage Classes：`GlusterFS、CephRBD` , for the details on storage configuration, please refer to [Storage Configuration Instructions](#storage-configuration-instructions).
+> - Supported Storage Classes：`GlusterFS、CephRBD` , for the details on storage configuration, please refer to <a href="https://docs.kubesphere.io/express/zh-CN/KubeSphere-Installer-Guide/#附录1：存储配置说明" target="_blank">Storage Configuration Instructions</a>.
 
 > - Typically, you need to configure persistent storage. Since multi-node mode does not support local storage, it's recommended to modify the local storage default configuration to `false`, then you would configure persistent storage such as GlusterFS or CephRBD. Following screenshot describes an example of how to configure CephCBD.
 
@@ -188,7 +188,7 @@ Please input an option: 2
 
 **Attention：** <br/>
 
-> - The installer will prompt you if you have configured the storage or not. If not, please enter "no", then return to the directory and continue to configure the storage, for details please refer to [Storage Configuration Instructions](#storage-configuration-instructions).
+> - The installer will prompt you if you have configured the storage or not. If not, please enter "no", then return to the directory and continue to configure the storage, for details please refer to <a href="https://docs.kubesphere.io/express/zh-CN/KubeSphere-Installer-Guide/#附录1：存储配置说明" target="_blank">Storage Configuration Instructions</a>.
 
 > -  Password-less SSH communication is necessary to be established with other nodes in the cluster. The user will be prompted to configure the password-less communication when executing the `install.sh`. Please enter "no" if not configured, then the installer will automatically configure password-less SSH communication as shown below:
 
@@ -250,4 +250,4 @@ When KubeSphere is deployed successfully ，you will be able to use following ac
 
 > Password: passw0rd
 
-For details, please refer to [*"KubeSphere User Guide"*](https://kubesphere.qingcloud.com)， and learn how to get started with it！
+For details, please refer to <a href="https://docs.kubesphere.io/express/zh-CN/user-case/" target="_blank">KubeSphere User Guide</a>， and learn how to get started with it！

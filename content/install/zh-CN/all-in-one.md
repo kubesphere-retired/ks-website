@@ -12,7 +12,7 @@
 
 ### 第二步: 准备 KubeSphere 安装文件
 
-**1.** 下载 [KubeSphere Installer](https://drive.yunify.com/s/DZ8FAIEaKfU98JT)。
+**1.** 下载 <a href="https://drive.yunify.com/s/DZ8FAIEaKfU98JT" target="_blank">KubeSphere Installer</a>。
 
 **2.** 获取 KubeSphere 安装包后，执行以下命令解压安装包：
 
@@ -31,7 +31,7 @@ $ cd kubesphere-all-express-1.0.0-alpha
 > - 通常情况您不需要修改任何配置，直接安装即可。
 > - 若您需要自定义配置文件的安装参数，如网络、存储等相关内容需在 **`conf/vars.yml`** 配置文件中指定或修改。
 > - 网络：默认插件 `calico`。
-> - 支持存储类型：`GlusterFS、CephRBD、local-storage`，存储配置相关的详细信息请参考[存储配置](#存储配置)。
+> - 支持存储类型：`GlusterFS、CephRBD、local-storage`，存储配置相关的详细信息请参考<a href="https://docs.kubesphere.io/express/zh-CN/KubeSphere-Installer-Guide/#附录1：存储配置说明" target="_blank">存储配置</a>。
 > - All-in-One 默认会用 local storage 作为存储类型，由于 local storage 不支持动态分配，用户安装完毕在 KubeSphere 控制台创建存储卷的时候需要预先创建 persistent volume (PV)。Installer 预先创建了 8 个 10G local storage 的 PV 供用户直接试用。
 
 KubeSphere 部署过程中将会自动化地进行环境和文件监测、平台依赖软件的安装、Kubernetes 和 etcd 的自动化部署，以及存储的自动化配置。KubeSphere 安装包将会自动安装一些依赖软件，如 ansible (v2.4+)，Python-netaddr (v0.7.18+)，Jinja (v2.9+)。
@@ -91,4 +91,4 @@ KubeSphere 部署成功后，可以使用以下的用户名和密码登录 KubeS
 
 > Password: passw0rd
 
-详情请参考 [《KubeSphere 用户指南》](https://kubesphere.qingcloud.com)。
+详情请参考 <a href="https://docs.kubesphere.io/express/zh-CN/user-case/" target="_blank">《KubeSphere 用户指南》</a>。

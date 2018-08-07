@@ -48,8 +48,12 @@ const Footer = ({ className, t }) => (
             </li>
             <li>
               <div className="h3">{t('KubeSphere Docs')}</div>
-              <Link to="">Installer</Link>
-              <Link to="">Tutorial</Link>
+              <a href="//docs.kubesphere.io/express/zh-CN/KubeSphere-Installer-Guide/" target="_blank">
+                Installer
+              </a>
+              <a href="//docs.kubesphere.io/express/zh-CN/user-case/" target="_blank">
+                Tutorial
+              </a>
             </li>
             <li>
               <div className="h3">{t('About')}</div>

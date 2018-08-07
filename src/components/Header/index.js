@@ -68,7 +68,9 @@ class Header extends React.Component {
       <div className={styles.nav} onClick={this.handleCloseModal}>
         <Link to="/">{t('Homepage')}</Link>
         <Link to={'/install'}>{t('Installation')}</Link>
-        <Link to="/building">{t('KubeSphere Docs')}</Link>
+        <a href="//docs.kubesphere.io" target="_blank">
+          {t('KubeSphere Docs')}
+        </a>
         <a href="https://kubesphere.qingcloud.com/" target="_blank">
           {t('Commercial Edition')}
         </a>
