@@ -177,7 +177,7 @@ const Contribution = ({ t }) => (
             <li
               dangerouslySetInnerHTML={{
                 __html: t(
-                  'Read the KubeSphere <a href="" target="_blank">Contributor Guide</a> carefully'
+                  'Read the KubeSphere <a href="//github.com/kubesphere/kubesphere/tree/master/docs" target="_blank">Contributor Guide</a> carefully'
                 ),
               }}
             />

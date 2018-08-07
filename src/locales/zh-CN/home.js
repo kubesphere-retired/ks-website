@@ -31,8 +31,8 @@ module.exports = {
     'KubeSphere 使用 GitHub issue 来管理 bug 跟踪',
   'Submit the Bug': '提交 Bug',
   'Participate in development and design': '参与开发和设计',
-  'Read the KubeSphere <a href="" target="_blank">Contributor Guide</a> carefully':
-    '认真阅读 kubesphere <a href="" target="_blank">贡献者指南</a>',
+  'Read the KubeSphere <a href="//github.com/kubesphere/kubesphere/tree/master/docs" target="_blank">Contributor Guide</a> carefully':
+    '认真阅读 kubesphere <a href="//github.com/kubesphere/kubesphere/tree/master/docs" target="_blank">贡献者指南</a>',
   'Fork KubeSphere Repo': 'fork 项目',
   'Read the KubeSphere User Guide': '阅读《使用手册》',
   'Participate in the upstream projects of KubeSphere such as Kubernetes, Docker, Kata, etc.':
