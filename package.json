@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "dependencies": {
     "classnames": "^2.2.6",
+    "es6-shim": "^0.35.3",
     "gatsby": "^1.9.247",
     "gatsby-link": "^1.6.40",
     "gatsby-plugin-no-sourcemaps": "^1.0.5",
@@ -20,6 +21,7 @@
     "lodash": "^4.17.10",
     "moment-mini": "^2.22.1",
     "prismjs": "^1.15.0",
+    "promise-polyfill": "^8.0.0",
     "react-helmet": "^5.2.0",
     "react-i18next": "^7.7.0",
     "react-modal": "^3.5.1"
