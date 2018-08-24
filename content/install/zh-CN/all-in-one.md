@@ -1,6 +1,6 @@
 ## All-in-One 模式
 
-`All-in-One` 模式即单节点部署，仅建议您用来测试或熟悉部署流程和了解 KubeSphere 功能特性，在正式使用环境建议使用 `multi-node` 模式，请参考 `multi-node` 模式 。
+`All-in-One` 模式即单节点部署，仅建议您用来测试或熟悉部署流程和了解 KubeSphere 功能特性，在正式使用环境建议使用 `multi-node` 模式，请参考 `multi-node` 模式。
 
 ### 第一步: 准备节点
 
@@ -15,11 +15,9 @@
 
 **1.** 下载 <a href="http://t.cn/RDVA7ek" target="_blank">KubeSphere Installer</a>。
 
-> 说明： alpha 版是目前在 Ubuntu 16.04 经过测试的版本。 若系统是 CentOS 7.4,  请下载 `kubesphere-all-express-1.0.0-dev-2018xxxx.tar.gz` 版本的安装包。 (此版本也支持 Ubuntu 16.04)
+> 说明： alpha 版是目前在 Ubuntu 16.04 经过测试的版本。 若系统是 CentOS 7.4，请下载 `kubesphere-all-express-1.0.0-dev-2018xxxx.tar.gz` 版本的安装包。 (此版本也支持 Ubuntu 16.04)
 
-**2.** 获取 KubeSphere 安装包后，执行以下命令解压安装包：
-
-> 说明： 以 alpha 版本的安装包为例，若下载的是 dev 版本，则替换为 dev 对应的包名和目录名。
+**2.** 获取 KubeSphere 安装包后，以 Alpha 版本的安装包为例，执行以下命令解压安装包。若下载的是 Dev 或 Offline 版本，则替换为 Dev 或 Offline 对应的包名和目录名。
 
 ```bash
 $ tar -zxvf kubesphere-all-express-1.0.0-alpha.tar.gz
@@ -36,8 +34,8 @@ $ cd kubesphere-all-express-1.0.0-alpha
 > - 通常情况您不需要修改任何配置，直接安装即可。
 > - 若您需要自定义配置文件的安装参数，如网络、存储等相关内容需在 **`conf/vars.yml`** 配置文件中指定或修改。
 > - 网络：默认插件 `calico`。
-> - 支持存储类型：`GlusterFS、CephRBD、local-storage`，存储配置相关的详细信息请参考<a href="https://docs.kubesphere.io/express/zh-CN/KubeSphere-Installer-Guide/#附录1：存储配置说明" target="_blank">存储配置</a>。
-> - All-in-One 默认会用 local storage 作为存储类型，由于 local storage 不支持动态分配，用户安装完毕在 KubeSphere 控制台创建存储卷的时候需要预先创建 persistent volume (PV)。Installer 预先创建了 8 个 10G local storage 的 PV 供用户直接试用。
+> - 支持存储类型： QingCloud-CSI（Dev 和 Offline 版支持）、GlusterFS、CephRBD 和 local-storage，存储配置相关的详细信息请参考<a href="https://docs.kubesphere.io/express/zh-CN/KubeSphere-Installer-Guide/#存储配置说明" target="_blank">存储配置</a>。
+> - All-in-One 默认会用 local storage 作为存储类型，由于 local storage 不支持动态分配，用户安装完毕在 KubeSphere 控制台创建存储卷的时候需要预先创建 persistent volume (PV)。Installer 预先创建了 8 个 可用的 10G PV 供用户直接使用，关于 local storage 的使用请参考 <a href="https://docs.kubesphere.io/express/zh-CN/manage-storages/#local-volume-使用方法">Local Volume 使用方法</a>。
 
 KubeSphere 部署过程中将会自动化地进行环境和文件监测、平台依赖软件的安装、Kubernetes 和 etcd 的自动化部署，以及存储的自动化配置。KubeSphere 安装包将会自动安装一些依赖软件，如 ansible (v2.4+)，Python-netaddr (v0.7.18+)，Jinja (v2.9+)。
 
@@ -86,7 +84,7 @@ ks-apiserver-nodeport: 32002
 ########################################################
 ```
 
-**(2)** 您可以通过浏览器，使用集群中任一节点的 IP 地址和端口号（端口号将显示在脚本执行完之后的界面 "ks-console-nodeport" 处），也可以通过公网 IP 及端口转发的方式访问控制台，如：[http://139.198.121.143:8080](http://139.198.121.143:8080), 即可进入 KubeSphere 登录界面，能看到如下用户界面说明 KubeSphere 能够正常访问和使用：
+**(2)** 您可以通过浏览器，使用集群中任一节点的 IP 地址和端口号（端口号将显示在脚本执行完之后的界面 "ks-console-nodeport" 处），如上图 [http://192.168.100.10:32117](http://192.168.100.10:32117，)，也可以通过公网 IP 及端口转发的方式访问控制台，如：[http://139.198.121.143:8080](http://139.198.121.143:8080)， 即可进入 KubeSphere 登录界面，能看到如下用户界面说明 KubeSphere 能够正常访问和使用：
 
 > 注： 若公网 IP 有防火墙，请在防火墙添加规则放行对应的端口，外部才能够访问。
 

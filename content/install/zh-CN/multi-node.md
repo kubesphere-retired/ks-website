@@ -15,7 +15,7 @@
 
 | 主机IP | 主机名 | 集群角色 |
 | --- | --- | --- |
-|192.168.0.10|master|master, etcd, node|
+|192.168.0.10|master|master， etcd， node|
 |192.168.0.20|node1|node|
 |192.168.0.30|node2|node|
 
@@ -31,9 +31,7 @@
 
 > 说明： alpha 版是目前在 Ubuntu 16.04 经过测试的版本。 若系统是 CentOS 7.4,  请下载 `kubesphere-all-express-1.0.0-dev-2018xxxx.tar.gz` 版本的安装包。 (此版本也支持 Ubuntu 16.04)
 
-**2.** 获取 KubeSphere 安装包后，执行以下命令解压安装包：
-
-> 说明： 以 alpha 版本的安装包为例，若下载的是 dev 版本，则替换为 dev 对应的包名和目录名。
+**2.** 获取 KubeSphere 安装包后，执行以下命令解压安装包。以 Alpha 版本的安装包为例，执行以下命令解压安装包。若下载的是 Dev 或 Offline 版本，则替换为 Dev 或 Offline 对应的包名和目录名。
 
 ```bash
 $ tar -zxvf kubesphere-all-express-1.0.0-alpha.tar.gz
@@ -45,11 +43,9 @@ $ tar -zxvf kubesphere-all-express-1.0.0-alpha.tar.gz
 $ cd kubesphere-all-express-1.0.0-alpha
 ```
 
-**4.** 编辑主机配置文件 `conf/hosts.ini`，为了对待部署目标机器及部署流程进行集中化管理配置，集群中各个节点在主机配置文件 `hosts.ini` 中应参考如下配置：
+**4.** 编辑主机配置文件 `conf/hosts.ini`，为了对待部署目标机器及部署流程进行集中化管理配置，集群中各个节点在主机配置文件 `hosts.ini` 中应参考如下配置，以 Alpha 版本的主机配置文件为例。以下示例在 Ubuntu 16.04.4 上使用 ubuntu 用户安装，每台机器信息占一行，不能分行。
 
-> 注：每台机器信息占一行，不能分行。
-
-**示例：**
+**Alpha 版示例：**
 
 ```ini
 [all]
@@ -88,31 +84,8 @@ kube-master
 > - ansible\_become\_user: 权限升级用户（root） 
 > - ansible\_become\_pass: 待连接主机的密码。
 
-注意： 若下载的是 dev 版本的安装包， 主机配置文件 `conf/hosts.ini` 参考以下示例，使用 `root` 身份进行安装 （非 root 用户请参考 Installer 中的配置文件的示例修改）：
 
-**示例：**
-
-```ini
-[all]
-master  ansible_connection=local local_release_dir={{ansible_env.HOME}}/releases 
-node1  ansible_host=192.168.0.20  ip=192.168.0.20  ansible_ssh_pass=password
-node2  ansible_host=192.168.0.30  ip=192.168.0.30  ansible_ssh_pass=password
-
-[kube-master]
-master 	  	 
-
-[kube-node]
-master
-node1 	 
-node2
-
-[etcd]
-master	 
-
-[k8s-cluster:children]
-kube-node
-kube-master 
-```
+- 若下载的是 Dev 或 Offline 版本的安装包， 安装包中 `conf/hosts.ini` 的 `[all]` 部分参数如 `ansible_host` 、 `ip` 、 `ansible_become_pass` 和 `ansible_ssh_pass` 需替换为您实际部署环境中各节点对应的参数。注意 `[all]` 中参数的配置方式分为 root 和 非 root 用户，非 root 用户的配置方式在安装包的 `conf/hosts.ini` 的注释部分已给出示例，请根据实际的用户身份修改配置参数。
 
 
 **5.** Multi-Node 模式进行多节点部署时，您需要预先准备好对应的存储服务器，再参考<a href="https://docs.kubesphere.io/express/zh-CN/KubeSphere-Installer-Guide/#附录1：存储配置说明" target="_blank">存储配置</a> 配置集群的存储类型。网络、存储等相关内容需在 ` conf/vars.yml` 配置文件中指定或修改。
@@ -120,8 +93,9 @@ kube-master
 > 说明：
 > - 根据配置文件按需修改相关配置项，未做修改将以默认参数执行。
 > - 网络：默认插件 `calico`
-> - 支持存储类型：`GlusterFS、CephRBD`， 存储配置相关的详细信息请参考 <a href="https://docs.kubesphere.io/express/zh-CN/KubeSphere-Installer-Guide/#附录1：存储配置说明" target="_blank">存储配置</a>
-> - 通常情况您需要配置持久化存储，multi-node 不支持 local storage，因此把 local storage 的配置修改为 false，然后配置持久化存储如 GlusterFS, CephRBD 等。如下图所示配置 CephRBD。
+> - 支持存储类型：QingCloud-CSI、GlusterFS、CephRBD， 存储配置相关的详细信息请参考 <a href="https://docs.kubesphere.io/express/zh-CN/KubeSphere-Installer-Guide/#存储配置说明" target="_blank">存储配置</a>
+> - 通常情况您需要配置持久化存储，multi-node 不支持 local storage，因此把 local storage 的配置修改为 false，然后配置持久化存储如 QingCloud-CSI、GlusterFS 或 CephRBD。如果使用 [青云云平台块存储](https://docs.qingcloud.com/product/storage/volume/)作为持久化存储，需要安装 [QingCloud-CSI 插件](https://github.com/yunify/qingcloud-csi/blob/master/README_zh.md)，且需要有操作 [QingCloud IaaS 平台](https://console.qingcloud.com/login) 资源的权限，如下所示为配置 QingCloud-CSI （`qy_access_key_id`、`qy_secret_access_key` 和 `qy_zone` 应替换为您实际环境的参数）。
+
 
  
 ```yaml
@@ -130,26 +104,31 @@ local_volume_provisioner_enabled: false
 local_volume_provisioner_storage_class: local
 local_volume_is_default_class: false
 
+# QingCloud-CSI 
+qy_csi_enabled: true
+qy_csi_is_default_class: true
+# Access key pair can be created in QingCloud console
+qy_access_key_id: ACCESS_KEY_ID
+qy_secret_access_key: ACCESS_KEY_SECRET
+# Zone should be the same as Kubernetes cluster
+qy_zone: ZONE
+# QingCloud IaaS platform service url.
+qy_host: api.qingcloud.com
+qy_port: 443
+qy_protocol: https
+qy_uri: /iaas
+qy_connection_retries: 3
+qy_connection_timeout: 30
+# The type of volume in QingCloud IaaS platform. 
+# 0 represents high performance volume. 
+# 3 respresents super high performance volume. 
+# 1 or 2 represents high capacity volume depending on cluster‘s zone.
+qy_type: 0
+qy_maxSize: 500
+qy_minSize: 10
+qy_stepSize: 10
+qy_fsType: ext4
 
-# Ceph_rbd  deployment
-ceph_rbd_enabled: true
-ceph_rbd_is_default_class: true
-ceph_rbd_storage_class: rbd
-# e.g. ceph_rbd_monitors:
-#   - 172.24.0.1:6789
-#   - 172.24.0.2:6789
-#   - 172.24.0.3:6789
-ceph_rbd_monitors:
-  - 192.168.100.8:6789
-ceph_rbd_admin_id: admin
-# e.g. ceph_rbd_admin_secret: AQAnwihbXo+uDxAAD0HmWziVgTaAdai90IzZ6Q==
-ceph_rbd_admin_secret: AQCU00Zb5YYZAxAA9Med5rbKZT+pA91vMYM0Jg==
-ceph_rbd_pool: rbd
-ceph_rbd_user_id: admin
-# e.g. ceph_rbd_user_secret: AQAnwihbXo+uDxAAD0HmWziVgTaAdai90IzZ6Q==
-ceph_rbd_user_secret: AQCU00Zb5YYZAxAA9Med5rbKZT+pA91vMYM0Jg==
-ceph_rbd_fsType: ext4
-ceph_rbd_imageFormat: 1
 ```
 
 ### 第三步: 安装 KubeSphere
@@ -187,9 +166,9 @@ Please input an option: 2
 
 **提示：**
 
-> - 安装程序会提示您是否已经配置过存储，若未配置请输入 "no"，返回目录继续配置存储并参考 <a href="https://docs.kubesphere.io/express/zh-CN/KubeSphere-Installer-Guide/#附录1：存储配置说明" target="_blank">存储配置</a>
-> - dev 版本的安装包不再需要配置 ssh 免密登录，只提示用户是否配置过存储。
-> - taskbox 需配置与待部署集群中所有节点的 `ssh 免密登录`，若还未配置 ssh 免密登录，在执行 `install.sh` 安装脚本时会提示用户是否已经配置免密登录，输入 "no" 安装程序将会帮您自动配置 ssh 免密登录，如下图所示:
+> - 安装程序会提示您是否已经配置过存储，若未配置请输入 "no"，返回目录继续配置存储并参考 <a href="https://docs.kubesphere.io/express/zh-CN/KubeSphere-Installer-Guide/#存储配置说明" target="_blank">存储配置</a>
+> - Dev 和 Offline 版本的安装包不再需要配置 ssh 免密登录，只提示用户是否配置过存储。
+> - 若下载的是 Alpha 版本的安装包， taskbox 需配置与待部署集群中所有节点的 `ssh 免密登录`，若还未配置 ssh 免密登录，在执行 `install.sh` 安装脚本时会提示用户是否已经配置免密登录，输入 "no" 安装程序将会帮您自动配置 ssh 免密登录，如下图所示:
 
 ```bash
 ######################################################################
