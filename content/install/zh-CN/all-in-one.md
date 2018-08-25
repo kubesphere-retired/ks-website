@@ -11,11 +11,21 @@
 | ubuntu 16.04 LTS 64bit | CPU：8 核 <br/> 内存：12G <br/> 磁盘：40G | CPU：16 核 <br/> 内存：32G <br/> 磁盘：100G |
 | CentOS 7.4 64bit | CPU：8 核 <br/> 内存：12 G <br/> 磁盘：40 G | CPU：16 核 <br/> 内存：32 G <br/> 磁盘：100 G |
 
-### 第二步: 准备 KubeSphere 安装文件
+### 第二步: 准备安装包
 
 **1.** 下载 <a href="http://t.cn/RDVA7ek" target="_blank">KubeSphere Installer</a>。
 
-> 说明： alpha 版是目前在 Ubuntu 16.04 经过测试的版本。 若系统是 CentOS 7.4，请下载 `kubesphere-all-express-1.0.0-dev-2018xxxx.tar.gz` 版本的安装包。 (此版本也支持 Ubuntu 16.04)
+|KubeSphere 版本|支持系统（将支持更多系统）|下载|
+|--------------|-------|----|
+|Dev 版|Ubuntu 16.04 LTS 64bit， <br> CentOS 7.4 64bit| [下载 Dev 版](http://t.cn/RDVA7ek) |
+|Stable (Alpha 版)|Ubuntu 16.04 LTS 64bit| [下载 Alpha 版](http://t.cn/RDVA7ek) |
+|Offline 版|Ubuntu 16.04.4 LTS 64bit，<br> Ubuntu 16.04.5 LTS 64bit|[下载 Offline 版](https://139.198.5.33/kubesphere/express/offline/Ubuntu/kubesphere-all-offline-express-1.0.0-alpha_amd64.tar.gz) |
+
+Offline 版也可以通过以下命令获取：
+
+```bash
+$ curl -O -k https://139.198.5.33/kubesphere/express/offline/Ubuntu/kubesphere-all-offline-express-1.0.0-alpha_amd64.tar.gz -u kubesphere
+```
 
 **2.** 获取 KubeSphere 安装包后，以 Alpha 版本的安装包为例，执行以下命令解压安装包。若下载的是 Dev 或 Offline 版本，则替换为 Dev 或 Offline 对应的包名和目录名。
 
@@ -29,7 +39,7 @@ $ tar -zxvf kubesphere-all-express-1.0.0-alpha.tar.gz
 $ cd kubesphere-all-express-1.0.0-alpha
 ```
 
-###  第三步: 执行部署
+###  第三步: 安装 KubeSphere
 
 > - 通常情况您不需要修改任何配置，直接安装即可。
 > - 若您需要自定义配置文件的安装参数，如网络、存储等相关内容需在 **`conf/vars.yml`** 配置文件中指定或修改。
@@ -93,7 +103,7 @@ ks-apiserver-nodeport: 32002
 KubeSphere 部署成功后，可以使用以下的用户名和密码登录 KubeSphere 控制台体验：
 
 > Account: admin@kubesphere.io 
-
+>
 > Password: passw0rd
 
-详情请参考 <a href="https://docs.kubesphere.io/express/zh-CN/user-case/" target="_blank">《KubeSphere 用户指南》</a>。
+关于如何使用请参考 <a href="https://docs.kubesphere.io/express/zh-CN/user-case/" target="_blank">《KubeSphere 用户指南》</a>。
