@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="40px" viewBox="0 0 64 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Select-KubeSphere-Version" transform="translate(-280.000000, -635.000000)">
+            <g id="Group" transform="translate(280.000000, 621.000000)">
+                <polygon id="Rectangle-9" points="0 0 64 0 64 64 0 64"></polygon>
+                <path d="M49.3333333,32 L61.3333333,32 C62.8060927,32 64,33.1939073 64,34.6666667 L64,49.3333333 L12,49.3333333 L12,17.3333333 C12,15.860574 13.1939073,14.6666667 14.6666667,14.6666667 L44,14.6666667 C45.4727593,14.6666667 46.6666667,15.860574 46.6666667,17.3333333 L56.3788828,17.3333333 C57.6950723,17.3333333 58.8144046,18.2936297 59.0145406,19.5945142 L60.1025641,26.6666667 L52,26.6666667 C50.5272407,26.6666667 49.3333333,27.860574 49.3333333,29.3333333 L49.3333333,32 Z" id="Combined-Shape" fill="#51B484"></path>
+                <polygon id="Rectangle" fill="#36435C" points="0 26.6666667 9.33333333 26.6666667 9.33333333 32 0 32"></polygon>
+                <polygon id="Rectangle-Copy" fill="#36435C" points="4 34.6666667 9.33333333 34.6666667 9.33333333 40 4 40"></polygon>
+                <circle id="Oval-2-Copy" fill="#36435C" cx="52" cy="49.3333333" r="4"></circle>
+                <circle id="Oval-2-Copy-2" fill="#36435C" cx="24" cy="49.3333333" r="4"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,25 @@
+.checkbox {
+  cursor: pointer;
+
+  .input {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: solid 1px #d8dee5;
+    vertical-align: middle;
+
+    & > svg {
+      margin-top: 2px;
+      margin-left: 2px;
+    }
+  }
+
+  &.checked {
+    .input {
+      background-color: #404e68;
+      border: 1px solid #404e68;
+    }
+  }
+}

@@ -13,10 +13,10 @@
         margin-bottom: 0;
         transform: translateY(4px);
       }
-      
+
       &.planning {
         :global {
-          .dot{
+          .dot {
             width: 14px;
             height: 14px;
             background-color: #ffffff;
@@ -59,7 +59,7 @@
     height: 2px;
     border: solid 1px #adebb5;
   }
-  
+
   @media only screen and (max-width: $mobile-max-width) {
     .dot {
       display: block;

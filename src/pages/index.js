@@ -43,7 +43,7 @@ const Banner = ({ t }) => {
           )}
         </p>
         <div className="banner-links">
-          <Link to={'/install'}>
+          <Link to={'/download'}>
             <Button type="primary" size="large">
               {t('Get Community Edition')}
             </Button>
@@ -205,10 +205,8 @@ const Contribution = ({ t }) => (
         <ContribCard icon={ChatIcon} title={t('Communication')}>
           <ul className="list">
             <li>
-              {t('Find us on the Slack channel')}：<a
-                href="https://kubesphere.slack.com"
-                target="_blank"
-              >
+              {t('Find us on the Slack channel')}：
+              <a href="https://kubesphere.slack.com" target="_blank">
                 kubesphere.slack.com
               </a>
             </li>

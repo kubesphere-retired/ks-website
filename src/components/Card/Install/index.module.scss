@@ -11,7 +11,7 @@
   text-align: left;
   transition: all $transition-speed ease;
   vertical-align: top;
-  
+
   &:hover {
     box-shadow: 0 4px 15px 0 rgba(7, 42, 68, 0.1);
   }
@@ -49,7 +49,7 @@
     box-shadow: 0 4px 15px 0 rgba(7, 42, 68, 0.1);
 
     & > svg {
-      color: #55BC8A;
+      color: #55bc8a;
     }
   }
 }
