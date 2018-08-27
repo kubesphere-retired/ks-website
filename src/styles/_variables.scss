@@ -1,7 +1,8 @@
-
-$font-family: "PingFang SC", "Lantinghei SC", "Helvetica Neue", Helvetica, Arial, "Microsoft YaHei", 微软雅黑, STHeitiSC-Light, simsun, 宋体, "WenQuanYi Zen Hei", "WenQuanYi Micro Hei", sans-serif;
-$font-family-id: "Proxima Nova";
-$font-family-code: 'PT Mono', Monaco, Menlo, Consolas, "Courier New", monospace;
+$font-family: 'PingFang SC', 'Lantinghei SC', 'Helvetica Neue', Helvetica, Arial,
+  'Microsoft YaHei', 微软雅黑, STHeitiSC-Light, simsun, 宋体,
+  'WenQuanYi Zen Hei', 'WenQuanYi Micro Hei', sans-serif;
+$font-family-id: 'Proxima Nova';
+$font-family-code: 'PT Mono', Monaco, Menlo, Consolas, 'Courier New', monospace;
 
 $body-size: 14px;
 $size-normal: 14px;
@@ -15,17 +16,22 @@ $font-thin: 300;
 $border-radius: 8px;
 $border-radius-sm: 5px;
 
-$transition-speed: .3s;
+$transition-speed: 0.3s;
 
-$green: #55BC8A;
-$primary: #55BC8A;
-$text-color: #303E5A;
+$green: #55bc8a;
+$primary: #55bc8a;
+$text-color: #303e5a;
 $desc-color: #485b7f;
-$border-color: #CFD9DF;
+$border-color: #cfd9df;
 
 $base-shadow: 0 2px 4px 0 rgba(72, 91, 127, 0.2);
 
-$headings: (h1: 40px, h2: 24px, h3: 16px, h4: 14px);
+$headings: (
+  h1: 40px,
+  h2: 24px,
+  h3: 16px,
+  h4: 14px,
+);
 
 $header-height: 96px;
 

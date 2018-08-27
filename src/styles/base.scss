@@ -1,6 +1,4 @@
 html {
-  overflow: visible;  // overwrite overflow from minireset
-  height: 100%;
   background-color: rgb(245, 248, 249);
 }
 
@@ -16,7 +14,8 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-button, input {
+button,
+input {
   font-family: $font-family;
 }
 
@@ -29,7 +28,11 @@ a {
   transition: color $transition-speed ease;
 }
 
-a, a:hover, a:focus, a:active, a:visited {
+a,
+a:hover,
+a:focus,
+a:active,
+a:visited {
   text-decoration: none;
 }
 
@@ -57,5 +60,11 @@ div {
   }
 }
 
-::-moz-selection{background: #369a6a; color: #fff } 
-::selection {background: #369a6a;color: #fff}
+::-moz-selection {
+  background: #369a6a;
+  color: #fff;
+}
+::selection {
+  background: #369a6a;
+  color: #fff;
+}

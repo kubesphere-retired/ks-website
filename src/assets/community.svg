@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="52px" viewBox="0 0 40 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon-Premium</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Select-KubeSphere-Version" transform="translate(-292.000000, -497.000000)">
+            <g id="Group-11" transform="translate(236.000000, 459.000000)">
+                <g id="Group-9" transform="translate(44.000000, 32.000000)">
+                    <g id="Icon-Premium">
+                        <polygon id="Bound" points="0 0 64 0 64 64 0 64"></polygon>
+                        <polygon id="Shape" fill="#55BC8A" points="12 6.66666667 52 6.66666667 52 17.3333333 12 17.3333333"></polygon>
+                        <path d="M12,20 L52,20 L52,34.6666667 C52,42.0529057 47.9290345,48.8378483 41.4117647,52.3137255 L32,57.3333333 L22.5882353,52.3137255 C16.0709655,48.8378483 12,42.0529057 12,34.6666667 L12,20 Z" id="Shape" fill="#55BC8A"></path>
+                        <polygon id="Star" fill="#36435C" points="32 39.9294328 26.4186965 44.0031554 28.5683192 37.4361708 22.9692612 33.3868852 29.8791047 33.4019881 32 26.8256694 34.1208953 33.4019881 41.0307388 33.3868852 35.4316808 37.4361708 37.5813035 44.0031554"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

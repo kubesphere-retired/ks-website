@@ -10,15 +10,17 @@ const Button = ({
   type = 'primary',
   onClick,
   ghost = false,
+  disabled = false,
 }) => (
   <button
     className={classnames(
       styles.button,
       styles[type],
       styles[size],
-      { [styles.ghost]: ghost },
+      { [styles.ghost]: ghost, [styles.disabled]: disabled },
       className
     )}
+    disabled={disabled}
     onClick={onClick}
   >
     {children}

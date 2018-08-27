@@ -1,0 +1,145 @@
+@import '../../../styles/variables';
+
+:global {
+  .ReactModal__Content {
+    @media only screen and (max-width: $mobile-max-width) {
+      width: auto !important;
+      padding: 20px;
+    }
+  }
+}
+
+.body {
+  padding: 65px 0;
+  margin: 130px auto;
+  background-color: #fff;
+  border-radius: 4px;
+
+  @media only screen and (max-width: $mobile-max-width) {
+    margin: 0;
+    padding: 0;
+    padding: 56px 20px;
+  }
+}
+
+.leftContent {
+  display: inline-block;
+  width: 400px;
+  height: 400px;
+  padding: 92px 40px;
+  border-right: 2px solid #d8dee5;
+  vertical-align: top;
+  text-align: center;
+
+  @media only screen and (max-width: $mobile-max-width) {
+    display: block;
+    width: auto;
+    height: auto;
+    border: none;
+    margin-bottom: 40px;
+    padding: 0;
+  }
+
+  svg {
+    width: 48px;
+    height: 48px;
+    margin-right: 28px;
+    vertical-align: middle;
+  }
+
+  .text {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+  }
+}
+
+.rightContent {
+  display: inline-block;
+  width: 560px;
+  height: 400px;
+  padding: 0 58px;
+  vertical-align: top;
+
+  @media only screen and (max-width: $mobile-max-width) {
+    display: block;
+    width: auto;
+    height: auto;
+    padding: 0;
+  }
+
+  a {
+    color: $primary;
+  }
+
+  .form {
+    width: 400px;
+
+    @media only screen and (max-width: $mobile-max-width) {
+      width: auto;
+    }
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    height: 36px;
+    padding: 6px 8px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: solid 2px #ccd3db;
+    line-height: 1.71;
+    color: #36435c;
+    font-size: 14px;
+    box-sizing: border-box;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: #c1c9d1;
+    }
+  }
+
+  textarea {
+    height: auto;
+    resize: none;
+  }
+
+  button {
+    float: right;
+    margin-top: 5px;
+  }
+
+  :global {
+    .form-item-group {
+      width: 400px;
+      margin-top: 12px;
+
+      @media only screen and (max-width: $mobile-max-width) {
+        width: auto;
+      }
+
+      & > .form-item {
+        display: inline-block;
+        width: calc(50% - 10px);
+        vertical-align: top;
+        margin-top: 0;
+
+        @media only screen and (max-width: $mobile-max-width) {
+          display: block;
+          width: auto;
+        }
+
+        & + .form-item {
+          margin-left: 20px;
+
+          @media only screen and (max-width: $mobile-max-width) {
+            margin-left: 0;
+          }
+        }
+      }
+    }
+  }
+}

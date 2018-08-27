@@ -1,0 +1,125 @@
+@import '../../../styles/variables';
+
+.body {
+  padding: 65px 0;
+  margin: 130px auto;
+  background-color: #fff;
+  border-radius: 4px;
+  
+  @media only screen and (max-width: $mobile-max-width) {
+    margin: 0;
+    padding: 0;
+    padding: 56px 20px;
+  }
+}
+
+.leftContent {
+  display: inline-block;
+  width: 400px;
+  height: 400px;
+  padding: 92px 40px;
+  border-right: 2px solid #d8dee5;
+  vertical-align: top;
+  text-align: center;
+
+  @media only screen and (max-width: $mobile-max-width) {
+    display: block;
+    width: auto;
+    height: auto;
+    border: none;
+    margin-bottom: 40px;
+    padding: 0;
+  }
+
+  svg {
+    width: 48px;
+    height: 48px;
+    margin-right: 28px;
+    vertical-align: middle;
+  }
+
+  .text {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+  }
+}
+
+.rightContent {
+  display: inline-block;
+  width: 560px;
+  height: 400px;
+  padding: 92px 58px;
+  vertical-align: top;
+
+  @media only screen and (max-width: $mobile-max-width) {
+    display: block;
+    width: auto;
+    height: auto;
+    padding: 0;
+  }
+
+  a {
+    color: $primary;
+  }
+}
+
+
+.checkbox {
+  display: block;
+  margin-top: 12px;
+
+  & > span {
+    line-height: 1.71;
+    color: #8f94a1;
+    margin-left: 17px;
+  }
+}
+
+.input {
+  position: relative;
+  height: 48px;
+  border-radius: 24px;
+  background-color: #f9fbfd;
+  border: solid 2px #d8dee5;
+
+  & > input {
+    width: 440px;
+    padding: 11px 101px 11px 51px;
+    border-radius: 24px;
+    line-height: 1.71;
+    color: #36435c;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    background-color: transparent;
+    box-sizing: border-box;
+
+    @media only screen and (max-width: $mobile-max-width) {
+      width: auto;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: #8f94a1;
+      font-weight: 400;
+    }
+  }
+
+  & > svg {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 10px;
+    left: 17px;
+  }
+
+  & > button {
+    position: absolute;
+    top: 4px;
+    right: 5px;
+  }
+}

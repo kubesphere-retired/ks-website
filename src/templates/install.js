@@ -26,7 +26,8 @@ const Banner = ({ t }) => (
     <div style={{ textAlign: 'center' }}>
       <a href="https://github.com/kubesphere/kubesphere" target="_blank">
         <Button type="primary" ghost size="large">
-          <GithubIcon />Github
+          <GithubIcon />
+          Github
         </Button>
       </a>
     </div>

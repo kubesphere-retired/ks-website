@@ -17,7 +17,11 @@ import Footer from '../components/Footer/index'
 import bg1 from '../assets/bg-1.svg'
 import bg2 from '../assets/bg-2.svg'
 
-const Layout = ({ children, data }) => {
+const Layout = ({ children, location, data }) => {
+  const path = location.pathname.slice(1)
+
+  const showBg = path !== 'download'
+
   return (
     <div className="main">
       <Helmet
@@ -32,8 +36,8 @@ const Layout = ({ children, data }) => {
         ]}
       />
       <Header siteTitle={data.site.siteMetadata.title} />
-      <img className="bg1" src={bg1} alt="" />
-      <img className="bg2" src={bg2} alt="" />
+      {showBg && <img className="bg1" src={bg1} alt="" />}
+      {showBg && <img className="bg2" src={bg2} alt="" />}
       {children()}
       <Footer />
     </div>
