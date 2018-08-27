@@ -21,9 +21,7 @@ class ExpressModal extends React.Component {
       },
       () => {
         const query = Object.keys(data).map(key => `${key}=${data[key]}`).join('&')
-        const xhr = new XMLHttpRequest()
-        xhr.open("GET", `https://kubesphere.io/apply?${query}`)
-        xhr.send()
+        fetch(`/apply.html?${query}&version=express`).then()
       }
     )
   }

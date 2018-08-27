@@ -39,12 +39,10 @@ class CommunityModal extends React.Component {
       },
       () => {
         const { value, notify } = this.state
+        const query = `email=${value}&notify=${notify}&version=community`
 
-        const a = document.createElement('a')
-        a.download = 'kubesphere.tgz'
-        a.target = "_blank"
-        a.href = `https://kubesphere.anybox.qingcloud.com/s/zFccwNOKC0MNu1cA3lkZZIueyr1cqvgF?email=${value}&notify=${notify}`
-        a.click()
+        fetch(`/apply.html?${query}`).then()
+        window.open('https://kubesphere.anybox.qingcloud.com/s/zFccwNOKC0MNu1cA3lkZZIueyr1cqvgF', '_blank')
       }
     )
   }

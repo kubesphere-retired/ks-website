@@ -1,6 +1,7 @@
 require('es6-shim')
 require('promise-polyfill')
 require('../utils/polifills')
+require('whatwg-fetch')
 
 import React from 'react'
 import PropTypes from 'prop-types'
