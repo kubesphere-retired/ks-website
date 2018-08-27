@@ -436,23 +436,20 @@
     }
 
     & > a {
-      display: none;
+      display: block;
       position: absolute;
       top: 50%;
       right: 44px;
       color: $primary;
       transform: translateY(-50%);
+
+      @media only screen and (max-width: $mobile-max-width) {
+        display: none;
+      }
     }
 
     &:hover {
       box-shadow: 0 4px 15px 0 rgba(7, 42, 68, 0.1);
-
-      & > a {
-        display: block;
-        @media only screen and (max-width: $mobile-max-width) {
-          display: none;
-        }
-      }
     }
 
     & + li {
