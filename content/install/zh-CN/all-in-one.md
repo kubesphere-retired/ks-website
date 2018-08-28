@@ -13,19 +13,13 @@
 
 ### 第二步: 准备安装包
 
-**1.** 下载 <a href="http://t.cn/RDVA7ek" target="_blank">KubeSphere Installer</a>。
+**1.**  下载 [KubeSphere Installer](https://kubesphere.io/download/)，跳转到下载页面后也可以通过 `curl -O url` 或 `wget url` 命令获取 Installer。
 
-|KubeSphere 版本|支持系统（将支持更多系统）|下载|
-|--------------|-------|----|
-|Dev 版|Ubuntu 16.04 LTS 64bit， <br> CentOS 7.4 64bit| [下载 Dev 版](http://t.cn/RDVA7ek) |
-|Stable (Alpha 版)|Ubuntu 16.04 LTS 64bit| [下载 Alpha 版](http://t.cn/RDVA7ek) |
-|Offline 版|Ubuntu 16.04.4 LTS 64bit，<br> Ubuntu 16.04.5 LTS 64bit|[下载 Offline 版](https://139.198.5.33/kubesphere/express/offline/Ubuntu/kubesphere-all-offline-express-1.0.0-alpha_amd64.tar.gz) |
-
-Offline 版也可以通过以下命令获取：
-
-```bash
-$ curl -O -k https://139.198.5.33/kubesphere/express/offline/Ubuntu/kubesphere-all-offline-express-1.0.0-alpha_amd64.tar.gz -u kubesphere
-```
+|KubeSphere 版本|支持系统（将支持更多系统）|
+|--------------|-------|
+|Dev 版|Ubuntu 16.04 LTS 64bit， <br> CentOS 7.4 64bit| 
+|Stable (Alpha 版)|Ubuntu 16.04 LTS 64bit| 
+|Offline 版|Ubuntu 16.04.4 LTS 64bit，<br> Ubuntu 16.04.5 LTS 64bit|
 
 **2.** 获取 KubeSphere 安装包后，以 Alpha 版本的安装包为例，执行以下命令解压安装包。若下载的是 Dev 或 Offline 版本，则替换为 Dev 或 Offline 对应的包名和目录名。
 
