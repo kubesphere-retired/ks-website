@@ -9,6 +9,10 @@ export default {
     ),
   },
   en: {
-    base: Object.assign({}, require('./en/base')),
+    base: Object.assign(
+      {}, 
+      require('./en/base'),
+      require('./en/home'),
+    ),
   },
 }
