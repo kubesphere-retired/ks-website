@@ -20,7 +20,7 @@ module.exports = {
   'Thank you for downloading KubeSphere': '感谢您下载KubeSphere',
   'If you have any questions, see the <a href="//docs.kubesphere.io/express/zh-CN/KubeSphere-Installer-Guide/" target="_blank">KubeSphere Installation Guide</a>': '如果您遇到问题，可参阅<a href="//docs.kubesphere.io/express/zh-CN/KubeSphere-Installer-Guide/" target="_blank">部署文档</a>。',
   'More Options': '更多选择',
-  'If you need to install offline please select the <a href="//kubesphere.anybox.qingcloud.com/s/UBBctImJLtxnkqT5hrEaijjolTENNVsr" target="_blank">offline installation package</a>;': '如果您需要离线安装请选择<a href="//kubesphere.anybox.qingcloud.com/s/UBBctImJLtxnkqT5hrEaijjolTENNVsr" target="_blank">离线安装包</a>;',
+  'If you need to install offline please select the <a href="//kubesphere.anybox.qingcloud.com/s/UBBctImJLtxnkqT5hrEaijjolTENNVsr" target="_blank">offline installation package</a>': '如果您需要离线安装请选择<a href="//kubesphere.anybox.qingcloud.com/s/UBBctImJLtxnkqT5hrEaijjolTENNVsr" target="_blank">离线安装包</a>',
   'If you already have a Kubernetes cluster, you can select <a href="" target="_blank"> KS-Core installation </a>': '如果您已有kubernetes集群您可以选择 <a href="" target="_blank">Ks-Core 安装</a>',
   'Please keep your email and phone works so that our pre-sales team can communicate with you as soon as possible': '请您保持联系方式的畅通，以便于我们售前团队与您及时沟通',
   'You can also download the trial version': '您也可以下载试用版',

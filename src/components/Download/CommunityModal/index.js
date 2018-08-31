@@ -63,12 +63,12 @@ class CommunityModal extends React.Component {
               ),
             }}
           />
-          <div className="h4">{}</div>
+          <div className="h4">{t('More Options')}</div>
           <p
             style={{ marginTop: 8 }}
             dangerouslySetInnerHTML={{
               __html: t(
-                'If you need to install offline please select the <a href="//kubesphere.anybox.qingcloud.com/s/UBBctImJLtxnkqT5hrEaijjolTENNVsr" target="_blank">offline installation package</a>;'
+                'If you need to install offline please select the <a href="//kubesphere.anybox.qingcloud.com/s/UBBctImJLtxnkqT5hrEaijjolTENNVsr" target="_blank">offline installation package</a>'
               ),
             }}
           />
