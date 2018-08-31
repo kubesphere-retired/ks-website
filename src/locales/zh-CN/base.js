@@ -1,8 +1,8 @@
 module.exports = {
   Homepage: '首页',
   Installation: '安装',
-  'Commercial Edition': '商业版',
-  'KubeSphere Docs': '文档中心',
+  'Commercial Editions': '商业版',
+  'Documentation': '文档中心',
   'MMM DD YYYY': 'YYYY 年 MM 月 DD 日',
   Products: '产品',
   'Community Edition': '社区版',
