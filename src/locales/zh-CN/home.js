@@ -35,8 +35,8 @@ module.exports = {
     '认真阅读 kubesphere <a href="//github.com/kubesphere/kubesphere/blob/master/docs/welcome-to-KubeSphere-new-developer-guide.md " target="_blank">贡献者指南</a>',
   'Fork KubeSphere Repo': 'fork 项目',
   'Read the KubeSphere User Guide': '阅读《使用手册》',
-  'Participate in the upstream projects of KubeSphere such as Kubernetes, Docker, Kata, etc.':
-    '参与到 Kubesphere 的上游项目如 Kubernetes、Docker、Kata 等',
+  'Participate in the upstream projects of KubeSphere such as Kubernetes, Docker, Istio, etc.':
+    '参与到 KubeSphere 的上游项目如 Kubernetes、Docker、Istio 等',
   Communication: '日常沟通',
   'Find us on the Slack channel': '在 Slack 频道上找到我们',
 }

@@ -202,7 +202,7 @@ const Contribution = ({ t }) => (
             </li>
             <li>
               {t(
-                'Participate in the upstream projects of KubeSphere such as Kubernetes, Docker, Kata, etc.'
+                'Participate in the upstream projects of KubeSphere such as Kubernetes, Docker, Istio, etc.'
               )}
             </li>
           </ul>
