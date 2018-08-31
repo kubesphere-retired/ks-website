@@ -19,7 +19,7 @@ const RoadMap = ({ className, data, t }) => (
         </div>
         <p className={styles.text}>
           {moment(new Date(item.time)).format(t('MMM DD YYYY'))}
-          <br />
+          <div className={styles.br}/>
           {t(item.name)}
         </p>
       </div>

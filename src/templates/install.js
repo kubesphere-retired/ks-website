@@ -1,7 +1,7 @@
 import React from 'react'
 import { translate } from 'react-i18next'
 
-import { getScrollTop } from '../utils/index'
+import { getScrollTop, getLanguage } from '../utils/index'
 
 import Button from '../components/Button/index'
 import InstallCard from '../components/Card/Install/index'
@@ -54,7 +54,7 @@ const Documents = ({ data, selectCard, selectorRef, onCardChange, i18n }) => {
   const edge = data.allMarkdownRemark.edges.find(
     item =>
       item.node.fields.article === selectCard &&
-      item.node.fields.language === i18n.language
+      item.node.fields.language === getLanguage(i18n.language)
   )
 
   const selectInstallCard = INSTALL_CARDS.find(card => card.type === selectCard)

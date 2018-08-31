@@ -4,10 +4,15 @@
   .item {
     display: inline-block;
     vertical-align: top;
+
+    @media only screen and (max-width: 700px) {
+      display: block;
+    }
+
     .tip {
       margin-bottom: 12px;
 
-      @media only screen and (max-width: $mobile-max-width) {
+      @media only screen and (max-width: 700px) {
         display: inline-block;
         vertical-align: top;
         margin-bottom: 0;
@@ -34,10 +39,25 @@
       line-height: 1.71;
       font-family: $font-family-id;
 
-      @media only screen and (max-width: $mobile-max-width) {
+      @media only screen and (max-width: 700px) {
         display: inline-block;
         vertical-align: top;
         margin-left: 20px;
+      }
+
+      @media only screen and (max-width: 400px) {
+        padding-bottom: 12px;
+      }
+
+      .br {
+        @media only screen and (max-width: 700px) {
+          display: inline-block;
+          width: 4px;
+        }
+
+        @media only screen and (max-width: 400px) {
+          display: block;
+        }
       }
     }
   }
@@ -52,6 +72,7 @@
     border-radius: 50%;
     background-color: #55bc8a;
   }
+
   .line {
     display: inline-block;
     vertical-align: middle;
@@ -60,15 +81,22 @@
     border: solid 1px #adebb5;
   }
 
-  @media only screen and (max-width: $mobile-max-width) {
+  @media only screen and (max-width: 700px) {
     .dot {
       display: block;
     }
+
     .line {
       display: block;
       width: 2px;
-      height: 31px;
+      height: 35px;
       margin-left: 5px;
+    }
+  }
+
+  @media only screen and (max-width: 400px) {
+    .line {
+      height: 50px;
     }
   }
 }

@@ -50,7 +50,7 @@ The environment and file monitoring, dependent software installation of KubeSphe
 
 > - Network：KubeSphere supports `calico` by default**
 
-> - Supported Storage Classes：`GlusterFS、CephRBD、local\_volume(Default)`. For details on storage configuration, please refer to <a href="https://docs.kubesphere.io/express/zh-CN/KubeSphere-Installer-Guide/#附录1：存储配置说明" target="_blank">Storage Configuration Instructions</a>
+> - Supported Storage Classes：`GlusterFS、CephRBD、local\_volume(Default)`. For details on storage configuration, please refer to <a href="https://docs.kubesphere.io/express/zh-CN/KubeSphere-Installer-Guide/#存储配置说明" target="_blank">Storage Configuration Instructions</a>
 
 > - All-in-One uses local storage as the storage class by default. Since local storage does not support dynamic provisioning, users may need to create a persistent volume (PV) in advance when creating volumes in the KubeSphere console, installer pre-creates 8 available 10G PVs for testing.
 
