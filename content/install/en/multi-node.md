@@ -246,8 +246,7 @@ Then you will be able to access the KubeSphere web via EIP and port forwarding.
 ### Summary
 When KubeSphere is deployed successfully ，you will be able to use following account and password to log in to the KubeSphere console to experience.
 
-> Account: admin@kubesphere.io 
-
+> Account: admin@kubesphere.io <br />
 > Password: passw0rd
 
 For details, please refer to <a href="https://docs.kubesphere.io/express/zh-CN/user-case/" target="_blank">KubeSphere User Guide</a>， and learn how to get started with it！

@@ -26,7 +26,7 @@ module.exports = {
   'You can also download the trial version': '您也可以下载试用版',
   'Online Installation': '在线安装',
   'Offline Installation': '离线安装',
-  'Welcome to the KubeSphere Community Edition, it\'s only recommended to understand the KubeSphere features. For production environment we recommend you to purchase the Commercial Edition.': '欢迎使用 KubeSphere 社区版，仅建议您用来了解 KubeSphere 功能特性,生产环境建议您购买商业版',
+  'Welcome to the KubeSphere Community Edition, it\'s only recommended to understand the KubeSphere features. For production environment we recommend you to purchase the Commercial Edition.': '欢迎使用 KubeSphere 社区版，仅建议您用来了解 KubeSphere 功能特性，生产环境建议您购买商业版',
   'KubeSphere provides workload and cluster management, wizard design operation interface, application repository and application template management, as well as our professional team support.': '提供工作负载及集群管理，可视化图形操作界面，应用及应用模板管理，并提供专业的团队服务支持',
   'KubeSphere provides workload management, CI/CD and Microservices governance, multi-cluster management, as well as multi-tenancy and fine-grained privilege separation for users of different enterprise scales.': '提供工作负载，CI/CD 以及微服务治理平台，多集群管理，多租户以及细粒度的权限划分，适用于不同企业规模的用户'
 }
