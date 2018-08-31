@@ -5,7 +5,7 @@
   height: $header-height;
   line-height: $header-height;
   background-color: transparent;
-  
+
   @media only screen and (max-width: $mobile-max-width) {
     position: fixed;
     width: 100vw;
@@ -54,7 +54,7 @@
   }
 }
 
-.nav {  
+.nav {
   height: $header-height;
 
   a {
@@ -88,7 +88,7 @@
     box-shadow: 0 8px 16px 0 rgba(36, 46, 66, 0.16);
     background-color: #fff;
     z-index: 3;
-    
+
     a {
       display: block;
       border-radius: 24px;
@@ -133,15 +133,6 @@
 
     & + .v-line {
       margin-top: 6px;
-    }
-  }
-}
-
-
-:global {
-  .ReactModal__Body--open {
-    .main {
-      filter: blur(2px);
     }
   }
 }

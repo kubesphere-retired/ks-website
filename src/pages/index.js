@@ -39,11 +39,11 @@ const Banner = ({ t }) => {
         />
         <p>
           {t(
-            'Kubesphere.io is an upstream project of the KubeSphere container management platform. Our vision is to provide an easier, more friendly and more powerful distributed management platform for individuals and enterprises based on Kubernetes,  as well as meet more business demands and help more users to use Kubernetes faster and better.'
+            'what_is_kubesphere_io'
           )}
         </p>
         <div className="banner-links">
-          <Link to={'/install'}>
+          <Link to={'/download'}>
             <Button type="primary" size="large">
               {t('Get Community Edition')}
             </Button>
@@ -112,11 +112,13 @@ const AppInstall = ({ t }) => (
     <div className="h1">
       {t('Enable one-click deployment for application.')}
     </div>
-    <p>
-      {t(
-        'Based on the open source OpenPitrix project, providing full lifecycle management of applications, including development, test, release, upgrade and remove, as well as multi-application registries management and one-click deployment of applications'
-      )}
-    </p>
+    <p
+      dangerouslySetInnerHTML={{
+        __html: t(
+          'Based on the open source <a href="//openpitrix.io" target="_blank">OpenPitrix</a> project, providing full lifecycle management of applications, including development, test, release, upgrade and remove, as well as multi-application registries management and one-click deployment of applications'
+        ),
+      }}
+    />
     <div className="slider-wrapper">
       <img src={SliderBg} alt="" />
       <Slider className="slider" data={sliders} />
@@ -128,15 +130,15 @@ const AppInstall = ({ t }) => (
 const ROADMAP = [
   {
     name: 'Community Edition 1.0.0 Alpha',
-    time: '2018-6-30',
+    time: '2018/6/30 00:00:00',
     status: 'Released',
   },
   {
     name: 'Community Edition 1.0.0 Beta',
-    time: '2018-7-31',
+    time: '2018/7/31 00:00:00',
     status: 'In Progress',
   },
-  { name: 'Community Edition 1.0.0 GA', time: '2018-8-31', status: 'Planning' },
+  { name: 'Community Edition 1.0.0 GA', time: '2018/8/31', status: 'Planning' },
 ]
 
 const Contribution = ({ t }) => (
@@ -177,7 +179,7 @@ const Contribution = ({ t }) => (
             <li
               dangerouslySetInnerHTML={{
                 __html: t(
-                  'Read the KubeSphere <a href="//github.com/kubesphere/kubesphere/tree/master/docs" target="_blank">Contributor Guide</a> carefully'
+                  'Read the KubeSphere <a href="//github.com/kubesphere/kubesphere/blob/master/docs/welcome-to-KubeSphere-new-developer-guide.md " target="_blank">Contributor Guide</a> carefully'
                 ),
               }}
             />
@@ -191,13 +193,16 @@ const Contribution = ({ t }) => (
               </a>
             </li>
             <li>
-              <a href="" target="_blank">
+              <a
+                href="//docs.kubesphere.io/express/zh-CN/user-case/"
+                target="_blank"
+              >
                 {t('Read the KubeSphere User Guide')}
               </a>
             </li>
             <li>
               {t(
-                'Participate in the upstream projects of KubeSphere such as Kubernetes, Docker, Kata, etc.'
+                'Participate in the upstream projects of KubeSphere such as Kubernetes, Docker, Istio, etc.'
               )}
             </li>
           </ul>
@@ -205,10 +210,8 @@ const Contribution = ({ t }) => (
         <ContribCard icon={ChatIcon} title={t('Communication')}>
           <ul className="list">
             <li>
-              {t('Find us on the Slack channel')}：<a
-                href="https://kubesphere.slack.com"
-                target="_blank"
-              >
+              {t('Find us on the Slack channel')}：
+              <a href="https://kubesphere.slack.com" target="_blank">
                 kubesphere.slack.com
               </a>
             </li>

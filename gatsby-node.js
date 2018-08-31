@@ -1,10 +1,10 @@
 const path = require(`path`)
-const fs = require("fs-extra")
+const fs = require('fs-extra')
 const chokidar = require('chokidar')
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
-const srcLocales = path.join(__dirname, "/src/locales")
-const publicLocales = path.join(__dirname, "/public/locales")
+const srcLocales = path.join(__dirname, '/src/locales')
+const publicLocales = path.join(__dirname, '/public/locales')
 
 exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
   const { createNodeField } = boundActionCreators
@@ -19,7 +19,7 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
 
     const [framework, language, article] = parts
 
-    createNodeField({ node, name: `slug`, value: slug, })
+    createNodeField({ node, name: `slug`, value: slug })
     createNodeField({ node, name: `framework`, value: framework })
     createNodeField({ node, name: `language`, value: language })
     createNodeField({ node, name: `article`, value: article })
@@ -50,8 +50,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
       })
 
       groups.forEach(framework => {
-
-        if(framework === 'install') {
+        if (framework === 'install') {
           createPage({
             path: framework,
             component: path.resolve(`./src/templates/install.js`),
@@ -67,6 +66,10 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 
 exports.onPostBuild = () => {
   fs.copySync(srcLocales, publicLocales)
+  fs.copySync(
+    path.join(__dirname, '/src/pages/apply.html'),
+    path.join(__dirname, '/public/apply.html')
+  )
 }
 
 exports.modifyWebpackConfig = ({ config, stage }) => {

@@ -54,7 +54,7 @@
     width: 760px;
     margin: 0 auto;
     text-align: center;
-    
+
     @media only screen and (max-width: $mobile-max-width) {
       display: none;
     }
@@ -92,7 +92,7 @@
     & > svg {
       width: 40px;
       height: 40px;
-      color: #55BC8A;
+      color: #55bc8a;
     }
 
     @media only screen and (max-width: $mobile-max-width) {

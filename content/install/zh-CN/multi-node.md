@@ -92,7 +92,7 @@ kube-master
 - 若下载的是 Dev 或 Offline 版本的安装包， 安装包中 `conf/hosts.ini` 的 `[all]` 部分参数如 `ansible_host` 、 `ip` 、 `ansible_become_pass` 和 `ansible_ssh_pass` 需替换为您实际部署环境中各节点对应的参数。注意 `[all]` 中参数的配置方式分为 root 和 非 root 用户，非 root 用户的配置方式在安装包的 `conf/hosts.ini` 的注释部分已给出示例，请根据实际的用户身份修改配置参数。
 
 
-**5.** Multi-Node 模式进行多节点部署时，您需要预先准备好对应的存储服务端，再参考<a href="https://docs.kubesphere.io/express/zh-CN/KubeSphere-Installer-Guide/#附录1：存储配置说明" target="_blank">存储配置</a> 配置集群的存储类型。网络、存储等相关内容需在 ` conf/vars.yml` 配置文件中指定或修改。
+**5.** Multi-Node 模式进行多节点部署时，您需要预先准备好对应的存储服务端，再参考<a href="https://docs.kubesphere.io/express/zh-CN/KubeSphere-Installer-Guide/#存储配置说明" target="_blank">存储配置</a> 配置集群的存储类型。网络、存储等相关内容需在 ` conf/vars.yml` 配置文件中指定或修改。
 
 > 说明：
 > - 根据配置文件按需修改相关配置项，未做修改将以默认参数执行。
@@ -223,8 +223,7 @@ ks-apiserver-nodeport: 32002
 
 KubeSphere 部署成功后，可以使用以下的用户名和密码登录 KubeSphere 控制台体验：
 
-> Account: admin@kubesphere.io 
->
-> Password: passw0rd
+> 用户名: admin@kubesphere.io <br />
+> 密码: passw0rd
 
 关于如何使用请参考 <a href="https://docs.kubesphere.io/express/zh-CN/user-case/" target="_blank">《KubeSphere 用户指南》</a>。

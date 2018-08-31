@@ -1,0 +1,52 @@
+@import '../../styles/variables';
+
+.item {
+  margin-bottom: 12px;
+
+  &.errorItem {
+    :global {
+      .input,
+      .select-control {
+        box-shadow: 0 4px 8px 0 rgba(202, 38, 33, 0.2);
+        border: solid 2px #ca2621 !important;
+        &:focus,
+        &:hover {
+          border: solid 2px #ca2621 !important;
+        }
+      }
+    }
+  }
+
+  .label {
+    display: block;
+    margin-bottom: 6px;
+    line-height: 20px;
+    color: #6b7b95;
+  }
+
+  .control {
+    position: relative;
+  }
+
+  .desc,
+  .error {
+    margin-top: 6px;
+    font-weight: $font-thin;
+    line-height: 20px;
+    color: #c1c9d1;
+  }
+
+  .error {
+    color: #a80600;
+  }
+
+  + .item {
+    margin-top: 12px;
+  }
+
+  :global {
+    .field {
+      margin-bottom: 0 !important;
+    }
+  }
+}

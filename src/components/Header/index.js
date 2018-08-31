@@ -4,25 +4,13 @@ import { translate } from 'react-i18next'
 import classnames from 'classnames'
 
 import Logo from '../Logo'
-import Modal from 'react-modal'
+import Modal from '../Modal/index'
 import styles from './index.module.scss'
 import { getScrollTop } from '../../utils/index'
 
 import Button from '../Button/index'
 
 import { ReactComponent as GithubIcon } from '../../assets/icon-git.svg'
-
-Modal.defaultStyles.overlay = Object.assign({}, Modal.defaultStyles.overlay, {
-  padding: 0,
-  width: '100vw',
-  height: '100vh',
-  backgroundColor: 'rgba(36, 46, 66, 0.06)',
-})
-
-Modal.defaultStyles.content = {
-  position: 'relative',
-  margin: '0 auto',
-}
 
 class Header extends React.Component {
   state = {
@@ -66,13 +54,12 @@ class Header extends React.Component {
 
     return (
       <div className={styles.nav} onClick={this.handleCloseModal}>
-        <Link to="/">{t('Homepage')}</Link>
         <Link to={'/install'}>{t('Installation')}</Link>
         <a href="//docs.kubesphere.io" target="_blank">
-          {t('KubeSphere Docs')}
+          {t('Documentation')}
         </a>
         <a href="https://kubesphere.qingcloud.com/" target="_blank">
-          {t('Commercial Edition')}
+          {t('Commercial Editions')}
         </a>
         <div className={styles.github}>
           <a href="https://github.com/kubesphere/kubesphere" target="_blank">

@@ -4,7 +4,7 @@
   width: 100%;
   padding: 118px 0;
 
-  @media only screen and (max-width: $mobile-max-width) { 
+  @media only screen and (max-width: $mobile-max-width) {
     padding: 80px 0 40px 0;
   }
 
@@ -12,7 +12,7 @@
     width: 960px;
     margin: 0 auto;
 
-    @media only screen and (max-width: $mobile-max-width) { 
+    @media only screen and (max-width: $mobile-max-width) {
       width: 100%;
       padding: 0 20px;
     }
@@ -41,7 +41,7 @@
     vertical-align: top;
     width: calc(100% - 293px);
 
-    @media only screen and (max-width: $mobile-max-width) { 
+    @media only screen and (max-width: $mobile-max-width) {
       width: auto;
       margin-left: 0px;
       margin-top: 63px;
@@ -53,7 +53,7 @@
       justify-content: space-between;
       list-style: none;
 
-      @media only screen and (max-width: $mobile-max-width) { 
+      @media only screen and (max-width: $mobile-max-width) {
         justify-content: start;
       }
 
@@ -64,20 +64,20 @@
         &:last-child {
           margin-right: 0;
         }
-  
+
         & > :global(.h3) {
           font-weight: 600;
           line-height: 1.5;
           color: #171c34;
           margin-bottom: 10px;
         }
-  
+
         & > a {
           display: block;
           line-height: 2;
           color: #919aa3;
           font-family: $font-family-id;
-  
+
           &:hover {
             color: $primary;
           }
