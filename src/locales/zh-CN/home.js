@@ -2,7 +2,7 @@ module.exports = {
   'Foreseeing the future. <br/>Going forward with KubeSphere':
     '预见未来, <br/>遇见 KubeSphere',
   'Kubesphere.io is an upstream project of the KubeSphere container management platform. Our vision is to provide an easier, more friendly and more powerful distributed management platform for individuals and enterprises based on Kubernetes,  as well as meet more business demands and help more users to use Kubernetes faster and better.':
-    'kubesphere.io 是 KubeSphere 容器管理平台的上游开源项目，愿景是基于 Kubernetes 为个人和企业提供更易用，更友好，更强大的分布式容器管理平台，满足更多的业务场景需求，帮助更多的用户能够更快更好的去使用 Kubernetes',
+    'kubesphere.io 是 KubeSphere 容器管理平台的上游开源项目，愿景是基于 Kubernetes 为企业提供更易用、更友好、更强大的分布式容器管理平台，满足更多的业务场景需求，帮助更多的用户能够更快更好地去使用 Kubernetes。',
   'Get Community Edition': '获取社区版',
   'Get Commercial Edition': '获取商业版',
   'What is KubeSphere': '什么是 KubeSphere ？',
@@ -18,8 +18,8 @@ module.exports = {
   'No infrastructure dependencies, no Kubernetes dependencies, support for deployment across physical machines, virtual machines, cloud platforms, and enables Kubernetes clusters of different versions and vendors management.':
     '无基础设施依赖，无 Kubernetes 依赖，支持跨物理机、虚拟机、云平台部署，可以纳管不同版本、不同厂商的 Kubernetes 集群。',
   'Enable one-click deployment for application.': '应用一键部署',
-  'Based on the open source OpenPitrix project, providing full lifecycle management of applications, including development, test, release, upgrade and remove, as well as multi-application registries management and one-click deployment of applications':
-    '基于开源的 OpenPitrix 项目，提供应用的全生命周期管理，包含开发、测试、发布、升级、下架等应用相关操作，还包括应用仓库管理、一键部署应用等。',
+  'Based on the open source <a href="//openpitrix.io" target="_blank">OpenPitrix</a> project, providing full lifecycle management of applications, including development, test, release, upgrade and remove, as well as multi-application registries management and one-click deployment of applications':
+    '基于开源的 <a href="//openpitrix.io" target="_blank">OpenPitrix</a> 项目，提供应用的全生命周期管理，包含开发、测试、审核、发布、升级、下架等应用相关操作，还包括应用仓库管理、一键部署应用等。',
   'How to contribute': '如何参与贡献',
   'If you would like to participate in the development of KubeSphere upstream, or understand the progress of the project and report the bug, you can keep in touch with us through GitHub and Slack.':
     '积极参与到 KubeSphere 上游的开发中，了解项目进度，以及 Bug 提交，可以通过 GitHub 与 Slack 与我们保持联系。',
