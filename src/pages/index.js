@@ -128,15 +128,15 @@ const AppInstall = ({ t }) => (
 const ROADMAP = [
   {
     name: 'Community Edition 1.0.0 Alpha',
-    time: '2018-6-30',
+    time: '2018/6/30 00:00:00',
     status: 'Released',
   },
   {
     name: 'Community Edition 1.0.0 Beta',
-    time: '2018-7-31',
+    time: '2018/7/31 00:00:00',
     status: 'In Progress',
   },
-  { name: 'Community Edition 1.0.0 GA', time: '2018-8-31', status: 'Planning' },
+  { name: 'Community Edition 1.0.0 GA', time: '2018/8/31', status: 'Planning' },
 ]
 
 const Contribution = ({ t }) => (
@@ -177,7 +177,7 @@ const Contribution = ({ t }) => (
             <li
               dangerouslySetInnerHTML={{
                 __html: t(
-                  'Read the KubeSphere <a href="//github.com/kubesphere/kubesphere/tree/master/docs" target="_blank">Contributor Guide</a> carefully'
+                  'Read the KubeSphere <a href="//github.com/kubesphere/kubesphere/blob/master/docs/welcome-to-KubeSphere-new-developer-guide.md " target="_blank">Contributor Guide</a> carefully'
                 ),
               }}
             />
@@ -191,7 +191,7 @@ const Contribution = ({ t }) => (
               </a>
             </li>
             <li>
-              <a href="" target="_blank">
+              <a href="//docs.kubesphere.io/express/zh-CN/user-case/" target="_blank">
                 {t('Read the KubeSphere User Guide')}
               </a>
             </li>
