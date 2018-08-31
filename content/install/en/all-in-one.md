@@ -1,7 +1,7 @@
 ##  All-in-One Mode
 
 
-`All-in-One` mode means single node deployment, can be deployed to a single host for a test or development environment only, it is just recommended to get familiar with installation process or learn about KubeSphere features by following with all-in-one mode installation, which means it can help you to get KubeSphere platform up and running to try out for the first time.  All-in-one mode is not considered a production environment. For formal environment, it is recommended to select `multi-node` instead.
+`All-in-One` mode means single node deployment, can be deployed to a single host for a test or development environment only. It's just recommended to get familiar with installation process or learn about KubeSphere features by following with all-in-one mode installation, which means it can help you to get KubeSphere platform up and running to try out for the first time.  All-in-one mode is not considered a production environment. For formal environment, it‘s recommended to select `multi-node` instead.
 
 
 ### Step 1: Provision Linux Host
@@ -15,15 +15,20 @@ The following section identifies the hardware specifications and system-level re
 | System | Minimum Requirements |  Recommendations |
 | --- | --- | --- |
 | ubuntu 16.04 LTS 64bit | CPU：8 Core <br/> Memory：12G <br/> Disk Space：40G | CPU：16 Core <br/> Memory：32G <br/> Disk Space：100G |
-
+| CentOS 7.4 64bit | CPU：8 Core <br/> Memory：12G <br/> Disk Space：40G | CPU：16 Core <br/> Memory：32G <br/> Disk Space：100G |
 
 
 ###  Step 2: Provision Installation Files
 
-**1.**  Download <a href="https://drive.yunify.com/s/DZ8FAIEaKfU98JT" target="_blank">KubeSphere Installer</a>
+**1.**  Download <a href="https://kubesphere.io/download/" target="_blank">KubeSphere Installer</a>, you will be able to download installer via command like `curl -O url` or `wget url`, actually the url is the download link.
 
+|KubeSphere Version|Operation System（More OS will coming soon）|
+|--------------|-------|
+|Dev |Ubuntu 16.04 LTS 64bit， <br> CentOS 7.4 64bit| 
+|Stable (Alpha )|Ubuntu 16.04 LTS 64bit| 
+|Offline |Ubuntu 16.04.4 LTS 64bit，<br> Ubuntu 16.04.5 LTS 64bit|
 
-**2.**  When you get the installation package, please execute following command to unzip the package.
+**2.**  When you get the installation package, please execute following command to unzip the package. Here showing an example with Alpha installer as following, the installer name should be replaced with download version.
 
 ```
   $ tar -zxvf kubesphere-all-express-1.0.0-alpha.tar.gz
@@ -42,22 +47,22 @@ The following section identifies the hardware specifications and system-level re
 
 The environment and file monitoring, dependent software installation of KubeSphere, automated installation of Kubernetes and etcd, and automated storage configuration, all of these procedures will be automatically processing in this deployment. The KubeSphere installation package will automatically install the relevant dependent software like Ansible (v2.4+)，Python-netaddr (v0.7.18+) and Jinja (v2.9+).
 
-
+**Note:**
 
 > - Generally, you can install it directly without any modification.
 
-> - If you would like to customize the configuration parameters, such as network, storage classes, etc. You will be able to specify the parameters in  `vars.yml`. Otherwise it will be executed with default parameters without any modifications**
+> - If you would like to customize the configuration parameters, such as network, storage classes, etc. You will be able to specify the parameters in  `vars.yml`. Otherwise it will be executed with default parameters without any modifications.
 
-> - Network：KubeSphere supports `calico` by default**
+> - Network：KubeSphere supports `calico` by default.
 
-> - Supported Storage Classes：`GlusterFS、CephRBD、local\_volume(Default)`. For details on storage configuration, please refer to <a href="https://docs.kubesphere.io/express/zh-CN/KubeSphere-Installer-Guide/#附录1：存储配置说明" target="_blank">Storage Configuration Instructions</a>
+> - Supported Storage Classes：`local\_volume(Default), QingCloud CSI, GlusterFS, CephRBD`. For details regarding storage configuration, please refer to <a href="https://docs.kubesphere.io/express/zh-CN/KubeSphere-Installer-Guide/#存储配置说明" target="_blank">Storage Configuration Instructions</a>
 
 > - All-in-One uses local storage as the storage class by default. Since local storage does not support dynamic provisioning, users may need to create a persistent volume (PV) in advance when creating volumes in the KubeSphere console, installer pre-creates 8 available 10G PVs for testing.
 
 
 
 
-The current system is Ubuntu 16.04. It is recommended to use ubuntu as default user to complete following steps.
+Following steps describes how to get started with all-in-one:
 
 **1.** Go into `scripts`
 
