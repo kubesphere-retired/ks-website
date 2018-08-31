@@ -112,11 +112,13 @@ const AppInstall = ({ t }) => (
     <div className="h1">
       {t('Enable one-click deployment for application.')}
     </div>
-    <p>
-      {t(
-        'Based on the open source OpenPitrix project, providing full lifecycle management of applications, including development, test, release, upgrade and remove, as well as multi-application registries management and one-click deployment of applications'
-      )}
-    </p>
+    <p
+      dangerouslySetInnerHTML={{
+        __html: t(
+          'Based on the open source <a href="//openpitrix.io" target="_blank">OpenPitrix</a> project, providing full lifecycle management of applications, including development, test, release, upgrade and remove, as well as multi-application registries management and one-click deployment of applications'
+        ),
+      }}
+    />
     <div className="slider-wrapper">
       <img src={SliderBg} alt="" />
       <Slider className="slider" data={sliders} />
@@ -191,7 +193,10 @@ const Contribution = ({ t }) => (
               </a>
             </li>
             <li>
-              <a href="//docs.kubesphere.io/express/zh-CN/user-case/" target="_blank">
+              <a
+                href="//docs.kubesphere.io/express/zh-CN/user-case/"
+                target="_blank"
+              >
                 {t('Read the KubeSphere User Guide')}
               </a>
             </li>
