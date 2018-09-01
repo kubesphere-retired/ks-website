@@ -4,6 +4,8 @@ import { translate } from 'react-i18next'
 
 import { ReactComponent as EarthIcon } from '../../assets/earth.svg'
 
+import { getLanguage } from '../../utils/index'
+
 import styles from './index.module.scss'
 
 const LANGS = [
@@ -23,7 +25,7 @@ const Language = ({ className, i18n }) => {
         <a
           key={lang.value}
           className={classnames({
-            [styles.select]: lang.value === i18n.language,
+            [styles.select]: lang.value === getLanguage(i18n.language),
           })}
           data-lang={lang.value}
           onClick={handleChange}

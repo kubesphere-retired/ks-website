@@ -92,7 +92,7 @@ kube-master
 - 若下载的是 Dev 或 Offline 版本的安装包， 安装包中 `conf/hosts.ini` 的 `[all]` 部分参数如 `ansible_host` 、 `ip` 、 `ansible_become_pass` 和 `ansible_ssh_pass` 需替换为您实际部署环境中各节点对应的参数。注意 `[all]` 中参数的配置方式分为 root 和 非 root 用户，非 root 用户的配置方式在安装包的 `conf/hosts.ini` 的注释部分已给出示例，请根据实际的用户身份修改配置参数。
 
 
-**5.** Multi-Node 模式进行多节点部署时，您需要预先准备好对应的存储服务端，再参考<a href="https://docs.kubesphere.io/express/zh-CN/KubeSphere-Installer-Guide/#附录1：存储配置说明" target="_blank">存储配置</a> 配置集群的存储类型。网络、存储等相关内容需在 ` conf/vars.yml` 配置文件中指定或修改。
+**5.** Multi-Node 模式进行多节点部署时，您需要预先准备好对应的存储服务端，再参考<a href="https://docs.kubesphere.io/express/zh-CN/KubeSphere-Installer-Guide/#存储配置说明" target="_blank">存储配置</a> 配置集群的存储类型。网络、存储等相关内容需在 ` conf/vars.yml` 配置文件中指定或修改。
 
 > 说明：
 > - 根据配置文件按需修改相关配置项，未做修改将以默认参数执行。
@@ -215,7 +215,7 @@ ks-apiserver-nodeport: 32002
 ########################################################
 ```
 
-**(2)** 您可以通过浏览器，使用集群中任一节点的 IP 地址和端口号（端口号将显示在脚本执行完之后的界面 "ks-console-nodeport" 处），也可以通过公网 IP 及端口转发的方式访问控制台，如：[http://139.198.121.143:8080](http://139.198.121.143:8080), 即可进入 KubeSphere 登录界面，能看到如下用户界面说明 KubeSphere 能够正常访问和使用：
+**(2)** 以上可以看到两个 nodeport，在 Kubernetes 中 nodeport 是提供给集群外部客户访问该 Service 入口的一种方式，Kubernetes 中的 nodeport 一般是高位 30000 ~ 32767。您可以通过浏览器，使用集群中任一节点的 IP 地址和端口号即 `<NodeIP>:nodeport` (ks-console-nodeport)，访问 KubeSphere 控制台，如上图 [http://192.168.100.10:32117](http://192.168.100.10:32117，)。由于服务的常用访问端口通常是低位，因此也可以通过 IP 及端口转发的方式访问控制台，如：[http://139.198.121.143:8080](http://139.198.121.143:8080)， 即可进入 KubeSphere 登录界面，能看到如下用户界面说明 KubeSphere 能够正常访问和使用：
 
 > 注： 若公网 IP 有防火墙，请在防火墙添加规则放行对应的端口，外部才能够访问。
 
@@ -223,8 +223,7 @@ ks-apiserver-nodeport: 32002
 
 KubeSphere 部署成功后，可以使用以下的用户名和密码登录 KubeSphere 控制台体验：
 
-> Account: admin@kubesphere.io 
->
-> Password: passw0rd
+> 用户名: admin@kubesphere.io <br />
+> 密码: passw0rd
 
 关于如何使用请参考 <a href="https://docs.kubesphere.io/express/zh-CN/user-case/" target="_blank">《KubeSphere 用户指南》</a>。

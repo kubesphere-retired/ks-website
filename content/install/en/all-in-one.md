@@ -110,16 +110,15 @@ ks-apiserver-nodeport: 32002
 ##################################################
 ```
 
-**(2).**Then you will be able to access KubeSphere login page with the IP address of the host and correct port. The port number will be automatically generated in the result page as above screenshot showing "ks-console-nodeport. Then you will be able to access the KubeSphere web via EIP and port forwarding. **Example**： [http://139.198.121.143:8080](http://139.198.121.143:8080)
+**(2).** You'll be able to see that there are 2 nodeports generated above, on top of having a cluster-internal IP, expose the service on a port on each node of the cluster in Kubernetes. Generally the nodeport is high-order bit like 30000 ~ 32767. Then you'll be able to access the KubeSphere dashboard via `<nodeIP>:nodeport` (ks-console-nodeport). Since the Apps' common nodeport is low-order bit, you can also access the KubeSphere dashboard via IP and port forwarding. **Example**： [http://139.198.121.143:8080](http://139.198.121.143:8080)
 <br/>
 
-![](/pic02.png)
+![login](/pic02.png)
 
 ###  Summary
 When KubeSphere is deployed successfully ，you will be able to use following account and password to log in to the KubeSphere console to experience.
 
-> Account: admin@kubesphere.io 
-
+> Account: admin@kubesphere.io <br />
 > Password: passw0rd
 
 For details, please refer to <a href="https://docs.kubesphere.io/express/zh-CN/user-case/" target="_blank">KubeSphere User Guide</a>， and learn how to get started with it！

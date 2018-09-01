@@ -32,7 +32,7 @@ The following section describes an example to introduce multi-node mode deployme
 
 Single master, Single etcd, Multiple nodes
 
-![](/pic04_en.svg)
+![Architecture](/pic04_en.svg)
 
 
 
@@ -111,6 +111,7 @@ kube-master
 
 - If you get Dev or Offline version, then some parameters like `ansible_host` 、 `ip` 、 `ansible_become_pass` and `ansible_ssh_pass` of `[all]` field in `conf/hosts.ini` need to be replaced with the actual environment parameters. Note that the configuration is devided into root and non-root user in `[all]` field, there is an example demonstrates the non-root user configuration in `conf/hosts.ini`. Please modify the parameters based on the actual identity.
 
+
 **5.** It is required to prepare a server for storage service before multi-node deployment. Then you will need to specify the storage class parameters in  `vars.yml` . Then reference the details on storage configuration, please go to <a href="https://docs.kubesphere.io/express/zh-CN/KubeSphere-Installer-Guide/#存储配置说明" target="_blank">Storage Configuration Instructions</a>.
 
 
@@ -120,9 +121,11 @@ kube-master
 
 > - Network：KubeSphere supports `calico` by default.
 
+
 > - Supported Storage Classes：`QingCloud-CSI, GlusterFS, CephRBD` , for the details on storage configuration, please refer to <a href="https://docs.kubesphere.io/express/zh-CN/KubeSphere-Installer-Guide/#存储配置说明" target="_blank">Storage Configuration Instructions</a>.
 
 > - Typically, you need to configure persistent storage. Since multi-node mode does not support local storage, it's recommended to modify the local storage default configuration to `false`, then configure persistent storage such as QingCloud-CSI, GlusterFS or CephRBD. [QingCloud-CSI](https://github.com/yunify/qingcloud-csi/blob/master/README.md) plugin makes users could use block storage as persistent storage provisioned by [QingCloud IAAS](https://console.qingcloud.com/login). Following example describes how to configure QingCloud-CSI (`qy_access_key_id`、`qy_secret_access_key` and `qy_zone` need to be replaced by the actual parameters).
+
 
 **Example** 
 
@@ -245,19 +248,16 @@ ks-apiserver-nodeport: 32002
 ```
 
 
-**(2).**Then you will be able to access KubeSphere login page with the host IP and correct port. The port number will be automatically generated in the result page as above screenshot showing "ks-console-nodeport". 
-Then you will be able to access the KubeSphere web via EIP and port forwarding.
+**(2).** You'll be able to see that there are 2 nodeports generated above, on top of having a cluster-internal IP, expose the service on a port on each node of the cluster in Kubernetes. Generally the nodeport is high-order bit like 30000 ~ 32767. Then you'll be able to access the KubeSphere dashboard via `<nodeIP>:nodeport` (ks-console-nodeport). Since the Apps' common nodeport is low-order bit, you can aloso access the KubeSphere dashboard via IP and nodeport forwarding. **Example**： [http://139.198.121.143:8080](http://139.198.121.143:8080)
+<br/>
 
-**Example**： [http://139.198.121.143:8080](http://139.198.121.143:8080)
-
-![](/pic02.png)
+![login](/pic02.png)
 
 
 ### Summary
 When KubeSphere is deployed successfully ，you will be able to use following account and password to log in to the KubeSphere console to experience.
 
-> Account: admin@kubesphere.io 
-
+> Account: admin@kubesphere.io <br />
 > Password: passw0rd
 
 For details, please refer to <a href="https://docs.kubesphere.io/express/zh-CN/user-case/" target="_blank">KubeSphere User Guide</a>， and learn how to get started with it！

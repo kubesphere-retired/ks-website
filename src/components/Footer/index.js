@@ -48,10 +48,16 @@ const Footer = ({ className, t }) => (
             </li>
             <li>
               <div className="h3">{t('KubeSphere Docs')}</div>
-              <a href="//docs.kubesphere.io/express/zh-CN/KubeSphere-Installer-Guide/" target="_blank">
+              <a
+                href="//docs.kubesphere.io/express/zh-CN/KubeSphere-Installer-Guide/"
+                target="_blank"
+              >
                 Installer
               </a>
-              <a href="//docs.kubesphere.io/express/zh-CN/user-case/" target="_blank">
+              <a
+                href="//docs.kubesphere.io/express/zh-CN/user-case/"
+                target="_blank"
+              >
                 Tutorial
               </a>
             </li>
@@ -63,7 +69,7 @@ const Footer = ({ className, t }) => (
           </ul>
         </div>
       </div>
-      <p className={styles.icp}>KubeSphere™  2018 All Rights Reserved.</p>
+      <p className={styles.icp}>KubeSphere™ 2018 All Rights Reserved.</p>
     </div>
   </div>
 )
