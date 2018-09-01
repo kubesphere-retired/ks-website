@@ -1,6 +1,6 @@
 ##  Multi-Node Mode
 
-`Multi-Node` mode means multiple nodes deployment, for example, single or multiple `master(s)`, multiple `nodes`, single or multiple  `etcd` node(s). it is recommended to prepare at least `2` nodes and deploy to production environment. Typically, select any one host in the cluster being served as a role of "`taskbox`" to execute installation task for other hosts before multi-node deployment,  "`SSH Communication`" is required to be established between "taskbox" and other hosts.
+`Multi-Node` mode means multiple nodes deployment, for example, single or multiple `master(s)`, multiple `nodes`, single or multiple  `etcd` node(s). It's recommended to prepare at least `2` nodes and deploy to normal environment. Typically, select any one host in the cluster being served as a role of "`taskbox`" to execute installation task for other hosts before multi-node deployment,  "`SSH Communication`" is required to be established between "taskbox" and other hosts.
 
 
 ### Step 1: Provision Linux Host
@@ -14,8 +14,8 @@ The following section identifies the hardware specifications and system-level re
 
 | Operating System | Minimum Requirements |  Recommendations |
 | --- | --- | --- |
-| ubuntu 16.04 LTS 64bit | CPU：8 Core <br/> Memory：12 G <br/> Disk Space：40 G | CPU：16 Core <br/> Memory：32 G <br/> Disk Space：100 G |
-
+| Ubuntu 16.04 LTS 64bit | CPU：8 Core <br/> Memory：12 G <br/> Disk Space：40 G | CPU：16 Core <br/> Memory：32 G <br/> Disk Space：100 G |
+| CentOS 7.4 64bit | CPU：8 Core <br/> Memory：12G <br/> Disk Space：40G | CPU：16 Core <br/> Memory：32G <br/> Disk Space：100G |
 
 
 The following section describes an example to introduce multi-node mode deployment. This example prepares 3 hosts, with the host name "master" serve as the taskbox, and the host name of each node can be customized by the user. Assume that the host information as following table showing:
@@ -32,7 +32,7 @@ The following section describes an example to introduce multi-node mode deployme
 
 Single master, Single etcd, Multiple nodes
 
-![](/pic04_en.svg)
+![Architecture](/pic04_en.svg)
 
 
 
@@ -44,9 +44,15 @@ Single master, Single etcd, Multiple nodes
 ###  Step 2: Provision Installation Files
 
 
-**1.**  Download <a href="https://drive.yunify.com/s/DZ8FAIEaKfU98JT" target="_blank">KubeSphere Installer</a>
+**1.**  Download <a href="https://kubesphere.io/download/" target="_blank">KubeSphere Installer</a>, you will be able to download installer via command like `curl -O url` or `wget url`, actually the url is the download link.
 
-**2.**  When you get the installation package, please execute following command to unzip the package.
+|KubeSphere Version|Operation System（More OS will coming soon）|
+|--------------|-------|
+|Dev |Ubuntu 16.04 LTS 64bit， <br> CentOS 7.4 64bit| 
+|Stable (Alpha )|Ubuntu 16.04 LTS 64bit| 
+|Offline |Ubuntu 16.04.4 LTS 64bit，<br> Ubuntu 16.04.5 LTS 64bit|
+
+**2.**  When you get the installation package, please execute following command to unzip the package. Here showing an example with Alpha version as following, the installer name should be replaced with downloaded version.
 
 ```bash
 $ tar -zxvf kubesphere-all-express-1.0.0-alpha.tar.gz
@@ -59,11 +65,8 @@ $ cd kubesphere-all-express-1.0.0-alpha
 ```
 
 
-**4.** In order to manage deployment process and target machines configuration, please refer to the following scripts to configure all hosts in `hosts.ini`,
+**4.** In order to manage deployment process and target machines configuration, please refer to the following scripts to configure all hosts in `hosts.ini`, here showing an example of Alpha version in Ubuntu 16.04 with ubuntu user. Note that each host information occupies one line and cannot be wrapped manually.
 
-**Attention：**
-
-> Each host occupies one line of information and cannot be wrapped.
 
 **Example**
 
@@ -106,20 +109,26 @@ kube-master
 > - ansible_become_pass: Allows you to set the privilege escalation password.
 
 
+- If you get Dev or Offline version, then some parameters like `ansible_host` 、 `ip` 、 `ansible_become_pass` and `ansible_ssh_pass` of `[all]` field in `conf/hosts.ini` need to be replaced with the actual environment parameters. Note that the configuration is devided into root and non-root user in `[all]` field, there is an example demonstrates the non-root user configuration in `conf/hosts.ini`. Please modify the parameters based on the actual identity.
+
+
 **5.** It is required to prepare a server for storage service before multi-node deployment. Then you will need to specify the storage class parameters in  `vars.yml` . Then reference the details on storage configuration, please go to <a href="https://docs.kubesphere.io/express/zh-CN/KubeSphere-Installer-Guide/#存储配置说明" target="_blank">Storage Configuration Instructions</a>.
 
 
 **Note：**  <br/>
 
-> - You may to modify the relevant configurations like network or storage class, otherwise it will be executed with default parameters without any modifications.
+> - You need to modify the relevant configurations like network or storage class, otherwise it will be executed with default parameters without any modifications.
 
 > - Network：KubeSphere supports `calico` by default.
 
-> - Supported Storage Classes：`GlusterFS、CephRBD` , for the details on storage configuration, please refer to <a href="https://docs.kubesphere.io/express/zh-CN/KubeSphere-Installer-Guide/#存储配置说明" target="_blank">Storage Configuration Instructions</a>.
 
-> - Typically, you need to configure persistent storage. Since multi-node mode does not support local storage, it's recommended to modify the local storage default configuration to `false`, then you would configure persistent storage such as GlusterFS or CephRBD. Following screenshot describes an example of how to configure CephCBD.
+> - Supported Storage Classes：`QingCloud-CSI, GlusterFS, CephRBD` , for the details on storage configuration, please refer to <a href="https://docs.kubesphere.io/express/zh-CN/KubeSphere-Installer-Guide/#存储配置说明" target="_blank">Storage Configuration Instructions</a>.
 
- 
+> - Typically, you need to configure persistent storage. Since multi-node mode does not support local storage, it's recommended to modify the local storage default configuration to `false`, then configure persistent storage such as QingCloud-CSI, GlusterFS or CephRBD. [QingCloud-CSI](https://github.com/yunify/qingcloud-csi/blob/master/README.md) plugin makes users could use block storage as persistent storage provisioned by [QingCloud IAAS](https://console.qingcloud.com/login). Following example describes how to configure QingCloud-CSI (`qy_access_key_id`、`qy_secret_access_key` and `qy_zone` need to be replaced by the actual parameters).
+
+
+**Example** 
+
 ```yaml
 # Local volume provisioner deployment(Only all-in-one)
 local_volume_provisioner_enabled: false
@@ -127,25 +136,29 @@ local_volume_provisioner_storage_class: local
 local_volume_is_default_class: false
 
 
-# Ceph_rbd  deployment
-ceph_rbd_enabled: true
-ceph_rbd_is_default_class: true
-ceph_rbd_storage_class: rbd
-# e.g. ceph_rbd_monitors:
-#   - 172.24.0.1:6789
-#   - 172.24.0.2:6789
-#   - 172.24.0.3:6789
-ceph_rbd_monitors:
-  - 192.168.100.8:6789
-ceph_rbd_admin_id: admin
-# e.g. ceph_rbd_admin_secret: AQAnwihbXo+uDxAAD0HmWziVgTaAdai90IzZ6Q==
-ceph_rbd_admin_secret: AQCU00Zb5YYZAxAA9Med5rbKZT+pA91vMYM0Jg==
-ceph_rbd_pool: rbd
-ceph_rbd_user_id: admin
-# e.g. ceph_rbd_user_secret: AQAnwihbXo+uDxAAD0HmWziVgTaAdai90IzZ6Q==
-ceph_rbd_user_secret: AQCU00Zb5YYZAxAA9Med5rbKZT+pA91vMYM0Jg==
-ceph_rbd_fsType: ext4
-ceph_rbd_imageFormat: 1
+qy_csi_enabled: true
+qy_csi_is_default_class: true
+# Access key pair can be created in QingCloud console
+qy_access_key_id: ACCESS_KEY_ID
+qy_secret_access_key: ACCESS_KEY_SECRET
+# Zone should be the same as Kubernetes cluster
+qy_zone: ZONE
+# QingCloud IaaS platform service url.
+qy_host: api.qingcloud.com
+qy_port: 443
+qy_protocol: https
+qy_uri: /iaas
+qy_connection_retries: 3
+qy_connection_timeout: 30
+# The type of volume in QingCloud IaaS platform. 
+# 0 represents high performance volume. 
+# 3 respresents super high performance volume. 
+# 1 or 2 represents high capacity volume depending on cluster‘s zone.
+qy_type: 0
+qy_maxSize: 500
+qy_minSize: 10
+qy_stepSize: 10
+qy_fsType: ext4
 ```
 
 
@@ -216,7 +229,7 @@ Your identification has been saved in /home/ubuntu/.ssh/id_rsa.
 Your public key has been saved in /home/ubuntu/.ssh/id_rsa.pub.
 ```
 
-**4.** Test KubeSphere multi-node Deployment：
+**4.** To verify KubeSphere multi-node Deployment：
 
 **(1).**If you can see the following "Successful" result being returned after `install.sh` completed, that means KubuSphere installation is ready.
 
@@ -235,12 +248,10 @@ ks-apiserver-nodeport: 32002
 ```
 
 
-**(2).**Then you will be able to access KubeSphere login page with the host IP and correct port. The port number will be automatically generated in the result page as above screenshot showing "ks-console-nodeport". 
-Then you will be able to access the KubeSphere web via EIP and port forwarding.
+**(2).** You'll be able to see that there are 2 nodeports generated above, on top of having a cluster-internal IP, expose the service on a port on each node of the cluster in Kubernetes. Generally the nodeport is high-order bit like 30000 ~ 32767. Then you'll be able to access the KubeSphere dashboard via `<nodeIP>:nodeport` (ks-console-nodeport). Since the Apps' common nodeport is low-order bit, you can aloso access the KubeSphere dashboard via IP and nodeport forwarding. **Example**： [http://139.198.121.143:8080](http://139.198.121.143:8080)
+<br/>
 
-**Example**： [http://139.198.121.143:8080](http://139.198.121.143:8080)
-
-![](/pic02.png)
+![login](/pic02.png)
 
 
 ### Summary

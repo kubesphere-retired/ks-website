@@ -14,7 +14,7 @@ The following section identifies the hardware specifications and system-level re
 
 | System | Minimum Requirements |  Recommendations |
 | --- | --- | --- |
-| ubuntu 16.04 LTS 64bit | CPU：8 Core <br/> Memory：12G <br/> Disk Space：40G | CPU：16 Core <br/> Memory：32G <br/> Disk Space：100G |
+| Ubuntu 16.04 LTS 64bit | CPU：8 Core <br/> Memory：12G <br/> Disk Space：40G | CPU：16 Core <br/> Memory：32G <br/> Disk Space：100G |
 | CentOS 7.4 64bit | CPU：8 Core <br/> Memory：12G <br/> Disk Space：40G | CPU：16 Core <br/> Memory：32G <br/> Disk Space：100G |
 
 
@@ -28,7 +28,7 @@ The following section identifies the hardware specifications and system-level re
 |Stable (Alpha )|Ubuntu 16.04 LTS 64bit| 
 |Offline |Ubuntu 16.04.4 LTS 64bit，<br> Ubuntu 16.04.5 LTS 64bit|
 
-**2.**  When you get the installation package, please execute following command to unzip the package. Here showing an example with Alpha installer as following, the installer name should be replaced with download version.
+**2.**  When you get the installation package, please execute following command to unzip the package. Here showing an example with Alpha version as following, the installer name should be replaced with downloaded version.
 
 ```
   $ tar -zxvf kubesphere-all-express-1.0.0-alpha.tar.gz
@@ -110,10 +110,10 @@ ks-apiserver-nodeport: 32002
 ##################################################
 ```
 
-**(2).**Then you will be able to access KubeSphere login page with the IP address of the host and correct port. The port number will be automatically generated in the result page as above screenshot showing "ks-console-nodeport. Then you will be able to access the KubeSphere web via EIP and port forwarding. **Example**： [http://139.198.121.143:8080](http://139.198.121.143:8080)
+**(2).** You'll be able to see that there are 2 nodeports generated above, on top of having a cluster-internal IP, expose the service on a port on each node of the cluster in Kubernetes. Generally the nodeport is high-order bit like 30000 ~ 32767. Then you'll be able to access the KubeSphere dashboard via `<nodeIP>:nodeport` (ks-console-nodeport). Since the Apps' common nodeport is low-order bit, you can also access the KubeSphere dashboard via IP and port forwarding. **Example**： [http://139.198.121.143:8080](http://139.198.121.143:8080)
 <br/>
 
-![](/pic02.png)
+![login](/pic02.png)
 
 ###  Summary
 When KubeSphere is deployed successfully ，you will be able to use following account and password to log in to the KubeSphere console to experience.
