@@ -28,7 +28,7 @@ The following section identifies the hardware specifications and system-level re
 |Stable (Alpha )|Ubuntu 16.04 LTS 64bit| 
 |Offline |Ubuntu 16.04.4 LTS 64bit，<br> Ubuntu 16.04.5 LTS 64bit|
 
-**2.**  When you get the installation package, please execute following command to unzip the package. Here showing an example with Alpha installer as following, the installer name should be replaced with download version.
+**2.**  When you get the installation package, please execute following command to unzip the package. Here showing an example with Alpha version as following, the installer name should be replaced with downloaded version.
 
 ```
   $ tar -zxvf kubesphere-all-express-1.0.0-alpha.tar.gz
