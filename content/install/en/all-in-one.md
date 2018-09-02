@@ -104,13 +104,13 @@ failed=0
 Succesful!
 ##################################################
 KubeSphere is running！
-Matser IP: 121.10.121.111
+Matser IP: 192.168.100.10
 ks-console-nodeport: 32117
 ks-apiserver-nodeport: 32002
 ##################################################
 ```
 
-**(2).** You'll be able to see that there are 2 nodeports generated above, on top of having a cluster-internal IP, expose the service on a port on each node of the cluster in Kubernetes. Generally the nodeport is high-order bit like 30000 ~ 32767. Then you'll be able to access the KubeSphere dashboard via `<nodeIP>:nodeport` (ks-console-nodeport). Since the Apps' common nodeport is low-order bit, you can also access the KubeSphere dashboard via IP and port forwarding. **Example**： [http://139.198.121.143:8080](http://139.198.121.143:8080)
+**(2).** You'll be able to see that there are 2 nodeports generated above, on top of having a cluster-internal IP, expose the service on a port on each node of the cluster in Kubernetes. Generally the nodeport is high-order bit like 30000 - 32767. Then you'll be able to access the KubeSphere dashboard via `<NodeIP>:ks-console-nodeport`, such as [http://192.168.100.10:32117](http://192.168.100.10:32117). Since the Apps' common nodeport is low-order bit, you can also access the KubeSphere dashboard via EIP and port forwarding. **Example**： [http://139.198.121.143:8080](http://139.198.121.143:8080)
 <br/>
 
 ![login](/pic02.png)
