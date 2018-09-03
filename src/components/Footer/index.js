@@ -22,7 +22,7 @@ const Footer = ({ className, t }) => (
               <div className="h3">{t('Products')}</div>
               <Link to="">{t('Community Edition')}</Link>
               <a href="https://kubesphere.qingcloud.com/" target="_blank">
-                {t('Commercial Edition')}
+                {t('Commercial Editions')}
               </a>
             </li>
             <li>
@@ -52,13 +52,13 @@ const Footer = ({ className, t }) => (
                 href="//docs.kubesphere.io/express/zh-CN/KubeSphere-Installer-Guide/"
                 target="_blank"
               >
-                Installer
+                {t('Installer')}
               </a>
               <a
                 href="//docs.kubesphere.io/express/zh-CN/user-case/"
                 target="_blank"
               >
-                Tutorial
+                {t('Tutorial')}
               </a>
             </li>
             <li>
