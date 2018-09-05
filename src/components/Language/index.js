@@ -16,6 +16,9 @@ const LANGS = [
 const Language = ({ className, i18n }) => {
   const handleChange = e => {
     i18n.changeLanguage(e.target.dataset.lang)
+    if (typeof window !== 'undefined') {
+      window.location.reload()
+    }
   }
 
   return (
