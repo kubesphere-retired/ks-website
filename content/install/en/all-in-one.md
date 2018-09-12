@@ -45,13 +45,15 @@ The following section identifies the hardware specifications and system-level re
 
 
 
-The environment and file monitoring, dependent software installation of KubeSphere, automated installation of Kubernetes and etcd, and automated storage configuration, all of these procedures will be automatically processing in this deployment. The KubeSphere installation package will automatically install the relevant dependent software like Ansible (v2.4+)，Python-netaddr (v0.7.18+) and Jinja (v2.9+).
+The environment and file monitoring, dependent software installation of KubeSphere, automated installation of Kubernetes and etcd, and automated storage configuration, Kubernetes v1.10.5 will be installed by default, currently it also enables v1.11.2 installation. If you need to install v1.11.2, just modify `kube_version` to v1.11.2 in `conf/vars.yaml`. All of these procedures will be automatically processing in this deployment. The KubeSphere installation package will automatically install the relevant dependent software like Ansible (v2.4+)，Python-netaddr (v0.7.18+) and Jinja (v2.9+).
 
 **Note:**
 
 > - Generally, you can install it directly without any modification.
 
 > - If you would like to customize the configuration parameters, such as network, storage classes, etc. You will be able to specify the parameters in  `vars.yml`. Otherwise it will be executed with default parameters without any modifications.
+
+> - Since the default subnet for Cluster IPs is 10.233.0.0/18, default subnet for Pod IPs is 10.233.64.0/18 in Kubernetes cluster. The node IPs must not overlap with those 2 default IPs. If any conflicts happened with the IP address, go to `conf/vars.yaml` and modify `kube_service_addresses` or `kube_pods_subnet` to avoid this senario.
 
 > - Network：KubeSphere supports `calico` by default.
 
@@ -84,7 +86,8 @@ $ ./install.sh
 ################################################
 *   1) All-in-one
 *   2) Multi-node
-*   3) Quit
+*   3) Cluster-scaling
+*   4) Quit
 ################################################
 https://kubesphere.io/               2018-07-27
 ################################################
@@ -110,7 +113,7 @@ ks-apiserver-nodeport: 32002
 ##################################################
 ```
 
-**(2).** You'll be able to see that there are 2 nodeports generated above, on top of having a cluster-internal IP, expose the service on a port on each node of the cluster in Kubernetes. Generally the nodeport is high-order bit like 30000 - 32767. Then you'll be able to access the KubeSphere dashboard via `<NodeIP>:ks-console-nodeport`, such as [http://192.168.100.10:32117](http://192.168.100.10:32117). Since the Apps' common nodeport is low-order bit, you can also access the KubeSphere dashboard via EIP and port forwarding. **Example**： [http://139.198.121.143:8080](http://139.198.121.143:8080)
+**(2).** You'll be able to see that there are 2 nodeports generated above, or use command `kubectl get svc -n kubesphere-system` to get the nodeport. On top of having a cluster-internal IP, expose the service on a port on each node of the cluster in Kubernetes. Generally the nodeport is high-order bit like 30000 - 32767. Then you'll be able to access the KubeSphere dashboard via `<NodeIP>:ks-console-nodeport`, such as [http://192.168.100.10:32117](http://192.168.100.10:32117). Since the Apps' common nodeport is low-order bit, you can also access the KubeSphere dashboard via EIP and port forwarding. **Example**： [http://139.198.121.143:8080](http://139.198.121.143:8080)
 <br/>
 
 ![login](/pic02.png)

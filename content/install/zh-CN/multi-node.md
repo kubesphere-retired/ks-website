@@ -96,9 +96,11 @@ kube-master
 
 > 说明：
 > - 根据配置文件按需修改相关配置项，未做修改将以默认参数执行。
-> - 网络：默认插件 `calico`
+> - 由于 Kubernetes 集群的 Cluster IP 子网网段默认是 10.233.0.0/18，Pod 的子网网段默认是 10.233.64.0/18，因此部署 KubeSphere 的节点 IP 地址范围不应与以上两个网段有重复，若遇到地址范围冲突可在配置文件 `conf/vars.yaml` 修改 `kube_service_addresses` 或 `kube_pods_subnet` 的参数。
+> - 网络：默认插件 `calico`。
 > - 支持存储类型：QingCloud-CSI、GlusterFS、CephRBD， 存储配置相关的详细信息请参考 <a href="https://docs.kubesphere.io/express/zh-CN/KubeSphere-Installer-Guide/#存储配置说明" target="_blank">存储配置</a>
 > - 通常情况您需要配置持久化存储，multi-node 不支持 local storage，因此把 local storage 的配置修改为 false，然后配置持久化存储如 QingCloud-CSI、GlusterFS 或 CephRBD。如果使用 [青云云平台块存储](https://docs.qingcloud.com/product/storage/volume/) 作为持久化存储，需要安装 [QingCloud-CSI 插件](https://github.com/yunify/qingcloud-csi/blob/master/README_zh.md)，且需要有操作 [QingCloud IaaS 平台](https://console.qingcloud.com/login) 资源的权限，如下所示为配置 QingCloud-CSI （`qy_access_key_id`、`qy_secret_access_key` 和 `qy_zone` 应替换为您实际环境的参数）。
+> - 安装 KubeSphere 后，如果需要对集群节点扩容，可参考 <a href="https://docs.kubesphere.io/express/zh-CN/KubeSphere-Installer-Guide/#集群节点扩容说明" target="_blank">集群节点扩容说明</a>。
 
 **存储配置示例**
  
@@ -137,7 +139,7 @@ qy_fsType: ext4
 
 ### 第三步: 安装 KubeSphere
 
-KubeSphere 多节点部署会自动化地进行环境和文件监测、平台依赖软件的安装、`Kubernetes` 和 `etcd` 集群的自动化部署，以及存储的自动化配置。KubeSphere 安装包将会自动安装一些依赖软件，如 ansible (v2.4+)，Python-netaddr (v0.7.18+)，Jinja (v2.9+)。
+KubeSphere 多节点部署会自动化地进行环境和文件监测、平台依赖软件的安装、Kubernetes 和 etcd 集群的自动化部署，以及存储的自动化配置。Installer 默认安装的 Kubernetes 版本是 v1.10.5，目前已支持 v1.11.2，如需安装 v1.11.2 可在配置文件 `conf/vars.yaml` 中修改 `kube_version` 的参数为 v1.11.2，再执行安装，安装成功后可通过 KubeSphere 控制台右上角点击关于查看安装的版本。KubeSphere 安装包将会自动安装一些依赖软件，如 Ansible (v2.4+)，Python-netaddr (v0.7.18+)，Jinja (v2.9+)。
 
 参考以下步骤开始 multi-node 部署：
 
@@ -161,7 +163,8 @@ $ ./install.sh
 ################################################
 *   1) All-in-one
 *   2) Multi-node
-*   3) Quit
+*   3) Cluster-scaling
+*   4) Quit
 ################################################
 https://kubesphere.io/               2018-07-27
 ################################################
@@ -180,7 +183,8 @@ Please input an option: 2
 ######################################################################
 *   1) All-in-one
 *   2) Multi-node
-*   3) Quit
+*   3) Cluster-scaling
+*   4) Quit
 ######################################################################
 https://kubesphere.io/                                      2018-07-27
 ######################################################################
@@ -215,7 +219,7 @@ ks-apiserver-nodeport: 32002
 ########################################################
 ```
 
-**(2)** 以上可以看到两个 nodeport，在 Kubernetes 中 nodeport 是提供给集群外部客户访问该 Service 入口的一种方式，Kubernetes 中的 nodeport 一般是高位 30000 - 32767。您可以通过浏览器，使用集群中任一节点的 IP 地址和端口号即 `<NodeIP>:ks-console-nodeport` 访问 KubeSphere 控制台，如上图 [http://192.168.100.10:32117](http://192.168.100.10:32117，)。由于服务的常用访问端口通常是低位，因此也可以通过公网 IP 并将高位端口转发后访问控制台，如：[http://139.198.121.143:8080](http://139.198.121.143:8080)， 即可进入 KubeSphere 登录界面，能看到如下用户界面说明 KubeSphere 能够正常访问和使用：
+**(2)** 以上可以看到两个 nodeport，也可以通过命令 `kubectl get svc -n kubesphere-system` 查看端口号。在 Kubernetes 中 nodeport 是提供给集群外部客户访问该 Service 入口的一种方式，Kubernetes 中的 nodeport 一般是高位 30000 - 32767。您可以通过浏览器，使用集群中任一节点的 IP 地址和端口号即 `<NodeIP>:ks-console-nodeport` 访问 KubeSphere 控制台，如上图 [http://192.168.100.10:32117](http://192.168.100.10:32117，)。由于服务的常用访问端口通常是低位，因此也可以通过公网 IP 并将高位端口转发后访问控制台，如：[http://139.198.121.143:8080](http://139.198.121.143:8080)，即可进入 KubeSphere 登录界面，能看到如下用户界面说明 KubeSphere 能够正常访问和使用：
 
 > 注： 若公网 IP 有防火墙，请在防火墙添加规则放行对应的端口，外部才能够访问。
 
