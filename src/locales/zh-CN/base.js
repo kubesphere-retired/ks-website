@@ -7,7 +7,7 @@ module.exports = {
   'Products': '产品',
   'Community Edition': '社区版',
   'Express Edition': '易捷版',
-  'Advance Edition': '高级版',
+  'Advanced Edition': '高级版',
   'Related Products': '相关产品',
   'KubeSphere Docs': '文档中心',
   'About': '关于',

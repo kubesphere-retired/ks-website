@@ -4,11 +4,12 @@ import { translate } from 'react-i18next'
 import Button from '../components/Button/index'
 import CommunityModal from '../components/Download/CommunityModal/index'
 import ExpressModal from '../components/Download/ExpressModal/index'
+import AdvancedModal from '../components/Download/AdvancedModal/index'
 
 import DownloadBg from '../assets/download-bg.svg'
 import { ReactComponent as Community } from '../assets/community.svg'
 import { ReactComponent as Express } from '../assets/express.svg'
-import { ReactComponent as Advance } from '../assets/advance.svg'
+import { ReactComponent as Advanced } from '../assets/advanced.svg'
 
 import './index.scss'
 
@@ -42,7 +43,7 @@ const Banner = ({ t }) => {
   )
 }
 
-const Versions = ({ t, showCommunityModal, showExpressModal }) => (
+const Versions = ({ t, showCommunityModal, showExpressModal, showAdvancedModal }) => (
   <div className="version-compare-wrapper">
     <ul className="version-compare">
       <li onClick={showCommunityModal}>
@@ -69,16 +70,17 @@ const Versions = ({ t, showCommunityModal, showExpressModal }) => (
         </div>
         <a>{t('Get the version')} → </a>
       </li>
-      <li>
-        <Advance />
+      <li onClick={showAdvancedModal}>
+        <Advanced />
         <div className="version-compare-text">
-          <div className="h2">{t('Advance Edition')}</div>
+          <div className="h2">{t('Advanced Edition')}</div>
           <p>
             {t(
               'KubeSphere provides workload management, CI/CD and Microservices governance, multi-cluster management, as well as multi-tenancy and fine-grained privilege separation for users of different enterprise scales.'
             )}
           </p>
         </div>
+        <a>{t('Get the version')} → </a>
       </li>
     </ul>
   </div>
@@ -88,6 +90,7 @@ class IndexPage extends React.Component {
   state = {
     showCommunity: false,
     showExpress: false,
+    showAdvanced: false,
   }
 
   showCommunityModal = () => {
@@ -114,6 +117,18 @@ class IndexPage extends React.Component {
     })
   }
 
+  showAdvancedModal = () => {
+    this.setState({
+      showAdvanced: true,
+    })
+  }
+
+  hideAdvancedModal = () => {
+    this.setState({
+      showAdvanced: false,
+    })
+  }
+
   render() {
     return (
       <div>
@@ -122,6 +137,7 @@ class IndexPage extends React.Component {
           {...this.props}
           showCommunityModal={this.showCommunityModal}
           showExpressModal={this.showExpressModal}
+          showAdvancedModal={this.showAdvancedModal}
         />
         <CommunityModal
           isOpen={this.state.showCommunity}
@@ -130,6 +146,10 @@ class IndexPage extends React.Component {
         <ExpressModal
           isOpen={this.state.showExpress}
           onRequestClose={this.hideExpressModal}
+        />
+        <AdvancedModal
+          isOpen={this.state.showAdvanced}
+          onRequestClose={this.hideAdvancedModal}
         />
       </div>
     )
