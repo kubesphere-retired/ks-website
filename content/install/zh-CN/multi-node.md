@@ -7,7 +7,7 @@
 - 请下载 [KubeSphere 高级版](https://kubesphere.io/download) 至待安装机器中。
 - 建议使用 KubeSphere 支持的存储服务，并准备相应的存储服务端，存储服务端的磁盘容量参考主机规格表中的推荐配置或选择更高的容量。为方便初次安装但没有准备存储服务端时进行部署测试，也可配置部署 NFS server in Kubernetes 到当前集群。
 
-#### 第一步: 准备主机
+### 第一步: 准备主机
 
 您可以参考以下节点规格 准备 **`至少 2 台`** 符合要求的主机节点开始 `multi-node` 模式的部署，若使用 ubuntu 16.04 建议使用其最新的版本 16.04.5。
 
@@ -31,7 +31,7 @@
 
 **集群架构：** 单 master 单 etcd 双 node
 
-![集群架构图](/cluster-architecture.svg)
+![集群架构图](/cluster-architecture-zh.svg)
 
 ### 第二步: 准备安装配置文件
 

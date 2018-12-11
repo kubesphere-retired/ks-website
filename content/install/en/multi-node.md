@@ -36,7 +36,7 @@ The following section describes an example to introduce multi-node mode installa
 
 **Single master, Single etcd, Single nodes**
 
-![Architecture](/pic04_en.svg)
+![Architecture](/cluster-architecture.svg)
 
 
 ###  Step 2: Provision Installation Files

@@ -43,8 +43,8 @@
                 </g>
                 <g id="Start-to-deploy-a-3-" transform="translate(43.000000, 174.000000)" fill="#55BC8A" font-family="PingFangSC-Regular, PingFang SC" font-size="14" font-weight="normal">
                     <g id="Start-to-deploy-a-3-node-cluster-from-taskbox">
-                        <text>
-                            <tspan x="0" y="15">Start to deploy a 3-node cluster from taskbox</tspan>
+                        <text id="以-Taskbox开始部署3节点集群">
+                            <tspan x="0" y="15">以 Taskbox开始部署3节点集群</tspan>
                         </text>
                     </g>
                 </g>
@@ -107,8 +107,8 @@
                 <path d="M23.5,199 L33,180 L14,180 L23.5,199 Z M22,64.5 L22,181.5 L22,183 L25,183 L25,181.5 L25,64.5 L25,63 L22,63 L22,64.5 Z" id="Line-3" fill="#55BC8A" fill-rule="nonzero"></path>
                 <path d="M404.721506,198.666379 L389.965477,183.385358 L383.643072,201.30259 L404.721506,198.666379 Z M23.275875,65.6573483 L387.834055,194.297998 L389.248573,194.797135 L390.246847,191.968098 L388.832329,191.468961 L24.2741494,62.8283117 L22.8596311,62.3291745 L21.8613567,65.1582111 L23.275875,65.6573483 Z" id="Line-3-Copy" fill="#55BC8A" fill-rule="nonzero"></path>
             </g>
-            <text id="Taskbox-can-be-any-node-in-the-cluster" fill="#919AA3" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal">
-                <tspan x="117.836" y="303">Taskbox can be any node in the cluster</tspan>
+            <text id="Taskbox-可以为集群中任意节点" fill="#919AA3" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal">
+                <tspan x="117.836" y="303">Taskbox 可以为集群中任意节点</tspan>
             </text>
         </g>
     </g>
