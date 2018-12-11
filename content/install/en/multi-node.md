@@ -185,4 +185,4 @@ NOTE：Please modify the default password after login.
 
 **(2).** You will be able to use default account and password to log in to the KubeSphere console to experience when KubeSphere is deployed successfully. It's highly recommended to refer to the [KubeSphere Quick Start](//docs.kubesphere.io/advanced-v1.0.0/zh-CN/quick-start/quick-start-guide/)， and learn how to get started with it！
 
-![login](/login-page.png)
+![login](/login-page-en.png)
