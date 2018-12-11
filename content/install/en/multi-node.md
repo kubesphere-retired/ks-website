@@ -86,22 +86,22 @@ kube-master
 **Note：** <br/>
 
 > - Each node's parameters like Internal IP and its password needs to be modified into `[all]` field. In this example, since "master" served as `taskbox` which has been ssh connected from your local, just needs to replace "ip" with your current "ip".
-> - Other nodes like "node1" and "node2", both "ansible_host" and "ip" needs to be replaced by their actual Internal IP, and "ansible_ssh_pass" should be replaced with the ssh password in `[all]` field.
+> - Other nodes like "node1" and "node2", both `"ansible_host"` and "ip" needs to be replaced by their actual Internal IP, and `"ansible_ssh_pass"` should be replaced with the ssh password in `[all]` field.
 > - "master" is served as the taskbox which is to execute installation task for whole cluster, as well as the role of master and etcd, so "master" needs to be filled into `[kube-master]` and `[etcd]` field.
 > - At the same time, for "node1" and "node2", they serve the role of `Node` as well, so all of the hosts name need to be filled into `[kube-node]` field.
 > 
 > Parameters Specification:
 > 
-> - ansible_connection: Connection type to the host, set to local here means local connection.
-> - ansible_host: The name of the host to be connected.
-> - ip: The ip of the host to be connected.
-> - ansible_user: The default ssh user name to use.
-> - ansible_become_pass: Allows you to set the privilege escalation password.
-> - ansible_ssh_pass: The password of the host to be connected using root.
+> - `ansible_connection`: Connection type to the host, set to local here means local connection.
+> - `ansible_host`: The name of the host to be connected.
+> - `ip`: The ip of the host to be connected.
+> - `ansible_user`: The default ssh user name to use.
+> - `ansible_become_pass`: Allows you to set the privilege escalation password.
+> - `ansible_ssh_pass`: The password of the host to be connected using root.
 
 
-**5.** It is recommended to use the storage services which are recommended by KubeSphere and prepare the corresponding storage server. If you are not prepare the storage server yet, you can also configure NFS-Server in Kubernetes as the default storage only for testing installation. If so, you may need to modify the storage class parameters in  `vars.yml` refer to the example below. For details please reference the [Storage Configuration Instructions](//docs.kubesphere.io/advanced-v1.0.0/zh-CN/installation/storage-configuration/).
 
+**5.** It is recommended to use the storage services which are recommended by KubeSphere and prepare the corresponding storage server. If you are not prepare the storage server yet, you can also configure NFS server in Kubernetes as the default storage only for testing installation. If so, you may need to modify the storage class parameters in  `vars.yml` refer to the example below. For details please reference the <a href="https://docs.kubesphere.io/advanced-v1.0.0/zh-CN/installation/storage-configuration/" target="_blank">Storage Configuration Instructions</a>.
  
 **Note：**  <br/>
 
