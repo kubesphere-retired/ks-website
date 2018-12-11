@@ -103,10 +103,22 @@ class InstallPage extends React.Component {
 
   componentDidMount() {
     document.addEventListener('scroll', this.handleScroll)
+    this.setLinkTargetBlank()
+  }
+
+  componentDidUpdate() {
+    this.setLinkTargetBlank()
   }
 
   componentWillUnmount() {
     document.removeEventListener('scroll', this.handleScroll)
+  }
+
+  setLinkTargetBlank() {
+    const $links = document.querySelectorAll('.md-body a')
+    Array.prototype.forEach.call($links, el => {
+      el.setAttribute('target', '_blank')
+    })
   }
 
   handleScroll = () => {
