@@ -11,14 +11,14 @@ const RoadMap = ({ className, data, t }) => (
       <div key={item.name} className={styles.item}>
         <div
           className={classnames(styles.tip, {
-            [styles.planning]: item.status === 'planning',
+            [styles.planning]: item.status === 'Planning',
           })}
         >
           <div className="dot" />
           <div className="line" />
         </div>
         <p className={styles.text}>
-          {moment(new Date(item.time)).format(t('MMM DD YYYY'))}
+          {moment(new Date(item.time)).format(t('MMM YYYY'))}
           <div className={styles.br}/>
           {t(item.name)}
         </p>

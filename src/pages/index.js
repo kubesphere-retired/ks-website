@@ -37,11 +37,7 @@ const Banner = ({ t }) => {
             ),
           }}
         />
-        <p>
-          {t(
-            'what_is_kubesphere_io'
-          )}
-        </p>
+        <p>{t('what_is_kubesphere_io')}</p>
         <div className="banner-links">
           <Link to={'/download'}>
             <Button type="primary" size="large">
@@ -129,16 +125,25 @@ const AppInstall = ({ t }) => (
 
 const ROADMAP = [
   {
-    name: 'Community Edition 1.0.0 Alpha',
+    name: 'Community Edition 1.0',
     time: '2018/6/30 00:00:00',
     status: 'Released',
   },
   {
-    name: 'Community Edition 1.0.0 Beta',
+    name: 'Express Edition 1.0',
     time: '2018/7/31 00:00:00',
-    status: 'In Progress',
+    status: 'Released',
   },
-  { name: 'Community Edition 1.0.0 GA', time: '2018/8/31', status: 'Planning' },
+  {
+    name: 'Advanced Edition 1.0',
+    time: '2018/12/1 00:00:00',
+    status: 'Released',
+  },
+  {
+    name: 'Advanced Edition 2.0',
+    time: '2019/2/1 00:00:00',
+    status: 'Planning',
+  },
 ]
 
 const Contribution = ({ t }) => (
