@@ -3,7 +3,7 @@ module.exports = {
   Installation: '安装',
   'Commercial Editions': '商业版',
   'Documentation': '文档中心',
-  'MMM DD YYYY': 'YYYY 年 MM 月 DD 日',
+  'MMM YYYY': 'YYYY 年 M 月',
   'Products': '产品',
   'Community Edition': '社区版',
   'Express Edition': '易捷版',
