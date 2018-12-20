@@ -29,7 +29,10 @@ const Layout = ({ children, location, data }) => {
         title={data.site.siteMetadata.title}
         meta={[
           { name: 'description', content: 'KubeSphere' },
-          { name: 'keywords', content: 'KubeSphere, OpenPitrix, Kubernetes' },
+          {
+            name: 'keywords',
+            content: 'KubeSphere, OpenPitrix, Kubernetes, Container, Docker',
+          },
           {
             name: 'google-site-verification',
             content: '4MQYB7t-JAew3en6iBUNg3yTLABe4xPSgxzfkArfhVw',
