@@ -199,10 +199,10 @@ const Contribution = ({ t }) => (
             </li>
             <li>
               <a
-                href="//docs.kubesphere.io/express/zh-CN/user-case/"
+                href="//docs.kubesphere.io"
                 target="_blank"
               >
-                {t('Read the KubeSphere User Guide')}
+                {t('Read the KubeSphere Documentation')}
               </a>
             </li>
             <li>
