@@ -40,7 +40,7 @@ class AdvancedModal extends React.Component {
           <div className="h4">{t('More Options')}</div>
           <p style={{ marginTop: 8 }}>
             <span>{t('You can also download the trial version')}</span>&nbsp;
-            <a href="//kubesphere.anybox.qingcloud.com/s/JE7NWkkT6EaI9Oksr0aJ5HvPFwtO2peL" target="_blank">{t('Online Installation')}</a>
+            <a href="//kubesphere.anybox.qingcloud.com/s/JE7NWkkT6EaI9Oksr0aJ5HvPFwtO2peL?type=file&id=3114265" target="_blank">{t('Online Installation')}</a>
           </p>
         </div>
       )
