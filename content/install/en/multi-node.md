@@ -37,7 +37,19 @@ The following section describes an example to introduce multi-node mode installa
 
 #### Step 2: Provision Installation Files
 
-<div class="md-tabs">
+**1.** Download the stable [KubeSphere Installer](/download), suggest you to download installer via command like `curl -O url` or `wget url` with download link. When you get the installer, execute following command to unzip it.
+
+```bash
+$ tar -zxf kubesphere-all-advanced-1.0.1.tar.gz
+```
+
+**2.** Go into “`kubesphere-all-advanced-1.0.1`” folder
+
+```bash
+$ cd kubesphere-all-advanced-1.0.1
+```
+
+<!-- <div class="md-tabs">
   <input type="radio" name="tabs" id="stable" checked="checked">
   <label for="stable">Stable</label>
   <span class="md-tab">
@@ -45,13 +57,13 @@ The following section describes an example to introduce multi-node mode installa
 **1.** Download the stable [KubeSphere Installer](/download), suggest you to download installer via command like `curl -O url` or `wget url` with download link. When you get the installer, execute following command to unzip it.
 
 ```bash
-$ tar -zxf kubesphere-all-advanced-1.0.0.tar.gz
+$ tar -zxf kubesphere-all-advanced-1.0.1.tar.gz
 ```
 
-**2.** Go into “`kubesphere-all-advanced-1.0.0`” folder
+**2.** Go into “`kubesphere-all-advanced-1.0.1`” folder
 
 ```bash
-$ cd kubesphere-all-advanced-1.0.0
+$ cd kubesphere-all-advanced-1.0.1
 ```
 
   </span>
@@ -72,7 +84,7 @@ $ cd kubesphere-all-advanced-1.0.1-dev
 ```
 
   </span>
-</div>
+</div> -->
 
 **3.** In order to manage deployment process and target machines configuration, please refer to the following scripts to configure all hosts in `hosts.ini`. It's recommneded to install using `root` user, here showing an example configuration in `CentOS 7.5` using `root` user. Note that each host information occupies one line and cannot be wrapped manually.
 

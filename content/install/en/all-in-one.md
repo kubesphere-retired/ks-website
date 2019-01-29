@@ -21,7 +21,19 @@ The following section identifies the hardware specifications and system-level re
 
 #### Step 2: Provision Installation Files
 
-<div class="md-tabs">
+**1.** Download the stable [KubeSphere Installer](/download), suggest you to download installer via command like `curl -O url` or `wget url` with download link. When you get the installer, execute following command to unzip it.
+
+```
+  $ tar -zxf kubesphere-all-advanced-1.0.1.tar.gz
+```
+
+**2.** Go into “`kubesphere-all-advanced-1.0.1`” folder
+
+```
+  $ cd kubesphere-all-advanced-1.0.1
+```
+
+<!-- <div class="md-tabs">
   <input type="radio" name="tabs" id="stable" checked="checked">
   <label for="stable">Stable</label>
   <span class="md-tab">
@@ -29,13 +41,13 @@ The following section identifies the hardware specifications and system-level re
 **1.** Download the stable [KubeSphere Installer](/download), suggest you to download installer via command like `curl -O url` or `wget url` with download link. When you get the installer, execute following command to unzip it.
 
 ```
-  $ tar -zxf kubesphere-all-advanced-1.0.0.tar.gz
+  $ tar -zxf kubesphere-all-advanced-1.0.1.tar.gz
 ```
 
-**2.** Go into “`kubesphere-all-advanced-1.0.0`” folder
+**2.** Go into “`kubesphere-all-advanced-1.0.1`” folder
 
 ```
-  $ cd kubesphere-all-advanced-1.0.0
+  $ cd kubesphere-all-advanced-1.0.1
 ```
 
   </span>
@@ -56,7 +68,7 @@ The following section identifies the hardware specifications and system-level re
 ```
 
   </span>
-</div>
+</div> -->
 
 #### Step 3: Get Started With Installation
 

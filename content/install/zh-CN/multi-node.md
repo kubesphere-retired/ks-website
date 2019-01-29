@@ -35,7 +35,19 @@
 
 ### 第二步: 准备安装配置文件
 
-<div class="md-tabs">
+**1.** 下载[稳定版安装包](/download)，获取下载链接后可使用 `curl -O url` or `wget url` 命令下载至待安装机器，并执行以下命令。
+
+```bash
+$ tar -zxf kubesphere-all-advanced-1.0.1.tar.gz
+```
+
+**2.** 进入 “`kubesphere-all-advanced-1.0.1`” 目录。
+
+```bash
+$ cd kubesphere-all-advanced-1.0.1
+```
+
+<!-- <div class="md-tabs">
   <input type="radio" name="tabs" id="stable" checked="checked">
   <label for="stable">稳定版</label>
   <span class="md-tab">
@@ -43,13 +55,13 @@
 **1.** 下载[稳定版安装包](/download)，获取下载链接后可使用 `curl -O url` or `wget url` 命令下载至待安装机器，并执行以下命令。
 
 ```bash
-$ tar -zxf kubesphere-all-advanced-1.0.0.tar.gz
+$ tar -zxf kubesphere-all-advanced-1.0.1.tar.gz
 ```
 
-**2.** 进入 “`kubesphere-all-advanced-1.0.0`” 目录。
+**2.** 进入 “`kubesphere-all-advanced-1.0.1`” 目录。
 
 ```bash
-$ cd kubesphere-all-advanced-1.0.0
+$ cd kubesphere-all-advanced-1.0.1
 ```
 
   </span>
@@ -70,7 +82,7 @@ $ cd kubesphere-all-advanced-1.0.1-dev
 ```
 
   </span>
-</div>
+</div> -->
 
 **3.** 编辑主机配置文件 `conf/hosts.ini`，为了对待部署目标机器及部署流程进行集中化管理配置，集群中各个节点在主机配置文件 `hosts.ini` 中应参考如下配置，建议使用 `root` 用户进行安装。
 
