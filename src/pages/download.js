@@ -87,11 +87,16 @@ const Versions = ({ t, showCommunityModal, showExpressModal, showAdvancedModal }
 )
 
 class IndexPage extends React.Component {
-  state = {
-    showCommunity: false,
-    showExpress: false,
-    showAdvanced: false,
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      showCommunity: props.location.search.indexOf('community') !== -1,
+      showExpress: props.location.search.indexOf('express') !== -1,
+      showAdvanced: props.location.search.indexOf('advanced') !== -1,
+    }
   }
+  
 
   showCommunityModal = () => {
     this.setState({
