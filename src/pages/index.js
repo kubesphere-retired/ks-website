@@ -141,7 +141,7 @@ const ROADMAP = [
   },
   {
     name: 'Advanced Edition 2.0',
-    time: '2019/2/1 00:00:00',
+    time: '2019/3/31 00:00:00',
     status: 'Planning',
   },
 ]
