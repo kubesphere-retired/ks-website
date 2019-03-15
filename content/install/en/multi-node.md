@@ -21,7 +21,7 @@ The following section identifies the hardware specifications and system-level re
 
 The following section describes an example to introduce multi-node mode installation. This example showing 3 hosts installation that "master" serves as the taskbox who is supposed to execute the installation. The KubeSphere cluster architecture consists of management nodes (Master) and working nodes (Node), the following cluster consists of one Master and two Nodes. In the underlying Kubernetes, the Worker nodes and the Master nodes all running a kubelet, but there are three system pods running on Master : kube-apiserver, kube-scheduler, and kube-controller-manager. Assume that the host information as following table showing:
 
-> Note: The Advanced Edition supports the high-availability configuration of the Master and etcd nodes, but this example is only for testing installation, so only a single Master and a single etcd are deployed. The formal environment is recommended to configure the high-availability of the Master and etcd nodes, see [Highly-available configuration of Master and etcd node](//docs.kubesphere.io/advanced-v1.0.0/zh-CN/installation/master-ha/).
+> Note: The Advanced Edition supports the high-availability configuration of the Master and etcd nodes, but this example is only for testing installation, so only a single Master and a single etcd are deployed. The formal environment is recommended to configure the high-availability of the Master and etcd nodes, see [Highly-available configuration of Master and etcd node](//docs.kubesphere.io/advanced-v1.0/zh-CN/installation/master-ha/).
 
 | Host IP     | Host Name | Role         |
 | ----------- | --------- | ------------ |
@@ -91,7 +91,7 @@ $ cd kubesphere-all-advanced-1.0.1-dev
 > Note:
 >
 > - If installer is ran from non-root user account who has sudo privilege already, then you are supposed to reference the example section that is commented out in `conf/hosts.ini`.
-> - If the `root` user cannot be ssh connected to other machines in taskbox, you need to refer to the `non-root` user example section in the `conf/hosts.ini` as well, but it's recommended to switch to the `root` user when executing `install.sh`. If you are still confused about this, see the [FAQ - Question 2](//docs.kubesphere.io/advanced-v1.0.0/zh-CN/faq/).
+> - If the `root` user cannot be ssh connected to other machines in taskbox, you need to refer to the `non-root` user example section in the `conf/hosts.ini` as well, but it's recommended to switch to the `root` user when executing `install.sh`. If you are still confused about this, see the [FAQ - Question 2](//docs.kubesphere.io/advanced-v1.0/zh-CN/faq/).
 
 **hosts.ini**
 
@@ -132,13 +132,13 @@ kube-master
 > - `ansible_become_pass`: Allows you to set the privilege escalation password.
 > - `ansible_ssh_pass`: The password of the host to be connected using root.
 
-**5.** It is recommended to use the storage services which are recommended by KubeSphere and prepare the corresponding storage server. If you are not prepare the storage server yet, you can also configure NFS server in Kubernetes as the default storage only for testing installation. If so, you may need to modify the storage class parameters in `vars.yml` refer to the example below. For details please reference the <a href="https://docs.kubesphere.io/advanced-v1.0.0/zh-CN/installation/storage-configuration/" target="_blank">Storage Configuration Instructions</a>.
+**5.** It is recommended to use the storage services which are recommended by KubeSphere and prepare the corresponding storage server. If you are not prepare the storage server yet, you can also configure NFS server in Kubernetes as the default storage only for testing installation. If so, you may need to modify the storage class parameters in `vars.yml` refer to the example below. For details please reference the <a href="https://docs.kubesphere.io/advanced-v1.0/zh-CN/installation/storage-configuration/" target="_blank">Storage Configuration Instructions</a>.
 
 **Note：** <br/>
 
 > - You may need to modify the relevant configurations like network or storage class in `conf/vars.yaml`, otherwise it will be executed with default parameters without any modifications.
 > - Network：KubeSphere supports `calico` by default.
-> - Supported Storage Classes：[QingCloud Block Storage](https://www.qingcloud.com/products/volume/)、[QingStor NeonSAN](https://docs.qingcloud.com/product/storage/volume/super_high_performance_shared_volume/)、[GlusterFS](https://www.gluster.org/)、[CephRBD](https://ceph.com/)、[NFS](https://kubernetes.io/docs/concepts/storage/volumes/#nfs)、[Local Volume](https://kubernetes.io/docs/concepts/storage/volumes/#local). For details regarding storage configuration, please refer to [Storage Configuration Instructions](//docs.kubesphere.io/advanced-v1.0.0/zh-CN/installation/storage-configuration/)
+> - Supported Storage Classes：[QingCloud Block Storage](https://www.qingcloud.com/products/volume/)、[QingStor NeonSAN](https://docs.qingcloud.com/product/storage/volume/super_high_performance_shared_volume/)、[GlusterFS](https://www.gluster.org/)、[CephRBD](https://ceph.com/)、[NFS](https://kubernetes.io/docs/concepts/storage/volumes/#nfs)、[Local Volume](https://kubernetes.io/docs/concepts/storage/volumes/#local). For details regarding storage configuration, please refer to [Storage Configuration Instructions](//docs.kubesphere.io/advanced-v1.0/zh-CN/installation/storage-configuration/)
 > - Typically, you need to configure the persistent storage. Since multi-node mode does not support local storage, it's recommended to modify the local storage configuration to `false`, then configure persistent storage such as QingCloud-CSI, NeonSAN-CSI, GlusterFS or CephRBD. Following example describes how to configure NFS server in Kubernetes (`nfs_server_enable` and `nfs_server_is_default_class` needs to be set to true).
 > - Since the default subnet for Cluster IPs is 10.233.0.0/18, default subnet for Pod IPs is 10.233.64.0/18 in Kubernetes cluster. The node IPs must not overlap with those 2 default IPs. If any conflicts happened with the IP address, go to `conf/vars.yaml` and modify `kube_service_addresses` or `kube_pods_subnet` to avoid this senario.
 
@@ -175,7 +175,7 @@ $ cd scripts
 $ ./install.sh
 ```
 
-**3.** Enter `2` to select `multi-node` mode to start, the installer will prompt if you have configured the storage or not. If not, please enter "no", then return to configure the storage, for details please reference [Storage Configuration Instructions](//docs.kubesphere.io/advanced-v1.0.0/zh-CN/installation/storage-configuration/).
+**3.** Enter `2` to select `multi-node` mode to start, the installer will prompt if you have configured the storage or not. If not, please enter "no", then return to configure the storage, for details please reference [Storage Configuration Instructions](//docs.kubesphere.io/advanced-v1.0/zh-CN/installation/storage-configuration/).
 
 ```bash
 ################################################
@@ -210,6 +210,6 @@ NOTE：Please modify the default password after login.
 
 > Note: If you need to view the above interface , just execute `cat kubesphere/kubesphere_running` command in the installer directory.
 
-**(2).** You will be able to use default account and password to log in to the KubeSphere console to experience when KubeSphere is deployed successfully. It's highly recommended to refer to the [KubeSphere Quick Start](//docs.kubesphere.io/advanced-v1.0.0/zh-CN/quick-start/quick-start-guide/)， and learn how to get started with it！
+**(2).** You will be able to use default account and password to log in to the KubeSphere console to experience when KubeSphere is deployed successfully. It's highly recommended to refer to the [KubeSphere Quick Start](//docs.kubesphere.io/advanced-v1.0/zh-CN/quick-start/quick-start-guide/)， and learn how to get started with it！
 
 ![login](/login-page-en.png)
