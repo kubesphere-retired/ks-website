@@ -8,6 +8,7 @@ import RoadMap from '../components/RoadMap/index'
 import Slider from '../components/Slider/index'
 
 import DashboardImage from '../assets/dashboard.png'
+import DashboardEnImage from '../assets/dashboard-en.png'
 import BannerBg from '../assets/banner-bg.svg'
 import SliderBg from '../assets/slider-bg.svg'
 import EasyUseIcon from '../assets/easyuse.svg'
@@ -25,7 +26,8 @@ import slider3 from '../assets/slider-3.png'
 
 import './index.scss'
 
-const Banner = ({ t }) => {
+const Banner = ({ t, i18n }) => {
+  const isZhCN = i18n.language.toLowerCase().indexOf('zh') !== -1
   return (
     <div className="wrapper banner">
       <div className="banner-desc">
@@ -53,7 +55,11 @@ const Banner = ({ t }) => {
       </div>
       <div className="banner-snapshot">
         <img src={BannerBg} alt="" />
-        <img src={DashboardImage} alt="" className="banner-snapshot-sub" />
+        <img
+          src={isZhCN ? DashboardImage : DashboardEnImage}
+          alt=""
+          className="banner-snapshot-sub"
+        />
       </div>
     </div>
   )
@@ -198,10 +204,7 @@ const Contribution = ({ t }) => (
               </a>
             </li>
             <li>
-              <a
-                href="//docs.kubesphere.io"
-                target="_blank"
-              >
+              <a href="//docs.kubesphere.io" target="_blank">
                 {t('Read the KubeSphere Documentation')}
               </a>
             </li>
