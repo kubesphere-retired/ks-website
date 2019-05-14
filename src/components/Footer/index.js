@@ -63,7 +63,7 @@ const Footer = ({ className, t }) => (
           </ul>
         </div>
       </div>
-      <p className={styles.icp}>KubeSphere™ 2019 All Rights Reserved.</p>
+      <p className={styles.icp}>KubeSphere®️ 2019 All Rights Reserved.</p>
     </div>
   </div>
 )
