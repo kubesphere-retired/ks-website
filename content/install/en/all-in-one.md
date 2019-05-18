@@ -1,86 +1,56 @@
-## All-in-One Mode
+## All-in-One Mode 
+ 
+For those who are new to KubeSphere Advanced Edition and looking for the fastest way to install and experience the new features, the all-in-one mode must be your best choice since it supports one-click installation. 
 
-For those who are new to KubeSphere Advanced Edition and looking for the fastest way to install and experience the new features, the all-in-one mode must be your best choice since it supports one-click installation. Just follow the steps below to get started.
+## Prerequisites
 
-### Prerequisites
+It is recommended to use the storage services which are recommended by KubeSphere and prepare the corresponding storage servers. If you are not prepare the storage servers yet, you can also use the default Local Volume as the storage only for testing installation.
 
-- Please download [KubeSphere Advanced Edition](/download) to the target machine.
-- It is recommended to use the storage services which are recommended by KubeSphere and prepare the corresponding storage servers. If you are not prepare the storage servers yet, you can also use Local Volume as the default storage only for testing installation.
+### Step 1: Provision Linux Host
 
-#### Step 1: Provision Linux Host
+The following section identifies the hardware specifications and system-level requirements of one host for installation. 
 
-The following section identifies the hardware specifications and system-level requirements of one host for installation. To get started with all-in-one mode, you may need to prepare only one host refer to the following specification. For `ubuntu 16.04` OS, it's recommended to select the latest `16.04.5`.
+- For `ubuntu 16.04` OS, it's recommended to select the latest `16.04.5`.
+- If you are using ubuntu 18.04, you need to use root.
+- If the Debian system does not have the sudo command installed, you need to execute the `apt update && apt install sudo` command using root before installation.
 
-##### Hardware Recommendations
+#### Hardware Recommendations
 
-| System                                       | Minimum Requirements                                  | Recommendations                                        |
-| -------------------------------------------- | ----------------------------------------------------- | ------------------------------------------------------ |
-| CentOS 7.5 (64 bit)                          | CPU：4 Core <br/> Memory：8 G <br/> Disk Space：100 G | CPU：8 Core <br/> Memory：16 G <br/> Disk Space：500 G |
-| Ubuntu 16.04/18.04 LTS (64 bit)              | CPU：4 Core <br/> Memory：8 G <br/> Disk Space：100 G | CPU：8 Core <br/> Memory：16 G <br/> Disk Space：500 G |
-| Red Hat Enterprise Linux Server 7.4 (64 bit) | CPU：4 Core <br/> Memory：8 G <br/> Disk Space：100 G | CPU：8 Core <br/> Memory：16 G <br/> Disk Space：500 G |
+| System  | Minimum Requirements | 
+| ------- | ----------- | 
+| CentOS 7.5 (64 bit)         | CPU：8 Core,  Memory：16 G, Disk Space：100 G | 
+| Ubuntu 16.04/18.04 LTS (64 bit)   | CPU：8 Core,  Memory：16 G, Disk Space：100 G |
+| Red Hat Enterprise Linux Server 7.4 (64 bit) | CPU：8 Core,  Memory：16 G, Disk Space：100 G | 
+|Debian Stretch 9.5 (64 bit)| CPU：8 Core,  Memory：16 G, Disk Space：100 G | 
 
-#### Step 2: Provision Installation Files
+### Step 2: Provision Installation Files
 
-**1.** Download the stable [KubeSphere Installer](/download), suggest you to download installer via command like `curl -O url` or `wget url` with download link. When you get the installer, execute following command to unzip it.
+**1.** Download the 2.0.0 installer then unzip it.
 
-```
-  $ tar -zxf kubesphere-all-advanced-1.0.1.tar.gz
-```
-
-**2.** Go into “`kubesphere-all-advanced-1.0.1`” folder
-
-```
-  $ cd kubesphere-all-advanced-1.0.1
+```bash
+$ curl -L https://kubesphere.io/download/stable/advanced-2.0.0 > advanced-2.0.0.tar.gz
 ```
 
-<!-- <div class="md-tabs">
-  <input type="radio" name="tabs" id="stable" checked="checked">
-  <label for="stable">Stable</label>
-  <span class="md-tab">
-
-**1.** Download the stable [KubeSphere Installer](/download), suggest you to download installer via command like `curl -O url` or `wget url` with download link. When you get the installer, execute following command to unzip it.
-
-```
-  $ tar -zxf kubesphere-all-advanced-1.0.1.tar.gz
+```bash
+$ tar -zxf advanced-2.0.0.tar.gz
 ```
 
-**2.** Go into “`kubesphere-all-advanced-1.0.1`” folder
+**2.** Go into “`kubesphere-all-advanced-2.0.0`” folder
 
 ```
-  $ cd kubesphere-all-advanced-1.0.1
+  $ cd `kubesphere-all-advanced-2.0.0`
 ```
 
-  </span>
-  <input type="radio" name="tabs" id="dev">
-  <label for="dev">Develop</label>
-  <span class="md-tab">
+### Step 3: Get Started With Installation
 
-**1.** Download the latest develop [KubeSphere Installer](https://kubesphere.anybox.qingcloud.com/s/08J9UayxM8XIQcnKnxLoRz1C084o2WoT), suggest you to download installer via command like `curl -O url` or `wget url` with download link. When you get the installer, execute following command to unzip it.
-
-```
-  $ tar -zxf kubesphere-all-advanced-1.0.1-dev.tar.gz
-```
-
-**2.** Go into “`kubesphere-all-advanced-1.0.1-dev`” folder
-
-```
-  $ cd kubesphere-all-advanced-1.0.1-dev
-```
-
-  </span>
-</div> -->
-
-#### Step 3: Get Started With Installation
-
-The environment and file monitoring, dependent software installation of KubeSphere, automated installation of Kubernetes and etcd, and automated storage configuration, Kubernetes v1.12.3 will be installed by default. All of these procedures will be automatically processing in this installation. The KubeSphere installer will automatically install the relevant dependent software like Ansible (v2.4+)，Python-netaddr (v0.7.18+) and Jinja (v2.9+) as well.
+All of these procedures will be automatically processing in this installation, such as the environment and file monitoring, installation of Kubernetes and etcd, and storage and network configuration, Kubernetes v1.13.5 will be installed by default. 
 
 **Note:**
 
 > - Generally, you can install it directly without any modification.
-> - If you would like to customize the configuration parameters, such as network, storage classes, etc. You will be able to specify the parameters in `vars.yml`. Otherwise it will be executed with default parameters without any modifications.
-> - Network：KubeSphere supports `calico` by default.
-> - All-in-One uses local storage as the storage class by default. Since local storage does not support dynamic provisioning, users may need to create a persistent volume (PV) in advance when creating volumes in the KubeSphere console if PVs is insufficient, installer also pre-creates 10 available 10G PVs for testing.
-> - Supported Storage Classes：[QingCloud Block Storage](https://www.qingcloud.com/products/volume/)、[QingStor NeonSAN](https://docs.qingcloud.com/product/storage/volume/super_high_performance_shared_volume/)、[GlusterFS](https://www.gluster.org/)、[CephRBD](https://ceph.com/)、[NFS](https://kubernetes.io/docs/concepts/storage/volumes/#nfs)、[Local Volume](https://kubernetes.io/docs/concepts/storage/volumes/#local). For details regarding storage configuration, please refer to [Storage Configuration Instructions](//docs.kubesphere.io/advanced-v1.0/zh-CN/installation/storage-configuration/)
+> - KubeSphere supports `calico` by default. If you would like to customize the configuration parameters, such as network, storage classes, etc. You will be able to specify the parameters in `vars.yml`. Otherwise it will be executed with default parameters without any modifications.
+> - All-in-One uses local storage as the storage class by default. Since local storage does not support dynamic provisioning, users may need to create a persistent volume (PV) in advance when creating volumes in the KubeSphere console if PVs is insufficient, installer also pre-creates 26 pieces of available 10G PVs for testing.
+> - Supported Storage Classes：[QingCloud Block Storage](https://www.qingcloud.com/products/volume/)、[QingStor NeonSAN](https://docs.qingcloud.com/product/storage/volume/super_high_performance_shared_volume/)、[GlusterFS](https://www.gluster.org/)、[CephRBD](https://ceph.com/)、[NFS](https://kubernetes.io/docs/concepts/storage/volumes/#nfs)、[Local Volume](https://kubernetes.io/docs/concepts/storage/volumes/#local). For details regarding storage configuration, please refer to [Storage Configuration Instructions](//docs.kubesphere.io/advanced-v2.0/zh-CN/installation/storage-configuration/)
 > - Since the default subnet for Cluster IPs is 10.233.0.0/18, default subnet for Pod IPs is 10.233.64.0/18 in Kubernetes cluster. The node IPs must not overlap with those 2 default IPs. If any conflicts happened with the IP address, go to `conf/vars.yaml` and modify `kube_service_addresses` or `kube_pods_subnet` to avoid this senario.
 
 Following steps describes how to get started with all-in-one:
@@ -109,14 +79,14 @@ $ ./install.sh
 *   2) Multi-node
 *   3) Quit
 ################################################
-https://kubesphere.io/               2018-12-08
+https://kubesphere.io/               2018-05-18
 ################################################
 Please input an option: 1
 ```
 
-**4.** Test KubeSphere all-in-one mode installation：
+**4.** Verify if all-in-one mode is installed successfully：
 
-**(1).** If you can see the following "Successful" result being returned after `install.sh` completed, that means KubuSphere installation is ready. You may need to bind the EIP and configure port forwarding. Make sure you have added the corresponding nodeport to the firewall (like 31236) if the EIP has a firewall, then external network traffic can pass through this nodeport.
+**(1).** If you can see the following "Successful" result being returned after `install.sh` completed, that's successful. You may need to bind the EIP and configure port forwarding. Make sure you have added the console nodeport (30880) to the firewall if the EIP has a firewall, then external network traffic can pass through this nodeport.
 
 ```bash
 successsful!
@@ -124,16 +94,20 @@ successsful!
 ###              Welcome to KubeSphere!           ###
 #####################################################
 
-Console: http://192.168.0.8:31236
+Console: http://192.168.0.8:30880
 Account: admin
-Password: passw0rd
+Password: P@88w0rd 
 
 NOTE：Please modify the default password after login.
 #####################################################
 ```
 
-> Note: If you need to view the above interface , just execute `cat kubesphere/kubesphere_running` command in the installer directory.
+> Note: If you need to view the above interface, just execute `cat kubesphere/kubesphere_running` command in the installer directory.
 
-**(2).** You will be able to use default account and password to log in to the KubeSphere console to experience when KubeSphere is deployed successfully. It's highly recommended to refer to the [KubeSphere Quick Start](//docs.kubesphere.io/advanced-v1.0/zh-CN/quick-start/quick-start-guide/)， and learn how to get started with it！
+**(2).** You will be able to use default account and password to log in to the KubeSphere console to experience the features, it also has an English version UI. It's highly recommended to refer to the [KubeSphere Quick Start](//docs.kubesphere.io/advanced-v2.0/zh-CN/quick-start/quick-start-guide/)， and learn how to get started with it！
 
 ![login](/login-page-en.png)
+
+<font color=red>Note: After log in to console, please verify the monitoring status of service components in the "Cluster Status". If the service is not ready, please wait patiently. You can start to use when all components are totally ready.</font>
+
+![](https://pek3b.qingstor.com/kubesphere-docs/png/20190519013347.png)
