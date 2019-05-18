@@ -131,23 +131,29 @@ const AppInstall = ({ t }) => (
 
 const ROADMAP = [
   {
-    name: 'Community Edition 1.0',
+    name: 'Community Edition 1.0.0',
     time: '2018/6/30 00:00:00',
     status: 'Released',
   },
   {
-    name: 'Express Edition 1.0',
+    name: 'Express Edition 1.0.0',
     time: '2018/7/31 00:00:00',
     status: 'Released',
   },
   {
-    name: 'Advanced Edition 1.0',
+    name: 'Advanced Edition 1.0.0',
     time: '2018/12/1 00:00:00',
     status: 'Released',
   },
   {
-    name: 'Advanced Edition 2.0',
-    time: '2019/3/31 00:00:00',
+    name: 'Advanced Edition 2.0.0',
+    time: '2019/5/18 00:00:00',
+    status: 'Released',
+    current: true,
+  },
+  {
+    name: 'Advanced Edition 3.0.0',
+    time: '2019',
     status: 'Planning',
   },
 ]

@@ -35,14 +35,6 @@
     }
   }
 
-  .content {
-    padding-left: 40px;
-
-    @media only screen and (max-width: $mobile-max-width) {
-      padding: 0;
-    }
-  }
-
   & + .card {
     margin-top: 24px;
   }
