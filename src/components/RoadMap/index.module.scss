@@ -1,6 +1,12 @@
 @import '../../styles/variables';
 
 .roadmap {
+  padding: 70px 0;
+
+  @media only screen and (max-width: 700px) {
+    padding: 0;
+  }
+
   .item {
     display: inline-block;
     vertical-align: top;
@@ -36,13 +42,22 @@
     }
 
     .text {
+      position: absolute;
       line-height: 1.71;
       font-family: $font-family-id;
+
+      &.top {
+        transform: translateY(-80px);
+      }
 
       @media only screen and (max-width: 700px) {
         display: inline-block;
         vertical-align: top;
         margin-left: 20px;
+
+        &.top {
+          transform: translateY(0);
+        }
       }
 
       @media only screen and (max-width: 400px) {
@@ -76,7 +91,7 @@
   .line {
     display: inline-block;
     vertical-align: middle;
-    width: 146px;
+    width: 120px;
     height: 2px;
     border: solid 1px #adebb5;
   }
