@@ -11,9 +11,9 @@ module.exports = {
   'Related Products': '相关产品',
   'KubeSphere Docs': '文档中心',
   'About': '关于',
-  'About us': '关于我们',
+  'News': '发布动态',
   'Careers': '加入我们',
   'Working hard Coding': '正在努力 Coding',
   'Installer': '安装指南',
-  'Tutorial': '使用指南',
+  'Tutorial': '快速入门',
 }

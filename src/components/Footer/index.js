@@ -43,13 +43,13 @@ const Footer = ({ className, t }) => (
             <li>
               <div className="h3">{t('KubeSphere Docs')}</div>
               <a
-                href="//docs.kubesphere.io/advanced-v1.0/zh-CN/installation/intro/"
+                href="//docs.kubesphere.io/advanced-v2.0/zh-CN/installation/intro/"
                 target="_blank"
               >
-                {t('Installer')}
+                {t('Installation')}
               </a>
               <a
-                href="//docs.kubesphere.io/advanced-v1.0/zh-CN/quick-start/quick-start-guide/"
+                href="//docs.kubesphere.io/advanced-v2.0/zh-CN/quick-start/quick-start-guide/"
                 target="_blank"
               >
                 {t('Tutorial')}
@@ -57,8 +57,18 @@ const Footer = ({ className, t }) => (
             </li>
             <li>
               <div className="h3">{t('About')}</div>
-              <Link to="">{t('About us')}</Link>
-              <Link to="">{t('Careers')}</Link>
+              <a
+                href="//activity.qingcloud.com/event/kubesphere2019/"
+                target="_blank"
+              >
+                {t('News')}
+              </a>
+              <a
+                href="//www.qingcloud.com/jobs"
+                target="_blank"
+              >
+                {t('Careers')}
+              </a>
             </li>
           </ul>
         </div>
