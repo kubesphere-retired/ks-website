@@ -17,7 +17,7 @@ const RoadMap = ({ className, data, t }) => (
           <div className="dot" />
           <div className="line" />
         </div>
-        <p
+        <div
           className={classnames(styles.text, { [styles.top]: index % 2 === 1 })}
         >
           {item.time.length === 4
@@ -25,7 +25,7 @@ const RoadMap = ({ className, data, t }) => (
             : moment(new Date(item.time)).format(t('MMM YYYY'))}
           <div className={styles.br} />
           {t(item.name)}
-        </p>
+        </div>
       </div>
     ))}
   </div>
