@@ -1,7 +1,7 @@
 import React from 'react'
 import classnames from 'classnames'
 import moment from 'moment-mini'
-import { translate } from 'react-i18next'
+import { withTranslation } from 'react-i18next'
 
 import styles from './index.module.scss'
 
@@ -31,4 +31,4 @@ const RoadMap = ({ className, data, t }) => (
   </div>
 )
 
-export default translate('base')(RoadMap)
+export default withTranslation()(RoadMap)

@@ -1,5 +1,5 @@
 import React from 'react'
-import { translate } from 'react-i18next'
+import { withTranslation } from 'react-i18next'
 
 import Modal from '../../Modal/index'
 import Form from '../../Form/index'
@@ -20,7 +20,9 @@ class AdvancedModal extends React.Component {
         submitted: true,
       },
       () => {
-        const query = Object.keys(data).map(key => `${key}=${data[key]}`).join('&')
+        const query = Object.keys(data)
+          .map(key => `${key}=${data[key]}`)
+          .join('&')
         fetch(`/apply.html?${query}&version=advanced`).then()
       }
     )
@@ -33,14 +35,25 @@ class AdvancedModal extends React.Component {
     if (submitted) {
       return (
         <div>
-          <div className="h2">{t('We have received your trial application')}</div>
+          <div className="h2">
+            {t('We have received your trial application')}
+          </div>
           <p style={{ marginBottom: 80, marginTop: 8 }}>
-            {t('Please keep your email and phone works so that our pre-sales team can communicate with you as soon as possible')}
+            {t(
+              'Please keep your email and phone works so that our pre-sales team can communicate with you as soon as possible'
+            )}
           </p>
           <div className="h4">{t('More Options')}</div>
           <p style={{ marginTop: 8 }}>
-            <span>{t('You can also download the trial version')}</span>&nbsp;
-            <a href="https://kubesphere-installer.pek3b.qingstor.com/stable/kubesphere-all-advanced-2.0.0.tar.gz" target="_blank">{t('Online Installation')}</a>
+            <span>{t('You can also download the trial version')}</span>
+            &nbsp;
+            <a
+              href="https://kubesphere-installer.pek3b.qingstor.com/stable/kubesphere-all-advanced-2.0.0.tar.gz"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {t('Online Installation')}
+            </a>
           </p>
         </div>
       )
@@ -63,7 +76,12 @@ class AdvancedModal extends React.Component {
               <input type="number" name="phone" required />
             </Form.Item>
             <Form.Item label={`${t('Email')}:`}>
-              <input type="email" name="email" placeholder="User@example.com" required />
+              <input
+                type="email"
+                name="email"
+                placeholder="User@example.com"
+                required
+              />
             </Form.Item>
           </div>
           <Form.Item label={`${t('Requirement Details')}:`}>
@@ -104,7 +122,7 @@ class AdvancedModal extends React.Component {
             <p
               dangerouslySetInnerHTML={{
                 __html: t(
-                  'More than 1000 users have already downloaded and used KubeSphere ,  please contact us via <a href="//github.com/kubesphere/kubesphere" target="_blank">Github</a> or <a href="//kubesphere.slack.com" target="_blank">Slack</a> if you have any questions.'
+                  'More than 1000 users have already downloaded and used KubeSphere ,  please contact us via <a href="//github.com/kubesphere/kubesphere" target="_blank" rel="noopener noreferrer">Github</a> or <a href="//kubesphere.slack.com" target="_blank" rel="noopener noreferrer">Slack</a> if you have any questions.'
                 ),
               }}
             />
@@ -116,4 +134,4 @@ class AdvancedModal extends React.Component {
   }
 }
 
-export default translate('base')(AdvancedModal)
+export default withTranslation()(AdvancedModal)

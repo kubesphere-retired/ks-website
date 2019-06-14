@@ -1,6 +1,6 @@
 import React from 'react'
 import classnames from 'classnames'
-import { translate } from 'react-i18next'
+import { withTranslation } from 'react-i18next'
 
 import { ReactComponent as Arrow } from '../../../assets/arrow.svg'
 
@@ -66,4 +66,4 @@ class InstallCardSelect extends React.Component {
   }
 }
 
-export default translate('base')(InstallCardSelect)
+export default withTranslation()(InstallCardSelect)

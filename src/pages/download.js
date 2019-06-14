@@ -1,6 +1,9 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
-import { translate } from 'react-i18next'
+import { graphql } from 'gatsby'
 
+import Layout from '../layouts/index'
+import withI18next from '../components/withI18next'
 import Button from '../components/Button/index'
 import CommunityModal from '../components/Download/CommunityModal/index'
 import ExpressModal from '../components/Download/ExpressModal/index'
@@ -29,7 +32,11 @@ const Banner = ({ t }) => {
           )}
         </p>
         <div className="download-banner-links">
-          <a href="https://kubesphere.qingcloud.com/#category" target="_blank">
+          <a
+            href="https://kubesphere.qingcloud.com/#category"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Button type="primary" size="large" ghost>
               {t('Version Comparison')} →
             </Button>
@@ -43,7 +50,12 @@ const Banner = ({ t }) => {
   )
 }
 
-const Versions = ({ t, showCommunityModal, showExpressModal, showAdvancedModal }) => (
+const Versions = ({
+  t,
+  showCommunityModal,
+  showExpressModal,
+  showAdvancedModal,
+}) => (
   <div className="version-compare-wrapper">
     <ul className="version-compare">
       <li onClick={showCommunityModal}>
@@ -52,7 +64,7 @@ const Versions = ({ t, showCommunityModal, showExpressModal, showAdvancedModal }
           <div className="h2">{t('Community Edition')}</div>
           <p>
             {t(
-              'Welcome to the KubeSphere Community Edition, it\'s only recommended to understand the KubeSphere features. For production environment we recommend you to purchase the Commercial Edition.'
+              "Welcome to the KubeSphere Community Edition, it's only recommended to understand the KubeSphere features. For production environment we recommend you to purchase the Commercial Edition."
             )}
           </p>
         </div>
@@ -88,7 +100,7 @@ const Versions = ({ t, showCommunityModal, showExpressModal, showAdvancedModal }
 
 class IndexPage extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
 
     this.state = {
       showCommunity: props.location.search.indexOf('community') !== -1,
@@ -96,7 +108,6 @@ class IndexPage extends React.Component {
       showAdvanced: props.location.search.indexOf('advanced') !== -1,
     }
   }
-  
 
   showCommunityModal = () => {
     this.setState({
@@ -136,7 +147,7 @@ class IndexPage extends React.Component {
 
   render() {
     return (
-      <div>
+      <Layout {...this.props}>
         <Banner {...this.props} />
         <Versions
           {...this.props}
@@ -156,9 +167,19 @@ class IndexPage extends React.Component {
           isOpen={this.state.showAdvanced}
           onRequestClose={this.hideAdvancedModal}
         />
-      </div>
+      </Layout>
     )
   }
 }
 
-export default translate('base')(IndexPage)
+export default withI18next({ns: 'common'})(IndexPage)
+
+export const query = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`

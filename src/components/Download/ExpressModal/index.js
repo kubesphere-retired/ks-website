@@ -1,5 +1,5 @@
 import React from 'react'
-import { translate } from 'react-i18next'
+import { withTranslation } from 'react-i18next'
 
 import Modal from '../../Modal/index'
 import Form from '../../Form/index'
@@ -20,7 +20,9 @@ class ExpressModal extends React.Component {
         submitted: true,
       },
       () => {
-        const query = Object.keys(data).map(key => `${key}=${data[key]}`).join('&')
+        const query = Object.keys(data)
+          .map(key => `${key}=${data[key]}`)
+          .join('&')
         fetch(`/apply.html?${query}&version=express`).then()
       }
     )
@@ -33,16 +35,33 @@ class ExpressModal extends React.Component {
     if (submitted) {
       return (
         <div>
-          <div className="h2">{t('We have received your trial application')}</div>
+          <div className="h2">
+            {t('We have received your trial application')}
+          </div>
           <p style={{ marginBottom: 80, marginTop: 8 }}>
-            {t('Please keep your email and phone works so that our pre-sales team can communicate with you as soon as possible')}
+            {t(
+              'Please keep your email and phone works so that our pre-sales team can communicate with you as soon as possible'
+            )}
           </p>
           <div className="h4">{t('More Options')}</div>
           <p style={{ marginTop: 8 }}>
-            <span>{t('You can also download the trial version')}</span>&nbsp;
-            <a href="//kubesphere.anybox.qingcloud.com/s/zFccwNOKC0MNu1cA3lkZZIueyr1cqvgF" target="_blank">{t('Online Installation')}</a>
+            <span>{t('You can also download the trial version')}</span>
+            &nbsp;
+            <a
+              href="//kubesphere.anybox.qingcloud.com/s/zFccwNOKC0MNu1cA3lkZZIueyr1cqvgF"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {t('Online Installation')}
+            </a>
             &nbsp;|&nbsp;
-            <a href="//kubesphere.anybox.qingcloud.com/s/UBBctImJLtxnkqT5hrEaijjolTENNVsr" target="_blank">{t('Offline Installation')}</a>
+            <a
+              href="//kubesphere.anybox.qingcloud.com/s/UBBctImJLtxnkqT5hrEaijjolTENNVsr"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {t('Offline Installation')}
+            </a>
           </p>
           {/* <p
             dangerouslySetInnerHTML={{
@@ -72,7 +91,12 @@ class ExpressModal extends React.Component {
               <input type="number" name="phone" required />
             </Form.Item>
             <Form.Item label={`${t('Email')}:`}>
-              <input type="email" name="email" placeholder="User@example.com" required />
+              <input
+                type="email"
+                name="email"
+                placeholder="User@example.com"
+                required
+              />
             </Form.Item>
           </div>
           <Form.Item label={`${t('Requirement Details')}:`}>
@@ -125,4 +149,4 @@ class ExpressModal extends React.Component {
   }
 }
 
-export default translate('base')(ExpressModal)
+export default withTranslation()(ExpressModal)

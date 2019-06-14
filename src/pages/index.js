@@ -1,7 +1,11 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
+import { graphql } from 'gatsby'
 import Link from 'gatsby-link'
-import { translate } from 'react-i18next'
 
+import Layout from '../layouts/index'
+
+import withI18next from '../components/withI18next'
 import Button from '../components/Button/index'
 import ContribCard from '../components/Card/Contrib/index'
 import RoadMap from '../components/RoadMap/index'
@@ -26,8 +30,8 @@ import slider3 from '../assets/slider-3.png'
 
 import './index.scss'
 
-const Banner = ({ t, i18n }) => {
-  const isZhCN = i18n.language.toLowerCase().indexOf('zh') !== -1
+const Banner = ({ t, pageContext: { locale } }) => {
+  const isZhCN = locale.toLowerCase().indexOf('zh') !== -1
   return (
     <div className="wrapper banner">
       <div className="banner-desc">
@@ -41,12 +45,16 @@ const Banner = ({ t, i18n }) => {
         />
         <p>{t('what_is_kubesphere_io')}</p>
         <div className="banner-links">
-          <Link to={'/download'}>
+          <Link to={`/${locale}/download`}>
             <Button type="primary" size="large">
               {t('Get Community Edition')}
             </Button>
           </Link>
-          <a href="https://kubesphere.qingcloud.com/" target="_blank">
+          <a
+            href="https://kubesphere.qingcloud.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Button type="primary" size="large" ghost>
               {t('Get Commercial Edition')}
             </Button>
@@ -89,7 +97,7 @@ const Features = ({ t }) => (
         <p
           dangerouslySetInnerHTML={{
             __html: t(
-              'Besides the open source solutions, if users would like to realize higher demands for network and storage, <a href="//www.qingcloud.com" target="_blank">QingCloud</a> can be used as the underlying platform to integrate QingCloud SDN, block storage and NeonSAN with service-guaranteed network and storage solutions.'
+              'Besides the open source solutions, if users would like to realize higher demands for network and storage, <a href="//www.qingcloud.com" target="_blank" rel="noopener noreferrer">QingCloud</a> can be used as the underlying platform to integrate QingCloud SDN, block storage and NeonSAN with service-guaranteed network and storage solutions.'
             ),
           }}
         />
@@ -117,7 +125,7 @@ const AppInstall = ({ t }) => (
     <p
       dangerouslySetInnerHTML={{
         __html: t(
-          'Based on the open source <a href="//openpitrix.io" target="_blank">OpenPitrix</a> project, providing full lifecycle management of applications, including development, test, release, upgrade and remove, as well as multi-application registries management and one-click deployment of applications'
+          'Based on the open source <a href="//openpitrix.io" target="_blank" rel="noopener noreferrer">OpenPitrix</a> project, providing full lifecycle management of applications, including development, test, release, upgrade and remove, as well as multi-application registries management and one-click deployment of applications'
         ),
       }}
     />
@@ -183,6 +191,7 @@ const Contribution = ({ t }) => (
             <a
               href="https://github.com/kubesphere/kubesphere/issues"
               target="_blank"
+              rel="noopener noreferrer"
             >
               {t('Submit the Bug')} →
             </a>
@@ -196,7 +205,7 @@ const Contribution = ({ t }) => (
             <li
               dangerouslySetInnerHTML={{
                 __html: t(
-                  'Read the KubeSphere <a href="//github.com/kubesphere/kubesphere/blob/master/docs/welcome-to-KubeSphere-new-developer-guide.md " target="_blank">Contributor Guide</a> carefully'
+                  'Read the KubeSphere <a href="//github.com/kubesphere/kubesphere/blob/master/docs/welcome-to-KubeSphere-new-developer-guide.md " target="_blank" rel="noopener noreferrer">Contributor Guide</a> carefully'
                 ),
               }}
             />
@@ -205,12 +214,17 @@ const Contribution = ({ t }) => (
               <a
                 href="https://github.com/kubesphere/kubesphere"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 https://github.com/kubesphere/kubesphere
               </a>
             </li>
             <li>
-              <a href="//docs.kubesphere.io" target="_blank">
+              <a
+                href="//docs.kubesphere.io"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {t('Read the KubeSphere Documentation')}
               </a>
             </li>
@@ -225,7 +239,11 @@ const Contribution = ({ t }) => (
           <ul className="list">
             <li>
               {t('Find us on the Slack channel')}：
-              <a href="https://kubesphere.slack.com" target="_blank">
+              <a
+                href="https://kubesphere.slack.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 kubesphere.slack.com
               </a>
             </li>
@@ -236,13 +254,25 @@ const Contribution = ({ t }) => (
   </div>
 )
 
-const IndexPage = props => (
-  <div>
-    <Banner {...props} />
-    <Features {...props} />
-    <AppInstall {...props} />
-    <Contribution {...props} />
-  </div>
-)
+const IndexPage = props => {
+  return (
+    <Layout {...props}>
+      <Banner {...props} />
+      <Features {...props} />
+      <AppInstall {...props} />
+      <Contribution {...props} />
+    </Layout>
+  )
+}
 
-export default translate('base')(IndexPage)
+export default withI18next({ns: 'common'})(IndexPage)
+
+export const query = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`

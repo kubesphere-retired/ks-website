@@ -1,5 +1,5 @@
 import React from 'react'
-import { translate } from 'react-i18next'
+import { withTranslation } from 'react-i18next'
 import isEmpty from 'lodash/isEmpty'
 
 import Modal from '../../Modal/index'
@@ -149,4 +149,4 @@ class CommunityModal extends React.Component {
   }
 }
 
-export default translate('base')(CommunityModal)
+export default withTranslation()(CommunityModal)
