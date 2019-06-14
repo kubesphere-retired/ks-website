@@ -1,6 +1,7 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
 import classnames from 'classnames'
-import { translate } from 'react-i18next'
+import { withTranslation } from 'react-i18next'
 
 import { ReactComponent as EarthIcon } from '../../assets/earth.svg'
 
@@ -13,11 +14,10 @@ const LANGS = [
   { name: 'English', value: 'en' },
 ]
 
-const Language = ({ className, i18n }) => {
+const Language = ({ className, pageContext: { locale, originalPath } }) => {
   const handleChange = e => {
-    i18n.changeLanguage(e.target.dataset.lang)
     if (typeof window !== 'undefined') {
-      window.location.reload()
+      window.location.href = `/${e.target.dataset.lang}${originalPath}`
     }
   }
 
@@ -28,7 +28,7 @@ const Language = ({ className, i18n }) => {
         <a
           key={lang.value}
           className={classnames({
-            [styles.select]: lang.value === getLanguage(i18n.language),
+            [styles.select]: lang.value === getLanguage(locale),
           })}
           data-lang={lang.value}
           onClick={handleChange}
@@ -40,4 +40,4 @@ const Language = ({ className, i18n }) => {
   )
 }
 
-export default translate('base')(Language)
+export default withTranslation()(Language)

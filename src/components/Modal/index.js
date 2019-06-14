@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactModal from 'react-modal'
 
-import styles from './index.module.scss'
+import './index.scss'
 
 ReactModal.defaultStyles.overlay = Object.assign(
   {},

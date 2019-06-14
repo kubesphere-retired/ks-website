@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import { translate } from 'react-i18next'
+import { withTranslation } from 'react-i18next'
 import classnames from 'classnames'
 
 import Logo from '../Logo'
@@ -50,19 +50,34 @@ class Header extends React.Component {
   }
 
   renderNav() {
-    const { t } = this.props
+    const {
+      t,
+      pageContext: { locale },
+    } = this.props
 
     return (
       <div className={styles.nav} onClick={this.handleCloseModal}>
-        <Link to={'/install'}>{t('Installation')}</Link>
-        <a href="//docs.kubesphere.io" target="_blank">
+        <Link to={`/${locale}/install`}>{t('Installation')}</Link>
+        <a
+          href="//docs.kubesphere.io"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           {t('Documentation')}
         </a>
-        <a href="https://kubesphere.qingcloud.com/" target="_blank">
+        <a
+          href="https://kubesphere.qingcloud.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           {t('Commercial Editions')}
         </a>
         <div className={styles.github}>
-          <a href="https://github.com/kubesphere/kubesphere" target="_blank">
+          <a
+            href="https://github.com/kubesphere/kubesphere"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Button type="default" ghost>
               <GithubIcon />
               Github
@@ -74,6 +89,10 @@ class Header extends React.Component {
   }
 
   render() {
+    const {
+      pageContext: { locale },
+    } = this.props
+
     return (
       <div
         className={styles.header}
@@ -82,7 +101,7 @@ class Header extends React.Component {
         }}
       >
         <div className={styles.wrapper}>
-          <Link to="/">
+          <Link to={`/${locale}`}>
             <Logo className={styles.logo} />
           </Link>
           <div className={styles.navsWrapper}>{this.renderNav()}</div>
@@ -108,4 +127,4 @@ class Header extends React.Component {
   }
 }
 
-export default translate('base')(Header)
+export default withTranslation()(Header)

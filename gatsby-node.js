@@ -1,13 +1,82 @@
-const path = require(`path`)
-const fs = require('fs-extra')
-const chokidar = require('chokidar')
+const fs = require('fs')
+const path = require('path')
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
-const srcLocales = path.join(__dirname, '/src/locales')
-const publicLocales = path.join(__dirname, '/public/locales')
+const localesNSContent = {
+  en: [
+    {
+      content: fs.readFileSync(`src/locales/en/common.json`, 'utf8'),
+      ns: 'common',
+    },
+  ],
+  'zh-CN': [
+    {
+      content: fs.readFileSync(`src/locales/zh-CN/common.json`, 'utf8'),
+      ns: 'common',
+    },
+  ],
+}
 
-exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
-  const { createNodeField } = boundActionCreators
+const availableLocales = [
+  { value: 'zh-CN', text: 'Chinese' },
+  { value: 'en', text: 'English' },
+]
+
+const defaultLocales = { value: 'en', text: 'English' }
+
+exports.onCreatePage = async props => {
+  const {
+    page,
+    actions: { createPage, createRedirect, deletePage },
+  } = props
+
+  if (page.path.indexOf('404') !== -1) {
+    return
+  }
+
+  deletePage(page)
+
+  availableLocales.map(({ value }) => {
+    const newPath = `/${value}${page.path}`
+
+    const localePage = {
+      ...page,
+      originalPath: page.path,
+      path: newPath,
+      context: {
+        availableLocales,
+        locale: value,
+        routed: true,
+        data: localesNSContent[value],
+        originalPath: page.path,
+      },
+    }
+    createPage(localePage)
+  })
+
+  if (page.path === '/') {
+    createPage({
+      ...page,
+      context: {
+        availableLocales,
+        locale: 'en',
+        routed: true,
+        data: localesNSContent['en'],
+        originalPath: page.path,
+      },
+    })
+  } else {
+    createRedirect({
+      fromPath: page.path,
+      isPermanent: true,
+      redirectInBrowser: true,
+      toPath: `/${defaultLocales.value}${page.path}`,
+    })
+  }
+}
+
+exports.onCreateNode = ({ node, getNode, actions }) => {
+  const { createNodeField } = actions
   if (node.internal.type === `MarkdownRemark`) {
     const slug = createFilePath({ node, getNode, basePath: `content/install` })
 
@@ -26,8 +95,8 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
   }
 }
 
-exports.createPages = ({ graphql, boundActionCreators }) => {
-  const { createPage } = boundActionCreators
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage, createRedirect } = actions
   return new Promise(resolve => {
     graphql(`
       {
@@ -51,10 +120,31 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 
       groups.forEach(framework => {
         if (framework === 'install') {
-          createPage({
-            path: framework,
-            component: path.resolve(`./src/templates/install.js`),
-            context: { framework },
+          const originalPath = `/${framework}`
+          availableLocales.map(({ value }) => {
+            const newPath = `/${value}${originalPath}`
+
+            const localePage = {
+              originalPath,
+              path: newPath,
+              component: path.resolve(`./src/templates/install.js`),
+              context: {
+                availableLocales,
+                locale: value,
+                routed: true,
+                data: localesNSContent[value],
+                originalPath,
+                framework,
+              },
+            }
+            createPage(localePage)
+          })
+
+          createRedirect({
+            fromPath: originalPath,
+            isPermanent: true,
+            redirectInBrowser: true,
+            toPath: `/${defaultLocales.value}${originalPath}`,
           })
         }
       })
@@ -62,22 +152,4 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
       resolve()
     })
   })
-}
-
-exports.onPostBuild = () => {
-  fs.copySync(srcLocales, publicLocales)
-  fs.copySync(
-    path.join(__dirname, '/src/pages/apply.html'),
-    path.join(__dirname, '/public/apply.html')
-  )
-}
-
-exports.modifyWebpackConfig = ({ config, stage }) => {
-  if (stage === 'develop') {
-    chokidar.watch(srcLocales).on('all', () => {
-      fs.copySync(srcLocales, publicLocales)
-    })
-  }
-
-  return config
 }

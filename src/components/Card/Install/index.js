@@ -1,6 +1,6 @@
 import React from 'react'
 import classnames from 'classnames'
-import { translate } from 'react-i18next'
+import { withTranslation } from 'react-i18next'
 
 import styles from './index.module.scss'
 
@@ -31,4 +31,4 @@ const InstallCard = ({
   </div>
 )
 
-export default translate('base')(InstallCard)
+export default withTranslation()(InstallCard)

@@ -1,8 +1,11 @@
 import React from 'react'
-import { translate } from 'react-i18next'
+
+import { graphql } from 'gatsby'
 
 import { getScrollTop, getLanguage } from '../utils/index'
 
+import Layout from '../layouts/index'
+import withI18next from '../components/withI18next'
 import Button from '../components/Button/index'
 import InstallCard from '../components/Card/Install/index'
 import InstallCardSelect from '../components/Card/Install/select'
@@ -24,7 +27,11 @@ const Banner = ({ t }) => (
       )}
     </p>
     <div style={{ textAlign: 'center' }}>
-      <a href="https://github.com/kubesphere/kubesphere" target="_blank">
+      <a
+        href="https://github.com/kubesphere/kubesphere"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <Button type="primary" ghost size="large">
           <GithubIcon />
           Github
@@ -39,7 +46,8 @@ const INSTALL_CARDS = [
     type: 'all-in-one',
     icon: <NodeIcon />,
     title: 'All-in-One deployment',
-    desc: 'All-in-One is single-node installation that supports one-click installation',
+    desc:
+      'All-in-One is single-node installation that supports one-click installation',
   },
   {
     type: 'multi-node',
@@ -50,11 +58,17 @@ const INSTALL_CARDS = [
   },
 ]
 
-const Documents = ({ data, selectCard, selectorRef, onCardChange, i18n }) => {
+const Documents = ({
+  data,
+  selectCard,
+  selectorRef,
+  onCardChange,
+  pageContext: { locale },
+}) => {
   const edge = data.allMarkdownRemark.edges.find(
     item =>
       item.node.fields.article === selectCard &&
-      item.node.fields.language === getLanguage(i18n.language)
+      item.node.fields.language === getLanguage(locale)
   )
 
   const selectInstallCard = INSTALL_CARDS.find(card => card.type === selectCard)
@@ -140,25 +154,32 @@ class InstallPage extends React.Component {
   render() {
     const { selectCard } = this.state
     return (
-      <div className="install">
-        <Banner {...this.props} />
-        <Documents
-          {...this.props}
-          selectCard={selectCard}
-          onCardChange={this.handleCardChange}
-          selectorRef={ref => {
-            this.selectorRef = ref
-          }}
-        />
-      </div>
+      <Layout {...this.props}>
+        <div className="install">
+          <Banner {...this.props} />
+          <Documents
+            {...this.props}
+            selectCard={selectCard}
+            onCardChange={this.handleCardChange}
+            selectorRef={ref => {
+              this.selectorRef = ref
+            }}
+          />
+        </div>
+      </Layout>
     )
   }
 }
 
-export default translate('base')(InstallPage)
+export default withI18next({ ns: 'common' })(InstallPage)
 
 export const query = graphql`
   query InstallPageQuery($framework: String!) {
+    site {
+      siteMetadata {
+        title
+      }
+    }
     allMarkdownRemark(filter: { fields: { framework: { eq: $framework } } }) {
       edges {
         node {

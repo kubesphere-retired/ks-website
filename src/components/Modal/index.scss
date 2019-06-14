@@ -1,0 +1,7 @@
+.ReactModal__Body--open {
+  .main {
+    height: 100vh;
+    overflow: hidden;
+    filter: blur(2px);
+  }
+}
