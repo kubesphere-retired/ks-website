@@ -1,4 +1,4 @@
-# Website for [KubeSphere](KubeSphere).
+# Website for [KubeSphere](https://github.com/kubesphere/kubesphere).
 
 [![Build Status](https://travis-ci.org/kubesphere/kubesphere.github.io.svg)](https://travis-ci.org/kubesphere/kubesphere.github.io)
 
