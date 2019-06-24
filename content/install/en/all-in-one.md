@@ -25,20 +25,20 @@ The following section identifies the hardware specifications and system-level re
 
 ### Step 2: Provision Installation Files
 
-**1.** Download the 2.0.0 installer then unzip it.
+**1.** Download the 2.0.1 installer then unzip it.
 
 ```bash
-$ curl -L https://kubesphere.io/download/stable/advanced-2.0.0 > advanced-2.0.0.tar.gz
+$ curl -L https://kubesphere.io/download/stable/advanced-2.0.1 > advanced-2.0.1.tar.gz
 ```
 
 ```bash
-$ tar -zxf advanced-2.0.0.tar.gz
+$ tar -zxf advanced-2.0.1.tar.gz
 ```
 
-**2.** Go into “`kubesphere-all-advanced-2.0.0`” folder
+**2.** Go into “`kubesphere-all-advanced-2.0.1`” folder
 
 ```
-  $ cd `kubesphere-all-advanced-2.0.0`
+  $ cd `kubesphere-all-advanced-2.0.1`
 ```
 
 ### Step 3: Get Started With Installation

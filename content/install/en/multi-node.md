@@ -42,20 +42,20 @@ The following procedure walks you through setting up a 3-node cluster, the host 
 
 ## Step 2: Provision Installation Files
 
-**1.** Download the 2.0.0 installer then unzip it.
+**1.** Download the 2.0.1 installer then unzip it.
 
 ```bash
-$ curl -L https://kubesphere.io/download/stable/advanced-2.0.0 > advanced-2.0.0.tar.gz
+$ curl -L https://kubesphere.io/download/stable/advanced-2.0.1 > advanced-2.0.1.tar.gz
 ```
 
 ```bash
-$ tar -zxf advanced-2.0.0.tar.gz
+$ tar -zxf advanced-2.0.1.tar.gz
 ```
 
-**2.** Go into “`kubesphere-all-advanced-2.0.0`” folder
+**2.** Go into “`kubesphere-all-advanced-2.0.1`” folder
 
 ```
-  $ cd `kubesphere-all-advanced-2.0.0`
+  $ cd `kubesphere-all-advanced-2.0.1`
 ```
 
 **3.** Please refer to the following scripts to configure all hosts in `hosts.ini`. It's recommneded to install using `root` user, here showing an example configuration in `CentOS 7.5` using `root` user. Note that each host information occupies one line and cannot be wrapped manually.
