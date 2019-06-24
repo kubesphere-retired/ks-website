@@ -27,20 +27,20 @@
 
 ### 第二步: 准备安装包
 
-**1.** 下载最新的 `KubeSphere Advanced v2.0.0` 安装包至待安装机器，并解压压缩包。
+**1.** 下载最新的 `KubeSphere Advanced v2.0.1` 安装包至待安装机器，并解压压缩包。
 
 ```bash
-$ curl -L https://kubesphere.io/download/stable/advanced-2.0.0 > advanced-2.0.0.tar.gz
+$ curl -L https://kubesphere.io/download/stable/advanced-2.0.1 > advanced-2.0.1.tar.gz
+```
+ 
+```bash
+$ tar -zxf advanced-2.0.1.tar.gz
 ```
 
-```bash
-$ tar -zxf advanced-2.0.0.tar.gz
-```
-
-**2.** 进入 “`kubesphere-all-advanced-2.0.0`” 目录。
+**2.** 进入 “`kubesphere-all-advanced-2.0.1`” 目录。
 
 ```bash
-$ cd kubesphere-all-advanced-2.0.0
+$ cd kubesphere-all-advanced-2.0.1
 ```
 
 
