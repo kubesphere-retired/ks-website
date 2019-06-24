@@ -48,20 +48,20 @@
 
 ### 第二步: 准备安装配置文件
 
-**1.** 下载最新的 `KubeSphere Advanced v2.0.0` 安装包至任务执行机，并解压压缩包。
+**1.** 下载最新的 `KubeSphere Advanced v2.0.1` 安装包至任务执行机，并解压压缩包。
 
 ```bash
-$ curl -L https://kubesphere.io/download/stable/advanced-2.0.0 > advanced-2.0.0.tar.gz
+$ curl -L https://kubesphere.io/download/stable/advanced-2.0.1 > advanced-2.0.1.tar.gz
 ```
 
 ```bash
-$ tar -zxf advanced-2.0.0.tar.gz
+$ tar -zxf advanced-2.0.1.tar.gz
 ```
-
-**2.** 进入 “`kubesphere-all-advanced-2.0.0`” 目录。
+ 
+**2.** 进入 “`kubesphere-all-advanced-2.0.1`” 目录。
 
 ```bash
-$ cd kubesphere-all-advanced-2.0.0
+$ cd kubesphere-all-advanced-2.0.1
 ```
  
 **3.** 编辑主机配置文件 `conf/hosts.ini`，为了对目标机器及部署流程进行集中化管理配置，集群中各个节点在主机配置文件 `hosts.ini` 中应参考如下配置，建议使用 `root` 用户进行安装。
