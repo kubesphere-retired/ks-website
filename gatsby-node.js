@@ -22,7 +22,7 @@ const availableLocales = [
   { value: 'en', text: 'English' },
 ]
 
-const defaultLocales = { value: 'en', text: 'English' }
+const defaultLocales = { value: 'zh-CN', text: 'English' }
 
 exports.onCreatePage = async props => {
   const {
@@ -59,9 +59,9 @@ exports.onCreatePage = async props => {
       ...page,
       context: {
         availableLocales,
-        locale: 'en',
+        locale: 'zh-CN',
         routed: true,
-        data: localesNSContent['en'],
+        data: localesNSContent['zh-CN'],
         originalPath: page.path,
       },
     })

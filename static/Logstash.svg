@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>TemplateIcon/Logstash</title>
+    <desc>Created with Sketch.</desc>
+    <g id="TemplateIcon/Logstash" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="elastic-logstash">
+            <path d="M20.55,20.95 L7.8,20.95 L7.8,6.25 L11.65,6.25 C16.6,6.25 20.55,10.25 20.55,15.15 L20.55,20.95 Z" id="路径" fill="#F3BD19" fill-rule="nonzero"></path>
+            <path d="M20.55,33.75 C13.5,33.75 7.75,28.05 7.75,20.95 L20.55,20.95 L20.55,33.75 Z" id="路径" fill="#231F20" fill-rule="nonzero"></path>
+            <polygon id="路径" fill="#3EBEB0" fill-rule="nonzero" points="20.55 20.95 32.2 20.95 32.2 33.75 20.55 33.75"></polygon>
+            <polygon id="路径" fill="#37A595" fill-rule="nonzero" points="20.55 20.95 23.25 20.95 23.25 33.75 20.55 33.75"></polygon>
+            <polygon id="路径" points="0 0 40 0 40 40 0 40"></polygon>
+        </g>
+    </g>
+</svg>

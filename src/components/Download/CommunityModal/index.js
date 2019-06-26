@@ -11,7 +11,11 @@ import { ReactComponent as Email } from '../../../assets/email.svg'
 
 import styles from './index.module.scss'
 
-const checkEmailValid = value => !isEmpty(value) && /^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z0-9]{2,6}$/.test(value)
+const checkEmailValid = value =>
+  !isEmpty(value) &&
+  /^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z0-9]{2,6}$/.test(
+    value
+  )
 
 class CommunityModal extends React.Component {
   state = {
@@ -42,7 +46,10 @@ class CommunityModal extends React.Component {
         const query = `email=${value}&notify=${notify}&version=community`
 
         fetch(`/apply.html?${query}`).then()
-        window.open('https://kubesphere.anybox.qingcloud.com/s/zFccwNOKC0MNu1cA3lkZZIueyr1cqvgF', '_blank')
+        window.open(
+          'https://kubesphere.anybox.qingcloud.com/s/zFccwNOKC0MNu1cA3lkZZIueyr1cqvgF',
+          '_blank'
+        )
       }
     )
   }
@@ -89,7 +96,9 @@ class CommunityModal extends React.Component {
       <div>
         <div className="h2">{t('Download')}</div>
         <p style={{ marginBottom: 20 }}>
-          {t('To get the latest KubeSphere news via leaving your contact information')}
+          {t(
+            'To get the latest KubeSphere news via leaving your contact information'
+          )}
         </p>
         <div className={styles.input}>
           <Email />
@@ -136,9 +145,7 @@ class CommunityModal extends React.Component {
             </div>
             <p
               dangerouslySetInnerHTML={{
-                __html: t(
-                  'More than 1000 users have already downloaded and used KubeSphere ,  please contact us via <a href="//github.com/kubesphere/kubesphere" target="_blank">Github</a> or <a href="//kubesphere.slack.com" target="_blank">Slack</a> if you have any questions.'
-                ),
+                __html: t('download_tip'),
               }}
             />
           </div>

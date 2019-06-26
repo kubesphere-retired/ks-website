@@ -121,9 +121,7 @@ class AdvancedModal extends React.Component {
             </div>
             <p
               dangerouslySetInnerHTML={{
-                __html: t(
-                  'More than 1000 users have already downloaded and used KubeSphere ,  please contact us via <a href="//github.com/kubesphere/kubesphere" target="_blank" rel="noopener noreferrer">Github</a> or <a href="//kubesphere.slack.com" target="_blank" rel="noopener noreferrer">Slack</a> if you have any questions.'
-                ),
+                __html: t('download_tip'),
               }}
             />
           </div>

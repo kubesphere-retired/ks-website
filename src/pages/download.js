@@ -5,12 +5,10 @@ import { graphql } from 'gatsby'
 import Layout from '../layouts/index'
 import withI18next from '../components/withI18next'
 import Button from '../components/Button/index'
-import CommunityModal from '../components/Download/CommunityModal/index'
 import ExpressModal from '../components/Download/ExpressModal/index'
 import AdvancedModal from '../components/Download/AdvancedModal/index'
 
 import DownloadBg from '../assets/download-bg.svg'
-import { ReactComponent as Community } from '../assets/community.svg'
 import { ReactComponent as Express } from '../assets/express.svg'
 import { ReactComponent as Advanced } from '../assets/advanced.svg'
 
@@ -50,26 +48,9 @@ const Banner = ({ t }) => {
   )
 }
 
-const Versions = ({
-  t,
-  showCommunityModal,
-  showExpressModal,
-  showAdvancedModal,
-}) => (
+const Versions = ({ t, showExpressModal, showAdvancedModal }) => (
   <div className="version-compare-wrapper">
     <ul className="version-compare">
-      <li onClick={showCommunityModal}>
-        <Community />
-        <div className="version-compare-text">
-          <div className="h2">{t('Community Edition')}</div>
-          <p>
-            {t(
-              "Welcome to the KubeSphere Community Edition, it's only recommended to understand the KubeSphere features. For production environment we recommend you to purchase the Commercial Edition."
-            )}
-          </p>
-        </div>
-        <a>{t('Get the version')} → </a>
-      </li>
       <li onClick={showExpressModal}>
         <Express />
         <div className="version-compare-text">
@@ -151,13 +132,8 @@ class IndexPage extends React.Component {
         <Banner {...this.props} />
         <Versions
           {...this.props}
-          showCommunityModal={this.showCommunityModal}
           showExpressModal={this.showExpressModal}
           showAdvancedModal={this.showAdvancedModal}
-        />
-        <CommunityModal
-          isOpen={this.state.showCommunity}
-          onRequestClose={this.hideCommunityModal}
         />
         <ExpressModal
           isOpen={this.state.showExpress}
@@ -172,7 +148,7 @@ class IndexPage extends React.Component {
   }
 }
 
-export default withI18next({ns: 'common'})(IndexPage)
+export default withI18next({ ns: 'common' })(IndexPage)
 
 export const query = graphql`
   query {

@@ -9,12 +9,9 @@ import withI18next from '../components/withI18next'
 import Button from '../components/Button/index'
 import ContribCard from '../components/Card/Contrib/index'
 import RoadMap from '../components/RoadMap/index'
-import Slider from '../components/Slider/index'
 
 import DashboardImage from '../assets/dashboard.png'
-import DashboardEnImage from '../assets/dashboard-en.png'
 import BannerBg from '../assets/banner-bg.svg'
-import SliderBg from '../assets/slider-bg.svg'
 import EasyUseIcon from '../assets/easyuse.svg'
 import FlexibleIcon from '../assets/flexible.svg'
 import EfficientIcon from '../assets/efficient.svg'
@@ -23,18 +20,37 @@ import BugIcon from '../assets/icon-bug.svg'
 import RoadMapIcon from '../assets/icon-roadmap.svg'
 import DesignIcon from '../assets/icon-design.svg'
 import ChatIcon from '../assets/icon-chat.svg'
+import AppInstallLeftImage from '../assets/app-install-left.svg'
+import AppInstallRightImage from '../assets/app-install-right.svg'
+import CloudNativeLogo from '../assets/cloud-native.png'
 
-import slider1 from '../assets/slider-1.png'
-import slider2 from '../assets/slider-2.png'
-import slider3 from '../assets/slider-3.png'
+import { ReactComponent as DownloadIcon } from '../assets/download.svg'
+
+import { ACTIVITIES, ROAD_MAPS, APPS } from '../data'
 
 import './index.scss'
 
 const Banner = ({ t, pageContext: { locale } }) => {
-  const isZhCN = locale.toLowerCase().indexOf('zh') !== -1
   return (
     <div className="wrapper banner">
-      <div className="banner-desc">
+      <div className="banner-title">
+        <div className="banner-activities">
+          <span className="banner-tag">{t('Activities')}</span>
+          <ul>
+            {ACTIVITIES.map(item => (
+              <li key={item.title}>
+                <a
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title={t(item.title)}
+                >
+                  {t(item.title)}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
         <div
           className="h1"
           dangerouslySetInnerHTML={{
@@ -43,31 +59,22 @@ const Banner = ({ t, pageContext: { locale } }) => {
             ),
           }}
         />
+        <div className="banner-sub-title">
+          {t('—— Future container orchestration platform')}
+        </div>
         <p>{t('what_is_kubesphere_io')}</p>
         <div className="banner-links">
           <Link to={`/${locale}/download`}>
-            <Button type="primary" size="large">
-              {t('Get Community Edition')}
+            <Button type="control" size="large">
+              <DownloadIcon />
+              {t('Get KubeSphere')}
             </Button>
           </Link>
-          <a
-            href="https://kubesphere.qingcloud.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Button type="primary" size="large" ghost>
-              {t('Get Commercial Edition')}
-            </Button>
-          </a>
         </div>
       </div>
       <div className="banner-snapshot">
         <img src={BannerBg} alt="" />
-        <img
-          src={isZhCN ? DashboardImage : DashboardEnImage}
-          alt=""
-          className="banner-snapshot-sub"
-        />
+        <img src={DashboardImage} alt="" className="banner-snapshot-sub" />
       </div>
     </div>
   )
@@ -115,56 +122,58 @@ const Features = ({ t }) => (
   </div>
 )
 
-const sliders = [slider1, slider2, slider3]
-
-const AppInstall = ({ t }) => (
-  <div className="wrapper section app-install">
-    <div className="h1">
-      {t('Enable one-click deployment for application.')}
+const AppCard = ({ data }) => (
+  <div className="app">
+    <div className="app-header">
+      <img className="app-icon" src={`/${data.icon}`} alt="" />
+      <div className="app-title">
+        <div className="app-name">{data.name}</div>
+        <div className="app-version">{data.version}</div>
+      </div>
     </div>
-    <p
-      dangerouslySetInnerHTML={{
-        __html: t(
-          'Based on the open source <a href="//openpitrix.io" target="_blank" rel="noopener noreferrer">OpenPitrix</a> project, providing full lifecycle management of applications, including development, test, release, upgrade and remove, as well as multi-application registries management and one-click deployment of applications'
-        ),
-      }}
-    />
-    <div className="slider-wrapper">
-      <img src={SliderBg} alt="" />
-      <Slider className="slider" data={sliders} />
-      <img className="slider1" src={slider1} alt="" />
-    </div>
+    <div className="app-desc">{data.desc}</div>
   </div>
 )
 
-const ROADMAP = [
-  {
-    name: 'Community Edition 1.0.0',
-    time: '2018/6/30 00:00:00',
-    status: 'Released',
-  },
-  {
-    name: 'Express Edition 1.0.0',
-    time: '2018/7/31 00:00:00',
-    status: 'Released',
-  },
-  {
-    name: 'Advanced Edition 1.0.0',
-    time: '2018/12/1 00:00:00',
-    status: 'Released',
-  },
-  {
-    name: 'Advanced Edition 2.0.0',
-    time: '2019/5/18 00:00:00',
-    status: 'Released',
-    current: true,
-  },
-  {
-    name: 'Advanced Edition 3.0.0',
-    time: '2019',
-    status: 'Planning',
-  },
-]
+class AppInstall extends React.Component {
+  render() {
+    const { t } = this.props
+    return (
+      <div className="section app-install">
+        <div className="app-install-title">
+          <img
+            className="app-install-left-image"
+            src={AppInstallLeftImage}
+            alt=""
+          />
+          <img
+            className="app-install-right-image"
+            src={AppInstallRightImage}
+            alt=""
+          />
+          <div className="h1">
+            {t('Complete application lifecycle management')}
+          </div>
+          <p
+            dangerouslySetInnerHTML={{
+              __html: t('app_management_desc'),
+            }}
+          />
+        </div>
+        <div className="slider-wrapper">
+          <div className="slider slider-repeat">
+            {APPS.map((app, index) => (
+              <AppCard key={`repeat-${index}`} data={app} />
+            ))}
+            {APPS.map((app, index) => (
+              <AppCard key={`repeat2-${index}`} data={app} />
+            ))}
+          </div>
+        </div>
+      </div>
+    )
+  }
+}
 
 const Contribution = ({ t }) => (
   <div
@@ -183,7 +192,7 @@ const Contribution = ({ t }) => (
       </p>
       <div className="contrib-cards">
         <ContribCard icon={RoadMapIcon} title="RoadMap">
-          <RoadMap data={ROADMAP} />
+          <RoadMap data={ROAD_MAPS} />
         </ContribCard>
         <ContribCard icon={BugIcon} title={t('Report the Bug')}>
           <p className="report">
@@ -254,6 +263,13 @@ const Contribution = ({ t }) => (
   </div>
 )
 
+const CloudNative = ({ t }) => (
+  <div className="cloud-native">
+    <img src={CloudNativeLogo} alt="" />
+    <span>{t('Cloud Native Computing Foundation Member')}</span>
+  </div>
+)
+
 const IndexPage = props => {
   return (
     <Layout {...props}>
@@ -261,11 +277,12 @@ const IndexPage = props => {
       <Features {...props} />
       <AppInstall {...props} />
       <Contribution {...props} />
+      <CloudNative {...props} />
     </Layout>
   )
 }
 
-export default withI18next({ns: 'common'})(IndexPage)
+export default withI18next({ ns: 'common' })(IndexPage)
 
 export const query = graphql`
   query {
