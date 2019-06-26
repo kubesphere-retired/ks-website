@@ -8,10 +8,6 @@ import Modal from '../Modal/index'
 import styles from './index.module.scss'
 import { getScrollTop } from '../../utils/index'
 
-import Button from '../Button/index'
-
-import { ReactComponent as GithubIcon } from '../../assets/icon-git.svg'
-
 class Header extends React.Component {
   state = {
     showModal: false,
@@ -30,9 +26,9 @@ class Header extends React.Component {
     const classes = this.headerRef.classList
     const headerShadow = classes.contains('header-shadow')
 
-    if (scrollTop >= 10 && !headerShadow) {
+    if (scrollTop >= 100 && !headerShadow) {
       classes.add('header-shadow')
-    } else if (scrollTop < 10 && headerShadow) {
+    } else if (scrollTop < 100 && headerShadow) {
       classes.remove('header-shadow')
     }
   }
@@ -52,38 +48,50 @@ class Header extends React.Component {
   renderNav() {
     const {
       t,
-      pageContext: { locale },
+      pageContext: { locale, originalPath },
     } = this.props
 
     return (
       <div className={styles.nav} onClick={this.handleCloseModal}>
-        <Link to={`/${locale}/install`}>{t('Installation')}</Link>
+        <Link
+          to={`/${locale}`}
+          className={classnames({
+            [styles.selected]: originalPath === '/',
+          })}
+        >
+          {t('Home')}
+        </Link>
+        <Link
+          to={`/${locale}/projects`}
+          className={classnames({
+            [styles.selected]: originalPath === '/projects/',
+          })}
+        >
+          {t('Open Source Projects')}
+        </Link>
+        <Link
+          to={`/${locale}/install`}
+          className={classnames({
+            [styles.selected]: originalPath === '/install',
+          })}
+        >
+          {t('Quick Installation')}
+        </Link>
         <a
-          href="//docs.kubesphere.io"
+          href={`//docs.kubesphere.io/zh-CN/`}
           target="_blank"
           rel="noopener noreferrer"
         >
           {t('Documentation')}
         </a>
-        <a
-          href="https://kubesphere.qingcloud.com/"
-          target="_blank"
-          rel="noopener noreferrer"
+        <Link
+          to={`/${locale}/reports`}
+          className={classnames({
+            [styles.selected]: originalPath === '/reports/',
+          })}
         >
-          {t('Commercial Editions')}
-        </a>
-        <div className={styles.github}>
-          <a
-            href="https://github.com/kubesphere/kubesphere"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Button type="default" ghost>
-              <GithubIcon />
-              Github
-            </Button>
-          </a>
-        </div>
+          {t('News Reports')}
+        </Link>
       </div>
     )
   }

@@ -3,7 +3,7 @@
 .roadmap {
   padding: 70px 0;
 
-  @media only screen and (max-width: 700px) {
+  @media only screen and (max-width: $mobile-max-width) {
     padding: 0;
   }
 
@@ -11,14 +11,14 @@
     display: inline-block;
     vertical-align: top;
 
-    @media only screen and (max-width: 700px) {
+    @media only screen and (max-width: $mobile-max-width) {
       display: block;
     }
 
     .tip {
       margin-bottom: 12px;
 
-      @media only screen and (max-width: 700px) {
+      @media only screen and (max-width: $mobile-max-width) {
         display: inline-block;
         vertical-align: top;
         margin-bottom: 0;
@@ -50,7 +50,7 @@
         transform: translateY(-80px);
       }
 
-      @media only screen and (max-width: 700px) {
+      @media only screen and (max-width: $mobile-max-width) {
         display: inline-block;
         vertical-align: top;
         margin-left: 20px;
@@ -60,17 +60,17 @@
         }
       }
 
-      @media only screen and (max-width: 400px) {
+      @media only screen and (max-width: $mobile-medium-width) {
         padding-bottom: 12px;
       }
 
       .br {
-        @media only screen and (max-width: 700px) {
+        @media only screen and (max-width: $mobile-max-width) {
           display: inline-block;
           width: 4px;
         }
 
-        @media only screen and (max-width: 400px) {
+        @media only screen and (max-width: $mobile-medium-width) {
           display: block;
         }
       }
@@ -91,12 +91,12 @@
   .line {
     display: inline-block;
     vertical-align: middle;
-    width: 120px;
+    width: 200px;
     height: 2px;
     border: solid 1px #adebb5;
   }
 
-  @media only screen and (max-width: 700px) {
+  @media only screen and (max-width: $mobile-max-width) {
     .dot {
       display: block;
     }
@@ -109,7 +109,7 @@
     }
   }
 
-  @media only screen and (max-width: 400px) {
+  @media only screen and (max-width: $mobile-medium-width) {
     .line {
       height: 50px;
     }

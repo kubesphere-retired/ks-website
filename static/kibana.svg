@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>TemplateIcon/kibana</title>
+    <desc>Created with Sketch.</desc>
+    <g id="TemplateIcon/kibana" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="elastic-kibana">
+            <path d="M9.8,16.55 C13.45,16.55 16.9,17.5 19.9,19.1 L30.6,6.25 L9.4,6.25 L9.4,31.75 L9.4,16.55 L9.8,16.55 Z" id="路径" fill="#E9478B" fill-rule="nonzero"></path>
+            <path d="M19.9,19.1 L9.4,31.75 L9.4,33.75 L30.55,33.75 C29.35,27.45 25.35,22.1 19.9,19.1 Z" id="路径" fill="#3EBEB0" fill-rule="nonzero"></path>
+            <path d="M19.9,19.1 L9.4,31.75 L9.4,33.75 L13.15,33.75 L23.35,21.45 C23.35,21.45 22.65,20.9 21.7,20.2 C21,19.7 19.9,19.1 19.9,19.1 L19.9,19.1 Z" id="路径" fill="#37A595" fill-rule="nonzero"></path>
+            <path d="M9.8,16.55 L9.4,16.55 L9.4,31.75 L19.9,19.1 C16.9,17.5 13.45,16.55 9.8,16.55 Z" id="路径" fill="#353535" fill-rule="nonzero"></path>
+            <polygon id="路径" points="0 0 40 0 40 40 0 40"></polygon>
+        </g>
+    </g>
+</svg>

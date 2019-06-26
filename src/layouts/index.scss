@@ -1,5 +1,9 @@
 @import '../styles/variables';
 
+.main {
+  padding-top: 96px;
+}
+
 .bg1 {
   position: absolute;
   top: 0;
@@ -21,4 +25,11 @@
     top: 46px;
     height: 181px;
   }
+}
+
+.header-shadow {
+  opacity: 0.96;
+  box-shadow: 0 4px 8px 0 rgba(36, 46, 66, 0.2);
+  background-color: #f5f8f9 !important;
+  border-color: transparent !important;
 }

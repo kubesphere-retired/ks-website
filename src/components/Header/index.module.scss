@@ -1,10 +1,16 @@
 @import '../../styles/variables';
 
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: $header-height;
   line-height: $header-height;
   background-color: transparent;
+  border-bottom: solid 1px #e3e9ef;
+  transition: all .2s ease-in-out;
+  z-index: 100;
 
   @media only screen and (max-width: $mobile-max-width) {
     position: fixed;
@@ -22,7 +28,10 @@
 }
 
 .logo {
-  padding: 32px 0;
+  position: absolute;
+  left: 0;
+  padding: 42px 0 22px 0;
+
   img {
     height: 32px;
   }
@@ -33,9 +42,12 @@
 }
 
 .wrapper {
+  position: relative;
   width: 1160px;
   height: $header-height;
   margin: 0 auto;
+  padding: 0 160px;
+  text-align: center;
 
   @media only screen and (max-width: $mobile-max-width) {
     width: 100%;
@@ -44,11 +56,6 @@
 }
 
 .navsWrapper {
-  display: inline-block;
-  vertical-align: top;
-  margin-left: 60px;
-  width: calc(100% - 213px);
-
   @media only screen and (max-width: $mobile-max-width) {
     display: none;
   }
@@ -56,18 +63,44 @@
 
 .nav {
   height: $header-height;
+  padding-top: 10px;
 
   a {
+    display: inline-block;
+    position: relative;
+    height: 86px;
     color: #242e42;
     font-size: 16px;
     font-family: $font-family-id;
 
-    &:hover {
+    @media only screen and (max-width: $mobile-max-width) {
+      height: auto;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 48px;
+      height: 0px;
+      border-radius: 2px;
+      background-color: #4ca986;
+      transform: translateX(-50%);
+      transition: height 0.2s ease-in-out;
+    }
+
+    &:hover,
+    &.selected {
       color: $green;
+
+      &::after {
+        height: 4px;
+      }
     }
 
     & + a {
-      margin-left: 48px;
+      margin-left: 40px;
     }
   }
 
@@ -78,7 +111,7 @@
   @media only screen and (max-width: $mobile-max-width) {
     display: block;
     position: fixed;
-    top: 210px;
+    top: 50%;
     left: 20px;
     width: calc(100vw - 40px);
     height: auto;
@@ -88,6 +121,7 @@
     box-shadow: 0 8px 16px 0 rgba(36, 46, 66, 0.16);
     background-color: #fff;
     z-index: 3;
+    transform: translateY(-50%);
 
     a {
       display: block;
@@ -116,8 +150,9 @@
 
 .showModal {
   display: none;
-  float: right;
-  margin-top: 14px;
+  position: absolute;
+  right: 18px;
+  top: 18px;
 
   @media only screen and (max-width: $mobile-max-width) {
     display: block;

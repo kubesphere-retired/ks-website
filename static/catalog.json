@@ -1,0 +1,161 @@
+[
+  {
+    name: 'TensorFlow',
+    version: '1.6',
+    icon: 'TensorFlow.svg',
+    desc: 'A Helm chart for running distributed TensorFlow on Kubernetes',
+  },
+  {
+    name: 'drone',
+    version: '1.7.4',
+    icon: 'drone.svg',
+    desc: 'Drone is a Continuous Delivery system built on container technology',
+  },
+  {
+    name: 'etcd-operator',
+    version: '0.8.0',
+    icon: 'etcd-operator.svg',
+    desc: 'CoreOS etcd-operator Helm chart for Kubernetes',
+  },
+  {
+    name: 'redis',
+    version: '3.0.2',
+    icon: 'redis.svg',
+    desc:
+      'Open source, advanced key-value store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets and sorted sets.',
+  },
+  {
+    name: 'weavescope',
+    version: '1.1.2',
+    icon: 'weavescope.svg',
+    desc: 'A Helm chart for the Weave Scope cluster visualizer.',
+  },
+  {
+    name: 'Gitlab',
+    version: '0.2.2',
+    icon: 'Gitlab.svg',
+    desc: 'GitLab Community Edition',
+  },
+  {
+    name: 'Logstash',
+    version: '2.0.0',
+    icon: 'Logstash.svg',
+    desc: 'Logstash is an open source, server-side data processing pipeline',
+  },
+  {
+    name: 'mysql',
+    version: '1.2.0',
+    icon: 'mysql.svg',
+    desc:
+      'Fast, reliable, scalable, and easy to use open-source relational database system.',
+  },
+  {
+    name: 'Jenkins',
+    version: '1.2.2',
+    icon: 'Jenkins.svg',
+    desc:
+      'Open source continuous integration server. It supports multiple SCM tools including CVS, Subversion and Git. It can execute Apache Ant and Apache Maven-based projects as well as arbitrary scripts.',
+  },
+  {
+    name: 'kubernetes-dashboard',
+    version: '1.2.0',
+    icon: 'kubernetes-dashboard.svg',
+    desc: 'General-purpose web UI for Kubernetes clusters',
+  },
+  {
+    name: 'kibana',
+    version: '3.0.0',
+    icon: 'kibana.svg',
+    desc:
+      'Kibana is an open source data visualization plugin for Elasticsearch',
+  },
+  {
+    name: 'drupal',
+    version: '3.3.4',
+    icon: 'drupal.svg',
+    desc: 'One of the most versatile open source content management systems.',
+  },
+  {
+    name: 'hadoop',
+    version: '1.0.7',
+    icon: 'hadoop.svg',
+    desc:
+      'The Apache Hadoop software library is a framework that allows for the distributed processing of large data sets across clusters of computers using simple programming models.',
+  },
+  {
+    name: 'wordpress',
+    version: '2.1.12',
+    icon: 'wordpress.svg',
+    desc: 'Web publishing platform for building blogs and websites.',
+  },
+  {
+    name: 'magento',
+    version: '1.0.1',
+    icon: 'magento.svg',
+    desc:
+      'A feature-rich flexible e-commerce solution. It includes transaction options, multi-store functionality, loyalty programs, product categorization and shopper filtering, promotion rules, and more.',
+  },
+  {
+    name: 'fluentd',
+    version: '2.0.7',
+    icon: 'fluentd.svg',
+    desc:
+      'A Fluentd Elasticsearch Helm chart for Kubernetes.',
+  },
+  {
+    name: 'Kafka',
+    version: '0.7.3',
+    icon: 'Kafka.svg',
+    desc:
+      'Kafka is used for building real-time data pipelines and streaming apps. It is horizontally scalable, fault-tolerant, wicked fast, and runs in production in thousands of companies.',
+  },
+  {
+    name: 'mariadb',
+    version: '6.5.2',
+    icon: 'mariadb.svg',
+    desc:
+      'Fast, reliable, scalable, and easy to use open-source relational database system. MariaDB Server is intended for mission-critical, heavy-load production systems as well as for embedding into mass-deployed software. Highly available MariaDB cluster.',
+  },
+  {
+    name: 'MongoDB',
+    version: '1.0.1',
+    icon: 'MongoDB.svg',
+    desc:
+      'MongoDB is a cross-platform document-oriented database. Classified as a NoSQL database, MongoDB eschews the traditional table-based relational database structure in favor of JSON-like documents with dynamic schemas, making the integration of data in certain types of applications easier and faster.',
+  },
+  {
+    name: 'owncloud',
+    version: '4.3.3',
+    icon: 'owncloud.svg',
+    desc:
+      'A file sharing server that puts the control and security of your own data back into your hands.',
+  },
+  {
+    name: 'jaeger-operator',
+    version: '2.6.0',
+    icon: 'jaeger-operator.svg',
+    desc:
+      'jaeger-operator Helm chart for Kubernetes',
+  },
+  {
+    name: 'tomcat',
+    version: '0.2.0',
+    icon: 'tomcat.svg',
+    desc:
+      'Deploy a basic tomcat application server with sidecar as web archive container',
+  },
+  {
+    name: 'postgresql',
+    version: '5.3.9',
+    icon: 'postgresql.svg',
+    desc:
+      'Chart for PostgreSQL, an object-relational database management system (ORDBMS) with an emphasis on extensibility and on standards-compliance.',
+  },
+  {
+    name: 'coredns',
+    version: '1.5.3',
+    icon: 'coredns.svg',
+    desc:
+      'CoreDNS is a DNS server that chains plugins and provides Kubernetes DNS Services',
+  },
+]

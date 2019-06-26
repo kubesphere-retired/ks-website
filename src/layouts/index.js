@@ -11,7 +11,6 @@ import Header from '../components/Header/index'
 import Footer from '../components/Footer/index'
 
 import bg1 from '../assets/bg-1.svg'
-import bg2 from '../assets/bg-2.svg'
 
 const Layout = ({ children, location, data, pageContext }) => {
   const path = location.pathname.slice(1)
@@ -39,7 +38,6 @@ const Layout = ({ children, location, data, pageContext }) => {
         pageContext={pageContext}
       />
       {showBg && <img className="bg1" src={bg1} alt="" />}
-      {showBg && <img className="bg2" src={bg2} alt="" />}
       {children}
       <Footer pageContext={pageContext} />
     </div>

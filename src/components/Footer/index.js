@@ -1,6 +1,5 @@
 /* eslint-disable jsx-a11y/accessible-emoji */
 import React from 'react'
-import Link from 'gatsby-link'
 import classnames from 'classnames'
 import { withTranslation } from 'react-i18next'
 
@@ -21,7 +20,7 @@ const Footer = ({ className, t, pageContext }) => (
           <ul>
             <li>
               <div className="h3">{t('Products')}</div>
-              <Link to="">{t('Community Edition')}</Link>
+              <a href={`/${pageContext.locale}`}>{t('Community Edition')}</a>
               <a
                 href="https://kubesphere.qingcloud.com/"
                 target="_blank"
