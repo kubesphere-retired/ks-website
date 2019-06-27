@@ -85,12 +85,12 @@ class Header extends React.Component {
           {t('Documentation')}
         </a>
         <Link
-          to={`/${locale}/reports`}
+          to={`/${locale}/trends`}
           className={classnames({
-            [styles.selected]: originalPath === '/reports/',
+            [styles.selected]: originalPath === '/trends/',
           })}
         >
-          {t('News Reports')}
+          {t('Trends')}
         </Link>
       </div>
     )
