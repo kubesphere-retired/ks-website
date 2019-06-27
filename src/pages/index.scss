@@ -890,6 +890,7 @@ img {
     max-width: 1188px;
     margin-left: -9999px;
     height: 0;
+    overflow: hidden;
 
     &-wrapper {
       padding: 54px;
@@ -1005,6 +1006,24 @@ img {
         p {
           font-size: 12px;
         }
+      }
+    }
+
+    &-date {
+      margin-top: 8px;
+      font-size: 16px;
+      line-height: 2;
+      color: #919aa3;
+
+      & > svg {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 12px;
+      }
+
+      & > span {
+        display: inline-block;
+        vertical-align: middle;
       }
     }
 

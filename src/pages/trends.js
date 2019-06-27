@@ -5,6 +5,8 @@ import { graphql } from 'gatsby'
 
 import Layout from '../layouts/index'
 
+import { ReactComponent as DateIcon } from '../assets/date.svg'
+
 import withI18next from '../components/withI18next'
 
 import { REPORTS, PRACTICES } from '../data'
@@ -49,7 +51,7 @@ const ReportsPage = props => {
             })}
           >
             {PRACTICES.map(report => (
-              <ReportCard key={report.title} data={report} />
+              <ReportCard key={report.title} data={report} t={t} />
             ))}
           </ul>
           <ul
@@ -58,7 +60,7 @@ const ReportsPage = props => {
             })}
           >
             {REPORTS.map(report => (
-              <ReportCard key={report.title} data={report} />
+              <ReportCard key={report.title} data={report} t={t} />
             ))}
           </ul>
         </div>
@@ -67,7 +69,7 @@ const ReportsPage = props => {
   )
 }
 
-const ReportCard = ({ data }) => (
+const ReportCard = ({ data, t }) => (
   <div className="report-card">
     {data.icon && (
       <div className="report-card-icon">
@@ -84,6 +86,12 @@ const ReportCard = ({ data }) => (
         {data.title}
       </a>
       <p>{data.desc}</p>
+      <div className="report-card-date">
+        <DateIcon width={20} height={20} />
+        <span>
+          {t('Published at')}: {data.date}
+        </span>
+      </div>
     </div>
   </div>
 )
