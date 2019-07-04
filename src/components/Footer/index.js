@@ -22,6 +22,13 @@ const Footer = ({ className, t, pageContext }) => (
               <div className="h3">{t('Products')}</div>
               <a href={`/${pageContext.locale}`}>{t('Community Edition')}</a>
               <a
+                href="https://appcenter.qingcloud.com/apps/app-cmgbd5k2/KubeSphere%C2%AE%EF%B8%8F%EF%BC%88QKE%EF%BC%89#Introduction"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t('QKE')}
+              </a>
+              <a
                 href="https://kubesphere.qingcloud.com/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -31,6 +38,13 @@ const Footer = ({ className, t, pageContext }) => (
             </li>
             <li>
               <div className="h3">{t('Related Products')}</div>
+              <a
+                href="https://appcenter.qingcloud.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                AppCenter
+              </a>
               <a
                 href="https://www.qingcloud.com/products/qingstor-neonsan/"
                 target="_blank"
@@ -56,6 +70,13 @@ const Footer = ({ className, t, pageContext }) => (
             <li>
               <div className="h3">{t('KubeSphere Docs')}</div>
               <a
+                href="//docs.kubesphere.io/advanced-v2.0/zh-CN/introduction/intro/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t('Introduction')}
+              </a>
+              <a
                 href="//docs.kubesphere.io/advanced-v2.0/zh-CN/installation/intro/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -69,6 +90,13 @@ const Footer = ({ className, t, pageContext }) => (
               >
                 {t('Tutorial')}
               </a>
+              <a
+                href="//docs.kubesphere.io/advanced-v2.0/zh-CN/api-reference/api-docs/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t('API Documentation')}
+              </a>
             </li>
             <li>
               <div className="h3">{t('About')}</div>
@@ -78,6 +106,13 @@ const Footer = ({ className, t, pageContext }) => (
                 rel="noopener noreferrer"
               >
                 {t('News')}
+              </a>
+              <a
+                href="//www.qingcloud.com/contactus"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t('Contact')}
               </a>
               <a
                 href="//www.qingcloud.com/jobs"
