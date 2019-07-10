@@ -1,6 +1,6 @@
 ## Multi-Node Mode
 
-`Multi-Node` mode means install KubeSphere on multiple instances. Typically, select any one host in the cluster being served as a role of "`taskbox`" to execute installation task, "`SSH Communication`" is required to be established between "taskbox" and other hosts.
+`Multi-Node` is used to install KubeSphere on multiple instances. Typically, select any one host in the cluster being served as a role of "`taskbox`" to execute installation task, "`SSH Communication`" is required to be established between "taskbox" and other hosts.
 
 ## Prerequisites 
 
@@ -42,23 +42,34 @@ The following procedure walks you through setting up a 3-node cluster, the host 
 
 ## Step 2: Provision Installation Files
 
-**1.** Download the 2.0.1 installer then unzip it.
+<div class="md-tabs">
+<input type="radio" name="tabs" id="stable" checked="checked">
+<label for="stable">Online Installer (2.0.2)</label>
+<span class="md-tab">
+
+**1.** Download `KubeSphere Advanced Edition 2.0.2` and enter into the configuration folder.
 
 ```bash
-$ curl -L https://kubesphere.io/download/stable/advanced-2.0.1 > advanced-2.0.1.tar.gz
+$ curl -L https://kubesphere.io/download/stable/advanced-2.0.2 > advanced-2.0.2.tar.gz \
+&& tar -zxf advanced-2.0.2.tar.gz && cd kubesphere-all-advanced-2.0.2/conf
 ```
+ 
+</span>
+<input type="radio" name="tabs" id="offline">
+<label for="offline">Offline Installer (2.0.0)</label>
+<span class="md-tab">
+
+**1.** Download `KubeSphere Advanced Edition 2.0.0` and enter into the configuration folder (2.0.2 offline installer is coming soon).
 
 ```bash
-$ tar -zxf advanced-2.0.1.tar.gz
+$ curl -L https://kubesphere.io/download/offline/advanced-2.0.0 > advanced-2.0.0.tar.gz \
+&& tar -zxf advanced-2.0.0.tar.gz && cd kubesphere-all-advanced-2.0.0/conf
 ```
 
-**2.** Go into “`kubesphere-all-advanced-2.0.1`” folder
+</span>
+</div>
 
-```
-  $ cd `kubesphere-all-advanced-2.0.1`
-```
-
-**3.** Please refer to the following scripts to configure all hosts in `hosts.ini`. It's recommneded to install using `root` user, here showing an example configuration in `CentOS 7.5` using `root` user. Note that each host information occupies one line and cannot be wrapped manually.
+**2.** Please refer to the following scripts to configure all hosts in `hosts.ini`. It's recommneded to install using `root` user, here showing an example configuration in `CentOS 7.5` using `root` user. Note that each host information occupies one line and cannot be wrapped manually.
 
 > Note:
 >
@@ -105,7 +116,7 @@ kube-master
 
 
 
-**4.** Edit the `conf/vars.yml`, for example, to configure QingCloud-CSI plugin to connect QingCloud block storage.
+**3.** Edit the `conf/vars.yml`, for example, to configure QingCloud-CSI plugin to connect QingCloud block storage.
 
 > Note：
 > - Where a value with `*` is required, refer to [Storage Configuration Instruction](//docs.kubesphere.io/advanced-v2.0/zh-CN/installation/storage-configuration).
@@ -148,19 +159,15 @@ All of these procedures will be automatically processing in this installation, s
 
 > Since Multi-node installation duration is related to network conditions and bandwidth, machine configuration and the number of nodes, it's hard to give a standard duration.
 
-**1.** Go into `scripts`:
+**1.** Enter into scripts folder, it's recommended to execute `install.sh` using `root` user:
 
 ```bash
 $ cd scripts
-```
-
-**2.** It's recommended to install using `root` user, then execute `install.sh`:
-
 ```bash
 $ ./install.sh
 ```
 
-**3.** Enter `2` to select `multi-node` mode to trigger, the installer will prompt if you have configured the storage or not. If already set please type yes to install.
+**2.** Enter `2` to select `multi-node` mode to trigger, the installer will prompt if you have configured the storage or not. If already set please type yes to install.
 
 ```bash
 ################################################
@@ -170,12 +177,12 @@ $ ./install.sh
 *   2) Multi-node
 *   3) Quit
 ################################################
-https://kubesphere.io/               2018-05-18
+https://kubesphere.io/               2018-07-08
 ################################################
 Please input an option: 1
 ```
 
-**4.** Verify if all-in-one mode is installed successfully：
+**3.** Verify if all-in-one mode is installed successfully：
 
 **(1).** If you can see the following "Successful" result being returned after `install.sh` completed, that's successful. You may need to bind the EIP and configure port forwarding. Make sure you have added the console nodeport (30880) to the firewall if the EIP has a firewall, then external network traffic can pass through this nodeport.
 

@@ -4,6 +4,10 @@
 
 > 提示：若需要安装内置的 Harbor 和 GitLab 请在**安装前**参考 [安装内置 Harbor](//docs.kubesphere.io/advanced-v2.0/zh-CN/installation/harbor-installation) 和 [安装内置 GitLab](//docs.kubesphere.io/advanced-v2.0/zh-CN/installation/gitlab-installation)。
 
+## 安装演示
+
+![all-in-one](https://pek3b.qingstor.com/kubesphere-docs/png/kubesphere-allinone.gif)
+
 ## 前提条件
 
 建议使用 KubeSphere 支持的存储服务，并准备相应的存储服务端。若还未准备存储服务端，为方便测试部署，也可使用 [Local Volume](https://kubernetes.io/docs/concepts/storage/volumes/#local) 作为默认存储。
@@ -27,21 +31,32 @@
 
 ### 第二步: 准备安装包
 
-**1.** 下载最新的 `KubeSphere Advanced v2.0.1` 安装包至待安装机器，并解压压缩包。
+<div class="md-tabs">
+<input type="radio" name="tabs" id="stable" checked="checked">
+<label for="stable">在线版 (2.0.2)</label>
+<span class="md-tab">
+
+下载 `KubeSphere Advanced Edition 2.0.2` 安装包至待安装机器，进入安装目录。
 
 ```bash
-$ curl -L https://kubesphere.io/download/stable/advanced-2.0.1 > advanced-2.0.1.tar.gz
+$ curl -L https://kubesphere.io/download/stable/advanced-2.0.2 > advanced-2.0.2.tar.gz \
+&& tar -zxf advanced-2.0.2.tar.gz && cd kubesphere-all-advanced-2.0.2/scripts
 ```
  
+</span>
+<input type="radio" name="tabs" id="offline">
+<label for="offline">离线版 (2.0.0)</label>
+<span class="md-tab">
+
+下载 `离线安装包 (2.0.0)` 至待安装机器 (2.0.2 的离线安装包即将上线)。
+
 ```bash
-$ tar -zxf advanced-2.0.1.tar.gz
+$ curl -L https://kubesphere.io/download/offline/advanced-2.0.0 > advanced-2.0.0.tar.gz \
+&& tar -zxf advanced-2.0.0.tar.gz && cd kubesphere-all-advanced-2.0.0/scripts
 ```
 
-**2.** 进入 “`kubesphere-all-advanced-2.0.1`” 目录。
-
-```bash
-$ cd kubesphere-all-advanced-2.0.1
-```
+</span>
+</div>
 
 
 ### 第三步: 安装 KubeSphere
@@ -59,19 +74,13 @@ KubeSphere 安装过程中将会自动化地进行环境和文件监测、平台
 
 > 说明：安装时间跟网络情况和带宽、机器配置、安装节点个数等因素有关，已测试过的 all-in-one 模式，在网络良好的情况下以规格列表最小配置安装用时大约为 25 分钟。
 
-**1.** 进入 `scripts` 目录
-
-```bash
-$ cd scripts
-```
-
-**2.** 建议使用 `root` 用户安装，执行 `install.sh` 脚本：
+**1.** 建议使用 `root` 用户安装，执行 `install.sh` 脚本：
 
 ```bash
 $ ./install.sh
 ```
 
-**3.** 输入数字 `1` 选择第一种即 all-in-one 模式开始安装：
+**2.** 输入数字 `1` 选择第一种即 all-in-one 模式开始安装：
 
 ```bash
 ################################################
@@ -81,13 +90,13 @@ $ ./install.sh
 *   2) Multi-node
 *   3) Quit
 ################################################
-https://kubesphere.io/               2018-05-18
+https://kubesphere.io/               2018-07-08
 ################################################
 Please input an option: 1
 
 ```
 
-**4.** 验证 KubeSphere 单节点安装是否成功：
+**3.** 验证 KubeSphere 单节点安装是否成功：
 
 **(1)** 待安装脚本执行完后，当看到如下 `"Successful"` 界面，则说明 KubeSphere 安装成功。
 
