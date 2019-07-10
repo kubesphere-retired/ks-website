@@ -7,6 +7,14 @@ export const ACTIVITIES = [
 
 export const REPORTS = [
   {
+    title: 'The New Stack 官方媒体在 KubeCon 采访 Porter 作者宋雪涛: Open Source Load Balancing on Bare Metal',
+    desc:
+      'On this livestream from KubeCon + CloudNativeCon China, we’re sitting down with Xuetao Song, Senior Software Engineer at Beijing Yunify Technology Co., Ltd. and Fang (Flora) Du, QingCloud Solution Architect at Beijing Yunify Technology Co., Ltd. to discuss open source load balancing on bare metal. Porter exists as an OSS solution to the issue of load balancing on bare metal in production on Kubernetes, which Song and Du are giving a presentation on at KCCNC + OSS Summit China 2019.',
+    icon: 'newstack.jpg',
+    link: 'https://www.youtube.com/watch?v=zSWypFKaYcY',
+    date: '2019-06-24',
+  },
+  {
     title: '专访青云KubeSphere容器团队：我们为何不放过这个新赛道？',
     desc:
       'Kubernetes这一容器工具的发起者是远在美国山景城的谷歌，但眼下，这一技术正跨越太平洋，被中国的青云QingCloud做了更多优化升级。那么，其背后的团队是经过怎样曲折的过程才打磨成功这款产品？经历了多少故事？',
@@ -107,6 +115,27 @@ export const REPORTS = [
 
 export const PRACTICES = [
   {
+    title: '「K8S 技术落地实践」Prometheus 在 K8S 上的监控实践',
+    desc:
+      'Kubernetes 已经成为事实上的编排平台的领导者，下一代分布式架构的王者，其在自动化部署、扩展性、以及管理容器化的应用中已经体现出独特的优势，在企业中应用落地已经成为一种共识。感谢本次技术内容提供者青云QingCloud 软件工程师黄广喆、霍秉杰',
+    link: 'https://mp.weixin.qq.com/s/8wwZVYdxAZpkit4cYgiJVA',
+    date: '2019-07-10',
+  },
+  {
+    title: '「K8S 技术落地实践」系列：高效运维 K8S 集群',
+    desc:
+      '本次「K8S 技术落地实践」杭州站，青云QingCloud 软件工程师万宏明为大家带来《高效运维 K8S 集群》主题分享。',
+    link: 'https://mp.weixin.qq.com/s/BUDnrUtElhnHivDGj0dPJg',
+    date: '2019-06-28',
+  },
+  {
+    title: '万字干货 | K8S 技术落地实践上海站分享',
+    desc:
+      '本次「K8S 技术落地实践」上海站，青云QingCloud 软件工程师朱晓扬、王欣、宋雪涛就以下主题进行了分享：Operator：以 K8S 原生的方式去管理 K8S 原生应用；企业级核心存储平台为 Kubernetes 赋能；NetDevOps in Kubernetes',
+    link: 'https://mp.weixin.qq.com/s/MH-PEQLqySoVz8r5A_m48g',
+    date: '2019-06-26',
+  },
+  {
     title: '运维&测试人员必读 | 微服务架构下应用灰度部署策略',
     desc:
       '应用上线，对开发者而言是阶段性工作的结束，可对运维和测试人员来说，这只是挑战的开始。',
@@ -119,6 +148,13 @@ export const PRACTICES = [
       '容器和容器编排系统仅仅是部署和运行的基础平台，开发人员需要关注更多的是部署在平台上的应用。容器时代，应用架构发生了巨大变化，如果要让应用在容器平台上发挥其最大的功效，我们就必须走上微服务道路。然而，容器落地的过程中路多坑更多，微服务进阶之路需要更多经验之谈。',
     link: 'https://mp.weixin.qq.com/s/QgI5aq4me6Ubb-Kn9gI7yw',
     date: '2019-04-08',
+  },
+  {
+    title: '知行学院总结 | 如何解决 Kubernetes 的多租户难题',
+    desc:
+      '本次我们邀请了青云QingCloud 容器平台研发工程师万宏明，带来《如何打造一个企业级 Kubernetes 发行版》。',
+    link: 'https://mp.weixin.qq.com/s/dxTb7zoh3oGHYeq5Fo7EQg',
+    date: '2019-03-11',
   },
 ]
 

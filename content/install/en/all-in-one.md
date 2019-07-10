@@ -2,6 +2,10 @@
  
 For those who are new to KubeSphere Advanced Edition and looking for the fastest way to install and experience the new features, the all-in-one mode must be your best choice since it supports one-click installation. 
 
+## Installation Demo
+
+![all-in-one](https://pek3b.qingstor.com/kubesphere-docs/png/kubesphere-allinone.gif)
+
 ## Prerequisites
 
 It is recommended to use the storage services which are recommended by KubeSphere and prepare the corresponding storage servers. If you are not prepare the storage servers yet, you can also use the default Local Volume as the storage only for testing installation.
@@ -25,21 +29,32 @@ The following section identifies the hardware specifications and system-level re
 
 ### Step 2: Provision Installation Files
 
-**1.** Download the 2.0.1 installer then unzip it.
+<div class="md-tabs">
+<input type="radio" name="tabs" id="stable" checked="checked">
+<label for="stable">Online Installer (2.0.2)</label>
+<span class="md-tab">
+
+Download `KubeSphere Advanced Edition 2.0.2` and enter into the installation folder.
 
 ```bash
-$ curl -L https://kubesphere.io/download/stable/advanced-2.0.1 > advanced-2.0.1.tar.gz
+$ curl -L https://kubesphere.io/download/stable/advanced-2.0.2 > advanced-2.0.2.tar.gz \
+&& tar -zxf advanced-2.0.2.tar.gz && cd kubesphere-all-advanced-2.0.2/scripts
 ```
+ 
+</span>
+<input type="radio" name="tabs" id="offline">
+<label for="offline">Offline Installer (2.0.0)</label>
+<span class="md-tab">
+
+Download `KubeSphere Advanced Edition 2.0.0` and enter into the installation folder (2.0.2 offline installer coming soon).
 
 ```bash
-$ tar -zxf advanced-2.0.1.tar.gz
+$ curl -L https://kubesphere.io/download/offline/advanced-2.0.0 > advanced-2.0.0.tar.gz \
+&& tar -zxf advanced-2.0.0.tar.gz && cd kubesphere-all-advanced-2.0.0/scripts
 ```
 
-**2.** Go into “`kubesphere-all-advanced-2.0.1`” folder
-
-```
-  $ cd `kubesphere-all-advanced-2.0.1`
-```
+</span>
+</div>
 
 ### Step 3: Get Started With Installation
 
@@ -57,19 +72,13 @@ Following steps describes how to get started with all-in-one:
 
 > The installation duration is related to network conditions and bandwidth, machine configuration and the number of nodes. All-in-one mode installation was about 25 minutes after testing when the network was good condition with the minimum hardware requirements.
 
-**1.** Go into `scripts`:
-
-```
-$ cd scripts
-```
-
-**2.** It's recommended to install using `root` user, then execute `install.sh`:
+**1.** It's recommended to install using `root` user, then execute `install.sh`:
 
 ```
 $ ./install.sh
 ```
 
-**3.** Enter `1` to select `all-in-one` mode to start:
+**2.** Enter `1` to select `all-in-one` mode to start:
 
 ```bash
 ################################################
@@ -79,12 +88,12 @@ $ ./install.sh
 *   2) Multi-node
 *   3) Quit
 ################################################
-https://kubesphere.io/               2018-05-18
+https://kubesphere.io/               2018-07-08
 ################################################
 Please input an option: 1
 ```
 
-**4.** Verify if all-in-one mode is installed successfully：
+**3.** Verify if all-in-one mode is installed successfully：
 
 **(1).** If you can see the following "Successful" result being returned after `install.sh` completed, that's successful. You may need to bind the EIP and configure port forwarding. Make sure you have added the console nodeport (30880) to the firewall if the EIP has a firewall, then external network traffic can pass through this nodeport.
 
