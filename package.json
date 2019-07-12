@@ -21,7 +21,7 @@
     "gatsby-transformer-remark": "^2.3.12",
     "i18next": "^17.0.3",
     "i18next-browser-languagedetector": "^3.0.1",
-    "lodash": "^4.17.10",
+    "lodash": "^4.17.13",
     "moment-mini": "^2.22.1",
     "node-sass": "^4.12.0",
     "prismjs": "^1.16.0",
