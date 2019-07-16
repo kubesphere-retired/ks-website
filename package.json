@@ -10,6 +10,7 @@
     "gatsby": "^2.9.2",
     "gatsby-i18n": "^1.1.5",
     "gatsby-link": "^2.1.1",
+    "gatsby-plugin-advanced-sitemap": "^1.3.1",
     "gatsby-plugin-no-sourcemaps": "^2.0.2",
     "gatsby-plugin-react-helmet": "^3.0.12",
     "gatsby-plugin-sass": "^2.0.11",
