@@ -77,11 +77,11 @@ In this tutorial we will create a Deployment as an example, demonstrating how to
 
 3.5. Other blanks could be remained default values, choose **Save → Next** when you've done.
 
-![Add Environmental Variable](https://pek3b.qingstor.com/kubesphere-docs/png/20190326101810.png)
-
 3.6. Choose **Add Existing Volume**, select the `wordpress-pvc` which was created in Step 2.
 
 3.7. Select `ReadAndWrite` and set the Mount Path to `/var/www/html`. Then click **Save → Next → Create** when you've done. Now we've created the Wordpress Deployment succeessfully.
+
+![](https://pek3b.qingstor.com/kubesphere-docs/png/20190716232832.png)
 
 #### Step 4: Create a Service
 

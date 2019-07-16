@@ -33,8 +33,6 @@ In this tutorial we will create a StatefulSet as an example, demonstrating how t
 
 2.2. Fill in the basic information, e.g. `Name : mysql`, then click **Next**. 
 
-![Fill in the basic information](/mysql-quick-start-1-en.png)
-
 2.3. Click **Add Container**, then fill in the table according to following list:
 
 

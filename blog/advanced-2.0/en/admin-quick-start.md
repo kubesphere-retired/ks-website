@@ -15,7 +15,7 @@ In this quickstart, as a cluster admin, you will learn how to create workspaces,
 
 Generally, the hierarchy relationship of Cluster, Workspace, Project and DevOps Project showing as the following graph, and there are common built-in roles existed in these orgnizations within each level.
 
-![resource-hierarchy](/resource-hierarchy.svg)
+![](https://pek3b.qingstor.com/kubesphere-docs/png/20190716231511.png)
 
 ### Cluster Admin
 
@@ -40,11 +40,7 @@ First, we will create a new role (user-manager), grants account management and r
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190716112614.png)
 
-1.2. Fill in the basic information and authority settings of the role.
-
-- Name: A simple and concise name for users to browse and search, such as `user-manager`.
-- Description: A brief description of the role, such as managing accounts and roles.
-
+1.2. Fill in the basic information and authority settings of the role, e.g. `Name : user-manager`.
 
 1.3. Check all the boxes for both **Account Management** and **Role Management**, then click **Create**.
 
@@ -61,11 +57,11 @@ First, we will create a new role (user-manager), grants account management and r
 1.6. Log out and Sign in with the `user manager` account, then navigate to **Account** and create 4 accounts according to the following table. Please reference the above steps to create these 4 accounts.
 
 |Account Name|Cluster Role|Responsibility|
-|---|---|---|---|
+|---|---|---|
 |ws-manager|workspaces-manager|Create and manage all workspaces|
 |ws-admin|cluster-regular|Manage all resources under the specified workspace<br> (This example is used to invite new members to join the workspace.)|
 |project-admin|cluster-regular|Create and manage projects, DevOps projects, invite new members|
-|project-regular|cluster-regular|The regular user will be invited to the project and DevOps project by the project-admin, <br> and project-regular is used to create workloads, pipelines and other resources under the specified project|
+|project-regular|cluster-regular|The regular user will be invited to the project and DevOps project by the project-admin, <br> we use this account to create workloads, pipelines and other resources under the specified project|
 
 1.7. Verify the 4 accounts that we created in step 1.6.
 
