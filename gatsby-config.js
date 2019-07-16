@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: 'KubeSphere',
+    siteUrl: 'https://kubesphere.io',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -29,5 +30,14 @@ module.exports = {
     {
       resolve: "gatsby-plugin-no-sourcemaps",
     },
+    {
+      resolve: `gatsby-plugin-advanced-sitemap`,
+      options: {
+        exclude: [
+          '/404',
+          '/404.html',
+        ],
+      }
+    }
   ],
 }
