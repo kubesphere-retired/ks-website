@@ -1,5 +1,5 @@
 ---
-title: "Create Accounts, Roles, Workspaces, Projects and DevOps Projects"
+title: "Multi-tenant Management: Create Accounts, Roles, Workspaces, Projects and DevOps Projects"
 ---
 
 ## Objective
@@ -54,7 +54,7 @@ First, we will create a new role (user-manager), grants account management and r
  
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190716113050.png)
 
-1.6. Log out and Sign in with the `user manager` account, then navigate to **Account** and create 4 accounts according to the following table. Please reference the above steps to create these 4 accounts.
+1.6. Log out and Sign in with the `user-manager` account, then navigate to **Account** and create 4 accounts according to the following table. Please reference the above steps to create these 4 accounts.
 
 |Account Name|Cluster Role|Responsibility|
 |---|---|---|
