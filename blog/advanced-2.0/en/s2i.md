@@ -4,7 +4,7 @@ title: "Source-to-Image: Build and Deploy Spring Boot Application to KubeSphere"
 
 ## Objective
 
-The tutorial will guide you Source to Image feature through setting up an example instance of KubeSphere deployment with your Spring Boot application. To elaborate this feature, we will create a Deployment and use a [Spring Boot sample repository](https://github.com/kubesphere/springboot-sample), demonstrating how to use Source to Image in KubeSphere to implement build images, automatically push to the Docker Hub, and finally deploy to the Kubernetes Namespace.
+This tutorial will guide you Source to Image feature through setting up an example instance of KubeSphere deployment with your Spring Boot application. To elaborate this feature, we will create a Deployment and use a [Spring Boot sample repository](https://github.com/kubesphere/springboot-sample), demonstrating how to use Source to Image in KubeSphere to implement build images, automatically push to the Docker Hub, and finally deploy to the Kubernetes Namespace.
 
 
 ## What is Source to Image
@@ -65,7 +65,7 @@ Sign in with `project-regular` account and enter into the `demo-project`, naviga
 
 The S2I sample build completes successfully after a few minutes.
 
-![](https://pek3b.qingstor.com/kubesphere-docs/png/20190718101045.png)
+![](https://pek3b.qingstor.com/kubesphere-docs/png/20190718115255.png)
 
 ### Step 3: Create a Service
 
