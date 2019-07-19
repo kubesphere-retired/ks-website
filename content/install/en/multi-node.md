@@ -56,14 +56,13 @@ $ curl -L https://kubesphere.io/download/stable/advanced-2.0.2 > advanced-2.0.2.
  
 </span>
 <input type="radio" name="tabs" id="offline">
-<label for="offline">Offline Installer (2.0.0)</label>
+<label for="offline">Offline Installer (2.0.2)</label>
 <span class="md-tab">
 
-**1.** Download `KubeSphere Advanced Edition 2.0.0` and enter into the configuration folder (2.0.2 offline installer is coming soon).
+**1.** Download `KubeSphere Advanced Edition 2.0.2` and enter into the configuration folder.
 
 ```bash
-$ curl -L https://kubesphere.io/download/offline/advanced-2.0.0 > advanced-2.0.0.tar.gz \
-&& tar -zxf advanced-2.0.0.tar.gz && cd kubesphere-all-advanced-2.0.0/conf
+$ curl -L https://kubesphere.io/download/offline/advanced-2.0.2 > advanced-2.0.2.tar.gz && tar -zxf advanced-2.0.2.tar.gz && cd kubesphere-all-advanced-2.0.2/scripts
 ```
 
 </span>
