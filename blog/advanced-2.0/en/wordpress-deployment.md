@@ -1,5 +1,5 @@
 ---
-title: "Deploy a WordPress Web Application" 
+title: "Deploying a WordPress Web Application" 
 ---
 
 ## Objective 

@@ -6,10 +6,6 @@ Istio’s service mesh is able to manage traffic distribution with complete inde
 
 KubeSphere provides three kind of grayscale strategies based on Istio, including blue-green deployment, canary release and traffic mirroring. Without modifying the source code, KubeSphere can realize grayscale, traffic governance, tracing, traffic monitoring and other service mesh features.
 
-## Objective
-
-In this tutorial, we're going to deploy a Bookinfo sample application composed of four separate microservices used to demonstrate the canary release, tracing and traffic monitoring using Istio on KubeSphere.
-
 ## What is Bookinfo Application
 
 The Bookinfo application is broken into four separate microservices (There are 3 versions of the reviews microservice):
@@ -23,10 +19,14 @@ The end-to-end architecture of the application is shown below, see [Bookinfo App
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190718152533.png)
 
+## Objective
+
+In this tutorial, we're going to deploy a Bookinfo sample application composed of four separate microservices used to demonstrate the canary release, tracing and traffic monitoring using Istio on KubeSphere.
 
 ## Prerequisites
 
-You've completed all steps in [Tutorial 1](admin-quick-start.md).
+- You've completed all steps in [Tutorial 1](admin-quick-start.md).
+- You need to turn on the **Application Governance** to enable the tracing feature. (Choose **Project Settings → Internet Access → Edit Gateway → Turn it On**)
 
 ## Hands-on Lab
 
@@ -70,7 +70,7 @@ You've completed all steps in [Tutorial 1](admin-quick-start.md).
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190718163639.png)
 
-2.5. Click **Create** when you've completed configuration, then you're able to see 
+2.5. Click **Create** when you've completed configuration, then you're able to see the `canary-release` has been created successfully.
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20190718164216.png)
 

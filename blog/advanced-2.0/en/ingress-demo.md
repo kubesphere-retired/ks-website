@@ -1,5 +1,5 @@
 ---
-title: "Expose your App: Create a Service and Ingress"
+title: "Exposing your App: Creating a Service and Ingress"
 ---
 
 KubeSphere has built a global load balancer into each project, we call it as Ingress Controller, an Ingress Controller is responsible for fulfilling the Ingress. Ingress exposes HTTP and HTTPS routes from outside the cluster to services within the cluster. Traffic routing is controlled by rules defined on the Ingress resource.

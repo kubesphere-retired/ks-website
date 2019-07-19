@@ -1,5 +1,5 @@
 ---
-title: "Source-to-Image: Build and Deploy Spring Boot Application to KubeSphere"
+title: "Source-to-Image: Building and Deploying Spring Boot Application to KubeSphere"
 ---
 
 ## Objective

@@ -1,5 +1,5 @@
 ---
-title: "Create Horizontal Pod Autoscaler for Deployment"
+title: "Creating Horizontal Pod Autoscaler for Deployment"
 ---
 
 The Horizontal Pod Autoscaler automatically scales the number of pods in a deployment based on observed CPU utilization or Memory usage. The controller periodically adjusts the number of replicas in a deployment to match the observed average CPU utilization to the target value specified by user.

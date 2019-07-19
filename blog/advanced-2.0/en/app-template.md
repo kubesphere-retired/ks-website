@@ -1,5 +1,5 @@
 ---
-title: "Application Template: One-click Deployment of Applications"
+title: "Deploying a Grafana Application to Kubernetes Using Application Template"
 ---
 
 ## Objective
