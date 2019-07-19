@@ -1,5 +1,5 @@
 ---
-title: "Wordpress Application Tutorial: Deploy a MySQL StatefulSet" 
+title: "Wordpress Application Tutorial: Deploying a MySQL StatefulSet" 
 ---
 
 ## Objective 

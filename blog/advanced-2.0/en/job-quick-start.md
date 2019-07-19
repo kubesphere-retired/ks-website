@@ -1,5 +1,5 @@
 ---
-title: "Create a Job to compute π to 2000 places"
+title: "Creating a Job to compute π to 2000 places"
 ---
 
 ## Objective

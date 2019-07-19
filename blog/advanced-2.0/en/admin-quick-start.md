@@ -1,5 +1,5 @@
 ---
-title: "Multi-tenant Management: Create Accounts, Roles, Workspaces, Projects and DevOps Projects"
+title: "Multi-tenant Management: Creating Accounts, Roles, Workspaces, Projects and DevOps Projects"
 ---
 
 ## Objective
