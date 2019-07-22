@@ -2,7 +2,7 @@
 
 对于首次接触 KubeSphere 高级版的用户，想寻找一个最快安装和体验 KubeSphere 高级版核心功能的方式，all-in-one 模式支持一键安装 KubeSphere 至一台目标机器。
 
-> 提示：若需要安装内置的 Harbor 和 GitLab 请在**安装前**参考 [安装内置 Harbor](//docs.kubesphere.io/advanced-v2.0/zh-CN/installation/harbor-installation) 和 [安装内置 GitLab](//docs.kubesphere.io/advanced-v2.0/zh-CN/installation/gitlab-installation)。
+> 提示：若需要安装内置的 Harbor 和 GitLab 请在**安装前**参考 [安装内置 Harbor](/docs/advanced-v2.0/zh-CN/installation/harbor-installation) 和 [安装内置 GitLab](/docs/advanced-v2.0/zh-CN/installation/gitlab-installation)。
 
 ## 安装演示
 
@@ -65,8 +65,8 @@ KubeSphere 安装过程中将会自动化地进行环境和文件监测、平台
 > 说明：
 > - 通常情况您不需要修改任何配置，直接安装即可。
 > - 网络默认插件是 `calico`，若您需要自定义安装参数，如网络、存储、GitLab、Harbor、负载均衡器插件等相关内容需在 **`conf/vars.yml`** 配置文件中指定或修改。
-> - All-in-One 默认会用 Local Volume 即本地存储设备作为存储类型，但 Local Volume 不支持动态分配，需手动创建 Persistent Volume (PV)，Installer 会预先创建 26 个可用的 10G PV 供使用。若存储空间不足时则需要手动创建，参见 [Local Volume 使用方法](//docs.kubesphere.io/advanced-v2.0/zh-CN/../storage/local-volume)。
-> - 支持存储类型：[QingCloud 云平台块存储](https://docs.qingcloud.com/product/storage/volume/) (QingCloud 公有云单节点挂盘限制为 10 块)、[QingStor NeonSAN](https://docs.qingcloud.com/product/storage/volume/super_high_performance_shared_volume/)、[GlusterFS](https://www.gluster.org/)、[Ceph RBD](https://ceph.com/)、[NFS](https://kubernetes.io/docs/concepts/storage/volumes/#nfs)、[Local Volume](https://kubernetes.io/docs/concepts/storage/volumes/#local)，存储配置相关的详细信息请参考 [存储配置说明](//docs.kubesphere.io/advanced-v2.0/zh-CN/installation/storage-configuration)。
+> - All-in-One 默认会用 Local Volume 即本地存储设备作为存储类型，但 Local Volume 不支持动态分配，需手动创建 Persistent Volume (PV)，Installer 会预先创建 26 个可用的 10G PV 供使用。若存储空间不足时则需要手动创建，参见 [Local Volume 使用方法](/docs/advanced-v2.0/zh-CN/../storage/local-volume)。
+> - 支持存储类型：[QingCloud 云平台块存储](https://docs.qingcloud.com/product/storage/volume/) (QingCloud 公有云单节点挂盘限制为 10 块)、[QingStor NeonSAN](https://docs.qingcloud.com/product/storage/volume/super_high_performance_shared_volume/)、[GlusterFS](https://www.gluster.org/)、[Ceph RBD](https://ceph.com/)、[NFS](https://kubernetes.io/docs/concepts/storage/volumes/#nfs)、[Local Volume](https://kubernetes.io/docs/concepts/storage/volumes/#local)，存储配置相关的详细信息请参考 [存储配置说明](/docs/advanced-v2.0/zh-CN/installation/storage-configuration)。
 > - 由于 Kubernetes 集群的 Cluster IP 子网网段默认是 `10.233.0.0/18`，Pod 的子网网段默认是 `10.233.64.0/18`，因此安装 KubeSphere 的节点 IP 地址范围不应与以上两个网段有重复，若遇到地址范围冲突可在配置文件 `conf/vars.yaml` 修改 `kube_service_addresses` 或 `kube_pods_subnet` 的参数。
 
 参考以下步骤开始 all-in-one 安装：
@@ -114,9 +114,9 @@ NOTE：Please modify the default password after login.
 ```
 > 提示：如需要再次查看以上的界面信息，可在安装包目录下执行 `cat kubesphere/kubesphere_running` 命令查看。
 
-**(2)** 若需要在外网访问，在云平台需要在端口转发规则中将**内网端口** 30880 转发到**源端口** 30880，然后在防火墙开放这个**源端口**，确保外网流量可以通过该端口。例如在 QingCloud 平台配置端口转发和防火墙规则，则可以参考 [云平台配置端口转发和防火墙](//docs.kubesphere.io/advanced-v2.0/zh-CN/appendix/qingcloud-manipulation)。
+**(2)** 若需要在外网访问，在云平台需要在端口转发规则中将**内网端口** 30880 转发到**源端口** 30880，然后在防火墙开放这个**源端口**，确保外网流量可以通过该端口。例如在 QingCloud 平台配置端口转发和防火墙规则，则可以参考 [云平台配置端口转发和防火墙](/docs/advanced-v2.0/zh-CN/appendix/qingcloud-manipulation)。
 
-**(3)** 安装成功后，浏览器访问对应的 URL，如 `http://{$公网IP}:30880`，即可进入 KubeSphere 登录界面，可使用默认的用户名和密码登录 KubeSphere 控制台体验，参阅 [快速入门](//docs.kubesphere.io/advanced-v2.0/zh-CN/quick-start/quick-start-guide) 帮助您快速上手 KubeSphere。
+**(3)** 安装成功后，浏览器访问对应的 URL，如 `http://{$公网IP}:30880`，即可进入 KubeSphere 登录界面，可使用默认的用户名和密码登录 KubeSphere 控制台体验，参阅 [快速入门](/docs/advanced-v2.0/zh-CN/quick-start/quick-start-guide) 帮助您快速上手 KubeSphere。
 
 ![KubeSphere 控制台](/kubesphere-console.png)
 

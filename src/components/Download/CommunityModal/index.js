@@ -66,7 +66,7 @@ class CommunityModal extends React.Component {
             style={{ marginBottom: 80, marginTop: 8 }}
             dangerouslySetInnerHTML={{
               __html: t(
-                'If you have any questions, see the <a href="//docs.kubesphere.io/express/zh-CN/KubeSphere-Installer-Guide/" target="_blank">KubeSphere Installation Guide</a>'
+                'If you have any questions, see the <a href="/docs/express/zh-CN/KubeSphere-Installer-Guide/" target="_blank">KubeSphere Installation Guide</a>'
               ),
             }}
           />

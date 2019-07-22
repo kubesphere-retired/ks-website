@@ -84,7 +84,7 @@
   "To get the latest KubeSphere news via leaving your contact information": "留下您的联系方式，获取最新的 KubeSphere 的动态信息。",
   "Do not want to be frequently notified by email": "不希望经常收到邮件通知",
   "Thank you for downloading KubeSphere": "感谢您下载 KubeSphere",
-  "If you have any questions, see the <a href=\"//docs.kubesphere.io/express/zh-CN/KubeSphere-Installer-Guide/\" target=\"_blank\" rel=\"noopener noreferrer\">KubeSphere Installation Guide</a>": "如果您遇到问题，可参阅<a href=\"//docs.kubesphere.io/express/zh-CN/KubeSphere-Installer-Guide/\" target=\"_blank\" rel=\"noopener noreferrer\">部署文档</a>。",
+  "If you have any questions, see the <a href=\"/docs/express/zh-CN/KubeSphere-Installer-Guide/\" target=\"_blank\" rel=\"noopener noreferrer\">KubeSphere Installation Guide</a>": "如果您遇到问题，可参阅<a href=\"/docs/express/zh-CN/KubeSphere-Installer-Guide/\" target=\"_blank\" rel=\"noopener noreferrer\">部署文档</a>。",
   "More Options": "更多选择",
   "If you need to install offline please select the <a href=\"//kubesphere.anybox.qingcloud.com/s/UBBctImJLtxnkqT5hrEaijjolTENNVsr\" target=\"_blank\" rel=\"noopener noreferrer\">offline installation package</a>": "如果您需要离线安装请选择<a href=\"//kubesphere.anybox.qingcloud.com/s/UBBctImJLtxnkqT5hrEaijjolTENNVsr\" target=\"_blank\" rel=\"noopener noreferrer\">离线安装包</a>",
   "If you already have a Kubernetes cluster, you can select <a href=\"\" target=\"_blank\" rel=\"noopener noreferrer\"> KS-Core installation </a>": "如果您已有 Kubernetes 集群您可以选择 <a href=\"\" target=\"_blank\" rel=\"noopener noreferrer\">KS-Core 安装</a>",

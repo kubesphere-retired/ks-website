@@ -78,7 +78,7 @@ class Header extends React.Component {
           {t('Quick Installation')}
         </Link>
         <a
-          href={`//docs.kubesphere.io/zh-CN/`}
+          href={`/docs/zh-CN/`}
           target="_blank"
           rel="noopener noreferrer"
         >
