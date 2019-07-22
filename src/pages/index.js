@@ -230,7 +230,7 @@ const Contribution = ({ t }) => (
             </li>
             <li>
               <a
-                href="//docs.kubesphere.io"
+                href="/docs"
                 target="_blank"
                 rel="noopener noreferrer"
               >

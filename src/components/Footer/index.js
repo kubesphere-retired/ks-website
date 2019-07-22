@@ -70,28 +70,28 @@ const Footer = ({ className, t, pageContext }) => (
             <li>
               <div className="h3">{t('KubeSphere Docs')}</div>
               <a
-                href="//docs.kubesphere.io/advanced-v2.0/zh-CN/introduction/intro/"
+                href="/docs/advanced-v2.0/zh-CN/introduction/intro/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 {t('Introduction')}
               </a>
               <a
-                href="//docs.kubesphere.io/advanced-v2.0/zh-CN/installation/intro/"
+                href="/docs/advanced-v2.0/zh-CN/installation/intro/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 {t('Installation')}
               </a>
               <a
-                href="//docs.kubesphere.io/advanced-v2.0/zh-CN/quick-start/quick-start-guide/"
+                href="/docs/advanced-v2.0/zh-CN/quick-start/quick-start-guide/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 {t('Tutorial')}
               </a>
               <a
-                href="//docs.kubesphere.io/advanced-v2.0/zh-CN/api-reference/api-docs/"
+                href="/docs/advanced-v2.0/zh-CN/api-reference/api-docs/"
                 target="_blank"
                 rel="noopener noreferrer"
               >

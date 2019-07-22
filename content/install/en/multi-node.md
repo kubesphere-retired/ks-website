@@ -26,7 +26,7 @@ The following section identifies the hardware specifications and system-level re
 
 The following procedure walks you through setting up a 3-node cluster, the host name of "master" serves as the taskbox to execute the installation. The KubeSphere cluster architecture consists of management nodes (Master) and working nodes (Node), thus this cluster consists of one Master and two Node. Assume that the host information as following table showing:
 
-> Note: The Advanced Edition supports the high-availability configuration of the Master and etcd nodes, for convenience this example is only for testing installation, so only a single Master and a single etcd will be deployed. The formal environment is recommended to configure the high-availability of the Master and etcd nodes, see [Highly-available configuration of Master and etcd node](//docs.kubesphere.io/advanced-v1.0/zh-CN/installation/master-ha/).
+> Note: The Advanced Edition supports the high-availability configuration of the Master and etcd nodes, for convenience this example is only for testing installation, so only a single Master and a single etcd will be deployed. The formal environment is recommended to configure the high-availability of the Master and etcd nodes, see [Highly-available configuration of Master and etcd node](/docs/advanced-v1.0/zh-CN/installation/master-ha/).
 
 | Host IP     | Host Name | Roles        |
 | ----------- | --------- | ------------ |
@@ -119,12 +119,12 @@ kube-master
 **3.** Edit the `conf/vars.yml`, for example, to configure QingCloud-CSI plugin to connect QingCloud block storage.
 
 > Note：
-> - Where a value with `*` is required, refer to [Storage Configuration Instruction](//docs.kubesphere.io/advanced-v2.0/zh-CN/installation/storage-configuration).
+> - Where a value with `*` is required, refer to [Storage Configuration Instruction](/docs/advanced-v2.0/zh-CN/installation/storage-configuration).
 >    - `qingcloud_access_key_id` and `qingcloud_secret_access_key`： Log in to [QingCloud Console](https://console.qingcloud.com/login), select **API key** to create the key and download it (Only the values within single quotation marks should be pasted when filling in)；
 >    - `qingcloud_zone`：Fill in according to your machine is in，i.e. sh1a（ShangHai 1-A）、sh1b（ShangHai 1-B）、 pek2（Beijing 2）、pek3a（Beijing 3-A）、gd1（Guangdong 1）、gd2a（Guangdong 2-A）、ap1（Asia-pacific -1）、ap2a（Asia-pacific 2-A）;
 >    - `qingcloud_csi_enabled`：Determines whether to use qingcloud-csi used as persistent storage，change it to true;
 >    - `qingcloud_csi_is_default_class`：Determines whether to set QingCloud-CSI as default storage class, change it to true;
-> - The last six lines without `*` are optional so there is no need to change them in the example. Defaults to high capacity disk and its type is 2(Can be mounted to any type of host).<br> <font color=red>Note that the resource quota of your account should meet the minimum requirements in the current Zone before installation</font> If you need to use other types of disk, also need to meet the minimum quota, refer to [Storage Configuration Instruction - QingCloud CSI](//docs.kubesphere.io/advanced-v2.0/zh-CN/installation/storage-configuration)。
+> - The last six lines without `*` are optional so there is no need to change them in the example. Defaults to high capacity disk and its type is 2(Can be mounted to any type of host).<br> <font color=red>Note that the resource quota of your account should meet the minimum requirements in the current Zone before installation</font> If you need to use other types of disk, also need to meet the minimum quota, refer to [Storage Configuration Instruction - QingCloud CSI](/docs/advanced-v2.0/zh-CN/installation/storage-configuration)。
 
 
 **vars.yml Configuration Example**
@@ -150,7 +150,7 @@ qingcloud_disk_replica: 2
 
 > - You need to modify the relevant configurations like network or storage class in `conf/vars.yaml`, otherwise it will be executed with default parameters without any modifications.
 > - Network：KubeSphere supports `calico` by default.
-> - Supported Storage Classes：[QingCloud Block Storage](https://www.qingcloud.com/products/volume/)、[QingStor NeonSAN](https://docs.qingcloud.com/product/storage/volume/super_high_performance_shared_volume/)、[GlusterFS](https://www.gluster.org/)、[CephRBD](https://ceph.com/)、[NFS](https://kubernetes.io/docs/concepts/storage/volumes/#nfs)、[Local Volume](https://kubernetes.io/docs/concepts/storage/volumes/#local). For details regarding storage configuration, please refer to [Storage Configuration Instructions](//docs.kubesphere.io/advanced-v1.0/zh-CN/installation/storage-configuration/)
+> - Supported Storage Classes：[QingCloud Block Storage](https://www.qingcloud.com/products/volume/)、[QingStor NeonSAN](https://docs.qingcloud.com/product/storage/volume/super_high_performance_shared_volume/)、[GlusterFS](https://www.gluster.org/)、[CephRBD](https://ceph.com/)、[NFS](https://kubernetes.io/docs/concepts/storage/volumes/#nfs)、[Local Volume](https://kubernetes.io/docs/concepts/storage/volumes/#local). For details regarding storage configuration, please refer to [Storage Configuration Instructions](/docs/advanced-v1.0/zh-CN/installation/storage-configuration/)
 > - Since the default subnet for Cluster IPs is 10.233.0.0/18, default subnet for Pod IPs is 10.233.64.0/18 in Kubernetes cluster. The node IPs must not overlap with those 2 default IPs. If any conflicts happened with the IP address, go to `conf/vars.yaml` and modify `kube_service_addresses` or `kube_pods_subnet` to avoid this senario.
 
 ### Step 3: Get Started With Installation
@@ -202,7 +202,7 @@ NOTE：Please modify the default password after login.
 
 > Note: If you need to view the above interface, just execute `cat kubesphere/kubesphere_running` command in the installer directory.
 
-**(2).** You will be able to use default account and password to log in to the KubeSphere console to experience the features, it also has an English version UI. It's highly recommended to refer to the [KubeSphere Quick Start](//docs.kubesphere.io/advanced-v2.0/zh-CN/quick-start/quick-start-guide/)， and learn how to get started with it！
+**(2).** You will be able to use default account and password to log in to the KubeSphere console to experience the features, it also has an English version UI. It's highly recommended to refer to the [KubeSphere Quick Start](/docs/advanced-v2.0/zh-CN/quick-start/quick-start-guide/)， and learn how to get started with it！
 
 
 ![login](/login-page-en.png)
