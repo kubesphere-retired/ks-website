@@ -49,7 +49,7 @@ $ curl -L https://kubesphere.io/download/stable/advanced-2.0.2 > advanced-2.0.2.
 Download `KubeSphere Advanced Edition 2.0.2` and enter into the installation folder.
 
 ```bash
-$ curl -L https://kubesphere.io/download/offline/advanced-2.0.2 > advanced-2.0.2.tar.gz && tar -zxf advanced-2.0.2.tar.gz && cd kubesphere-all-advanced-2.0.2/scripts
+$ curl -L https://kubesphere.io/download/offline/advanced-2.0.2 > advanced-2.0.2.tar.gz && tar -zxf advanced-2.0.2.tar.gz && cd kubesphere-all-offline-advanced-2.0.2/scripts
 ```
 
 </span>
