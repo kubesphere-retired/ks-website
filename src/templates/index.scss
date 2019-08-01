@@ -151,3 +151,13 @@
     }
   }
 }
+
+:global {
+  .asciinema-terminal .line {
+    border: none;
+  }
+
+  .asciinema-player .control-bar {
+    border-radius: 0 0 4px 4px;
+  }
+}

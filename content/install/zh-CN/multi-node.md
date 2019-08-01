@@ -3,7 +3,10 @@
 `Multi-Node` 即多节点集群部署，部署前建议您选择集群中任意一个节点作为一台任务执行机 (taskbox)，为准备部署的集群中其他节点执行部署的任务，且 Taskbox 应能够与待部署的其他节点进行 **ssh 通信**。
 
 > 提示：若需要安装内置的 Harbor 和 GitLab 请在**安装前**参考 [安装内置 Harbor](/docs/advanced-v2.0/zh-CN/installation/harbor-installation) 和 [安装内置 GitLab](/docs/advanced-v2.0/zh-CN/installation/gitlab-installation)。
- 
+
+## 安装演示
+
+<asciinema-player src="/multi-node.json" cols="99" rows="30"></asciinema-player>
 
 ## 前提条件
 

@@ -1,4 +1,5 @@
 import React from 'react'
+import Helmet from 'react-helmet'
 
 import { graphql } from 'gatsby'
 
@@ -155,6 +156,10 @@ class InstallPage extends React.Component {
     const { selectCard } = this.state
     return (
       <Layout {...this.props}>
+        <Helmet>
+          <link rel="stylesheet" type="text/css" href="/asciinema-player.css" />
+          <script src="/asciinema-player.js"></script>
+        </Helmet>
         <div className="install">
           <Banner {...this.props} />
           <Documents
