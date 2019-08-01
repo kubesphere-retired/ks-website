@@ -6,7 +6,7 @@
 
 ## 安装演示
 
-![all-in-one](https://pek3b.qingstor.com/kubesphere-docs/png/kubesphere-allinone.gif)
+<asciinema-player src="/all-in-one.json" cols="99" rows="30"></asciinema-player>
 
 ## 前提条件
 

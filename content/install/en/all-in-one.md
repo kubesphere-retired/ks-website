@@ -4,7 +4,7 @@ For those who are new to KubeSphere Advanced Edition and looking for the fastest
 
 ## Installation Demo
 
-![all-in-one](https://pek3b.qingstor.com/kubesphere-docs/png/kubesphere-allinone.gif)
+<asciinema-player src="/all-in-one.json" cols="99" rows="30"></asciinema-player>
 
 ## Prerequisites
 

@@ -2,6 +2,10 @@
 
 `Multi-Node` is used to install KubeSphere on multiple instances. Typically, select any one host in the cluster being served as a role of "`taskbox`" to execute installation task, "`SSH Communication`" is required to be established between "taskbox" and other hosts.
 
+## Installation Demo
+
+<asciinema-player src="/multi-node.json" cols="99" rows="30"></asciinema-player>
+
 ## Prerequisites 
 
 - It is recommended to use the persistent storage services which are recommended by KubeSphere and prepare the corresponding storage server. The following procedure uses [QingCloud-CSI block storage plugin](https://www.qingcloud.com/products/volume/) as an example，suppose you have [QingCloud Console](https://console.qingcloud.com/login) account.
