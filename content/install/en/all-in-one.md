@@ -4,7 +4,7 @@ For those who are new to KubeSphere Advanced Edition and looking for the fastest
 
 ## Installation Demo
 
-<asciinema-player src="/all-in-one.json" cols="99" rows="30"></asciinema-player>
+<asciinema-player src="/all-in-one.json" cols="99" rows="41"></asciinema-player>
 
 ## Prerequisites
 
