@@ -4,7 +4,7 @@
 
 ## Installation Demo
 
-<asciinema-player src="/multi-node.json" cols="99" rows="30"></asciinema-player>
+<asciinema-player src="/multi-node.json" cols="99" rows="41"></asciinema-player>
 
 ## Prerequisites 
 

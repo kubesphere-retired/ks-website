@@ -6,7 +6,7 @@
 
 ## 安装演示
 
-<asciinema-player src="/multi-node.json" cols="99" rows="30"></asciinema-player>
+<asciinema-player src="/multi-node.json" cols="99" rows="41"></asciinema-player>
 
 ## 前提条件
 
