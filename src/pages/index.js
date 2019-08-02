@@ -64,7 +64,7 @@ const Banner = ({ t, pageContext: { locale } }) => {
         </div>
         <p>{t('what_is_kubesphere_io')}</p>
         <div className="banner-links">
-          <Link to={`/${locale}/install`}>
+          <Link to={`/${locale}/install/`}>
             <Button type="control" size="large">
               <DownloadIcon />
               {t('Get KubeSphere')}
