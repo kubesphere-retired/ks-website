@@ -54,7 +54,7 @@ class Header extends React.Component {
     return (
       <div className={styles.nav} onClick={this.handleCloseModal}>
         <Link
-          to={`/${locale}`}
+          to={`/${locale}/`}
           className={classnames({
             [styles.selected]: originalPath === '/',
           })}
@@ -62,7 +62,7 @@ class Header extends React.Component {
           {t('Home')}
         </Link>
         <Link
-          to={`/${locale}/projects`}
+          to={`/${locale}/projects/`}
           className={classnames({
             [styles.selected]: originalPath === '/projects/',
           })}
@@ -70,7 +70,7 @@ class Header extends React.Component {
           {t('Open Source Projects')}
         </Link>
         <Link
-          to={`/${locale}/install`}
+          to={`/${locale}/install/`}
           className={classnames({
             [styles.selected]: originalPath === '/install',
           })}
@@ -85,7 +85,7 @@ class Header extends React.Component {
           {t('Documentation')}
         </a>
         <Link
-          to={`/${locale}/trends`}
+          to={`/${locale}/trends/`}
           className={classnames({
             [styles.selected]: originalPath === '/trends/',
           })}
@@ -109,7 +109,7 @@ class Header extends React.Component {
         }}
       >
         <div className={styles.wrapper}>
-          <Link to={`/${locale}`}>
+          <Link to={`/${locale}/`}>
             <Logo className={styles.logo} />
           </Link>
           <div className={styles.navsWrapper}>{this.renderNav()}</div>

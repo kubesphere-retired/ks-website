@@ -72,6 +72,18 @@ exports.onCreatePage = async props => {
       redirectInBrowser: true,
       toPath: `/${defaultLocales.value}${page.path}`,
     })
+    createRedirect({
+      fromPath: page.path.slice(0, -1),
+      isPermanent: true,
+      redirectInBrowser: true,
+      toPath: `/${defaultLocales.value}${page.path}`,
+    })
+    createRedirect({
+      fromPath: `/${defaultLocales.value}${page.path}`.slice(0, -1),
+      isPermanent: true,
+      redirectInBrowser: true,
+      toPath: `/${defaultLocales.value}${page.path}`,
+    })
   }
 }
 
@@ -142,6 +154,18 @@ exports.createPages = ({ graphql, actions }) => {
 
           createRedirect({
             fromPath: originalPath,
+            isPermanent: true,
+            redirectInBrowser: true,
+            toPath: `/${defaultLocales.value}${originalPath}`,
+          })
+          createRedirect({
+            fromPath: originalPath.slice(0, -1),
+            isPermanent: true,
+            redirectInBrowser: true,
+            toPath: `/${defaultLocales.value}${originalPath}`,
+          })
+          createRedirect({
+            fromPath: `/${defaultLocales.value}${originalPath}`.slice(0, -1),
             isPermanent: true,
             redirectInBrowser: true,
             toPath: `/${defaultLocales.value}${originalPath}`,
