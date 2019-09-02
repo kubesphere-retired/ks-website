@@ -33,6 +33,7 @@
   font-weight: 600;
   line-height: 1.5;
   color: #fff;
+  z-index: 2;
 
   & > svg {
     vertical-align: sub;
@@ -44,4 +45,24 @@
   top: 15px;
   right: 14px;
   cursor: pointer;
+}
+
+.left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 120.4px;
+  height: 86px;
+  object-fit: contain;
+  opacity: 0.9;
+}
+
+.right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 134.3px;
+  height: 120px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
 }
