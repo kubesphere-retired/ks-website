@@ -3,6 +3,8 @@ import { withTranslation } from 'react-i18next'
 
 import { ReactComponent as CloseIcon } from '../../assets/close.svg'
 import { ReactComponent as GithubIcon } from '../../assets/icon-git.svg'
+import { ReactComponent as StarLeftIcon } from '../../assets/star-left.svg'
+import { ReactComponent as StarRightIcon } from '../../assets/star-right.svg'
 
 import styles from './index.module.scss'
 
@@ -41,6 +43,8 @@ class Star extends React.Component {
         <div className={styles.close} onClick={this.handleClose}>
           <CloseIcon width={20} height={20} />
         </div>
+        <StarLeftIcon className={styles.left} />
+        <StarRightIcon className={styles.right} />
       </div>
     )
   }
