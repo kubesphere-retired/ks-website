@@ -9,6 +9,7 @@ import '../i18n'
 
 import Header from '../components/Header/index'
 import Footer from '../components/Footer/index'
+import Star from '../components/Star/index'
 
 import bg1 from '../assets/bg-1.svg'
 
@@ -40,6 +41,7 @@ const Layout = ({ children, location, data, pageContext }) => {
       {showBg && <img className="bg1" src={bg1} alt="" />}
       {children}
       <Footer pageContext={pageContext} />
+      <Star />
     </div>
   )
 }

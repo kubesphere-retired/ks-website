@@ -23,6 +23,7 @@ import ChatIcon from '../assets/icon-chat.svg'
 import AppInstallLeftImage from '../assets/app-install-left.svg'
 import AppInstallRightImage from '../assets/app-install-right.svg'
 import CloudNativeLogo from '../assets/cloud-native.png'
+import CertifiedLogo from '../assets/certified.svg'
 
 import { ReactComponent as DownloadIcon } from '../assets/download.svg'
 
@@ -265,8 +266,14 @@ const Contribution = ({ t }) => (
 
 const CloudNative = ({ t }) => (
   <div className="cloud-native">
+    <div>
     <img src={CloudNativeLogo} alt="" />
-    <span>{t('Cloud Native Computing Foundation Member')}</span>
+    <div>{t('Cloud Native Computing Foundation Member')}</div>
+    </div>
+    <div style={{ marginLeft: 60 }}>
+    <img src={CertifiedLogo} alt="" />
+    <div>{t('Certified Kubernetes Conformance')}</div>
+    </div>
   </div>
 )
 

@@ -544,6 +544,8 @@ img {
 }
 
 .cloud-native {
+  display: flex;
+  justify-content: center;
   min-height: 120px;
   margin-top: 48px;
   padding: 30px 0;
@@ -552,17 +554,12 @@ img {
 
   img {
     height: 60px;
-    display: inline-block;
-    vertical-align: middle;
   }
 
-  & > span {
-    margin-left: 12px;
+  & > div {
     font-size: 16px;
     line-height: 2;
     color: #919aa3;
-    display: inline-block;
-    vertical-align: middle;
   }
 }
 

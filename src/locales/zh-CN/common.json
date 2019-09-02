@@ -55,6 +55,7 @@
   "Get Community Edition": "获取社区版",
   "Get Commercial Edition": "获取商业版",
   "Cloud Native Computing Foundation Member": "CNCF 云原生基金会会员",
+  "Certified Kubernetes Conformance": "Kubernetes一致性认证",
   "What is KubeSphere": "什么是 KubeSphere ？",
   "KubeSphere is an open source project, built on Kubernetes, which is a powerful production-grade container orchestration system. KubeSphere provides users with easy-to-use interface and wizard design, it reduces the complexity of development, testing and maintenance, as well as lower the learning cost of the container orchestration platform.": "KubeSphere 是一款开源项目，在目前主流容器调度平台 Kubernetes 之上构建的企业级分布式多租户容器管理平台，提供简单易用的操作界面以及向导式操作方式，在降低用户使用容器调度平台学习成本的同时，极大降低开发、测试、运维的日常工作的复杂度。",
   "Easy": "易用",
@@ -100,5 +101,7 @@
   "All-in-One deployment": "All-in-One 单节点部署",
   "Multi-Node cluster deployment": "Multi-Node 多节点集群部署",
   "Multi-Node mode allows you to deploy KubeSphere in production environments": "Multi-Node 模式支持您在生产环境部署 KubeSphere",
-  "All-in-One is single-node installation that supports one-click installation": "All-in-One 支持一键快速部署至目标机器"
+  "All-in-One is single-node installation that supports one-click installation": "All-in-One 支持一键快速部署至目标机器",
+  "If you like KubeSphere": "如果您喜欢 KubeSphere",
+  "Please give us a GitHub Star as an encouragement.": "请给我们一个 GitHub Star，给我们一份鼓励。"
 }
