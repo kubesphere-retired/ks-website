@@ -250,7 +250,7 @@ const Contribution = ({ t }) => (
             <li>
               {t('Find us on the Slack channel')}：
               <a
-                href="https://kubesphere.slack.com"
+                href="https://join.slack.com/t/kubesphere/shared_invite/enQtNTE3MDIxNzUxNzQ0LTZkNTdkYWNiYTVkMTM5ZThhODY1MjAyZmVlYWEwZmQ3ODQ1NmM1MGVkNWEzZTRhNzk0MzM5MmY4NDc3ZWVhMjE"
                 target="_blank"
                 rel="noopener noreferrer"
               >
