@@ -81,7 +81,7 @@
   "Participate in the upstream projects of KubeSphere such as Kubernetes, Docker, Istio, etc.": "参与到 KubeSphere 项目和上游项目如 Kubernetes、Docker、Istio 等",
   "Communication": "日常沟通",
   "Find us on the Slack channel": "在 Slack 频道上找到我们",
-  "download_tip": "已经有超过 1000 名用户下载并使用了 KubeSphere，如有问题可通过 <a href=\"//github.com/kubesphere/kubesphere\" target=\"_blank\" rel=\"noopener noreferrer\">Github</a> 或者 <a href=\"//kubesphere.slack.com\" target=\"_blank\" rel=\"noopener noreferrer\">Slack</a> 与我们联系。",
+  "download_tip": "已经有超过 1000 名用户下载并使用了 KubeSphere，如有问题可通过 <a href=\"//github.com/kubesphere/kubesphere\" target=\"_blank\" rel=\"noopener noreferrer\">Github</a> 或者 <a href=\"https://join.slack.com/t/kubesphere/shared_invite/enQtNTE3MDIxNzUxNzQ0LTZkNTdkYWNiYTVkMTM5ZThhODY1MjAyZmVlYWEwZmQ3ODQ1NmM1MGVkNWEzZTRhNzk0MzM5MmY4NDc3ZWVhMjE\" target=\"_blank\" rel=\"noopener noreferrer\">Slack</a> 与我们联系。",
   "To get the latest KubeSphere news via leaving your contact information": "留下您的联系方式，获取最新的 KubeSphere 的动态信息。",
   "Do not want to be frequently notified by email": "不希望经常收到邮件通知",
   "Thank you for downloading KubeSphere": "感谢您下载 KubeSphere",
