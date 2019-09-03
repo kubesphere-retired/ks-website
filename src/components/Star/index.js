@@ -25,7 +25,7 @@ class Star extends React.Component {
     const showStar =
       typeof localStorage !== 'undefined'
         ? localStorage.getItem('kubesphere-star') !== 'hidden'
-        : true
+        : false
 
     if (!showStar) {
       return null
