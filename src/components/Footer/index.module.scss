@@ -92,15 +92,23 @@
   text-align: center;
 
   svg {
-    width: 26px;
-    height: 26px;
+    width: 32px;
+    height: 32px;
     color: #b6c2cd;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
     margin-right: 8px;
+  }
 
+  .wechat {
     &:hover {
-      color: #314457;
+      color: #50b674;
+    }
+  }
+
+  .youtube {
+    &:hover {
+      color: #dd1829;
     }
   }
 }
