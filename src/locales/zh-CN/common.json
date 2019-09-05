@@ -103,5 +103,7 @@
   "Multi-Node mode allows you to deploy KubeSphere in production environments": "Multi-Node 模式支持您在生产环境部署 KubeSphere",
   "All-in-One is single-node installation that supports one-click installation": "All-in-One 支持一键快速部署至目标机器",
   "If you like KubeSphere": "如果您喜欢 KubeSphere",
-  "Please give us a GitHub Star as an encouragement.": "请给我们一个 GitHub Star，给我们一份鼓励。"
+  "Please give us a GitHub Star as an encouragement.": "请给我们一个 GitHub Star，给我们一份鼓励。",
+  "Follow the official account": "关注公众号",
+  "Join the WeChat group": "加入微信交流群"
 }

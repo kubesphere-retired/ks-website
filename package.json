@@ -32,6 +32,7 @@
     "react-helmet": "^5.2.1",
     "react-i18next": "^10.11.0",
     "react-modal": "^3.5.1",
+    "tippy.js": "^4.3.5",
     "whatwg-fetch": "^2.0.4"
   },
   "keywords": [
