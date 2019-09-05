@@ -33,7 +33,7 @@ class Star extends React.Component {
 
     return (
       <div className={styles.wrapper} onClick={this.handleClick}>
-        <div className={styles.title}>🎉🎉🎉 {t('If you like KubeSphere')}</div>
+        <div className={styles.title}><span role="img" aria-label="celibrate">🎉🎉🎉</span> {t('If you like KubeSphere')}</div>
         <p className={styles.desc}>
           {t('Please give us a GitHub Star as an encouragement.')}
         </p>

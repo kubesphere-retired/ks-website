@@ -12,12 +12,17 @@ import { ReactComponent as WechatIcon } from '../../assets/wechat.svg'
 import { ReactComponent as GroupIcon } from '../../assets/group.svg'
 import { ReactComponent as VideoIcon } from '../../assets/video.svg'
 import { ReactComponent as SlackIcon } from '../../assets/slack.svg'
+import { ReactComponent as SlackColorIcon } from '../../assets/slack-color.svg'
 import WechatCode from '../../assets/wechat_code.svg'
 import GroupCode from '../../assets/group_code.svg'
 
 import styles from './index.module.scss'
 
 class Footer extends React.Component {
+  state = {
+    hovered: false
+  }
+
   componentDidMount() {
     tippy('#wechat', {
       content: document.getElementById('wechat_tip').innerHTML,
@@ -35,8 +40,17 @@ class Footer extends React.Component {
     })
   }
 
+  handleMouseEnter = () => {
+    this.setState({ hovered : true })
+  }
+
+  handleMouseLeave = () => {
+    this.setState({ hovered : false })
+  }
+
   render() {
     const { className, t, pageContext } = this.props
+    const { hovered } = this.state
     return (
       <div className={classnames(styles.footer, className)}>
         <div className={styles.wrapper}>
@@ -155,16 +169,19 @@ class Footer extends React.Component {
             </div>
           </div>
           <div className={styles.logos}>
-            <WechatIcon id="wechat" />
-            <GroupIcon id="group" />
-            <a href="https://www.youtube.com/channel/UCybIhsLg8P1xzCx97eELiwQ" target="_blank">
-              <VideoIcon />
+            <WechatIcon id="wechat" className={styles.wechat}/>
+            <GroupIcon id="group" className={styles.wechat} />
+            <a href="https://www.youtube.com/channel/UCybIhsLg8P1xzCx97eELiwQ" target="_blank" rel="noopener noreferrer">
+              <VideoIcon className={styles.youtube}/>
             </a>
             <a
               href="https://join.slack.com/t/kubesphere/shared_invite/enQtNTE3MDIxNzUxNzQ0LTZkNTdkYWNiYTVkMTM5ZThhODY1MjAyZmVlYWEwZmQ3ODQ1NmM1MGVkNWEzZTRhNzk0MzM5MmY4NDc3ZWVhMjE"
               target="_blank"
+              onMouseEnter={this.handleMouseEnter}
+              onMouseLeave={this.handleMouseLeave}
+              rel="noopener noreferrer"
             >
-              <SlackIcon />
+              {hovered ? <SlackColorIcon /> : <SlackIcon />}
             </a>
           </div>
           <p className={styles.icp}>KubeSphere®️ 2019 All Rights Reserved.</p>
