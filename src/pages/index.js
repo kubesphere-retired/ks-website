@@ -215,7 +215,7 @@ const Contribution = ({ t }) => (
             <li
               dangerouslySetInnerHTML={{
                 __html: t(
-                  'Read the KubeSphere <a href="//github.com/kubesphere/kubesphere/blob/master/docs/welcome-to-KubeSphere-new-developer-guide.md " target="_blank" rel="noopener noreferrer">Contributor Guide</a> carefully'
+                  'Read the KubeSphere <a href="//github.com/kubesphere/kubesphere/blob/master/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">Development Guide</a> carefully'
                 ),
               }}
             />
@@ -230,11 +230,7 @@ const Contribution = ({ t }) => (
               </a>
             </li>
             <li>
-              <a
-                href="/docs"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href="/docs" target="_blank" rel="noopener noreferrer">
                 {t('Read the KubeSphere Documentation')}
               </a>
             </li>
@@ -267,12 +263,12 @@ const Contribution = ({ t }) => (
 const CloudNative = ({ t }) => (
   <div className="cloud-native">
     <div>
-    <img src={CloudNativeLogo} alt="" />
-    <div>{t('Cloud Native Computing Foundation Member')}</div>
+      <img src={CloudNativeLogo} alt="" />
+      <div>{t('Cloud Native Computing Foundation Member')}</div>
     </div>
     <div style={{ marginLeft: 60 }}>
-    <img src={CertifiedLogo} alt="" />
-    <div>{t('Certified Kubernetes Conformance')}</div>
+      <img src={CertifiedLogo} alt="" />
+      <div>{t('Certified Kubernetes Conformance')}</div>
     </div>
   </div>
 )
