@@ -75,7 +75,7 @@
   "KubeSphere uses GitHub issue to manage bug tracking": "KubeSphere 使用 GitHub issue 来管理 bug 跟踪",
   "Submit the Bug": "提交 Bug",
   "Participate in development and design": "参与开发和设计",
-  "Read the KubeSphere <a href=\"//github.com/kubesphere/kubesphere/blob/master/docs/welcome-to-KubeSphere-new-developer-guide.md \" target=\"_blank\" rel=\"noopener noreferrer\">Contributor Guide</a> carefully": "认真阅读 kubesphere <a href=\"//github.com/kubesphere/kubesphere/blob/master/docs/development-guide.md \" target=\"_blank\" rel=\"noopener noreferrer\">开发者指南</a>",
+  "Read the KubeSphere <a href=\"//github.com/kubesphere/kubesphere/blob/master/CONTRIBUTING.md\" target=\"_blank\" rel=\"noopener noreferrer\">Development Guide</a> carefully": "认真阅读 kubesphere <a href=\"//github.com/kubesphere/kubesphere/blob/master/CONTRIBUTING.md\" target=\"_blank\" rel=\"noopener noreferrer\">开发者指南</a>",
   "Fork KubeSphere Repo": "fork 项目",
   "Read the KubeSphere Documentation": "阅读《KubeSphere 文档》",
   "Participate in the upstream projects of KubeSphere such as Kubernetes, Docker, Istio, etc.": "参与到 KubeSphere 项目和上游项目如 Kubernetes、Docker、Istio 等",
