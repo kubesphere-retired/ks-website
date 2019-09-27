@@ -68,3 +68,65 @@ div {
   background: #369a6a;
   color: #fff;
 }
+
+.wrapper {
+  width: 1160px;
+  margin: 0 auto;
+  @media only screen and (max-width: $mobile-max-width) {
+    width: 100vw;
+    padding: 0 20px;
+    overflow-x: hidden;
+  }
+
+  a {
+    color: $primary;
+  }
+}
+
+.tabs {
+  list-style: none;
+  text-align: center;
+
+  & > li {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 32px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #36435c;
+    cursor: pointer;
+
+    & + li {
+      margin-left: 40px;
+    }
+
+    &:hover,
+    &.tab-selected {
+      color: #4ca986;
+
+      & > a {
+        color: #4ca986;
+      }
+    }
+
+    &.tab-selected::after {
+      position: absolute;
+      bottom: -32px;
+      left: 50%;
+      transform: translateX(-50%);
+      content: '';
+      width: 0;
+      height: 0;
+      border-width: 1em;
+      border-color: transparent;
+      border-style: solid;
+      border-bottom-color: #fff;
+    }
+  }
+}
+
+.tab-content {
+  background-color: #fff;
+  padding-top: 60px;
+  padding-bottom: 100px;
+}

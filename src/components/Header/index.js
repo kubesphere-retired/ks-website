@@ -2,11 +2,15 @@ import React from 'react'
 import Link from 'gatsby-link'
 import { withTranslation } from 'react-i18next'
 import classnames from 'classnames'
+import Tippy from '@tippy.js/react'
 
 import Logo from '../Logo'
 import Modal from '../Modal/index'
+import Button from '../Button/index'
 import styles from './index.module.scss'
 import { getScrollTop } from '../../utils/index'
+import { OPEN_SOURCE_SUB_MENUS } from '../../data'
+import Language from '../Language/index'
 
 class Header extends React.Component {
   state = {
@@ -45,6 +49,30 @@ class Header extends React.Component {
     })
   }
 
+  renderSubMenu() {
+    const {
+      t,
+      pageContext: { locale, originalPath },
+    } = this.props
+
+    return (
+      <ul className={styles.menu}>
+        {OPEN_SOURCE_SUB_MENUS.map(menu => (
+          <li key={menu.value}>
+            <Link
+              to={`/${locale}/${menu.value}/`}
+              className={classnames({
+                [styles.selected]: originalPath === `/${menu.value}/`,
+              })}
+            >
+              {t(menu.label)}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    )
+  }
+
   renderNav() {
     const {
       t,
@@ -61,14 +89,26 @@ class Header extends React.Component {
         >
           {t('Home')}
         </Link>
-        <Link
-          to={`/${locale}/projects/`}
-          className={classnames({
-            [styles.selected]: originalPath === '/projects/',
-          })}
+        <Tippy
+          content={this.renderSubMenu()}
+          arrowType="round"
+          theme="light"
+          placement="bottom"
+          distance={-10}
+          interactive
+          arrow
         >
-          {t('Open Source Projects')}
-        </Link>
+          <span
+            href="#"
+            className={classnames({
+              [styles.selected]: OPEN_SOURCE_SUB_MENUS.some(
+                menu => originalPath === `/${menu.value}/`
+              ),
+            })}
+          >
+            {t('Open Source Community')}
+          </span>
+        </Tippy>
         <Link
           to={`/${locale}/install/`}
           className={classnames({
@@ -77,11 +117,7 @@ class Header extends React.Component {
         >
           {t('Quick Installation')}
         </Link>
-        <a
-          href={`/docs/zh-CN/`}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href={`/docs/zh-CN/`} target="_blank" rel="noopener noreferrer">
           {t('Documentation')}
         </a>
         <Link
@@ -98,6 +134,7 @@ class Header extends React.Component {
 
   render() {
     const {
+      t,
       pageContext: { locale },
     } = this.props
 
@@ -113,6 +150,30 @@ class Header extends React.Component {
             <Logo className={styles.logo} />
           </Link>
           <div className={styles.navsWrapper}>{this.renderNav()}</div>
+          <div className={styles.right}>
+            <Language pageContext={this.props.pageContext} />
+            <Tippy
+              content={
+                <span
+                  className={styles.tip}
+                  dangerouslySetInnerHTML={{
+                    __html: t('DEMO_TIP'),
+                  }}
+                />
+              }
+              arrowType="round"
+              theme="light"
+              placement="bottom"
+              interactive
+              arrow
+            >
+              <div className={styles.demo}>
+                <Button size="small" type="control">
+                  {t('Online Demo')}
+                </Button>
+              </div>
+            </Tippy>
+          </div>
           <div
             className={classnames(styles.showModal)}
             onClick={this.handleOpenModal}

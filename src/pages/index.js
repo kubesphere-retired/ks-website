@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
 import { graphql } from 'gatsby'
 import Link from 'gatsby-link'
@@ -230,11 +229,7 @@ const Contribution = ({ t }) => (
               </a>
             </li>
             <li>
-              <a
-                href="/docs"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href="/docs" target="_blank" rel="noopener noreferrer">
                 {t('Read the KubeSphere Documentation')}
               </a>
             </li>
@@ -267,12 +262,12 @@ const Contribution = ({ t }) => (
 const CloudNative = ({ t }) => (
   <div className="cloud-native">
     <div>
-    <img src={CloudNativeLogo} alt="" />
-    <div>{t('Cloud Native Computing Foundation Member')}</div>
+      <img src={CloudNativeLogo} alt="" />
+      <div>{t('Cloud Native Computing Foundation Member')}</div>
     </div>
     <div style={{ marginLeft: 60 }}>
-    <img src={CertifiedLogo} alt="" />
-    <div>{t('Certified Kubernetes Conformance')}</div>
+      <img src={CertifiedLogo} alt="" />
+      <div>{t('Certified Kubernetes Conformance')}</div>
     </div>
   </div>
 )

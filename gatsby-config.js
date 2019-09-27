@@ -9,10 +9,8 @@ module.exports = {
     {
       resolve: 'gatsby-transformer-remark',
       options: {
-        plugins: [
-          "gatsby-remark-prismjs",
-        ]
-      }
+        plugins: ['gatsby-remark-prismjs', 'gatsby-remark-autolink-headers'],
+      },
     },
     {
       resolve: 'gatsby-source-filesystem',
@@ -28,16 +26,13 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-no-sourcemaps",
+      resolve: 'gatsby-plugin-no-sourcemaps',
     },
     {
       resolve: `gatsby-plugin-advanced-sitemap`,
       options: {
-        exclude: [
-          '/404',
-          '/404.html',
-        ],
-      }
-    }
+        exclude: ['/404', '/404.html'],
+      },
+    },
   ],
 }

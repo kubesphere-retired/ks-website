@@ -90,7 +90,7 @@ exports.onCreatePage = async props => {
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
   if (node.internal.type === `MarkdownRemark`) {
-    const slug = createFilePath({ node, getNode, basePath: `content/install` })
+    const slug = createFilePath({ node, getNode, basePath: `content` })
 
     const parts = slug.split('/').filter(p => !!p)
 
@@ -100,19 +100,25 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 
     const [framework, language, article] = parts
 
-    createNodeField({ node, name: `slug`, value: slug })
+    createNodeField({
+      node,
+      name: `slug`,
+      value: `/${language}/${framework}/${article}/`,
+    })
     createNodeField({ node, name: `framework`, value: framework })
     createNodeField({ node, name: `language`, value: language })
     createNodeField({ node, name: `article`, value: article })
   }
 }
 
-exports.createPages = ({ graphql, actions }) => {
+const createInstallPages = ({ graphql, actions }) => {
   const { createPage, createRedirect } = actions
   return new Promise(resolve => {
     graphql(`
       {
-        pages: allMarkdownRemark {
+        pages: allMarkdownRemark(
+          filter: { fields: { framework: { eq: "install" } } }
+        ) {
           edges {
             node {
               fields {
@@ -131,49 +137,95 @@ exports.createPages = ({ graphql, actions }) => {
       })
 
       groups.forEach(framework => {
-        if (framework === 'install') {
-          const originalPath = `/${framework}`
-          availableLocales.map(({ value }) => {
-            const newPath = `/${value}${originalPath}`
+        const originalPath = `/${framework}`
+        availableLocales.map(({ value }) => {
+          const newPath = `/${value}${originalPath}`
 
-            const localePage = {
+          const localePage = {
+            originalPath,
+            path: newPath,
+            component: path.resolve(`./src/templates/install.js`),
+            context: {
+              availableLocales,
+              locale: value,
+              routed: true,
+              data: localesNSContent[value],
               originalPath,
-              path: newPath,
-              component: path.resolve(`./src/templates/install.js`),
-              context: {
-                availableLocales,
-                locale: value,
-                routed: true,
-                data: localesNSContent[value],
-                originalPath,
-                framework,
-              },
-            }
-            createPage(localePage)
-          })
+              framework,
+            },
+          }
+          createPage(localePage)
+        })
 
-          createRedirect({
-            fromPath: originalPath,
-            isPermanent: true,
-            redirectInBrowser: true,
-            toPath: `/${defaultLocales.value}${originalPath}`,
-          })
-          createRedirect({
-            fromPath: originalPath.slice(0, -1),
-            isPermanent: true,
-            redirectInBrowser: true,
-            toPath: `/${defaultLocales.value}${originalPath}`,
-          })
-          createRedirect({
-            fromPath: `/${defaultLocales.value}${originalPath}`.slice(0, -1),
-            isPermanent: true,
-            redirectInBrowser: true,
-            toPath: `/${defaultLocales.value}${originalPath}`,
-          })
-        }
+        createRedirect({
+          fromPath: originalPath,
+          isPermanent: true,
+          redirectInBrowser: true,
+          toPath: `/${defaultLocales.value}${originalPath}`,
+        })
+        createRedirect({
+          fromPath: originalPath.slice(0, -1),
+          isPermanent: true,
+          redirectInBrowser: true,
+          toPath: `/${defaultLocales.value}${originalPath}`,
+        })
+        createRedirect({
+          fromPath: `/${defaultLocales.value}${originalPath}`.slice(0, -1),
+          isPermanent: true,
+          redirectInBrowser: true,
+          toPath: `/${defaultLocales.value}${originalPath}`,
+        })
       })
 
       resolve()
     })
   })
+}
+
+const createMarkdownPages = ({ graphql, actions }) => {
+  const { createPage } = actions
+  return new Promise(resolve => {
+    graphql(`
+      {
+        pages: allMarkdownRemark(
+          filter: { fields: { framework: { in: ["blog", "conference"] } } }
+        ) {
+          edges {
+            node {
+              fields {
+                slug
+                framework
+                language
+              }
+            }
+          }
+        }
+      }
+    `).then(({ data: { pages: { edges } } }) => {
+      edges.forEach(({ node }) => {
+        const { language, slug } = node.fields
+
+        createPage({
+          path: slug,
+          component: path.resolve(`./src/templates/blog.js`),
+          context: {
+            slug: slug,
+            availableLocales,
+            locale: language,
+            routed: true,
+            data: localesNSContent[language],
+          },
+        })
+      })
+
+      resolve()
+    })
+  })
+}
+
+exports.createPages = (...rest) => {
+  return Promise.all([
+    createMarkdownPages(...rest),
+    createInstallPages(...rest),
+  ])
 }

@@ -7,7 +7,8 @@ export const ACTIVITIES = [
 
 export const REPORTS = [
   {
-    title: 'The New Stack 官方媒体在 KubeCon 采访 Porter 作者宋雪涛: Open Source Load Balancing on Bare Metal',
+    title:
+      'The New Stack 官方媒体在 KubeCon 采访 Porter 作者宋雪涛: Open Source Load Balancing on Bare Metal',
     desc:
       'On this livestream from KubeCon + CloudNativeCon China, we’re sitting down with Xuetao Song, Senior Software Engineer at Beijing Yunify Technology Co., Ltd. and Fang (Flora) Du, QingCloud Solution Architect at Beijing Yunify Technology Co., Ltd. to discuss open source load balancing on bare metal. Porter exists as an OSS solution to the issue of load balancing on bare metal in production on Kubernetes, which Song and Du are giving a presentation on at KCCNC + OSS Summit China 2019.',
     icon: 'newstack.jpg',
@@ -347,98 +348,157 @@ export const APPS = [
   },
 ]
 
+export const OPEN_SOURCE_SUB_MENUS = [
+  { label: 'Open Source Projects', value: 'projects' },
+  { label: 'KubeCon & QCon', value: 'conferences' },
+  { label: 'Technology Blogs', value: 'blogs' },
+  { label: 'Video Resources', value: 'videos' },
+]
+
+export const OPEN_SOURCE_GROUPS = [
+  'Container Platform',
+  'App Management',
+  'Storage Plugins',
+  'Network Plugins',
+  'CI/CD',
+  'Notification & Alerting',
+]
+
 export const OEPN_SOURCE_PROJECTS = [
   {
     name: 'kubesphere',
-    desc: 'Enterprise Container Management Platform',
+    desc: 'PROJECT_KUBESPHERE_DESC',
     icon: 'kubesphere.svg',
     link: 'https://github.com/kubesphere/kubesphere',
+    group: 'Container Platform',
   },
   {
     name: 's2ioperator',
-    desc: 'Operator for Source to image',
+    desc: 'PROJECT_S2I_OPERATOR_DESC',
     icon: 's2i-operator.svg',
     link: 'https://github.com/kubesphere/s2ioperator',
+    group: 'CI/CD',
   },
   {
     name: 'fluentbit-operator',
-    desc: 'Fluent-Bit operator for Kubernetes based on Fluent-Bit',
+    desc: 'PROJECT_FLUENTBIT_OPERATOR_DESC',
     icon: 'fluentbit-operator.svg',
     link: 'https://github.com/kubesphere/fluentbit-operator',
+    group: 'Container Platform',
   },
   {
     name: 'DevOps',
-    desc: 'DevOps Component for KubeSphere',
+    desc: 'PROJECT_DEVOPS_DESC',
     icon: 'devops.svg',
     link: 'https://github.com/kubesphere/devops',
+    group: 'CI/CD',
   },
   {
     name: 'porter',
-    desc: 'LB controller for Kubernetes on bare metal',
+    desc: 'PROJECT_PORTER_DESC',
     icon: 'porter.svg',
     link: 'https://github.com/kubesphere/porter',
+    group: 'Network Plugins',
   },
   {
     name: 'IM',
-    desc: 'A general identify manage system',
+    desc: 'PROJECT_IM_DESC',
     icon: 'im.svg',
     link: 'https://github.com/kubesphere/im',
+    group: 'Container Platform',
   },
   {
     name: 'openpitrix',
-    desc:
-      'Application Lifecycle Management Platform for Multi-clouds, including Kubernetes',
+    desc: 'PROJECT_OPENPITRIX_DESC',
     icon: 'openpitrix.svg',
     link: 'https://github.com/openpitrix/openpitrix',
+    group: 'App Management',
   },
   {
     name: 'notification',
-    desc: 'independent service for notification',
+    desc: 'PROJECT_NOTIFICATION_DESC',
     icon: 'notification.svg',
     link: 'https://github.com/openpitrix/notification',
+    group: 'Notification & Alerting',
   },
   {
     name: 'alert',
-    desc: 'Common Alert Component, used by KubeSphere',
+    desc: 'PROJECT_ALERT_DESC',
     icon: 'alert.svg',
     link: 'https://github.com/kubesphere/alert',
+    group: 'Notification & Alerting',
   },
   {
     name: 'alert adapter',
-    desc: 'Alert adapter, used to integrate with KubeSphere',
+    desc: 'PROJECT_ALERT_ADAPTER_DESC',
     icon: 'alert.svg',
     link: 'https://github.com/kubesphere/alert-adapter',
+    group: 'Notification & Alerting',
   },
   {
-    name: 'Qingcloud cloud controller manager',
-    desc: 'A kubernetes cloud-controller-manager for the qingcloud',
+    name: 'Qingcloud Load Balancer',
+    desc: 'PROJECT_QINGCLOUD_LB_DESC',
     icon: 'qingcloud.svg',
     link: 'https://github.com/yunify/qingcloud-cloud-controller-manager',
+    group: 'Network Plugins',
   },
   {
     name: 'hostnic-cni',
-    desc: 'hostnic-cni is a Container Network Interface plugin.',
+    desc: 'PROJECT_HOSTNIC_CNI_DESC',
     icon: 'qingcloud.svg',
     link: 'https://github.com/yunify/hostnic-cni',
+    group: 'Network Plugins',
   },
   {
     name: 'qingstor-csi',
-    desc: 'CSI Driver for QingStor NeonSAN',
-    icon: 'qingcloud.svg',
+    desc: 'PROJECT_QINGSTOR_CSI_DESC',
+    icon: 'qingstor.svg',
     link: 'https://github.com/yunify/qingstor-csi',
+    group: 'Storage Plugins',
   },
   {
     name: 'qingcloud-csi',
-    desc:
-      'Kubernetes volume plugin based on CSI specification which support block storage of qingcloud',
+    desc: 'PROJECT_QINGCLOUD_CSI_DESC',
     icon: 'qingcloud.svg',
     link: 'https://github.com/yunify/qingcloud-csi',
+    group: 'Storage Plugins',
   },
   {
     name: 'Qingcloud volume provisioner',
-    desc:
-      'QingCloud Volume External Storage Plugins for Kubernetes Provisoners',
+    desc: 'PROJECT_QINGCLOUD_VOLUME_DESC',
     icon: 'qingcloud.svg',
     link: 'https://github.com/yunify/qingcloud-volume-provisioner',
+    group: 'Storage Plugins',
+  },
+]
+
+export const KUBECON_REPORTS = [
+  {
+    title: 'Porter——面向裸机的 Kubernetes 的开源负载均衡器',
+    author: '宋雪涛',
+    expert:
+      'Porter 是一款适用于物理机部署 Kubernetes 的负载均衡器，该负载均衡器使用物理交换机实现，利用 BGP 和 ECMP 从而达到性能最优和高可用性。我们知道在云上部署的 Kubernetes 环境下，通常云服务厂商会提供 cloud LB 插件暴露 Kubernetes 服务到外网',
+    url: '',
+  },
+  {
+    title: '多租户 Kubernetes 环境的日志管理',
+    author: '霍秉杰 & 马丹',
+    expert:
+      '在传统的基于服务器的环境中，日志通常被写在硬盘的一个文件里。Kubernetes 容器平台的日志管理不同于传统意义上的日志管理，有其特殊性，云原生应用本身不应该试图去写或者管理日志文件，而是要将日志输出到 stdout，再由 Kubernetes 统一转发给接收者用作不同用途',
+    url: '',
+  },
+  {
+    title: '基于 Kubernetes 的 Serverless Jenkins——Jenkins X',
+    author: '霍秉杰 &马丹',
+    expert: '---',
+    url: '',
+  },
+]
+export const QCON_REPORTS = [
+  {
+    title: '基于 Kubernetes 的 Serverless Jenkins——Jenkins X',
+    author: '霍秉杰 &马丹',
+    expert: '---',
+    url: '',
   },
 ]

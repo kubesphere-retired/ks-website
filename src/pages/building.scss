@@ -1,0 +1,35 @@
+@import '../styles/variables';
+
+img {
+  user-select: none;
+}
+
+.building {
+  padding-top: 160px;
+  padding-bottom: 60px;
+  text-align: center;
+  user-select: none;
+
+  & > .h1 {
+    margin-bottom: 66px;
+    font-weight: normal;
+    font-family: $font-family-id;
+    color: #171c34;
+    text-shadow: 0 8px 16px rgba(35, 45, 65, 0.16);
+  }
+
+  @media only screen and (max-width: $mobile-max-width) {
+    padding-top: 136px;
+    padding-bottom: 0;
+
+    & > .h1 {
+      width: 200px;
+      margin: 0 auto;
+      margin-bottom: 20px;
+    }
+
+    & > img {
+      width: 100%;
+    }
+  }
+}

@@ -5,7 +5,7 @@ import Layout from '../layouts/index'
 import withI18next from '../components/withI18next'
 import buildingSVG from '../assets/building.svg'
 
-import './index.scss'
+import './building.scss'
 
 const IndexPage = props => {
   const { t } = props
@@ -19,7 +19,7 @@ const IndexPage = props => {
   )
 }
 
-export default withI18next({ns: 'common'})(IndexPage)
+export default withI18next({ ns: 'common' })(IndexPage)
 
 export const query = graphql`
   query {

@@ -1,0 +1,148 @@
+@import '../styles/variables';
+
+.projects-wrapper {
+  position: relative;
+  min-height: 400px;
+}
+
+.projects-types {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 260px;
+  padding: 0 30px;
+  border-radius: 4px;
+  box-shadow: 0 4px 15px 0 rgba(7, 42, 68, 0.1);
+  background-color: #ffffff;
+
+  & > ul {
+    list-style: none;
+
+    & > li {
+      position: relative;
+      padding: 15px 0;
+      font-size: 14px;
+      line-height: 20px;
+      color: #36435c;
+      transition: all 0.2s ease-in-out;
+      cursor: pointer;
+
+      &:first-of-type {
+        border-bottom: 1px solid #b5c1cc80;
+        font-size: 16px;
+        font-weight: 500;
+        color: #36435c;
+        line-height: 22px;
+        padding: 20px 0;
+        margin-bottom: 5px;
+      }
+
+      &.projects-type-selected,
+      &:hover {
+        color: #4ca986;
+
+        &::after {
+          display: block;
+          position: absolute;
+          content: '';
+          top: 50%;
+          left: -28px;
+          transform: translateY(-50%);
+          width: 2px;
+          height: 11px;
+          background-color: #4ca986;
+        }
+      }
+    }
+  }
+}
+
+.projects-cards {
+  padding-left: 300px;
+}
+
+.project-card {
+  position: relative;
+  padding: 32px 157px 32px 120px;
+  border-radius: 4px;
+  box-shadow: 0 4px 15px 0 rgba(7, 42, 68, 0.1);
+  background-color: #ffffff;
+
+  @media only screen and (max-width: $mobile-max-width) {
+    padding: 12px 30px 12px 54px;
+  }
+
+  &-icon {
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    top: 50%;
+    left: 28px;
+    transform: translateY(-50%);
+
+    @media only screen and (max-width: $mobile-max-width) {
+      width: 32px;
+      height: 32px;
+      left: 12px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &-title {
+    .strong {
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 1.6;
+      margin-bottom: 8px;
+      color: #36435c;
+    }
+    p {
+      font-family: $font-family-id;
+      font-size: 14px;
+      line-height: 1.71;
+      color: #8f94a1;
+    }
+
+    @media only screen and (max-width: $mobile-max-width) {
+      .strong {
+        font-size: 14px;
+      }
+
+      p {
+        font-size: 12px;
+      }
+    }
+  }
+
+  &-link {
+    display: none;
+    position: absolute;
+    top: 50%;
+    right: 40px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    line-height: 1.5;
+
+    @media only screen and (max-width: $mobile-max-width) {
+      display: none !important;
+    }
+
+    a {
+      color: $green;
+    }
+  }
+
+  &:hover {
+    .project-card-link {
+      display: block;
+    }
+  }
+
+  & + .project-card {
+    margin-top: 12px;
+  }
+}

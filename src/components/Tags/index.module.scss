@@ -1,0 +1,40 @@
+.wrapper {
+  padding: 30px 34px 22px 34px;
+  border-radius: 5px;
+  box-shadow: 0 4px 16px 0 rgba(7, 42, 68, 0.1);
+  background-color: #ffffff;
+
+  & > ul {
+    list-style: none;
+
+    & > li {
+      display: inline-block;
+      min-width: 48px;
+      padding: 8px 16px;
+      margin-bottom: 8px;
+      border-radius: 20px;
+      transition: all 0.2s ease-in-out;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.5;
+      text-align: center;
+
+      &:hover {
+        background-color: #55bc8a;
+        color: #fff;
+      }
+
+      &.selected {
+        box-shadow: 0 8px 16px 0 rgba(101, 193, 148, 0.2),
+          0 0 50px 0 rgba(101, 193, 148, 0.1);
+        background-color: #55bc8a;
+        color: #fff;
+      }
+
+      & + li {
+        margin-left: 12px;
+      }
+    }
+  }
+}

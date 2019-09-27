@@ -1,0 +1,186 @@
+[
+  {
+    "title": "K8S是什么",
+    "link": "https://kubesphere-docs.pek3b.qingstor.com/website/Kubernetes%E5%9F%BA%E7%A1%80/K8S_100P001C201809_K8S%E6%98%AF%E4%BB%80%E4%B9%88.mp4",
+    "createTime": "2019.09.27",
+    "snapshot": "https://via.placeholder.com/480",
+    "group": "Kubernetes基础",
+    "tag": "Kubernetes,快速教程"
+  },
+  {
+    "title": "K8S与KubeSphere的关系",
+    "link": "https://kubesphere-docs.pek3b.qingstor.com/website/Kubernetes%E5%9F%BA%E7%A1%80/K8S_100P002C201809_K8S%E4%B8%8EKubeSphere%E7%9A%84%E5%85%B3%E7%B3%BB.mp4",
+    "createTime": "2019.09.27",
+    "snapshot": "",
+    "group": "Kubernetes基础",
+    "tag": "Kubernetes,快速教程"
+  },
+  {
+    "title": "K8S架构",
+    "link": "https://kubesphere-docs.pek3b.qingstor.com/website/Kubernetes%E5%9F%BA%E7%A1%80/K8S_100P003C201809_K8S%E6%9E%B6%E6%9E%84.mp4",
+    "createTime": "2019.09.27",
+    "snapshot": "",
+    "group": "Kubernetes基础",
+    "tag": "Kubernetes,快速教程"
+  },
+  {
+    "title": "K8S基本概念-1",
+    "link": "https://kubesphere-docs.pek3b.qingstor.com/website/Kubernetes%E5%9F%BA%E7%A1%80/K8S_100P004C201809_K8S%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5-1.mp4",
+    "createTime": "2019.09.27",
+    "snapshot": "",
+    "group": "Kubernetes基础",
+    "tag": "Kubernetes,快速教程"
+  },
+  {
+    "title": "K8S基本概念-2",
+    "link": "https://kubesphere-docs.pek3b.qingstor.com/website/Kubernetes%E5%9F%BA%E7%A1%80/K8S_100P005C201809_K8S%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5-2.mp4",
+    "createTime": "2019.09.27",
+    "snapshot": "",
+    "group": "Kubernetes基础",
+    "tag": "Kubernetes,快速教程"
+  },
+  {
+    "title": "K8S基本概念-3",
+    "link": "https://kubesphere-docs.pek3b.qingstor.com/website/Kubernetes%E5%9F%BA%E7%A1%80/K8S_100P005C201809_K8S%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5-3.mp4",
+    "createTime": "2019.09.27",
+    "snapshot": "",
+    "group": "Kubernetes基础",
+    "tag": "Kubernetes,快速教程"
+  },
+  {
+    "title": "K8S Networking-1",
+    "link": "https://kubesphere-docs.pek3b.qingstor.com/website/Kubernetes%E5%9F%BA%E7%A1%80/K8S_100P007C201809_K8S%20Networking-1.mp4",
+    "createTime": "2019.09.27",
+    "snapshot": "",
+    "group": "Kubernetes基础",
+    "tag": "Kubernetes,快速教程"
+  },
+  {
+    "title": "K8S Networking-2",
+    "link": "https://kubesphere-docs.pek3b.qingstor.com/website/Kubernetes%E5%9F%BA%E7%A1%80/K8S_100P007C201809_K8S%20Networking-2.mp4",
+    "createTime": "2019.09.27",
+    "snapshot": "",
+    "group": "Kubernetes基础",
+    "tag": "Kubernetes,快速教程"
+  },
+  {
+    "title": "K8S Storage-1",
+    "link": "https://kubesphere-docs.pek3b.qingstor.com/website/Kubernetes%E5%9F%BA%E7%A1%80/K8S_100P009C201809_K8S%20Storage-1.mp4",
+    "createTime": "2019.09.27",
+    "snapshot": "",
+    "group": "Kubernetes基础",
+    "tag": "Kubernetes,快速教程"
+  },
+  {
+    "title": "K8S Storage-2-CSI 架构",
+    "link": "https://kubesphere-docs.pek3b.qingstor.com/website/Kubernetes%E5%9F%BA%E7%A1%80/K8S_100P010C201809_K8S%20Storage-2-CSI%20%E6%9E%B6%E6%9E%84.mp4",
+    "createTime": "2019.09.27",
+    "snapshot": "",
+    "group": "Kubernetes基础",
+    "tag": "Kubernetes,快速教程"
+  },
+  {
+    "title": "Open Source Load Balancing on Bare Metal",
+    "link": "https://kubesphere-docs.pek3b.qingstor.com/website/kubecon/Open%20Source%20Load%20Balancing%20on%20Bare%20Metal.mp4",
+    "createTime": "2019.09.27",
+    "snapshot": "",
+    "group": "KubeCon",
+    "tag": "Kubernetes"
+  },
+  {
+    "title": "Porter - An Open Source Load Balancer for Bare Metal Kubernetes - Xuetao Song & Fang Du",
+    "link": "https://kubesphere-docs.pek3b.qingstor.com/website/kubecon/Porter%20-%20An%20Open%20Source%20Load%20Balancer%20for%20Bare%20Metal%20Kubernetes%20-%20Xuetao%20Song%20%26%20Fang%20Du.mp4",
+    "createTime": "2019.09.27",
+    "snapshot": "",
+    "group": "KubeCon",
+    "tag": "Kubernetes"
+  },
+  {
+    "title": "Serverless Jenkins on Kubernetes - Jenkins X - RunZe Xia & Fang Du",
+    "link": "https://kubesphere-docs.pek3b.qingstor.com/website/kubecon/Serverless%20Jenkins%20on%20Kubernetes%20-%20Jenkins%20X%20-%20RunZe%20Xia%20%26%20Fang%20Du.mp4",
+    "createTime": "2019.09.27",
+    "snapshot": "",
+    "group": "KubeCon",
+    "tag": "Kubernetes"
+  },
+  {
+    "title": "容器是什么",
+    "link": "https://kubesphere-docs.pek3b.qingstor.com/website/%E4%BA%A7%E5%93%81%E4%BB%8B%E7%BB%8D/Container_100P001C201804_%E5%AE%B9%E5%99%A8%E6%98%AF%E4%BB%80%E4%B9%88.mp4",
+    "createTime": "2019.09.27",
+    "snapshot": "",
+    "group": "产品介绍",
+    "tag": "KubeSphere,容器"
+  },
+  {
+    "title": "容器与镜像的关系",
+    "link": "https://kubesphere-docs.pek3b.qingstor.com/website/%E4%BA%A7%E5%93%81%E4%BB%8B%E7%BB%8D/Container_100P002C201804_%E5%AE%B9%E5%99%A8%E4%B8%8E%E9%95%9C%E5%83%8F%E7%9A%84%E5%85%B3%E7%B3%BB.mp4",
+    "createTime": "2019.09.27",
+    "snapshot": "",
+    "group": "产品介绍",
+    "tag": "KubeSphere,容器"
+  },
+  {
+    "title": "KubeSphere是什么",
+    "link": "https://kubesphere-docs.pek3b.qingstor.com/website/%E4%BA%A7%E5%93%81%E4%BB%8B%E7%BB%8D/Container_100P003C201904_KubeSphere%E6%98%AF%E4%BB%80%E4%B9%88.mp4",
+    "createTime": "2019.09.27",
+    "snapshot": "",
+    "group": "产品介绍",
+    "tag": "KubeSphere,容器"
+  },
+  {
+    "title": "KubeSphere架构与主要功能",
+    "link": "https://kubesphere-docs.pek3b.qingstor.com/website/%E4%BA%A7%E5%93%81%E4%BB%8B%E7%BB%8D/Container_100P004C201904_KubeSphere%E6%9E%B6%E6%9E%84%E4%B8%8E%E4%B8%BB%E8%A6%81%E5%8A%9F%E8%83%BD.mp4",
+    "createTime": "2019.09.27",
+    "snapshot": "",
+    "group": "产品介绍",
+    "tag": "KubeSphere,容器"
+  },
+  {
+    "title": "KubeSphere 全景功能概览",
+    "link": "https://kubesphere-docs.pek3b.qingstor.com/website/%E4%BA%A7%E5%93%81%E4%BB%8B%E7%BB%8D/Container_100P005C201904_KubeSphere%20%E5%85%A8%E6%99%AF%E5%8A%9F%E8%83%BD%E6%A6%82%E8%A7%88.mp4",
+    "createTime": "2019.09.27",
+    "snapshot": "",
+    "group": "产品介绍",
+    "tag": "KubeSphere,容器"
+  },
+  {
+    "title": "KubeSphere 租户和权限管理",
+    "link": "https://kubesphere-docs.pek3b.qingstor.com/website/%E4%BA%A7%E5%93%81%E4%BB%8B%E7%BB%8D/Container_100P006C201906_KubeSphere%20%E7%A7%9F%E6%88%B7%E5%92%8C%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86.mp4",
+    "createTime": "2019.09.27",
+    "snapshot": "",
+    "group": "产品介绍",
+    "tag": "KubeSphere,容器"
+  },
+  {
+    "title": "KubeSphere 的网络与存储",
+    "link": "https://kubesphere-docs.pek3b.qingstor.com/website/%E4%BA%A7%E5%93%81%E4%BB%8B%E7%BB%8D/Container_100P007C201906_KubeSphere%20%E7%9A%84%E7%BD%91%E7%BB%9C%E4%B8%8E%E5%AD%98%E5%82%A8.mp4",
+    "createTime": "2019.09.27",
+    "snapshot": "",
+    "group": "产品介绍",
+    "tag": "KubeSphere,容器"
+  },
+  {
+    "title": "KubeSphere 集群资源管理与监控",
+    "link": "https://kubesphere-docs.pek3b.qingstor.com/website/%E4%BA%A7%E5%93%81%E4%BB%8B%E7%BB%8D/Container_100P008C201906_KubeSphere%20%E9%9B%86%E7%BE%A4%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E4%B8%8E%E7%9B%91%E6%8E%A7.mp4",
+    "createTime": "2019.09.27",
+    "snapshot": "",
+    "group": "产品介绍",
+    "tag": "KubeSphere,容器"
+  },
+  {
+    "title": "KubeSphere 日志",
+    "link": "https://kubesphere-docs.pek3b.qingstor.com/website/%E4%BA%A7%E5%93%81%E4%BB%8B%E7%BB%8D/Container_100P009C201906_KubeSphere%20%E6%97%A5%E5%BF%97.mp4",
+    "createTime": "2019.09.27",
+    "snapshot": "",
+    "group": "产品介绍",
+    "tag": "KubeSphere,容器"
+  },
+  {
+    "title": "KubeSphere 告警和通知",
+    "link": "https://kubesphere-docs.pek3b.qingstor.com/website/%E4%BA%A7%E5%93%81%E4%BB%8B%E7%BB%8D/Container_100P010C201906_KubeSphere%20%E5%91%8A%E8%AD%A6%E5%92%8C%E9%80%9A%E7%9F%A5.mp4",
+    "createTime": "2019.09.27",
+    "snapshot": "",
+    "group": "产品介绍",
+    "tag": "KubeSphere,容器"
+  }
+]
