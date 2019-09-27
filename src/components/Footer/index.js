@@ -6,7 +6,7 @@ import { withTranslation } from 'react-i18next'
 import tippy from 'tippy.js'
 
 import Logo from '../Logo'
-import Language from '../Language/index'
+import Search from '../Search'
 
 import { ReactComponent as WechatIcon } from '../../assets/wechat.svg'
 import { ReactComponent as GroupIcon } from '../../assets/group.svg'
@@ -20,7 +20,7 @@ import styles from './index.module.scss'
 
 class Footer extends React.Component {
   state = {
-    hovered: false
+    hovered: false,
   }
 
   componentDidMount() {
@@ -41,11 +41,11 @@ class Footer extends React.Component {
   }
 
   handleMouseEnter = () => {
-    this.setState({ hovered : true })
+    this.setState({ hovered: true })
   }
 
   handleMouseLeave = () => {
-    this.setState({ hovered : false })
+    this.setState({ hovered: false })
   }
 
   render() {
@@ -57,7 +57,15 @@ class Footer extends React.Component {
           <div className={styles.info}>
             <div style={{ display: 'inline-block' }}>
               <Logo className={styles.logo} />
-              <Language pageContext={pageContext} />
+              <div className={styles.description}>
+                KubeSphere 最新的新闻，文章和动态，直接发送到您的邮箱。
+              </div>
+              <Search
+                className={styles.subscribe}
+                searchText={t('Subscribe')}
+                placeholder={t('Please input your email')}
+                onSearch={this.handleSubscribe}
+              />
             </div>
             <div className={styles.links}>
               <ul>
@@ -169,10 +177,14 @@ class Footer extends React.Component {
             </div>
           </div>
           <div className={styles.logos}>
-            <WechatIcon id="wechat" className={styles.wechat}/>
+            <WechatIcon id="wechat" className={styles.wechat} />
             <GroupIcon id="group" className={styles.wechat} />
-            <a href="https://www.youtube.com/channel/UCybIhsLg8P1xzCx97eELiwQ" target="_blank" rel="noopener noreferrer">
-              <VideoIcon className={styles.youtube}/>
+            <a
+              href="https://www.youtube.com/channel/UCybIhsLg8P1xzCx97eELiwQ"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <VideoIcon className={styles.youtube} />
             </a>
             <a
               href="https://join.slack.com/t/kubesphere/shared_invite/enQtNTE3MDIxNzUxNzQ0LTZkNTdkYWNiYTVkMTM5ZThhODY1MjAyZmVlYWEwZmQ3ODQ1NmM1MGVkNWEzZTRhNzk0MzM5MmY4NDc3ZWVhMjE"

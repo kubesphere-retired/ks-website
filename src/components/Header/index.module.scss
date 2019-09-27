@@ -5,11 +5,10 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: $header-height;
-  line-height: $header-height;
+  padding-top: 10px;
   background-color: transparent;
   border-bottom: solid 1px #e3e9ef;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   z-index: 100;
 
   @media only screen and (max-width: $mobile-max-width) {
@@ -30,7 +29,7 @@
 .logo {
   position: absolute;
   left: 0;
-  padding: 42px 0 22px 0;
+  padding: 32px 0;
 
   img {
     height: 32px;
@@ -44,7 +43,7 @@
 .wrapper {
   position: relative;
   width: 1160px;
-  height: $header-height;
+  height: $header-height - 10px;
   margin: 0 auto;
   padding: 0 160px;
   text-align: center;
@@ -62,16 +61,17 @@
 }
 
 .nav {
-  height: $header-height;
-  padding-top: 10px;
+  height: $header-height - 10px;
 
-  a {
+  & > a,
+  & > span {
     display: inline-block;
     position: relative;
-    height: 86px;
     color: #242e42;
     font-size: 16px;
     font-family: $font-family-id;
+    line-height: $header-height - 10px;
+    cursor: pointer;
 
     @media only screen and (max-width: $mobile-max-width) {
       height: auto;
@@ -90,7 +90,6 @@
       transition: height 0.2s ease-in-out;
     }
 
-    &:hover,
     &.selected {
       color: $green;
 
@@ -99,8 +98,19 @@
       }
     }
 
-    & + a {
+    & + a,
+    & + span {
       margin-left: 40px;
+    }
+  }
+
+  & > a {
+    &:hover {
+      color: $green;
+
+      &::after {
+        height: 4px;
+      }
     }
   }
 
@@ -123,7 +133,8 @@
     z-index: 3;
     transform: translateY(-50%);
 
-    a {
+    & > span,
+    & > a {
       display: block;
       border-radius: 24px;
       line-height: 2;
@@ -170,4 +181,54 @@
       margin-top: 6px;
     }
   }
+}
+
+.right {
+  position: absolute;
+  right: 0;
+  top: 28px;
+  display: flex;
+  align-items: center;
+}
+
+.menu {
+  padding: 12px 0;
+  list-style: none;
+
+  & > li {
+    min-width: 200px;
+
+    cursor: pointer;
+    text-align: center;
+
+    & > a {
+      display: block;
+      padding: 6px;
+      font-size: 14px;
+      line-height: 20px;
+      color: #36435c;
+      transition: all 0.2s ease-in-out;
+
+      &.selected,
+      &:hover {
+        color: $primary;
+      }
+    }
+
+    & + li {
+      margin-top: 4px;
+    }
+  }
+}
+
+.tip {
+  display: block;
+  padding: 20px;
+  text-align: left;
+  line-height: 2;
+  color: #36435c;
+}
+
+.demo {
+  margin-left: 24px;
 }

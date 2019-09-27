@@ -33,3 +33,46 @@
   background-color: #f5f8f9 !important;
   border-color: transparent !important;
 }
+
+.tippy-tooltip.light-theme {
+  padding: 0;
+  font-size: 12px;
+  line-height: 20px;
+  color: #26323d;
+  box-shadow: 0 10px 30px 0 rgba(7, 42, 68, 0.1);
+  border-radius: 2px;
+  background-color: #fff;
+}
+.tippy-tooltip.light-theme[x-placement^='top'] .tippy-arrow {
+  border-top: 8px solid #fff;
+  border-right: 8px solid transparent;
+  border-left: 8px solid transparent;
+}
+.tippy-tooltip.light-theme[x-placement^='bottom'] .tippy-arrow {
+  border-bottom: 8px solid #fff;
+  border-right: 8px solid transparent;
+  border-left: 8px solid transparent;
+}
+.tippy-tooltip.light-theme[x-placement^='left'] .tippy-arrow {
+  border-left: 8px solid #fff;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+}
+.tippy-tooltip.light-theme[x-placement^='right'] .tippy-arrow {
+  border-right: 8px solid #fff;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+}
+.tippy-tooltip.light-theme .tippy-backdrop {
+  background-color: #fff;
+}
+.tippy-tooltip.light-theme .tippy-roundarrow {
+  fill: #fff;
+}
+.tippy-tooltip.light-theme[data-animatefill] {
+  background-color: initial;
+}
+
+[tabindex] {
+  outline: none;
+}

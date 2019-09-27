@@ -1,44 +1,53 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react'
+import React, { useState } from 'react'
 import { graphql } from 'gatsby'
+import classnames from 'classnames'
 
-import Layout from '../layouts/index'
+import Layout from '../layouts/opensource'
 
 import withI18next from '../components/withI18next'
-import Button from '../components/Button/index'
 
-import { ReactComponent as GithubIcon } from '../assets/icon-git.svg'
+import { OEPN_SOURCE_PROJECTS, OPEN_SOURCE_GROUPS } from '../data'
 
-import { OEPN_SOURCE_PROJECTS } from '../data'
-
-import './index.scss'
+import './projects.scss'
 
 const ProjectsPage = props => {
   const { t } = props
+  const [selectedGroup, setGroup] = useState('')
   return (
     <Layout {...props}>
-      <div className="projects">
-        <div className="projects-header">
-          <div className="projects-title">{t('Open Source Projects')}</div>
-          <div className="projects-desc">{t('open_source_projects_desc')}</div>
-          <div className="projects-goto-github">
-            <a
-              href="https://github.com/kubesphere"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button type="control" size="large">
-                <GithubIcon />
-                {t('Goto Github')}
-              </Button>
-            </a>
+      <div className="wrapper">
+        <div className="projects-wrapper">
+          <div className="projects-types">
+            <ul>
+              <li
+                className={classnames({
+                  'projects-type-selected': selectedGroup === '',
+                })}
+                onClick={() => setGroup('')}
+              >
+                {t('Open Source Projects')}
+              </li>
+              {OPEN_SOURCE_GROUPS.map(group => (
+                <li
+                  key={group}
+                  className={classnames({
+                    'projects-type-selected': selectedGroup === group,
+                  })}
+                  onClick={() => setGroup(group)}
+                >
+                  {t(group)}
+                </li>
+              ))}
+            </ul>
           </div>
+          <ul className="projects-cards">
+            {OEPN_SOURCE_PROJECTS.filter(
+              project => !selectedGroup || project.group === selectedGroup
+            ).map(project => (
+              <ProjectCard key={project.name} data={project} />
+            ))}
+          </ul>
         </div>
-        <ul className="projects-cards">
-          {OEPN_SOURCE_PROJECTS.map(project => (
-            <ProjectCard key={project.name} data={project} />
-          ))}
-        </ul>
       </div>
     </Layout>
   )

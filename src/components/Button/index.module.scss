@@ -1,7 +1,7 @@
 @import '../../styles/variables';
 
 .button {
-  font-size: $size-medium;
+  font-size: 14px;
   line-height: 1.5;
   text-align: center;
   border: none;
@@ -32,12 +32,13 @@
   height: 48px;
   padding: 11px 40px;
   border-radius: 30px;
+  font-size: 16px;
 }
 
 .small {
   height: 36px;
   padding: 6px 19px;
-  border-radius: 20px;
+  border-radius: 18px;
 }
 
 .primary {
@@ -94,10 +95,21 @@
   }
 }
 
+.white {
+  color: #36435c;
+  border: solid 1px #ccd3db;
+  background-color: #f5f8f9;
+
+  &:hover {
+    background: #ccd3db;
+  }
+}
+
 .control {
   color: #fff;
   background-color: #242e42;
-  box-shadow: 0 8px 16px 0 rgba(48, 62, 90, 0.1);
+  box-shadow: 0 10px 50px 0 rgba(34, 43, 62, 0.1),
+    0 8px 16px 0 rgba(33, 43, 61, 0.2);
 
   &:hover {
     box-shadow: none;

@@ -1,0 +1,23 @@
+@import '../../styles/variables';
+
+.videoWrapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.video {
+  width: 50vw;
+  min-width: 745px;
+  min-height: 419px;
+  background-color: #171c34;
+  outline: none;
+}
+
+.close {
+  position: absolute;
+  top: -28px;
+  right: 8px;
+  cursor: pointer;
+}

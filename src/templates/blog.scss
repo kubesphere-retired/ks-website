@@ -1,0 +1,133 @@
+@import '../styles/variables';
+
+.wrapper {
+  width: 1160px;
+  margin: 0 auto;
+  @media only screen and (max-width: $mobile-max-width) {
+    width: 100%;
+  }
+}
+
+.breadcrumbs {
+  margin: 30px 0;
+  font-size: 14px;
+  line-height: 2;
+
+  & > div {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    color: #919aa3;
+
+    & > a {
+      color: #919aa3;
+
+      &:hover {
+        color: $primary;
+      }
+    }
+
+    &:last-child {
+      color: #171c34;
+    }
+
+    & + div {
+      margin-left: 30px;
+
+      &::after {
+        content: '>';
+        position: absolute;
+        left: -20px;
+        color: #919aa3;
+      }
+    }
+  }
+}
+
+.blog-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.blog {
+  width: 880px;
+  padding: 40px 60px;
+  background-color: #ffffff;
+  border-radius: 4px;
+
+  p {
+    color: #36435c;
+    line-height: 2.29;
+  }
+
+  .md-body {
+    font-size: 14px;
+    line-height: 2.29;
+    color: #36435c;
+  }
+
+  .md-body h2 {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 64px;
+    color: #171c34;
+    text-shadow: none;
+    text-align: left;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccd3db;
+  }
+
+  .md-body h3 {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #171c34;
+  }
+
+  .md-body img {
+    max-width: 100%;
+    box-sizing: content-box;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: none;
+  }
+
+  .md-body blockquote {
+    padding: 4px 20px 4px 12px;
+    border-radius: 4px;
+    background-color: #ecf0f2;
+  }
+
+  &-metadata {
+    margin-bottom: 28px;
+
+    &-title {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.5;
+      color: #171c34;
+    }
+
+    &-time {
+      font-size: 14px;
+      line-height: 1.43;
+      color: #919aa3;
+    }
+  }
+
+  &-title {
+    text-shadow: 0 8px 16px rgba(35, 45, 65, 0.1);
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 1.4;
+    color: #171c34;
+    margin-bottom: 40px;
+  }
+}
+
+.navigation {
+  position: fixed;
+  top: 170px;
+  right: calc(50vw - 580px);
+  width: 214px;
+}

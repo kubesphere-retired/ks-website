@@ -17,7 +17,7 @@ import { ReactComponent as MultiNodeIcon } from '../assets/icon-multi-node.svg'
 
 import '../styles/markdown.scss'
 import './b16-tomorrow-dark.scss'
-import './index.scss'
+import './install.scss'
 
 const Banner = ({ t }) => (
   <div className="wrapper install-banner text-center">
@@ -158,7 +158,7 @@ class InstallPage extends React.Component {
       <Layout {...this.props}>
         <Helmet>
           <link rel="stylesheet" type="text/css" href="/asciinema-player.css" />
-          <script src="/asciinema-player.js"></script>
+          <script src="/asciinema-player.js" />
         </Helmet>
         <div className="install">
           <Banner {...this.props} />

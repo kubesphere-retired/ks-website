@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
 import classnames from 'classnames'
 import { withTranslation } from 'react-i18next'
@@ -7,35 +6,31 @@ import { ReactComponent as EarthIcon } from '../../assets/earth.svg'
 
 import { getLanguage } from '../../utils/index'
 
+import Select from '../Select'
+
 import styles from './index.module.scss'
 
 const LANGS = [
-  { name: '简体中文', value: 'zh-CN' },
-  { name: 'English', value: 'en' },
+  { label: '简体中文', value: 'zh-CN' },
+  { label: 'English', value: 'en' },
 ]
 
 const Language = ({ className, pageContext: { locale, originalPath } }) => {
-  const handleChange = e => {
+  const handleChange = value => {
     if (typeof window !== 'undefined') {
-      window.location.href = `/${e.target.dataset.lang}${originalPath}`
+      window.location.href = `/${value}${originalPath}`
     }
   }
 
   return (
     <div className={classnames(styles.lang, className)}>
       <EarthIcon />
-      {LANGS.map(lang => (
-        <a
-          key={lang.value}
-          className={classnames({
-            [styles.select]: lang.value === getLanguage(locale),
-          })}
-          data-lang={lang.value}
-          onClick={handleChange}
-        >
-          {lang.name}
-        </a>
-      ))}
+      <Select
+        controlClassName={styles.selectControl}
+        value={getLanguage(locale)}
+        options={LANGS}
+        onChange={handleChange}
+      />
     </div>
   )
 }

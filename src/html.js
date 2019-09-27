@@ -35,6 +35,7 @@ export default function HTML(props) {
             __html: `!function(e,t,n,g,i){e[i]=e[i]||function(){(e[i].q=e[i].q||[]).push(arguments)},n=t.createElement("script"),tag=t.getElementsByTagName("script")[0],n.async=1,n.src=('https:'==document.location.protocol?'https://':'http://')+g,tag.parentNode.insertBefore(n,tag)}(window,document,"script","assets.growingio.com/2.1/gio.js","gio");gio('init','8a24ae300cbf8b8c', {});gio('send');`,
           }}
         />
+        <script type="text/javascript" src="/smooth-scroll.polyfills.min.js" />
       </body>
     </html>
   )

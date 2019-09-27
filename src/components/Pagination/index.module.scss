@@ -1,0 +1,54 @@
+.wrapper {
+  & > ul {
+    list-style: none;
+    text-align: center;
+
+    & > li {
+      display: inline-block;
+      transition: all 0.2s ease-in-out;
+      padding: 0 12px;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.5;
+      color: #36435c;
+      cursor: pointer;
+      user-select: none;
+
+      &:hover {
+        color: #55bc8a;
+      }
+
+      &.selected {
+        color: #55bc8a;
+      }
+    }
+  }
+}
+
+.leftArrow {
+  transform: rotate(180deg) translateY(2px);
+}
+
+.rightArrow {
+  transform: translateY(4px);
+}
+
+.leftArrow,
+.rightArrow {
+  color: #324558;
+  fill: #b6c2cd;
+
+  &:hover {
+    & > svg {
+      color: #00aa72;
+      fill: #90e0c5;
+    }
+  }
+
+  &.disabled {
+    & > svg {
+      color: #ccd3db;
+      fill: #b6c2cd;
+    }
+  }
+}

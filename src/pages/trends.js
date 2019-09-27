@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from 'react'
 import classNames from 'classnames'
 import { graphql } from 'gatsby'
@@ -11,7 +10,7 @@ import withI18next from '../components/withI18next'
 
 import { REPORTS, PRACTICES } from '../data'
 
-import './index.scss'
+import './trends.scss'
 
 const ReportsPage = props => {
   const { t } = props
@@ -26,10 +25,10 @@ const ReportsPage = props => {
             {t("Share KubeSphere's best practices and media coverage")}
           </div>
         </div>
-        <ul className="reports-tabs">
+        <ul className="tabs">
           <li
             className={classNames({
-              'reports-tab-selected': tab === 'practices',
+              'tab-selected': tab === 'practices',
             })}
             onClick={() => setTab('practices')}
           >
@@ -37,7 +36,7 @@ const ReportsPage = props => {
           </li>
           <li
             className={classNames({
-              'reports-tab-selected': tab === 'reports',
+              'tab-selected': tab === 'reports',
             })}
             onClick={() => setTab('reports')}
           >

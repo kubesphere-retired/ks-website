@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
 import { graphql } from 'gatsby'
 
@@ -12,7 +11,7 @@ import DownloadBg from '../assets/download-bg.svg'
 import { ReactComponent as Express } from '../assets/express.svg'
 import { ReactComponent as Advanced } from '../assets/advanced.svg'
 
-import './index.scss'
+import './download.scss'
 
 const Banner = ({ t }) => {
   return (
@@ -61,7 +60,7 @@ const Versions = ({ t, showExpressModal, showAdvancedModal }) => (
             )}
           </p>
         </div>
-        <a>{t('Get the version')} → </a>
+        <span>{t('Get the version')} → </span>
       </li>
       <li onClick={showAdvancedModal}>
         <Advanced />
@@ -73,7 +72,7 @@ const Versions = ({ t, showExpressModal, showAdvancedModal }) => (
             )}
           </p>
         </div>
-        <a>{t('Get the version')} → </a>
+        <span>{t('Get the version')} → </span>
       </li>
     </ul>
   </div>

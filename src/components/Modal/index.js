@@ -11,7 +11,7 @@ ReactModal.defaultStyles.overlay = Object.assign(
     width: '100vw',
     height: '100vh',
     overflowY: 'auto',
-    backgroundColor: 'rgba(36, 46, 66, 0.2)',
+    backgroundColor: '#171c3480',
   }
 )
 
