@@ -1,7 +1,7 @@
 import React from 'react'
 import classnames from 'classnames'
 
-import { ReactComponent as ArrowIcon } from '../../assets/Paging.svg'
+import { ReactComponent as ArrowIcon } from '../../assets/paging.svg'
 
 import styles from './index.module.scss'
 
