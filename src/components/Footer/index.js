@@ -58,7 +58,7 @@ class Footer extends React.Component {
             <div style={{ display: 'inline-block' }}>
               <Logo className={styles.logo} />
               <div className={styles.description}>
-                KubeSphere 最新的新闻，文章和动态，直接发送到您的邮箱。
+                {/* KubeSphere 最新的新闻，文章和动态，直接发送到您的邮箱。 */}
               </div>
               <Search
                 className={styles.subscribe}

@@ -24,7 +24,7 @@ const OpenSourceLayout = props => {
     <Layout {...rest}>
       <div className="opensource">
         <div className="opensource-header">
-          <div className="opensource-title">{t('Open Source Projects')}</div>
+          <div className="opensource-title">{t('Open Source Community')}</div>
           <div className="opensource-desc">
             {t('open_source_projects_desc')}
           </div>

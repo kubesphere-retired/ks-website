@@ -24,7 +24,7 @@ const Banner = ({ t }) => (
     <div className="h1">{t('KubeSphere Installation')}</div>
     <p>
       {t(
-        'KubeSphere supports both all-in-one mode and multi-node mode to meet your installation demands. All-in-one means a single host that includes the master, node, etcd, and other components, thus multi-node means multiple hosts with all components included on each (master, node, etcd, and other components).'
+        'In addition to supporting deploy on VM and BM, KubeSphere also supports installing on cloud-hosted and on-premises Kubernetes clusters. For more details please reference the documentation center.'
       )}
     </p>
     <div style={{ textAlign: 'center' }}>
@@ -51,11 +51,11 @@ const INSTALL_CARDS = [
       'All-in-One is single-node installation that supports one-click installation',
   },
   {
-    type: 'multi-node',
+    type: 'kubesphere-on-k8s',
     icon: <MultiNodeIcon />,
-    title: 'Multi-Node cluster deployment',
+    title: 'Install KubeSphere on K8s',
     desc:
-      'Multi-Node mode allows you to deploy KubeSphere in production environments',
+      'KubeSphere supports installing on existing Kubernetes',
   },
 ]
 
