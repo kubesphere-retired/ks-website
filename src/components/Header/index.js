@@ -168,9 +168,15 @@ class Header extends React.Component {
               arrow
             >
               <div className={styles.demo}>
+              <a
+              href="https://demo.kubesphere.io/login"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
                 <Button size="small" type="control">
-                  {t('Online Demo')}
+                  {t('Online Demo')} 
                 </Button>
+                </a>
               </div>
             </Tippy>
           </div>
