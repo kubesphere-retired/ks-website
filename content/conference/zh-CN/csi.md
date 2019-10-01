@@ -14,17 +14,17 @@ snapshot: 'https://pek3b.qingstor.com/kubesphere-docs/png/20190930112634.png'
 
 首先，我们会介绍 Kubernetes 存储插件的分类情况；然后为大家介绍如何开发一款 QingCloud 云平台 CSI 插件；之后，会介绍如何将 QingCloud 云平台 CSI 插件部署到 Kubernetes 容器平台中；最后，介绍如何对开发的 CSI 插件进行质量管理。
 
-![图片](https://uploader.shimo.im/f/dqtF2zLYFOMk8daZ.png!thumbnail)
+![](https://pek3b.qingstor.com/kubesphere-docs/png/20191001182756.png)
 
 在 Kubernetes 容器平台中，Kubernetes 可以调用某类存储插件，对接后端存储服务，如调用 GCE 存储插件对接后端 GCE 存储服务。Kubernetes 里的存储插件可以分为 **In-tree 和 Out-of-tree** 这两大类。
 
-![图片](https://uploader.shimo.im/f/Amoeurz8v8kWJ04s.png!thumbnail)
+![](https://pek3b.qingstor.com/kubesphere-docs/png/20191001182807.png)
 
 首先，In-tree 存储插件的代码是在 Kubernetes 核心代码库里，In-tree 存储插件运行在 Kubernetes 核心组件里。Kubernetes 容器平台要使用后端某类存储服务，需要调用相应的 In-tree 存储插件，比如 Kubernetes 容器平台要使用后端 AWS 存储服务，需要调用 In-tree AWS 存储插件才能对接后端 AWS 存储服务。
 
 另一类存储插件是 Out-of-tree 的存储插件，其代码和 Kubernetes 核心代码相独立。它的部署与 Kubernetes 核心组件的部署相独立，Kubernetes 核心组件可以通过调用某类 Out-of-tree 存储插件对接我们后端的存储服务，比如 Kubernetes 可以通过调用 GCE Out-of-tree 存储插件对接后端 GCE 存储服务。
 
-![图片](https://uploader.shimo.im/f/ONa7oAtn6FQ9QkW0.png!thumbnail)
+![](https://pek3b.qingstor.com/kubesphere-docs/png/20191001182819.png)
 
 **将 In-tree 存储插件和 Out-of-tree 存储插件进行比较：**
 
@@ -40,7 +40,7 @@ snapshot: 'https://pek3b.qingstor.com/kubesphere-docs/png/20190930112634.png'
 
 Out-of-tree 存储插件现在分为 FlexVolume 和 CSI 两大类。FlexVolume 插件是 Kubernetes1.2 开始支持的， QingCloud 云平台开发过相关的 FlexVolume 存储插件。FlexVolume 存储插件的部署相对 CSI 这种会复杂一些，FlexVolume 支持存储卷基本管理功能。
 
-![图片](https://uploader.shimo.im/f/AUwJVM84PrQMrYdn.png!thumbnail)
+![](https://pek3b.qingstor.com/kubesphere-docs/png/20191001182835.png)
 
 另一种比较新的存储方案是 CSI 方案，CSI 方案全称是 Container Storage Interface，它是容器平台里的一种工业标准。CSI 不仅仅是针对 Kubernetes 容器平台开发的，它是一种容器平台的通用解决方案。存储服务商或者存储厂商只要开发支持 CSI 标准的存储插件，就可以供各种容器平台使用。Kubernetes 从 1.9 开始支持 CSI 规范。
 
@@ -50,7 +50,7 @@ CSI 插件方案部署起来比较简单，可以支持容器化部署，在 Kub
 
 接下来跟大家分享我在 QingCloud 云平台开发 CSI 插件的经验，并且告诉大家 QingCloud 云平台是如何开发一款 CSI 插件，如何把 CSI 插件部署在 Kubernetes 容器平台中，为用户提供相应的存储支持。
 
-![图片](https://uploader.shimo.im/f/BbSfKF8x5QY6btCl.png!thumbnail)
+![](https://pek3b.qingstor.com/kubesphere-docs/png/20191001182857.png)
 
 在谈到开发 CSI 插件之前，我们先了解一下 CSI 插件的基本原理：开发一款 CSI 插件要遵循 CSI 的标准实现相关的接口，在实现接口中，我们可以调用底层存储服务端的 API。在 QingCloud 云平台开发的 CSI 插件里，我们实现 CSI 接口是调用 QingCloud 云平台云平台 API 实现相关业务逻辑。
 
@@ -59,19 +59,19 @@ CSI 插件方案部署起来比较简单，可以支持容器化部署，在 Kub
 承上，容器平台可以通过 gRPC 调用 CSI 插件，对接 CSI 接口，支撑容器平台对于存储卷管理的功能，如创建、挂载、删除等操作。
 启下，CSI 插件实现 CSI 接口，是通过调用存储服务端 API 实现相关业务逻辑，可以充分挖掘我们存储资源的能力。
 
-![图片](https://uploader.shimo.im/f/uvRkrORAYb4U4ZZH.png!thumbnail)
+![](https://pek3b.qingstor.com/kubesphere-docs/png/20191001182912.png)
 
 关于开发 CSI 插件，将会从以下三方面跟大家分享：
 
-第一，CSI 接口规范。
-第二，分享开发 CSI 插件的经验。
-第三，开发 CSI 插件各个接口也要符合返回值规范。开发 CSI 插件的官方文档可以从 GitHub 上获取。
+- 第一，CSI 接口规范。
+- 第二，分享开发 CSI 插件的经验。
+- 第三，开发 CSI 插件各个接口也要符合返回值规范。开发 CSI 插件的官方文档可以从 GitHub 上获取。
 
 ## CSI 接口规范
 
 首先，开发一款 CSI 插件是要实现相关 CSI 的接口，作为开发者来说，CSI 规范将接口分为 Identity、Controller、Node 三大类。
 
-![图片](https://uploader.shimo.im/f/ryO8EsKjbWgLtdOx.png!thumbnail)
+![](https://pek3b.qingstor.com/kubesphere-docs/png/20191001182936.png)
 
 首先是 **Identity 接口**，其功能主要描述插件的基本信息，我们可以通过 GetPluginInfo 的接口获得插件版本号或者插件所支持的 CSI 规范版本，像 Get Plugin Capabilities，我们可以找到插件的功能点，插件是否支持存储卷创建、删除等功能，是否支持存储卷挂载的功能。得到插件元数据信息。此外 Identity 接口可以检查插件的健康状态，开发者可以通过实现 Probe 接口对我们插件健康状况进行检查。
 
@@ -88,7 +88,8 @@ Controller 类服务主要调用 Controller 类接口，从存储服务端角度
 
 ## CSI 插件开发经验
 
-![图片](https://uploader.shimo.im/f/k4fjnHT0Zz0JHVbC.png!thumbnail)
+![](https://pek3b.qingstor.com/kubesphere-docs/png/20191001182946.png)
+
 接下来以存储卷的生命周期为例为大家介绍 CSI 插件运行过程。在讲这个例子之前，我们想象一下个人在非容器化场景下如何使用存储卷。首先我们会打开云平台控制台，点击创建一个块存储卷，在控制台上把块存储卷挂载至某台主机，之后我们会登录主机，对主机里的存储卷进行分区格式化操作。再将已经分区格式化的存储卷挂载至某个路径下，才能让我们的应用使用这个存储卷。
 
 在容器平台中流程也是相似的，接下来可以看到我们如何通过调用实现的各类 CSI 接口，完成我们对存储卷管理的过程。
@@ -111,7 +112,7 @@ CSI 插件实现的 ControllerPublishVolume 接口会调用底层云平台 API �
 
 我们实现 CSI 插件仅仅简单的实现CSI接口所规定的字面意义是绝对不行的。例如：我们实现 CSI CreateVolume 接口直接调用底层云平台的创建存储卷 API 是远远不够的。其中需要开发者解决一个问题是，存储卷泄漏状况的发生。
 
-![图片](https://uploader.shimo.im/f/rAM0yqWCQmIJWZTO.png!thumbnail)
+![](https://pek3b.qingstor.com/kubesphere-docs/png/20191001183004.png)
 
 当容器平台发起一个创建存储卷请求时，CSI 插件会调用底层云平台 API 创建存储卷。此时在云平台这边创建一个存储卷 A，存储卷 A 的信息通过 CSI 插件反馈到容器平台。当你将存储卷 A 的信息反馈到容器平台时，一些意外情况没有及时反馈容器平台或者没有成功的反馈到容器平台时，容器平台会重新以相同的请求参数，再次发起一个创建存储卷的请求。
 
@@ -119,7 +120,7 @@ CSI 插件实现的 ControllerPublishVolume 接口会调用底层云平台 API �
 
 此时在存储服务端中会有 A、B 这两个存储卷，都是由容器平台创建的。而实际上在容器平台这边，管理并发现存储卷 B，对于存储卷 A 来说，对于容器平台来说是不可知的。此时，存储卷 A 是无人管理的存储卷，造成存储卷泄漏的问题。存储卷泄漏问题十分严重，不仅会造成资源的浪费，还会造成其他影响。比如当我们配额或者资源不足时，会影响我们正常创建存储卷的请求，不能正常创建存储卷。我们要避免存储卷泄漏情况的发生。CSI 插件通过实现 CSI 插件接口的幂等性，避免存储卷泄漏情况的发生。所谓幂等性指的是以相同参数对某个接口调用一次和多次的结果是相同的。
 
-![图片](https://uploader.shimo.im/f/5uWTw24mXfEZ1grI.png!thumbnail)
+![](https://pek3b.qingstor.com/kubesphere-docs/png/20191001183013.png)
 
 就刚才的例子所说，我们要实现 CreateVolume 接口，创建一个存储卷时，不能简单的调用底层 API 创建存储卷。在创建存储卷之前，CSI 插件需要先到存储服务端查询是否有符合我们创建存储卷参数的存储卷存在，如果有，直接反馈存储卷信息。如果没有相应存储卷的存在，CSI 插件调用底层云平台 API 新建一个存储卷。
 
@@ -129,7 +130,7 @@ CSI 插件实现的 ControllerPublishVolume 接口会调用底层云平台 API �
 
 我们开发 CSI 插件时也要符合 CSI 返回值的规范，CSI 对于存储插件的开发者来说，对 CSI 返回值有相关的规范。同时对于容器平台来说，要对不同返回值做相关的特殊处理。那么，我们在实际 Create Volume CSI 接口有怎样的返回值规范？
 
-![图片](https://uploader.shimo.im/f/wckut4VBrg0KYQ8Z.png!thumbnail)
+![](https://pek3b.qingstor.com/kubesphere-docs/png/20191001183027.png)
 
 对于输入请求的参数，如果缺少必要的字段，实现 CSI 的接口需要立即返回，告诉容器平台你的请求缺少必要的字段。如果有的字段不支持也会返回给容器平台。
 
@@ -139,11 +140,11 @@ CSI 插件实现的 ControllerPublishVolume 接口会调用底层云平台 API �
 
 我们将从通信、部署架构等多个方面，介绍我们如何将开发的 CSI 插件部署到 Kubernetes 容器平台中。我们使用的是 Kubernetes CSI 推荐的方式，可以从 GitHub 上获取。
 
-![图片](https://uploader.shimo.im/f/LyNB06R3xxwkV0sO.png!thumbnail)
+![](https://pek3b.qingstor.com/kubesphere-docs/png/20191001183038.png)
 
 首先，我们来看通信方面的用途，前面谈到 Kubernetes CSI 对接组件和CSI存储插件共同构成存储插件层，在 Kubernetes 和存储服务之间。对于 CSI Controller 服务，可以看到 K8S 和 CSI 对接组件是通过调用 K8S API，通过 HTTP 协议与 K8S API Server 进行相关的交互。
 
-![图片](https://uploader.shimo.im/f/7iehSo38HHYkZnU6.png!thumbnail)
+![](https://pek3b.qingstor.com/kubesphere-docs/png/20191001183052.png)
 
 Kubernetes CSI 对接组件对于下层与 CSI 存储插件相通信，是通过 UDS 进行通信交互。CSI 存储插件收到调用 CSI 请求，调用底层云平台 API 也是通过 HTTP 协议实现的。
 
@@ -151,7 +152,7 @@ Kubernetes CSI 对接组件对于下层与 CSI 存储插件相通信，是通过
 
 那么如何部署CSI插件到K8S容器平台中呢，这是我们的部署架构图。
 
-![图片](https://uploader.shimo.im/f/L0HvmwLEvSM9BHg0.png!thumbnail)
+![](https://pek3b.qingstor.com/kubesphere-docs/png/20191001183100.png)
 
 在部署架构图里可以看到 K8S Master 节点，下面划出了三个 K8S 的 Node 节点。灰色组件表明 K8S 核心组件。在 Master 节点上，我们划出 K8S API Server。在 Node 节点上，我们只划出了 K8S 核心组件的 Kubelet。深蓝色部分指的是 K8S 与 CSI 的对接组件，这是由  Kubernetes 团队维护的。绿色部分表明 QingCloud 云平台开发的 CSI 存储插件。
 
@@ -172,24 +173,24 @@ Secret 密钥是为了拉取 CSI 插件的镜像所使用的资源对象。可�
 
 前面讲完我们如何开发一个 CSI 插件，以及如何将 CSI 插件部署到 Kubernetes 容器平台中。接下来我们看看在开发时，如何对 CSI 插件进行质量管控。
 
-![图片](https://uploader.shimo.im/f/MnKV9DvkNiArhbdw.png!thumbnail)
+![](https://pek3b.qingstor.com/kubesphere-docs/png/20191001183112.png)
 
 我们在开发 CSI 插件时引入了持续集成的概念，我们在开发相关 CSI 插件代码时会写相关单元测试，对 CSI 插件进行相关测试。我们开发完代码，每次提交会先运行单元测试，通过一键式 Makefile 构建程序，再通过 Dockerfile 和 Makefile 一键式制作我们的 CSI 插件镜像。构建镜像成功后，我们通过前面所说的 K8S Yaml 资源定义文件，持续部署我们 CSI 插件到 Kubernetes 容器平台中。当部署成功后，我们会进行 Kubernetes CSI Test 的过程，Kubernetes CSI Test 是 K8S CSI 官方开发的一个测试 CSI 插件的项目，我们需要通过这个测试。
 下一步是集成测试的阶段，在集成测试里我们会模拟用户使用情况创建资源对象，对我们 CSI 插件进行最后的测试。当集成测试成功后，才能顺利的完成提交过程。
 
 从单元测试到持续集成过程中出现错误或过不去的情况，我们会返回开发代码阶段修复问题。引入持续集成开发 CSI 插件时，我们感觉到开发初期，有些问题快速暴露出来。我们快速定位问题并且解决，在开发 CSI 插件的后期可以顺利的进行 CSI 插件的版本发布等工作。
 
-![图片](https://uploader.shimo.im/f/tYyJqptRBw0wwCIg.png!thumbnail)
+![](https://pek3b.qingstor.com/kubesphere-docs/png/20191001183131.png)
 
 关于 Kubernetes CSI Test 项目，它是 K8S CSI 官方开发的开源项目，主要测试 CSI 插件是否符合 CSI 标准规范。左图是相关 CSI Test 的截图，右图是我们开发 CSI 插件运行 CSI Test 后的结果。可以看到 QingCloud 云平台开发的 CSI 插件要通过 CSI Test。
 
-![图片](https://uploader.shimo.im/f/eJvk6zKnL8AISlEu.png!thumbnail)
+![](https://pek3b.qingstor.com/kubesphere-docs/png/20191001183141.png)
 
 前面谈到 CSI 插件如何开发部署，并且谈到 CSI 的质量管理。接下来我们对 CSI 的发展进行简单的展望。我们知道 CSI 规范在不断快速发展中，昨天发布了 1.0 版本。下一步我们 CSI 规范会对快照功能进行完善，如快照保护等功能， QingCloud 云平台会持续跟进并且开发新 CSI 插件，支持最新的功能。
 
 在 CSI 插件使用中，需要增加存储卷监控功能。用户使用存储卷挂载至容器中，我们需要知道存储卷已使用容量，存储卷监控是不可缺少的。当用户存储卷容量已经满或者将要满的时候，我们需要存储卷扩容的功能。Kubernetes CSI 官方逐渐将 K8S In-tree 的存储插件向 CSI 存储插件迁移，可以看到无论在开发和使用上，CSI 存储插件的确是大的趋势。
 
-![图片](https://uploader.shimo.im/f/3Ra3gD8nL0krO49p.png!thumbnail)
+![](https://pek3b.qingstor.com/kubesphere-docs/png/20191001183157.png)
 
 以上列出了相关资源，最上面是 CSI 的定义规范，下面是 QingCloud 云平台开发的基于 QingCloud 云平台云平台的 CSI 存储插件，还有基于 NeonSAN 的 CSI 存储插件，都可以在 GitHub 上获取。
 
