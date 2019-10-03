@@ -1,10 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: 'KubeSphere',
+    title: 'KubeSphere-以应用为中心的开源容器平台',
     siteUrl: 'https://kubesphere.io',
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-react-helmet', 
     'gatsby-plugin-sass',
     {
       resolve: 'gatsby-transformer-remark',

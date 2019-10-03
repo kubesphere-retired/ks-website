@@ -1,6 +1,6 @@
 {
   "name": "kubesphere.github.io",
-  "description": "KubeSphere Website",
+  "description": "KubeSphere-以应用为中心的开源容器平台",
   "version": "1.0.0",
   "dependencies": {
     "@svgr/webpack": "^4.3.0",
@@ -36,14 +36,15 @@
     "tippy.js": "^4.3.5",
     "whatwg-fetch": "^2.0.4"
   },
-  "keywords": [
+  "keywords": [ 
     "kubesphere",
-    "openpitrix",
-    "iaas",
-    "paas",
+    "微服务",
+    "容器云",
+    "容器管理平台",
     "docker",
     "kubernetes",
-    "k8s"
+    "jenkins",
+    "istio"
   ],
   "license": "Apache 2.0",
   "scripts": {

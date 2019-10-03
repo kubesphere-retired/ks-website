@@ -71,7 +71,7 @@ class Footer extends React.Component {
               <ul>
                 <li>
                   <div className="h3">{t('Products')}</div>
-                  <a href={`/${pageContext.locale}/`}>{t('Express Edition')}</a>
+                  <a href={`/${pageContext.locale}/`}>{t('Community Edition')}</a>
                   <a
                     href="https://appcenter.qingcloud.com/apps/app-cmgbd5k2/KubeSphere%C2%AE%EF%B8%8F%EF%BC%88QKE%EF%BC%89#Introduction"
                     target="_blank"
@@ -84,7 +84,7 @@ class Footer extends React.Component {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    {t('Commercial Editions')}
+                    {t('Commercial Service')}
                   </a>
                 </li>
                 <li>

@@ -153,11 +153,11 @@ CRD 是 k8s 当中的一等公民，是扩展 k8s 的标准方式。使用这种
 在介绍完我们的工作流程之后，我们再来介绍以下 Jenkins X 的环境清理和数据持久化。
 在使用 Jenkins X 的过程中会产生一系列的资源，大量的资源被写入到 k8s 的 etcd，当数据量较大时就会影响我们 k8s 的正常使用。Jenkins X 利用 k8s 的核心资源 CronJob 来清理一些无用的数据，包括无用的 Preview环境、过期的Pod、过期的其他数据等等。
 
-![](https://pek3b.qingstor.com/kubesphere-docs/png/20191001081157.png)
+![](https://pek3b.qingstor.com/kubesphere-docs/png/20191001185027.png)
 
 对于我们真正想要持久化的数据，Jenkins X 提供了外部对接的能力。我们可以去对接外部的存储，例如AWS的S3、青云的对象存储……这样我们就可以把想要持久化的数据很容易的保留下来。
 
-![](https://pek3b.qingstor.com/kubesphere-docs/png/20191001081022.png)
+![](https://pek3b.qingstor.com/kubesphere-docs/png/20191001184955.png)
 
 在上面的图中就体现了这一点，对于 Artifacts、Secrets、Build logs……我们都可以借助云厂商的力量，进行数据的可靠存储，这种方式同样使我们的服务变得无状态、高可用、更稳定。
 

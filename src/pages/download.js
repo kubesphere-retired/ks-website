@@ -53,7 +53,7 @@ const Versions = ({ t, showExpressModal, showAdvancedModal }) => (
       <li onClick={showExpressModal}>
         <Express />
         <div className="version-compare-text">
-          <div className="h2">{t('Express Edition')}</div>
+          <div className="h2">{t('Community Edition')}</div>
           <p>
             {t(
               'KubeSphere provides workload and cluster management, wizard design operation interface, application repository and application template management, as well as our professional team support.'
