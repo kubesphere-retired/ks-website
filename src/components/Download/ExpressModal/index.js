@@ -130,8 +130,8 @@ class ExpressModal extends React.Component {
             <div style={{ marginBottom: 40 }}>
               <Express />
               <div className={styles.text}>
-                <div className="h2">{t('Express Edition')}</div>
-                <p>{t('Express Edition')}</p>
+                <div className="h2">{t('Community Edition')}</div>
+                <p>{t('Community Edition')}</p>
               </div>
             </div>
             <p
