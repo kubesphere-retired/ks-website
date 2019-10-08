@@ -26,7 +26,7 @@ const Layout = ({ children, location, data, pageContext }) => {
           { name: 'description', content: 'KubeSphere 是在 Kubernetes 之上构建的以应用为中心的开源容器平台，支持部署和运行在任何基础设施之上，帮助企业轻松应对敏捷开发、自动化运维、应用快速交付、微服务治理、多租户管理、监控日志告警、服务与网络管理等业务场景' },
           {
             name: 'keywords',
-            content: 'KubeSphere, 微服务, 容器云, 容器管理平台, DevOps, Istio, Kubernetes, Jenkins, Docker',
+            content: 'KubeSphere, 微服务, Kubernetes Dashboard, 容器管理平台, DevOps, Istio, Kubernetes, Jenkins, Docker',
           },
           {
             name: 'google-site-verification',
