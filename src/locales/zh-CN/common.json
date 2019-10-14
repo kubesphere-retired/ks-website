@@ -56,7 +56,7 @@
   "what_is_kubesphere_io": "KubeSphere 帮助企业在云、虚拟化及物理机等任何环境中快速构建、部署和运维基于 Kubernetes 的容器架构，轻松实现微服务治理、多租户管理、DevOps 与 CI/CD、监控日志告警、应用商店、大数据、以及人工智能等业务场景。",
   "Complete application lifecycle management": "完整的应用生命周期管理",
   "app_management_desc": "基于 <a href=\"//openpitrix.io\" target=\"_blank\" rel=\"noopener noreferrer\">OpenPitrix</a> 提供应用的全生命周期管理，包含开发、测试、发布、升级，下架等应用相关操作，多应用仓库管理，一键部署应用，并可实现版本控制、计费、审计等高级功能。",
-  "open_source_projects_desc": "KubeSphere 社区致力于容器与云原生技术的开源贡献，进一步丰富了开源社区的生态。",
+  "open_source_projects_desc": "分享云原生领域最前沿的技术干货与开发实践文章，以及 KubeSphere 产品最新的动态。",
   "Get Community Edition": "获取社区版",
   "Get Commercial Service": "获取商业服务",
   "Cloud Native Computing Foundation Member": "CNCF 云原生基金会会员",

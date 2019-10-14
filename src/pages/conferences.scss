@@ -76,18 +76,18 @@
   }
 
   &-excerpt {
-    height: 112px;
+    height: 84px;
     margin-top: 2px;
-    padding: 20px 0;
+    margin: 20px 0;
     font-size: 14px;
     line-height: 2;
     color: #919aa3;
-    border-bottom: 1px solid #919aa380;
     overflow: hidden;
   }
 
   &-more {
-    margin-top: 20px;
+    border-top: 1px solid #919aa380;
+    padding: 30px 0;
   }
 
   &-snapshot {
