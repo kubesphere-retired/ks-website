@@ -8,6 +8,7 @@ import Tags from '../components/Tags'
 import withI18next from '../components/withI18next'
 
 import { ReactComponent as RightArrowIcon } from '../assets/right-arrow.svg'
+import { ReactComponent as PeopleIcon } from '../assets/people.svg'
 
 import './blogs.scss'
 
@@ -59,7 +60,10 @@ const BlogItem = ({ data, tag }) => {
         <div className="blog-item-title">
           <Link to={data.node.fields.slug}>{data.node.frontmatter.title}</Link>
         </div>
-        <div className="blog-item-author">{data.node.frontmatter.author}</div>
+        <div className="blog-item-author">
+          <PeopleIcon width={16} height={16} />
+          <span>{data.node.frontmatter.author}</span>
+        </div>
         <div className="blog-item-excerpt">{data.node.excerpt}</div>
         <div>
           {tags.map(tagItem => (

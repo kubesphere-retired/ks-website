@@ -45,6 +45,7 @@
 }
 
 .blog-wrapper {
+  position: relative;
   display: flex;
   justify-content: space-between;
 }
@@ -126,8 +127,17 @@
 }
 
 .navigation {
-  position: fixed;
-  top: 170px;
-  right: calc(50vw - 580px);
   width: 214px;
+}
+
+.navigation-fixed {
+  position: fixed;
+  right: calc(50vw - 580px);
+}
+
+.navigation-bottom {
+  position: static;
+  bottom: 0;
+  right: auto;
+  align-self: flex-end;
 }

@@ -5,6 +5,7 @@ import Link from 'gatsby-link'
 import Layout from '../layouts/index'
 import withI18next from '../components/withI18next'
 import Headings from '../components/Headings'
+import { getScrollTop } from '../utils/index'
 
 import '../styles/markdown.scss'
 import './b16-tomorrow-dark.scss'
@@ -24,9 +25,14 @@ const FRAMEWORK_PATH = {
 class BlogPage extends React.Component {
   markdownRef = React.createRef()
 
+  blogRef = React.createRef()
+
+  navRef = React.createRef()
+
   componentDidMount() {
     if (
       this.markdownRef &&
+      this.markdownRef.current &&
       !this.scroll &&
       typeof SmoothScroll !== 'undefined'
     ) {
@@ -37,6 +43,18 @@ class BlogPage extends React.Component {
     }
 
     this.scrollToHash()
+
+    if (this.navRef && this.navRef.current) {
+      this.navHeight = this.navRef.current.firstChild.clientHeight
+      this.threshold = this.navHeight - (window.innerHeight - 205)
+      this.navBottom = this.threshold < 0 ? -this.threshold + 20 : 20
+
+      document.addEventListener('scroll', this.handleScroll)
+    }
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('scroll', this.handleScroll)
   }
 
   scrollToHash = () => {
@@ -52,6 +70,35 @@ class BlogPage extends React.Component {
         }
       }
     }, 0)
+  }
+
+  handleScroll = () => {
+    const scrollTop = getScrollTop()
+    const classes = this.navRef.current.classList
+    const navFixed = classes.contains('navigation-fixed')
+    const mdBottom = classes.contains('navigation-bottom')
+
+    if (scrollTop >= this.threshold && !navFixed) {
+      classes.add('navigation-fixed')
+      this.navRef.current.style.bottom = `${this.navBottom}px`
+    } else if (scrollTop < this.threshold && navFixed) {
+      classes.remove('navigation-fixed')
+      this.navRef.current.style.bottom = 'auto'
+    }
+
+    if (this.blogRef && this.blogRef.current) {
+      this.bottom =
+        this.blogRef.current.clientHeight +
+        185 -
+        window.innerHeight +
+        this.navBottom
+
+      if (scrollTop >= this.bottom && !mdBottom) {
+        classes.add('navigation-bottom')
+      } else if (scrollTop < this.bottom && mdBottom) {
+        classes.remove('navigation-bottom')
+      }
+    }
   }
 
   handleHeadClick = head => {
@@ -80,7 +127,7 @@ class BlogPage extends React.Component {
             <div>{edge.node.frontmatter.title}</div>
           </div>
           <div className="blog-wrapper">
-            <div className="blog">
+            <div className="blog" ref={this.blogRef}>
               <div className="blog-metadata">
                 <div className="blog-metadata-title">
                   {edge.node.frontmatter.author}
@@ -98,7 +145,7 @@ class BlogPage extends React.Component {
                 }}
               />
             </div>
-            <div className="navigation">
+            <div className="navigation" ref={this.navRef}>
               <Headings
                 title={t('Table of Contents')}
                 headings={edge.node.headings}
