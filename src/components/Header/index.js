@@ -120,6 +120,9 @@ class Header extends React.Component {
         <a href={`/docs/zh-CN/`} target="_blank" rel="noopener noreferrer">
           {t('Documentation')}
         </a>
+        <a href={`/forum`} target="_blank" rel="noopener noreferrer">
+          {t('Forum')}
+        </a>
         <Link
           to={`/${locale}/trends/`}
           className={classnames({
@@ -168,14 +171,14 @@ class Header extends React.Component {
               arrow
             >
               <div className={styles.demo}>
-              <a
-              href="https://demo.kubesphere.io/login"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-                <Button size="small" type="control">
-                  {t('Online Demo')} 
-                </Button>
+                <a
+                  href="https://demo.kubesphere.io/login"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button size="small" type="control">
+                    {t('Online Demo')}
+                  </Button>
                 </a>
               </div>
             </Tippy>

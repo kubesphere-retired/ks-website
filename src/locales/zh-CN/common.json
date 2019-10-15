@@ -140,5 +140,6 @@
   "KUBECON_DESC": "KubeSphere 团队在 KubeCon + CloudNativeCon 2019 Shanghai 上的技术主题分享。",
   "QCon International Software Development Conference": "QCon 全球软件开发大会",
   "QCON_DESC": "",
-  "DEMO_TIP": "1. 建议您优先在个人环境安装 KubeSphere <br /> 2. 在线体验请将“公司-姓名”发到kubesphere@yunify.com<br /> 3. 试用账号与资源仅限当天保留"
+  "DEMO_TIP": "1. 建议您优先在个人环境安装 KubeSphere <br /> 2. 在线体验请将“公司-姓名”发到kubesphere@yunify.com<br /> 3. 试用账号与资源仅限当天保留",
+  "Forum": "开发者社区"
 }
