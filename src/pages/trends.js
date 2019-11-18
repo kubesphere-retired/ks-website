@@ -20,7 +20,7 @@ const ReportsPage = props => {
     <Layout {...props}>
       <div className="reports">
         <div className="reports-header">
-          <div className="reports-title">{t('Trends')}</div>
+          <div className="reports-title">{t('News')}</div>
           <div className="reports-desc">
             {t("Share KubeSphere's best practices and media coverage")}
           </div>

@@ -28,7 +28,7 @@
   "Technology Blogs": "技术博客",
   "Video Resources": "视频资源",
   "Quick Installation": "快速安装",
-  "Trends": "动态",
+  "News": "动态",
   "Media Coverage": "媒体报道",
   "Develop Practices": "开发实践",
   "Published at": "发布于",
@@ -140,6 +140,6 @@
   "KUBECON_DESC": "KubeSphere 团队在 KubeCon + CloudNativeCon 2019 Shanghai 上的技术主题分享。",
   "QCon International Software Development Conference": "QCon 全球软件开发大会",
   "QCON_DESC": "",
-  "DEMO_TIP": "1. 建议您优先在个人环境安装 KubeSphere <br /> 2. 在线体验请将“公司-姓名”发到kubesphere@yunify.com<br /> 3. 试用账号与资源仅限当天保留",
+  "DEMO_TIP": "1. 体验账号：demo1 / Demo123 <br /> 2. 该账号仅开放了“允许查看”权限 <br /> 3. 建议自行安装体验完整的管理功能",
   "Forum": "开发者社区"
 }
