@@ -129,7 +129,7 @@ class Header extends React.Component {
             [styles.selected]: originalPath === '/trends/',
           })}
         >
-          {t('Trends')}
+          {t('News')}
         </Link>
       </div>
     )
