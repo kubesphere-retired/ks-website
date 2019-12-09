@@ -8,25 +8,45 @@ import Logo from '../Logo'
 import Modal from '../Modal/index'
 import Button from '../Button/index'
 import styles from './index.module.scss'
-import { getScrollTop } from '../../utils/index'
+import { getScrollTop, isPC } from '../../utils/index'
 import { OPEN_SOURCE_SUB_MENUS } from '../../data'
 import Language from '../Language/index'
+import Notification from '../Notification/index'
 
 class Header extends React.Component {
   state = {
     showModal: false,
+    showNotify:
+      typeof localStorage !== 'undefined' &&
+      localStorage.getItem('show_notification') === 'false'
+        ? false
+        : true,
+  }
+
+  componentWillMount() {
+    this.isPC = isPC()
   }
 
   componentDidMount() {
-    document.addEventListener('scroll', this.handleScroll)
+    this.$main = document.getElementsByClassName('main')[0]
+    document.addEventListener('scroll', this.handlePCScroll)
+
+    if (!this.isPC) {
+      document.addEventListener('scroll', this.handleMobileScroll)
+    }
   }
 
   componentWillUnmount() {
     document.removeEventListener('scroll', this.handleScroll)
+    document.removeEventListener('scroll', this.handleMobileScroll)
   }
 
-  handleScroll = () => {
+  handlePCScroll = () => {
     const scrollTop = getScrollTop()
+    if (!this.headerRef) {
+      return
+    }
+
     const classes = this.headerRef.classList
     const headerShadow = classes.contains('header-shadow')
 
@@ -34,6 +54,34 @@ class Header extends React.Component {
       classes.add('header-shadow')
     } else if (scrollTop < 100 && headerShadow) {
       classes.remove('header-shadow')
+    }
+  }
+
+  handleMobileScroll = () => {
+    const scrollTop = getScrollTop()
+    if (!this.headerRef) {
+      return
+    }
+
+    const classes = this.headerRef.classList
+    const headerFixed = classes.contains('header-fixed')
+
+    if (!this.lastScrollTop) {
+      this.lastScrollTop = scrollTop
+    }
+
+    if (this.lastScrollTop > scrollTop + 30) {
+      if (!headerFixed) {
+        classes.add('header-fixed')
+        this.$main.style.paddingTop = '96px'
+      }
+      this.lastScrollTop = scrollTop
+    } else if (this.lastScrollTop + 30 < scrollTop) {
+      if (headerFixed) {
+        classes.remove('header-fixed')
+        this.$main.style.paddingTop = '0px'
+      }
+      this.lastScrollTop = scrollTop
     }
   }
 
@@ -47,6 +95,18 @@ class Header extends React.Component {
     this.setState({
       showModal: false,
     })
+  }
+
+  hideNotify = () => {
+    this.setState(
+      {
+        showNotify: false,
+      },
+      () => {
+        typeof localStorage !== 'undefined' &&
+          localStorage.setItem('show_notification', false)
+      }
+    )
   }
 
   renderSubMenu() {
@@ -89,26 +149,39 @@ class Header extends React.Component {
         >
           {t('Home')}
         </Link>
-        <Tippy
-          content={this.renderSubMenu()}
-          arrowType="round"
-          theme="light"
-          placement="bottom"
-          distance={-10}
-          interactive
-          arrow
-        >
-          <span
-            href="#"
+        {this.isPC ? (
+          <Tippy
+            content={this.renderSubMenu()}
+            arrowType="round"
+            theme="light"
+            placement="bottom"
+            distance={-10}
+            interactive
+            arrow
+          >
+            <span
+              href="#"
+              className={classnames({
+                [styles.selected]: OPEN_SOURCE_SUB_MENUS.some(
+                  menu => originalPath === `/${menu.value}/`
+                ),
+              })}
+            >
+              {t('Open Source')}
+            </span>
+          </Tippy>
+        ) : (
+          <Link
+            to={`/${locale}/projects/`}
             className={classnames({
               [styles.selected]: OPEN_SOURCE_SUB_MENUS.some(
                 menu => originalPath === `/${menu.value}/`
               ),
             })}
           >
-            {t('Open Source Community')}
-          </span>
-        </Tippy>
+            {t('Open Source')}
+          </Link>
+        )}
         <Link
           to={`/${locale}/install/`}
           className={classnames({
@@ -148,6 +221,18 @@ class Header extends React.Component {
           this.headerRef = ref
         }}
       >
+        {this.state.showNotify && (
+          <Notification
+            text={
+              <span
+                dangerouslySetInnerHTML={{
+                  __html: t('KUBESPHERE_210_NOTIFY'),
+                }}
+              />
+            }
+            onClick={this.hideNotify}
+          />
+        )}
         <div className={styles.wrapper}>
           <Link to={`/${locale}/`}>
             <Logo className={styles.logo} />

@@ -8,6 +8,7 @@ import VideoModal from '../components/VideoModal'
 import Pagination from '../components/Pagination'
 
 import withI18next from '../components/withI18next'
+import { isPC } from '../utils/index'
 
 import { ReactComponent as PlayIcon } from '../assets/play.svg'
 
@@ -52,7 +53,7 @@ const VideosPage = props => {
   return (
     <Layout {...props}>
       <div className="wrapper">
-        <Groups options={groups} value={group} onChange={setGroup} />
+        {isPC() && <Groups options={groups} value={group} onChange={setGroup} />}
         <Labels options={labels} value={label} onChange={setLabel} />
         <VideoList data={videos} showModal={setVideo} />
         <VideoModal

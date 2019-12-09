@@ -5,21 +5,21 @@
   top: 0;
   left: 0;
   width: 100%;
-  padding-top: 10px;
   background-color: transparent;
   border-bottom: solid 1px #e3e9ef;
   transition: all 0.2s ease-in-out;
   z-index: 100;
 
   @media only screen and (max-width: $mobile-max-width) {
-    position: fixed;
+    position: relative;
     width: 100vw;
-    height: $mobile-header-height;
-    line-height: $mobile-header-height;
-    padding: 0 12px;
     background-color: rgba(245, 248, 249, 0.95);
     z-index: 1000;
 
+    &:global(.header-fixed) {
+      position: fixed;
+      animation: fadeIn .3s ease-in-out;
+    }
     &:global(.header-shadow) {
       box-shadow: 0 4px 8px 0 rgba(36, 46, 66, 0.06);
     }
@@ -37,6 +37,7 @@
 
   @media only screen and (max-width: $mobile-max-width) {
     padding: 12px 0;
+    left: 12px;
   }
 }
 
@@ -51,6 +52,7 @@
   @media only screen and (max-width: $mobile-max-width) {
     width: 100%;
     height: $mobile-header-height;
+    line-height: $mobile-header-height;
   }
 }
 
@@ -101,6 +103,9 @@
     & + a,
     & + span {
       margin-left: 40px;
+      @media only screen and (max-width: $mobile-max-width) {
+        margin-left: 0;
+      }  
     }
   }
 
@@ -189,6 +194,11 @@
   top: 28px;
   display: flex;
   align-items: center;
+
+  @media only screen and (max-width: $mobile-max-width) {
+    top: 0;
+    right: 60px;
+  }
 }
 
 .menu {
@@ -231,4 +241,18 @@
 
 .demo {
   margin-left: 24px;
+
+  @media only screen and (max-width: $mobile-max-width) {
+    display: none;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
 }

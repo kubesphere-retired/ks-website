@@ -56,6 +56,12 @@
   background-color: #ffffff;
   border-radius: 4px;
 
+  @media only screen and (max-width: $mobile-max-width) {
+    width: 100%;
+    padding: 0;
+    background-color: transparent;
+  }
+
   p {
     color: #36435c;
     line-height: 2.29;
@@ -128,6 +134,9 @@
 
 .navigation {
   width: 214px;
+  @media only screen and (max-width: $mobile-max-width) {
+    display: none;
+  }
 }
 
 .navigation-fixed {

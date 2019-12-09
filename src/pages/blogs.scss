@@ -12,6 +12,11 @@
   background-color: #ffffff;
   overflow: hidden;
 
+  @media only screen and (max-width: $mobile-max-width) {
+    height: auto;
+    margin-bottom: 20px;
+  }
+
   &-snapshot {
     position: absolute;
     top: 0;
@@ -25,6 +30,10 @@
       min-width: 100%;
       height: 100%;
     }
+
+    @media only screen and (max-width: $mobile-max-width) {
+      display: none;
+    }
   }
 
   &-content {
@@ -32,6 +41,11 @@
     padding: 32px 40px;
     padding-right: 200px;
     margin-left: 280px;
+
+    @media only screen and (max-width: $mobile-max-width) {
+      margin-left: 0;
+      padding: 24px;
+    }
   }
 
   &-time {
@@ -99,6 +113,10 @@
     top: 50%;
     right: 40px;
     transform: translateY(-50%);
+
+    @media only screen and (max-width: $mobile-max-width) {
+      display: none;
+    }
 
     & > svg {
       width: 64px;

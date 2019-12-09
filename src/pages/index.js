@@ -265,7 +265,7 @@ const CloudNative = ({ t }) => (
       <img src={CloudNativeLogo} alt="" />
       <div>{t('Cloud Native Computing Foundation Member')}</div>
     </div>
-    <div style={{ marginLeft: 60 }}>
+    <div>
       <img src={CertifiedLogo} alt="" />
       <div>{t('Certified Kubernetes Conformance')}</div>
     </div>

@@ -10,10 +10,11 @@ import '../i18n'
 import Header from '../components/Header/index'
 import Footer from '../components/Footer/index'
 import Star from '../components/Star/index'
+import withI18next from '../components/withI18next'
 
 import bg1 from '../assets/bg-1.svg'
 
-const Layout = ({ children, location, data, pageContext }) => {
+const Layout = ({ t, children, location, data, pageContext }) => {
   const path = location.pathname.slice(1)
 
   const showBg = path !== 'download'
@@ -21,12 +22,19 @@ const Layout = ({ children, location, data, pageContext }) => {
   return (
     <div className="main">
       <Helmet
-        title={data.site.siteMetadata.title}
+        title={t(data.site.siteMetadata.title)}
         meta={[
-          { name: 'description', content: 'KubeSphere 是在 Kubernetes 之上构建的以应用为中心的开源容器平台，支持部署和运行在任何基础设施之上，帮助企业轻松应对敏捷开发、自动化运维、应用快速交付、微服务治理、多租户管理、监控日志告警、服务与网络管理等业务场景' },
+          {
+            name: 'description',
+            content: t(
+              'KubeSphere is an open source container platform based on Kubernetes for enterprise app development and deployment, suppors installing anywhere from on-premise datacenter to any cloud to edge.'
+            ),
+          },
           {
             name: 'keywords',
-            content: 'KubeSphere, 微服务, Kubernetes Dashboard, 容器管理平台, DevOps, Istio, Kubernetes, Jenkins, Docker',
+            content: t(
+              'KubeSphere, Kubernetes Dashboard,  Install Enterprise Kubernetes, DevOps, Istio, Service Mesh, Jenkins, container platform'
+            ),
           },
           {
             name: 'google-site-verification',
@@ -35,7 +43,7 @@ const Layout = ({ children, location, data, pageContext }) => {
         ]}
       />
       <Header
-        siteTitle={data.site.siteMetadata.title}
+        siteTitle={t(data.site.siteMetadata.title)}
         pageContext={pageContext}
       />
       {showBg && <img className="bg1" src={bg1} alt="" />}
@@ -50,4 +58,4 @@ Layout.propTypes = {
   children: PropTypes.node,
 }
 
-export default Layout
+export default withI18next({ ns: 'common' })(Layout)

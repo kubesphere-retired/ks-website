@@ -508,6 +508,10 @@ img {
   background-color: rgba(143, 148, 161, 0.06);
   text-align: center;
 
+  @media only screen and (max-width: $mobile-max-width) {
+    flex-direction: column;
+  }
+
   img {
     height: 60px;
   }
@@ -516,5 +520,14 @@ img {
     font-size: 16px;
     line-height: 2;
     color: #919aa3;
+
+    & + div {
+      margin-left: 60px;
+
+      @media only screen and (max-width: $mobile-max-width) {
+        margin-left: 0;
+        margin-top: 20px;
+      }
+    }
   }
 }

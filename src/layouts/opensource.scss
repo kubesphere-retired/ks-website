@@ -5,6 +5,13 @@
 
   @media only screen and (max-width: $mobile-max-width) {
     margin-top: 60px;
+
+    .tabs {
+      li + li {
+        margin-left: 24px;
+        font-size: 14px;
+      }
+    }
   }
 
   &-header {

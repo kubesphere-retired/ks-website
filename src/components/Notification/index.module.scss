@@ -1,0 +1,31 @@
+@import '../../styles/variables';
+
+.notify {
+  position: relative;
+  height: 40px;
+  line-height: 40px;
+  color: #fff;
+  text-align: center;
+  background-image: url('/top.svg');
+  background-size: cover;
+}
+
+.text {
+  font-size: 12px;
+  font-weight: 500;
+  color: #ffffff;
+  overflow: hidden;
+  height: 40px;
+}
+
+.close {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 44px;
+  cursor: pointer;
+
+  @media only screen and (max-width: $mobile-max-width) {
+    right: 10px;
+  }
+}

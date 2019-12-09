@@ -29,3 +29,27 @@ export function formatAnchor(str) {
     .join('-')
     .toLowerCase()
 }
+
+export function isPC() {
+  if (typeof navigator === 'undefined') {
+    return true
+  }
+
+  const userAgentInfo = navigator.userAgent
+  const Agents = [
+    'Android',
+    'iPhone',
+    'SymbianOS',
+    'Windows Phone',
+    'iPad',
+    'iPod',
+  ]
+  let flag = true
+  for (let v = 0; v < Agents.length; v++) {
+    if (userAgentInfo.indexOf(Agents[v]) > 0) {
+      flag = false
+      break
+    }
+  }
+  return flag
+}

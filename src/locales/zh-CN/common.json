@@ -12,7 +12,6 @@
   "KubeSphere Docs": "文档中心",
   "Get KubeSphere": "获取 KubeSphere",
   "About": "关于",
-  "News": "发布动态",
   "Contact": "联系我们",
   "Careers": "加入我们",
   "Working hard Coding": "正在努力 Coding",
@@ -23,7 +22,7 @@
   "Home": "首页",
   "All": "全部",
   "Tags": "标签",
-  "Open Source Community": "开源社区",
+  "Open Source": "开源社区",
   "Open Source Projects": "开源项目",
   "Technology Blogs": "技术博客",
   "Video Resources": "视频资源",
@@ -141,5 +140,9 @@
   "QCon International Software Development Conference": "QCon 全球软件开发大会",
   "QCON_DESC": "",
   "DEMO_TIP": "1. 体验账号：demo1 / Demo123 <br /> 2. 该账号仅开放了“允许查看”权限 <br /> 3. 建议自行安装体验完整的管理功能",
-  "Forum": "开发者社区"
+  "Forum": "开发者社区",
+  "KubeSphere-以应用为中心的开源容器平台": "KubeSphere | Enterprise container platform, built on Kubernetes",
+  "KubeSphere is an open source container platform based on Kubernetes for enterprise app development and deployment, suppors installing anywhere from on-premise datacenter to any cloud to edge.": "KubeSphere 是在 Kubernetes 之上构建的以应用为中心的开源容器平台，支持部署和运行在任何基础设施之上，帮助企业轻松应对敏捷开发、自动化运维、应用快速交付、微服务治理、多租户管理、监控日志告警、服务与网络管理等业务场景",
+  "KubeSphere, Kubernetes Dashboard,  Install Enterprise Kubernetes, DevOps, Istio, Service Mesh, Jenkins, container platform": "KubeSphere, 微服务, Kubernetes Dashboard, 容器管理平台, DevOps, Istio, Kubernetes, Jenkins, Docker",
+  "KUBESPHERE_210_NOTIFY": "KubeSphere 2.1.0 全新升级！生产可用！多项功能与用户体验优化！<a href=\"\/install\">一键快速安装 → </a>"
 }

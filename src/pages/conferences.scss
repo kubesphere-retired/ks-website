@@ -8,6 +8,11 @@
   background-image: linear-gradient(to left, #65c194, #4ca986);
   color: #ffffff;
 
+  @media only screen and (max-width: $mobile-max-width) {
+    height: auto;
+    padding: 24px;
+  }
+
   &-title {
     font-size: 28px;
     font-weight: 600;
@@ -19,6 +24,10 @@
     font-size: 14px;
     line-height: 1.71;
     width: 614px;
+
+    @media only screen and (max-width: $mobile-max-width) {
+      width: auto;
+    }
   }
 
   &-bg {
@@ -31,11 +40,15 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+
+    @media only screen and (max-width: $mobile-max-width) {
+      display: none;
+    }
   }
 }
 
 .con-reports {
-  margin-top: 16px;
+  margin: 16px 0;
 }
 
 .con-report {
@@ -45,11 +58,19 @@
   box-shadow: 0 4px 15px 0 rgba(7, 42, 68, 0.1);
   background-color: #ffffff;
 
+  @media only screen and (max-width: $mobile-max-width) {
+    padding: 12px;
+  }
+
   &-info {
     display: inline-block;
     vertical-align: top;
     width: 536px;
     padding: 16px 0 6px 16px;
+
+    @media only screen and (max-width: $mobile-max-width) {
+      width: auto;
+    }
   }
 
   &-title {
@@ -97,6 +118,10 @@
     img {
       width: 480px;
       height: 306px;
+    }
+
+    @media only screen and (max-width: $mobile-max-width) {
+      display: none;
     }
   }
 

@@ -117,6 +117,7 @@ class InstallPage extends React.Component {
   }
 
   componentDidMount() {
+    this.$docs = document.getElementsByClassName('docs')[0]
     document.addEventListener('scroll', this.handleScroll)
     this.setLinkTargetBlank()
   }
@@ -143,8 +144,10 @@ class InstallPage extends React.Component {
 
     if (scrollTop >= 610 && !selectorFixed) {
       classes.add('selector-fixed')
+      this.$docs.style.paddingTop = "100px"
     } else if (scrollTop < 610 && selectorFixed) {
       classes.remove('selector-fixed')
+      this.$docs.style.paddingTop = "0"
     }
   }
 
