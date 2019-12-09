@@ -9,12 +9,8 @@
 }
 
 .install {
-  @media only screen and (max-width: $mobile-max-width) {
-    padding-top: 136px;
-  }
-
   &-banner {
-    padding: 160px 0 100px 0;
+    padding: 100px 0;
 
     & > .h1 {
       font-family: $font-family-id;
@@ -73,14 +69,14 @@
 
     @media only screen and (max-width: $mobile-max-width) {
       display: block;
-      margin-top: 80px;
       margin-bottom: 20px;
     }
 
     &.selector-fixed {
       position: fixed;
-      top: 64px;
-      width: calc(100vw - 40px);
+      top: 12px;
+      left: 12px;
+      width: calc(100vw - 24px);
       margin: 0;
     }
   }
@@ -111,7 +107,6 @@
     }
   }
 }
-
 
 .md-tabs {
   display: flex;

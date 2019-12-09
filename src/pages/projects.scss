@@ -3,6 +3,7 @@
 .projects-wrapper {
   position: relative;
   min-height: 400px;
+  padding-bottom: 20px;
 }
 
 .projects-types {
@@ -14,6 +15,10 @@
   border-radius: 4px;
   box-shadow: 0 4px 15px 0 rgba(7, 42, 68, 0.1);
   background-color: #ffffff;
+
+  @media only screen and (max-width: $mobile-max-width) {
+    display: none;
+  }
 
   & > ul {
     list-style: none;
@@ -59,6 +64,10 @@
 
 .projects-cards {
   padding-left: 300px;
+
+  @media only screen and (max-width: $mobile-max-width) {
+    padding-left: 0;
+  }
 }
 
 .project-card {

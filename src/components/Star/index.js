@@ -1,5 +1,6 @@
 import React from 'react'
 import { withTranslation } from 'react-i18next'
+import classNames from 'classnames'
 
 import { ReactComponent as CloseIcon } from '../../assets/close.svg'
 import { ReactComponent as GithubIcon } from '../../assets/icon-git.svg'
@@ -9,6 +10,19 @@ import { ReactComponent as StarRightIcon } from '../../assets/star-right.svg'
 import styles from './index.module.scss'
 
 class Star extends React.Component {
+  componentDidMount() {
+    if (typeof window !== 'undefined') {
+      const Swiped = require('../../utils/swipe')
+      Swiped.init({
+        query: '.star',
+        left: 1000,
+        onOpen: () => {
+          localStorage.setItem('kubesphere-star', 'hidden')
+        },
+      })
+    }
+  }
+
   handleClick = () => {
     window.open('https://github.com/kubesphere/kubesphere', '_blank')
   }
@@ -32,8 +46,16 @@ class Star extends React.Component {
     }
 
     return (
-      <div className={styles.wrapper} onClick={this.handleClick}>
-        <div className={styles.title}><span role="img" aria-label="celibrate">🎉🎉🎉</span> {t('If you like KubeSphere')}</div>
+      <div
+        className={classNames(styles.wrapper, 'star')}
+        onClick={this.handleClick}
+      >
+        <div className={styles.title}>
+          <span role="img" aria-label="celibrate">
+            🎉🎉🎉
+          </span>{' '}
+          {t('If you like KubeSphere')}
+        </div>
         <p className={styles.desc}>
           {t('Please give us a GitHub Star as an encouragement.')}
         </p>

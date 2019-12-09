@@ -161,7 +161,7 @@ export const PRACTICES = [
 
 export const ROAD_MAPS = [
   {
-    name: 'Community Edition 1.0.0',
+    name: 'Express Edition 1.0.0',
     time: '2018/6/30 00:00:00',
     status: 'Released',
   },

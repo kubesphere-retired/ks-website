@@ -6,6 +6,7 @@ import Layout from '../layouts/opensource'
 import Tags from '../components/Tags'
 
 import withI18next from '../components/withI18next'
+import { isPC } from '../utils/index'
 
 import { ReactComponent as RightArrowIcon } from '../assets/right-arrow.svg'
 import { ReactComponent as PeopleIcon } from '../assets/people.svg'
@@ -28,7 +29,7 @@ const BlogsPage = props => {
   return (
     <Layout {...props}>
       <div className="wrapper">
-        <Tags options={tags} value={tag} onChange={setTag} />
+        {isPC() && <Tags options={tags} value={tag} onChange={setTag} />}
         <BlogList data={props.data.allMarkdownRemark.edges} tag={tag} />
       </div>
     </Layout>

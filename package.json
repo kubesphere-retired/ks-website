@@ -33,10 +33,11 @@
     "react-helmet": "^5.2.1",
     "react-i18next": "^10.11.0",
     "react-modal": "^3.5.1",
+    "swiped": "^0.1.4",
     "tippy.js": "^4.3.5",
     "whatwg-fetch": "^2.0.4"
   },
-  "keywords": [ 
+  "keywords": [
     "kubesphere",
     "微服务",
     "容器云",
