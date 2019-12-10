@@ -44,6 +44,16 @@
   }
 }
 
+.share-btns {
+  position: fixed;
+  top: 50%;
+  left: 0;
+
+  a {
+    display: block;
+  }
+}
+
 .blog-wrapper {
   position: relative;
   display: flex;

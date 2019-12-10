@@ -1,12 +1,5 @@
 @import '../styles/variables';
 
-.main {
-  padding-top: 96px;
-  @media only screen and (max-width: $mobile-max-width) {
-    padding-top: 0;
-  }
-}
-
 .bg1 {
   position: absolute;
   top: 0;
