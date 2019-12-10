@@ -1,14 +1,19 @@
 @import '../../styles/variables';
 
 .header {
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
   background-color: transparent;
   border-bottom: solid 1px #e3e9ef;
-  transition: all 0.2s ease-in-out;
+  transition: box-shadow 0.2s ease-in-out;
   z-index: 100;
+
+  &:global(.header-fixed) {
+    position: fixed;
+    top: -40px;
+  }
 
   @media only screen and (max-width: $mobile-max-width) {
     position: relative;
@@ -16,8 +21,9 @@
     background-color: rgba(245, 248, 249, 0.95);
     z-index: 1000;
 
-    &:global(.header-fixed) {
+    &:global(.header-mobile-fixed) {
       position: fixed;
+      top: -40px;
       animation: fadeIn .3s ease-in-out;
     }
     &:global(.header-shadow) {

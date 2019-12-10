@@ -16,11 +16,6 @@ import Notification from '../Notification/index'
 class Header extends React.Component {
   state = {
     showModal: false,
-    showNotify:
-      typeof localStorage !== 'undefined' &&
-      localStorage.getItem('show_notification') === 'false'
-        ? false
-        : true,
   }
 
   componentWillMount() {
@@ -29,10 +24,11 @@ class Header extends React.Component {
 
   componentDidMount() {
     this.$main = document.getElementsByClassName('main')[0]
-    document.addEventListener('scroll', this.handlePCScroll)
 
     if (!this.isPC) {
       document.addEventListener('scroll', this.handleMobileScroll)
+    } else {
+      document.addEventListener('scroll', this.handlePCScroll)
     }
   }
 
@@ -49,11 +45,20 @@ class Header extends React.Component {
 
     const classes = this.headerRef.classList
     const headerShadow = classes.contains('header-shadow')
+    const headerFixed = classes.contains('header-fixed')
 
     if (scrollTop >= 100 && !headerShadow) {
       classes.add('header-shadow')
     } else if (scrollTop < 100 && headerShadow) {
       classes.remove('header-shadow')
+    }
+
+    if (scrollTop >= 40 && !headerFixed) {
+      classes.add('header-fixed')
+      this.$main.style.paddingTop = '96px'
+    } else if (scrollTop < 40 && headerFixed) {
+      classes.remove('header-fixed')
+      this.$main.style.paddingTop = '0px'
     }
   }
 
@@ -64,7 +69,14 @@ class Header extends React.Component {
     }
 
     const classes = this.headerRef.classList
-    const headerFixed = classes.contains('header-fixed')
+    const headerShadow = classes.contains('header-shadow')
+    const headerFixed = classes.contains('header-mobile-fixed')
+
+    if (scrollTop >= 100 && !headerShadow) {
+      classes.add('header-shadow')
+    } else if (scrollTop < 100 && headerShadow) {
+      classes.remove('header-shadow')
+    }
 
     if (!this.lastScrollTop) {
       this.lastScrollTop = scrollTop
@@ -72,13 +84,13 @@ class Header extends React.Component {
 
     if (this.lastScrollTop > scrollTop + 30) {
       if (!headerFixed) {
-        classes.add('header-fixed')
+        classes.add('header-mobile-fixed')
         this.$main.style.paddingTop = '96px'
       }
       this.lastScrollTop = scrollTop
     } else if (this.lastScrollTop + 30 < scrollTop) {
       if (headerFixed) {
-        classes.remove('header-fixed')
+        classes.remove('header-mobile-fixed')
         this.$main.style.paddingTop = '0px'
       }
       this.lastScrollTop = scrollTop
@@ -95,18 +107,6 @@ class Header extends React.Component {
     this.setState({
       showModal: false,
     })
-  }
-
-  hideNotify = () => {
-    this.setState(
-      {
-        showNotify: false,
-      },
-      () => {
-        typeof localStorage !== 'undefined' &&
-          localStorage.setItem('show_notification', false)
-      }
-    )
   }
 
   renderSubMenu() {
@@ -221,18 +221,15 @@ class Header extends React.Component {
           this.headerRef = ref
         }}
       >
-        {this.state.showNotify && (
-          <Notification
-            text={
-              <span
-                dangerouslySetInnerHTML={{
-                  __html: t('KUBESPHERE_210_NOTIFY'),
-                }}
-              />
-            }
-            onClick={this.hideNotify}
-          />
-        )}
+        <Notification
+          text={
+            <span
+              dangerouslySetInnerHTML={{
+                __html: t('KUBESPHERE_210_NOTIFY'),
+              }}
+            />
+          }
+        />
         <div className={styles.wrapper}>
           <Link to={`/${locale}/`}>
             <Logo className={styles.logo} />

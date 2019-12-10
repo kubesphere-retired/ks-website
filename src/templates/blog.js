@@ -180,6 +180,7 @@ export const query = graphql`
             article
           }
           html
+          excerpt
           frontmatter {
             title
             author
