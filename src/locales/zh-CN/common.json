@@ -145,5 +145,5 @@
   "KubeSphere | Enterprise container platform, built on Kubernetes": "KubeSphere-以应用为中心的开源容器平台",
   "KubeSphere is an open source container platform based on Kubernetes for enterprise app development and deployment, suppors installing anywhere from on-premise datacenter to any cloud to edge.": "KubeSphere 是在 Kubernetes 之上构建的以应用为中心的开源容器平台，支持部署和运行在任何基础设施之上，帮助企业轻松应对敏捷开发、自动化运维、应用快速交付、微服务治理、多租户管理、监控日志告警、服务与网络管理等业务场景",
   "KubeSphere, Kubernetes Dashboard,  Install Enterprise Kubernetes, DevOps, Istio, Service Mesh, Jenkins, container platform": "KubeSphere, 微服务, Kubernetes Dashboard, 容器管理平台, DevOps, Istio, Kubernetes, Jenkins, Docker",
-  "KUBESPHERE_210_NOTIFY": "KubeSphere 社区首次线下 Meetup 将于 12 月 14 日在北京举行，多场干货实践分享, <a href=\"https://www.bagevent.com/event/2420263?from=singlemessage&bag_track=wechat&code=021ZWPge1CjXUy0dqGde1nzCge1ZWPgm&state=STATE\" target=\"_blank\">点击报名！</a>"
+  "KUBESPHERE_210_NOTIFY": "KubeSphere 2.1.0 全新升级！生产可用！多项功能与用户体验优化！ <a href=\"\/install\">一键快速安装 → </a>"
 }
