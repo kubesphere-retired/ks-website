@@ -121,28 +121,28 @@ class Footer extends React.Component {
                 <li>
                   <div className="h3">{t('KubeSphere Docs')}</div>
                   <a
-                    href="/docs/advanced-v2.0/zh-CN/introduction/intro/"
+                    href="/docs/v2.1/zh-CN/introduction/intro/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     {t('Introduction')}
                   </a>
                   <a
-                    href="/docs/advanced-v2.0/zh-CN/installation/intro/"
+                    href="/docs/v2.1/zh-CN/installation/intro/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     {t('Installation')}
                   </a>
                   <a
-                    href="/docs/advanced-v2.0/zh-CN/quick-start/quick-start-guide/"
+                    href="/docs/v2.1/zh-CN/quick-start/quick-start-guide/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     {t('Tutorial')}
                   </a>
                   <a
-                    href="/docs/advanced-v2.0/zh-CN/api-reference/api-docs/"
+                    href="/docs/v2.1/zh-CN/api-reference/api-docs/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
