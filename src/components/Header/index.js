@@ -190,7 +190,7 @@ class Header extends React.Component {
         >
           {t('Quick Installation')}
         </Link>
-        <a href={`/docs/zh-CN/`} target="_blank" rel="noopener noreferrer">
+        <a href={`/docs/${locale}/`} target="_blank" rel="noopener noreferrer">
           {t('Documentation')}
         </a>
         <a href={`/forum`} target="_blank" rel="noopener noreferrer">
