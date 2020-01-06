@@ -71,7 +71,9 @@ class Footer extends React.Component {
               <ul>
                 <li>
                   <div className="h3">{t('Products')}</div>
-                  <a href={`/${pageContext.locale}/`}>{t('Community Edition')}</a>
+                  <a href={`/${pageContext.locale}/`}>
+                    {t('Community Edition')}
+                  </a>
                   <a
                     href="https://appcenter.qingcloud.com/apps/app-cmgbd5k2/KubeSphere%C2%AE%EF%B8%8F%EF%BC%88QKE%EF%BC%89#Introduction"
                     target="_blank"
@@ -121,28 +123,36 @@ class Footer extends React.Component {
                 <li>
                   <div className="h3">{t('KubeSphere Docs')}</div>
                   <a
-                    href="/docs/v2.1/zh-CN/introduction/intro/"
+                    href={`/docs/v2.1/${
+                      pageContext.locale
+                    }/introduction/intro/`}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     {t('Introduction')}
                   </a>
                   <a
-                    href="/docs/v2.1/zh-CN/installation/intro/"
+                    href={`/docs/v2.1/${
+                      pageContext.locale
+                    }/installation/intro/`}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     {t('Installation')}
                   </a>
                   <a
-                    href="/docs/v2.1/zh-CN/quick-start/quick-start-guide/"
+                    href={`/docs/v2.1/${
+                      pageContext.locale
+                    }/quick-start/quick-start-guide/`}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     {t('Tutorial')}
                   </a>
                   <a
-                    href="/docs/v2.1/zh-CN/api-reference/api-docs/"
+                    href={`/docs/v2.1/${
+                      pageContext.locale
+                    }/api-reference/api-docs/`}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
