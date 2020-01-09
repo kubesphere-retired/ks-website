@@ -161,29 +161,29 @@ export const PRACTICES = [
 
 export const ROAD_MAPS = [
   {
-    name: 'Express Edition 1.0.0',
-    time: '2018/6/30 00:00:00',
+    name: 'Historic Versions',
+    link: 'https://github.com/kubesphere/kubesphere/releases',
+    status: 'Archived',
+  },
+  {
+    name: 'KubeSphere 2.0.2',
+    time: '2019/7/15 00:00:00',
     status: 'Released',
   },
   {
-    name: 'Community Edition 1.0.0',
-    time: '2018/7/31 00:00:00',
-    status: 'Released',
-  },
-  {
-    name: 'Advanced Edition 1.0.0',
-    time: '2018/12/1 00:00:00',
-    status: 'Released',
-  },
-  {
-    name: 'Advanced Edition 2.0.0',
-    time: '2019/5/18 00:00:00',
+    name: 'KubeSphere 2.1.0',
+    time: '2019/11/11 00:00:00',
     status: 'Released',
     current: true,
   },
   {
-    name: 'Advanced Edition 3.0.0',
-    time: '2019',
+    name: 'KubeSphere 2.1.1',
+    time: '2020/2/1 00:00:00',
+    status: 'Planning',
+  },
+  {
+    name: 'KubeSphere 3.0.0',
+    time: '2020/3/1 00:00:00',
     status: 'Planning',
   },
 ]
