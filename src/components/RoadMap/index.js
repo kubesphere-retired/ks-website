@@ -20,11 +20,18 @@ const RoadMap = ({ className, data, t }) => (
         <div
           className={classnames(styles.text, { [styles.top]: index % 2 === 1 })}
         >
-          {item.time.length === 4
-            ? moment(new Date(item.time)).format(t('YYYY'))
-            : moment(new Date(item.time)).format(t('MMM YYYY'))}
+          {item.time &&
+            (item.time.length === 4
+              ? moment(new Date(item.time)).format(t('YYYY'))
+              : moment(new Date(item.time)).format(t('MMM YYYY')))}
           <div className={styles.br} />
-          {t(item.name)}
+          {item.link ? (
+            <a href={item.link} target="_blank" rel="noopener noreferrer">
+              {t(item.name)}
+            </a>
+          ) : (
+            t(item.name)
+          )}
         </div>
       </div>
     ))}

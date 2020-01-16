@@ -94,6 +94,10 @@ export const query = graphql`
       filter: {
         fields: { framework: { eq: "blog" }, language: { eq: $locale } }
       }
+      sort: {
+        fields: [frontmatter___createTime]
+        order: DESC
+      }
     ) {
       edges {
         node {
