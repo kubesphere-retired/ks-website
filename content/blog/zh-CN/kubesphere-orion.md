@@ -38,7 +38,7 @@ Orion vGPU 软件由 [VirtAI Tech 趋动科技](https://virtai.tech/) 开发，�
 
 ### Orion Client
 
-Orion Client 为一个运行时环境，模拟了NVidia CUDA的运行库环境，为CUDA程序提供了API接口兼容的全新实现。通过和Orion其他功能组件的配合，为CUDA应用程序虚拟化了一定数量的虚拟GPU（Orion vGPU）。由于 Orion Client 模拟了 NVidia CUDA 运行环境，因此 CUDA 应用程序可以透明无修改地直接运行在 Orion vGPU 之上。
+Orion Client 为一个运行时环境，模拟了 NVidia CUDA 的运行库环境，为 CUDA 程序提供了 API 接口兼容的全新实现。通过和 Orion 其他功能组件的配合，为CUDA应用程序虚拟化了一定数量的虚拟 GPU（Orion vGPU）。由于 Orion Client 模拟了 NVidia CUDA 运行环境，因此 CUDA 应用程序可以透明无修改地直接运行在 Orion vGPU 之上。
 
 ### Orion Controller
 
@@ -48,15 +48,17 @@ Orion Controller 是一个长期运行的服务程序，其负责整个 GPU 资�
 
 该组件为一个长运行的系统服务，负责 GPU 资源化的后端服务。Orion Server 部署在每一个物理 GPU 服务器上，接管本机内的所有物理 GPU。Orion Server 通过和 Orion Controller 的交互把本机的GPU加入到由 Orion Controller 管理维护的GPU资源池当中。
 
-当 Orion Client 端应用程序运行时，通过 Orion Controller 的资源调度，建立和 Orion Server 的连接。Orion Server 为其应用程序的所有CUDA调用提供一个隔离的运行环境以及真实 GPU 硬件算力。
+当 Orion Client 端应用程序运行时，通过 Orion Controller 的资源调度，建立和 Orion Server 的连接。Orion Server 为其应用程序的所有 CUDA 调用提供一个隔离的运行环境以及真实 GPU 硬件算力。
 
 ## 场景演示
 
 Orion vGPU 的使用包括以下三类场景：
 
+
 - 场景一：Docker 容器中使用本地节点 GPU 资源
 - 场景二：KVM 虚拟机中使用本地节点 GPU 资源
 - 场景三：在没有 GPU 的节点上使用远程节点上的 GPU 资源
+
 
 本文仅对场景一进行演示说明，后续的文章会对场景三说明如何通过 RDMA 使用远程节点 GPU 资源。
 
@@ -204,7 +206,7 @@ kubectl create -f deploy-service.yaml
 
 3. 训练的过程中，我们可以在宿主机上通过 nvidia-smi 工作监视物理 GPU 的使用情况：
 
-![图片](https://uploader.shimo.im/f/7gcgWUwz0q4zyI6U!thumbnail)
+![](https://pek3b.qingstor.com/kubesphere-docs/png/20200116204740.png)
 
 4. 从图中可以看到，真正使用物理 GPU 的进程是 Orion Server 的服务进程 `/usr/bin/oriond`，而不是容器中正在执行 TensorFlow 任务的 Python 进程。这表明容器中的应用程序使用的是 Orion vGPU 资源，对物理 GPU 的访问完全由 Orion Server 所接管。
 
