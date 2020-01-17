@@ -60,7 +60,7 @@ Orion vGPU 的使用包括以下三类场景：
 - 场景三：在没有 GPU 的节点上使用远程节点上的 GPU 资源
 
 
-本文仅对场景一进行演示说明，后续的文章会对场景三说明如何通过 RDMA 使用远程节点 GPU 资源。
+本文仅对场景一进行演示说明，该场景非常适用于教学及推理场景，后续的文章会对场景三说明如何通过 RDMA 使用远程节点 GPU 资源。
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20200116184604.png)
 
@@ -194,13 +194,17 @@ kubectl create -f deploy-service.yaml
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20200116183236.png)
 
-## GPU 深度学习训练测试 - mnist
+## 训练一个简单的 CNN 模型
+
+以下将在 Jupyter Notebook 训练一个简单的 CNN 模型实现 mnist 手写数字分类。
 
 1. 在 Jupyter Notebook 页面点击 `new-python3`。
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20200116184405.png)
 
 2. 将 `mnist.txt` 文件中的内容拷贝到上面新建的文件中。鼠标放到代码上，点击运行，运行结果如下：
+
+> 提示：mnist.txt 文件下载地址：https://kubesphere-docs.pek3b.qingstor.com/files/AI/mnist.txt
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20200116184421.png)
 
@@ -213,6 +217,8 @@ kubectl create -f deploy-service.yaml
 ## GPU 深度学习训练测试：人脸识别
 
 1. 在 Jupyter 页面上传 `facenet.tar` 文件：
+
+> 提示：facenet 下载地址： https://kubesphere-docs.pek3b.qingstor.com/files/AI/facenet.tar
 
 ![](https://pek3b.qingstor.com/kubesphere-docs/png/20200116190941.png)
 
