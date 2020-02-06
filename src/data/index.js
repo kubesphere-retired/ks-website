@@ -1,7 +1,7 @@
 export const ACTIVITIES = [
   {
-    title: 'Review 2019 KubeSphere® container platform product launch',
-    link: 'https://activity.qingcloud.com/event/kubesphere2019/',
+    title: 'Review KubeSphere Annual Meetup in Beijing',
+    link: 'https://kubesphere.com.cn/zh-CN/videos/',
   },
 ]
 

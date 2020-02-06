@@ -1,5 +1,93 @@
 [
   {
+    "title": "为什么选择 KubeSphere",
+    "link": "https://kubesphere-docs.pek3b.qingstor.com/website/meetup/meetup-final-1226.mp4",
+    "createTime": "2019.12.14",
+    "snapshot": "https://pek3b.qingstor.com/kubesphere-docs/png/20200206170305.png",
+    "group": "Meetup",
+    "tag": "用户访谈,容器,Kubernetes"
+  },
+  {
+    "title": "走近 KubeSphere",
+    "link": "https://kubesphere-docs.pek3b.qingstor.com/website/meetup/zhouxiaosi-final.mp4",
+    "createTime": "2019.12.14",
+    "snapshot": "https://pek3b.qingstor.com/kubesphere-docs/png/20200206171311.png",
+    "group": "Meetup",
+    "tag": "KubeSphere 2.1,容器,Kubernetes"
+  },
+  {
+    "title": "企业级容器 CI/CD 进阶之路",
+    "link": "https://kubesphere-docs.pek3b.qingstor.com/website/meetup/xiarunze-final.mp4",
+    "createTime": "2019.12.14",
+    "snapshot": "https://pek3b.qingstor.com/kubesphere-docs/png/20200206171404.png",
+    "group": "Meetup",
+    "tag": "KubeSphere 2.1,DevOps,容器,Kubernetes"
+  },
+  {
+    "title": "Istio 在 KubeSphere 平台上的实践",
+    "link": "https://kubesphere-docs.pek3b.qingstor.com/website/meetup/zhangrenyu-final.mp4",
+    "createTime": "2019.12.14",
+    "snapshot": "https://pek3b.qingstor.com/kubesphere-docs/png/20200206171431.png",
+    "group": "Meetup",
+    "tag": "KubeSphere 2.1,微服务,容器,Kubernetes"
+  },
+  {
+    "title": "K8s 可观察性实践之路 - 上",
+    "link": "https://kubesphere-docs.pek3b.qingstor.com/website/meetup/huobingjie-final.mp4",
+    "createTime": "2019.12.14",
+    "snapshot": "https://pek3b.qingstor.com/kubesphere-docs/png/20200206171451.png",
+    "group": "Meetup",
+    "tag": "KubeSphere 2.1,容器,Kubernetes"
+  },
+  {
+    "title": "K8s 可观察性实践之路 - 下",
+    "link": "https://kubesphere-docs.pek3b.qingstor.com/website/meetup/huangguangzhe-final.mp4",
+    "createTime": "2019.12.14",
+    "snapshot": "https://pek3b.qingstor.com/kubesphere-docs/png/20200206171451.png",
+    "group": "Meetup",
+    "tag": "KubeSphere 2.1,容器,Kubernetes"
+  },
+  {
+    "title": "你不知道的 KubeSphere Console",
+    "link": "https://kubesphere-docs.pek3b.qingstor.com/website/meetup/liulu-final.mp4",
+    "createTime": "2019.12.14",
+    "snapshot": "https://pek3b.qingstor.com/kubesphere-docs/png/20200206171525.png",
+    "group": "Meetup",
+    "tag": "KubeSphere 2.1,容器,Kubernetes"
+  },
+  {
+    "title": "KubeSphere 多租户管理教程",
+    "link": "https://kubesphere-docs.pek3b.qingstor.com/website/%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/KS2.1_1-multi-tenancy.mp4",
+    "createTime": "2019.01.24",
+    "snapshot": "https://pek3b.qingstor.com/kubesphere-docs/png/20200206174734.png",
+    "group": "入门教程",
+    "tag": "KubeSphere 2.1,容器,Kubernetes"
+  },
+  {
+    "title": "创建 Wordpress 应用并发布至 K8s",
+    "link": "https://kubesphere-docs.pek3b.qingstor.com/website/%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/KS2.1_3-wordpress-k8s.mp4",
+    "createTime": "2019.01.24",
+    "snapshot": "https://pek3b.qingstor.com/kubesphere-docs/png/20200206174845.png",
+    "group": "入门教程",
+    "tag": "KubeSphere 2.1,容器,Kubernetes"
+  },
+  {
+    "title": "创建 Service 与 Ingress 暴露应用",
+    "link": "https://kubesphere-docs.pek3b.qingstor.com/website/%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/KS2.1_2-service-ingress.mp4",
+    "createTime": "2019.01.24",
+    "snapshot": "https://pek3b.qingstor.com/kubesphere-docs/png/20190928174847.png",
+    "group": "入门教程",
+    "tag": "KubeSphere 2.1,容器,Kubernetes"
+  },
+  {
+    "title": "Binary to Image - 发布制品至 K8s",
+    "link": "https://kubesphere-docs.pek3b.qingstor.com/website/%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/Binary-to-image.mp4",
+    "createTime": "2019.01.24",
+    "snapshot": "https://pek3b.qingstor.com/kubesphere-docs/png/20200206174934.png",
+    "group": "入门教程",
+    "tag": "KubeSphere 2.1,容器,Kubernetes"
+  },
+  {
     "title": "KubeSphere 容器平台新动向 - 周小四",
     "link": "https://insight2019.pek3a.qingstor.com/%E7%9B%B4%E6%92%AD%E8%A7%86%E9%A2%91/%E4%B8%BB%E4%BC%9A%E5%9C%BA/6%E3%80%81KubeSphere%20%E5%AE%B9%E5%99%A8%E5%B9%B3%E5%8F%B0%E6%96%B0%E5%8A%A8%E5%90%91%20%20%20%E5%91%A8%E5%B0%8F%E5%9B%9B.mp4",
     "createTime": "2019.07.25",
@@ -53,7 +141,7 @@
     "createTime": "2018.07.27",
     "snapshot": "https://pek3b.qingstor.com/kubesphere-docs/png/20190928184613.png",
     "group": "CIC 用户大会",
-    "tag": "KubeSphere Express,峰会论坛"
+    "tag": "峰会论坛"
   },
   {
     "title": "划时代的云端容器平台 KubeSphere - 于爽",
@@ -232,37 +320,22 @@
     "tag": "KubeSphere 2.0,容器"
   },
   {
-    "title": "企业级核心存储平台为 Kubernetes 赋能",
-    "link": "https://api.anybox.qingcloud.com/v1/downloads/PKIVwyT5htEVuSB7dYiNAPBBYKlGoTaOQt4Ft19lgkaSMnjjaOVawzJDklAnKFynomwU5tgX1Q0TMQGsyBKYWvefNrrUPHP5vrs3mRepwW92S56M1sCvrEWEgdsq3Ftl/%E8%A7%86%E9%A2%912.mp4",
-    "createTime": "2019.06.24",
-    "snapshot": "https://pek3b.qingstor.com/kubesphere-docs/png/20190928173719.png",
+    "title": "Porter 在本来生活的落地实践",
+    "link": "https://kubesphere-docs.pek3b.qingstor.com/website/meetup/benlaishenghuo-final.mp4",
+    "createTime": "2019.12.14",
+    "snapshot": "https://pek3b.qingstor.com/kubesphere-docs/png/20200206171221.png",
     "group": "Meetup",
-    "tag": "KubeSphere 2.0,容器,Kubernetes"
+    "tag": "网络,容器,Kubernetes"
   },
   {
-    "title": "NetDevOps in Kubernetes",
-    "link": "https://api.anybox.qingcloud.com/v1/downloads/wWK94ZjwcgMtwD0QRKaLnDwNLnWV29fT3fO32UxDxAlw85H5fU0bA8wbfMdKAo1VjluTVbDpZmuk1QXefA6qLx4DyQCMPOIrmKDhyXgNQvwmkgrKEjkOH49clmUsj6Us/%E8%A7%86%E9%A2%911.mp4",
-    "createTime": "2019.06.24",
-    "snapshot": "https://pek3b.qingstor.com/kubesphere-docs/png/20190928173719.png",
+    "title": "新浪产品运维团队 K8s 应用实践",
+    "link": "https://kubesphere-docs.pek3b.qingstor.com/website/meetup/sina-k8s.mp4",
+    "createTime": "2019.12.14",
+    "snapshot": "https://pek3b.qingstor.com/kubesphere-docs/png/20200206171248.png",
     "group": "Meetup",
-    "tag": "KubeSphere 2.0,容器,Kubernetes"
+    "tag": "容器,Kubernetes"
   },
-  {
-    "title": "Operator：以K8s原生的方式管理K8s原生应用",
-    "link": "https://api.anybox.qingcloud.com/v1/downloads/aIS4CS9gpzihnvLgO0gGYGifgdcpCDxX47PTKbCNajyHZhtJTNZtQ8iX7cOHaqaUPr2PFARCcwIDqRsJbB1hwkHblesGHrgJLs1IWb9XPtWKGnnNVzvAoihTeh3b8g2i/%E8%A7%86%E9%A2%913.mp4",
-    "createTime": "2019.06.24",
-    "snapshot": "https://pek3b.qingstor.com/kubesphere-docs/png/20190928173719.png",
-    "group": "Meetup",
-    "tag": "KubeSphere 2.0,容器,Kubernetes"
-  },
-  {
-    "title": "KubeSphere 多租户管理教程",
-    "link": "https://kubesphere-docs.pek3b.qingstor.com/website/%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/%E5%A4%9A%E7%A7%9F%E6%88%B7%E7%AE%A1%E7%90%86.mov",
-    "createTime": "2019.06.24",
-    "snapshot": "https://pek3b.qingstor.com/kubesphere-docs/png/20190928174847.png",
-    "group": "入门教程",
-    "tag": "KubeSphere 2.0,容器,Kubernetes"
-  },
+
   {
     "title": "KubeSphere 多维度监控教程",
     "link": "https://kubesphere-docs.pek3b.qingstor.com/website/%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/%E5%A4%9A%E7%BB%B4%E5%BA%A6%E7%9B%91%E6%8E%A7.mov",
@@ -431,5 +504,5 @@
     "group": "Kubernetes基础",
     "tag": "Kubernetes,快速教程"
   }
-  
+
 ]
