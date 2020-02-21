@@ -114,7 +114,8 @@ class BlogPage extends React.Component {
     } = this.props
     const edge = this.props.data.allMarkdownRemark.edges[0]
     const framework = edge.node.fields.framework
-
+    const siteMetadata = this.props.data.site.siteMetadata
+    siteMetadata.title = `${edge.node.frontmatter.title} - ${siteMetadata.title}`
     return (
       <Layout {...this.props}>
         <div className="wrapper">
