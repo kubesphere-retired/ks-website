@@ -115,7 +115,10 @@ class BlogPage extends React.Component {
     const edge = this.props.data.allMarkdownRemark.edges[0]
     const framework = edge.node.fields.framework
     const siteMetadata = this.props.data.site.siteMetadata
-    siteMetadata.title = `${edge.node.frontmatter.title} - ${siteMetadata.title}`
+    siteMetadata.title = `${edge.node.frontmatter.title} - ${
+      siteMetadata.title
+    }`
+
     return (
       <Layout {...this.props}>
         <div className="wrapper">
@@ -124,8 +127,12 @@ class BlogPage extends React.Component {
               <Link to={`/${locale}/${FRAMEWORK_PATH[framework].path}`}>
                 {t(FRAMEWORK_PATH[framework].title)}
               </Link>
+              &nbsp;>&nbsp;
+              {edge.node.frontmatter.title}
             </div>
-            <div>{edge.node.frontmatter.title}</div>
+          </div>
+          <div style={{ display: 'none' }}>
+            <img src={edge.node.frontmatter.snapshot} alt="" />
           </div>
           <div className="blog-wrapper">
             <div className="blog" ref={this.blogRef}>
@@ -186,6 +193,7 @@ export const query = graphql`
             title
             author
             createTime
+            snapshot
           }
           headings {
             value
