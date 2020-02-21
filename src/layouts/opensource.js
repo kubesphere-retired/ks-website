@@ -20,6 +20,9 @@ const OpenSourceLayout = props => {
     pageContext: { locale, originalPath },
   } = props
 
+  const siteMetadata = props.data.site.siteMetadata
+  siteMetadata.title = `${t('Open Source Community')} - ${siteMetadata.title}`
+
   return (
     <Layout {...rest}>
       <div className="opensource">

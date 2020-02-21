@@ -157,6 +157,9 @@ class InstallPage extends React.Component {
 
   render() {
     const { selectCard } = this.state
+    const { t } = this.props
+    const siteMetadata = this.props.data.site.siteMetadata
+    siteMetadata.title = `${t('KubeSphere Installation')} - ${siteMetadata.title}`
     return (
       <Layout {...this.props}>
         <Helmet>
