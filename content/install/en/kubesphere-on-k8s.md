@@ -23,6 +23,10 @@ kubectl apply -f https://raw.githubusercontent.com/kubesphere/ks-installer/maste
 
 - If there are 8 Cores and 16 GB RAM available in your cluster, use the command below to install a complete KubeSphere, i.e. with all components enabled:
 
+```yaml
+kubectl apply -f https://raw.githubusercontent.com/kubesphere/ks-installer/master/kubesphere-complete-setup.yaml
+```
+
 Verify the real-time logs. When you see the following outputs, congratulation! You can access KubeSphere console in your browser now.
 
 ```bash

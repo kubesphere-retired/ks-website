@@ -16,13 +16,13 @@ KubeSphere 支持在已有 Kubernetes 集群之上在线安装 [KubeSphere](http
 
 ## 最小化安装 KubeSphere
 
-若您的集群可用的资源符合 CPU > 1 Core，可用内存 > 2 G，可以参考以下命令开启 KubeSphere 最小化安装：
+- 若您的集群可用的资源符合 CPU > 1 Core，可用内存 > 2 G，可以参考以下命令开启 KubeSphere 最小化安装：
 
 ```yaml
 kubectl apply -f https://raw.githubusercontent.com/kubesphere/ks-installer/master/kubesphere-minimal.yaml
 ```
 
-若您的集群可用的资源符合 CPU ≥ 8 Core，可用内存 ≥ 16 G，建议参考以下命令开启 KubeSphere 完整安装，即开启所有功能组件的安装：
+- 若您的集群可用的资源符合 CPU ≥ 8 Core，可用内存 ≥ 16 G，建议参考以下命令开启 KubeSphere 完整安装，即开启所有功能组件的安装：
 
 ```yaml
 kubectl apply -f https://raw.githubusercontent.com/kubesphere/ks-installer/master/kubesphere-complete-setup.yaml
