@@ -51,6 +51,11 @@ class Footer extends React.Component {
   render() {
     const { className, t, pageContext } = this.props
     const { hovered } = this.state
+
+    const showBeiAn =
+      typeof window !== 'undefined' &&
+      window.location.host === 'kubesphere.com.cn'
+
     return (
       <div className={classnames(styles.footer, className)}>
         <div className={styles.wrapper}>
@@ -207,6 +212,17 @@ class Footer extends React.Component {
             </a>
           </div>
           <p className={styles.icp}>KubeSphere®️ 2019 All Rights Reserved.</p>
+          {showBeiAn && (
+            <p className={styles.beian}>
+              <a
+                href="http://www.beian.miit.gov.cn/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                京ICP备13019086号
+              </a>
+            </p>
+          )}
         </div>
         <div id="wechat_tip" style={{ display: 'none' }}>
           <div className={styles.tooltip}>
