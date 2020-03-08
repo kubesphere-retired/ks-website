@@ -335,7 +335,14 @@
     "group": "Meetup",
     "tag": "容器,Kubernetes"
   },
-
+  {
+    "title": "在 OpenShift 部署 KubeSphere",
+    "link": "https://kubesphere-docs.pek3b.qingstor.com/video/Demo-Install-KubeSphere-on-OpenShift.mp4",
+    "createTime": "2020.01.20",
+    "snapshot": "https://pek3b.qingstor.com/kubesphere-docs/png/20200308224101.png",
+    "group": "Webniar",
+    "tag": "容器"
+  },
   {
     "title": "KubeSphere 多维度监控教程",
     "link": "https://kubesphere-docs.pek3b.qingstor.com/website/%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/%E5%A4%9A%E7%BB%B4%E5%BA%A6%E7%9B%91%E6%8E%A7.mov",
