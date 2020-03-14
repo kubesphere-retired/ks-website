@@ -3,7 +3,6 @@ import { graphql } from 'gatsby'
 
 import Layout from '../layouts/opensource'
 import Groups from '../components/Tags'
-import Labels from '../components/Labels'
 import VideoModal from '../components/VideoModal'
 import Pagination from '../components/Pagination'
 
@@ -17,20 +16,11 @@ import VIDEOS from '../data/videos'
 import './videos.scss'
 
 const VideosPage = props => {
-  const [label, setLabel] = useState('')
   const [group, setGroup] = useState('')
   const [video, setVideo] = useState(null)
 
-  const labels = []
   const groups = []
   VIDEOS.forEach(vi => {
-    const _tag = vi.tag
-    _tag.split(',').forEach(item => {
-      if (!labels.includes(item)) {
-        labels.push(item)
-      }
-    })
-
     const _group = vi.group
     if (!groups.includes(_group)) {
       groups.push(_group)
@@ -42,11 +32,6 @@ const VideosPage = props => {
       return false
     }
 
-    const tags = vi.tag.split(',')
-    if (label !== '' && !tags.includes(label)) {
-      return false
-    }
-
     return true
   })
 
@@ -54,7 +39,6 @@ const VideosPage = props => {
     <Layout {...props}>
       <div className="wrapper">
         {isPC() && <Groups options={groups} value={group} onChange={setGroup} />}
-        <Labels options={labels} value={label} onChange={setLabel} />
         <VideoList data={videos} showModal={setVideo} />
         <VideoModal
           isOpen={video !== null}

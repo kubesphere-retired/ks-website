@@ -112,7 +112,7 @@ class Header extends React.Component {
   renderSubMenu() {
     const {
       t,
-      pageContext: { locale, originalPath },
+      pageContext: { prefix, originalPath },
     } = this.props
 
     return (
@@ -120,7 +120,7 @@ class Header extends React.Component {
         {OPEN_SOURCE_SUB_MENUS.map(menu => (
           <li key={menu.value}>
             <Link
-              to={`/${locale}/${menu.value}/`}
+              to={`${prefix}${menu.value}/`}
               className={classnames({
                 [styles.selected]: originalPath === `/${menu.value}/`,
               })}
@@ -136,13 +136,13 @@ class Header extends React.Component {
   renderNav() {
     const {
       t,
-      pageContext: { locale, originalPath },
+      pageContext: { prefix, originalPath },
     } = this.props
 
     return (
       <div className={styles.nav} onClick={this.handleCloseModal}>
         <Link
-          to={`/${locale}/`}
+          to={prefix}
           className={classnames({
             [styles.selected]: originalPath === '/',
           })}
@@ -172,7 +172,7 @@ class Header extends React.Component {
           </Tippy>
         ) : (
           <Link
-            to={`/${locale}/projects/`}
+            to={`${prefix}projects/`}
             className={classnames({
               [styles.selected]: OPEN_SOURCE_SUB_MENUS.some(
                 menu => originalPath === `/${menu.value}/`
@@ -183,21 +183,21 @@ class Header extends React.Component {
           </Link>
         )}
         <Link
-          to={`/${locale}/install/`}
+          to={`${prefix}install/`}
           className={classnames({
             [styles.selected]: originalPath === '/install',
           })}
         >
           {t('Quick Installation')}
         </Link>
-        <a href={`/docs/${locale}/`} target="_blank" rel="noopener noreferrer">
+        <a href={`/docs/`} target="_blank" rel="noopener noreferrer">
           {t('Documentation')}
         </a>
         <a href={`/forum`} target="_blank" rel="noopener noreferrer">
           {t('Forum')}
         </a>
         <Link
-          to={`/${locale}/trends/`}
+          to={`${prefix}trends/`}
           className={classnames({
             [styles.selected]: originalPath === '/trends/',
           })}
@@ -211,7 +211,7 @@ class Header extends React.Component {
   render() {
     const {
       t,
-      pageContext: { locale },
+      pageContext: { prefix },
     } = this.props
 
     return (
@@ -231,7 +231,7 @@ class Header extends React.Component {
           }
         />
         <div className={styles.wrapper}>
-          <Link to={`/${locale}/`}>
+          <Link to={prefix}>
             <Logo className={styles.logo} />
           </Link>
           <div className={styles.navsWrapper}>{this.renderNav()}</div>

@@ -2,6 +2,11 @@ module.exports = {
   siteMetadata: {
     title: 'KubeSphere | Enterprise container platform, built on Kubernetes',
     siteUrl: 'https://kubesphere.io',
+    availableLocales: [
+      { name: '简体中文', value: 'zh-CN' },
+      { name: 'English', value: 'en' },
+    ],
+    defaultLocale: 'en',
   },
   plugins: [
     'gatsby-plugin-react-helmet',

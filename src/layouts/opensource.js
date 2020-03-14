@@ -17,7 +17,7 @@ const OpenSourceLayout = props => {
   const { children, ...rest } = props
   const {
     t,
-    pageContext: { locale, originalPath },
+    pageContext: { prefix, originalPath },
   } = props
 
   const siteMetadata = props.data.site.siteMetadata
@@ -52,7 +52,7 @@ const OpenSourceLayout = props => {
                 'tab-selected': originalPath === `/${menu.value}/`,
               })}
             >
-              <Link to={`/${locale}/${menu.value}/`}>{t(menu.label)}</Link>
+              <Link to={`${prefix}${menu.value}/`}>{t(menu.label)}</Link>
             </li>
           ))}
         </ul>
