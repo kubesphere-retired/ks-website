@@ -6,7 +6,7 @@ module.exports = {
       { name: '简体中文', value: 'zh-CN' },
       { name: 'English', value: 'en' },
     ],
-    defaultLocale: 'en',
+    defaultLocale: 'zh-CN',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
