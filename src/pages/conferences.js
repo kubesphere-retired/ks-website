@@ -35,18 +35,23 @@ const ConferencesPage = props => {
 
 const Reports = props => {
   const { reports, t } = props
+  const { defaultLocale, locale } = props.pageContext
+  const convert =
+    defaultLocale === locale ? str => str.replace(`/${locale}`, '') : str => str
   return (
     <div className="con-reports">
       {reports.map(({ node }) => (
         <div key={node.id} className="con-report">
           <div className="con-report-info">
             <div className="con-report-title">
-              <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
+              <Link to={convert(node.fields.slug)}>
+                {node.frontmatter.title}
+              </Link>
             </div>
             <div className="con-report-author">{node.frontmatter.author}</div>
             <div className="con-report-excerpt">{node.excerpt}</div>
             <div className="con-report-more">
-              <Link to={node.fields.slug}>
+              <Link to={convert(node.fields.slug)}>
                 <Button size="small" type="white">
                   {t('View Details')}
                 </Button>

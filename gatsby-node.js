@@ -1,5 +1,6 @@
 const fs = require('fs')
 const path = require('path')
+const config = require('./gatsby-config')
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
 const localesNSContent = {
@@ -17,12 +18,7 @@ const localesNSContent = {
   ],
 }
 
-const availableLocales = [
-  { value: 'zh-CN', text: 'Chinese' },
-  { value: 'en', text: 'English' },
-]
-
-const defaultLocales = { value: 'zh-CN', text: 'English' }
+const { availableLocales, defaultLocale } = config.siteMetadata
 
 exports.onCreatePage = async props => {
   const {
@@ -37,7 +33,8 @@ exports.onCreatePage = async props => {
   deletePage(page)
 
   availableLocales.map(({ value }) => {
-    const newPath = `/${value}${page.path}`
+    const newPath =
+      value === defaultLocale ? page.path : `/${value}${page.path}`
 
     const localePage = {
       ...page,
@@ -45,7 +42,9 @@ exports.onCreatePage = async props => {
       path: newPath,
       context: {
         availableLocales,
+        defaultLocale,
         locale: value,
+        prefix: value === defaultLocale ? '/' : `/${value}/`,
         routed: true,
         data: localesNSContent[value],
         originalPath: page.path,
@@ -53,38 +52,6 @@ exports.onCreatePage = async props => {
     }
     createPage(localePage)
   })
-
-  if (page.path === '/') {
-    createPage({
-      ...page,
-      context: {
-        availableLocales,
-        locale: 'zh-CN',
-        routed: true,
-        data: localesNSContent['zh-CN'],
-        originalPath: page.path,
-      },
-    })
-  } else {
-    createRedirect({
-      fromPath: page.path,
-      isPermanent: true,
-      redirectInBrowser: true,
-      toPath: `/${defaultLocales.value}${page.path}`,
-    })
-    createRedirect({
-      fromPath: page.path.slice(0, -1),
-      isPermanent: true,
-      redirectInBrowser: true,
-      toPath: `/${defaultLocales.value}${page.path}`,
-    })
-    createRedirect({
-      fromPath: `/${defaultLocales.value}${page.path}`.slice(0, -1),
-      isPermanent: true,
-      redirectInBrowser: true,
-      toPath: `/${defaultLocales.value}${page.path}`,
-    })
-  }
 }
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
@@ -139,7 +106,7 @@ const createInstallPages = ({ graphql, actions }) => {
       groups.forEach(framework => {
         const originalPath = `/${framework}`
         availableLocales.map(({ value }) => {
-          const newPath = `/${value}${originalPath}`
+          const newPath = value === defaultLocale ? originalPath : `/${value}${originalPath}`
 
           const localePage = {
             originalPath,
@@ -147,7 +114,9 @@ const createInstallPages = ({ graphql, actions }) => {
             component: path.resolve(`./src/templates/install.js`),
             context: {
               availableLocales,
+              defaultLocale,
               locale: value,
+              prefix: value === defaultLocale ? '/' : `/${value}/`,
               routed: true,
               data: localesNSContent[value],
               originalPath,
@@ -155,25 +124,6 @@ const createInstallPages = ({ graphql, actions }) => {
             },
           }
           createPage(localePage)
-        })
-
-        createRedirect({
-          fromPath: originalPath,
-          isPermanent: true,
-          redirectInBrowser: true,
-          toPath: `/${defaultLocales.value}${originalPath}`,
-        })
-        createRedirect({
-          fromPath: originalPath.slice(0, -1),
-          isPermanent: true,
-          redirectInBrowser: true,
-          toPath: `/${defaultLocales.value}${originalPath}`,
-        })
-        createRedirect({
-          fromPath: `/${defaultLocales.value}${originalPath}`.slice(0, -1),
-          isPermanent: true,
-          redirectInBrowser: true,
-          toPath: `/${defaultLocales.value}${originalPath}`,
         })
       })
 
@@ -206,12 +156,14 @@ const createMarkdownPages = ({ graphql, actions }) => {
         const { language, slug } = node.fields
 
         createPage({
-          path: slug,
+          path: language === defaultLocale ? slug.replace(`/${defaultLocale}`, '') : slug,
           component: path.resolve(`./src/templates/blog.js`),
           context: {
             slug: slug,
             availableLocales,
+            defaultLocale,
             locale: language,
+            prefix: language === defaultLocale ? '/' : `/${language}/`,
             routed: true,
             data: localesNSContent[language],
           },

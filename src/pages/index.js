@@ -30,7 +30,7 @@ import { ACTIVITIES, ROAD_MAPS, APPS } from '../data'
 
 import './index.scss'
 
-const Banner = ({ t, pageContext: { locale } }) => {
+const Banner = ({ t, pageContext: { prefix } }) => {
   return (
     <div className="wrapper banner">
       <div className="banner-title">
@@ -64,7 +64,7 @@ const Banner = ({ t, pageContext: { locale } }) => {
         </div>
         <p>{t('what_is_kubesphere_io')}</p>
         <div className="banner-links">
-          <Link to={`/${locale}/install/`}>
+          <Link to={`${prefix}install/`}>
             <Button type="control" size="large">
               <DownloadIcon />
               {t('Get KubeSphere')}

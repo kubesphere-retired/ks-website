@@ -15,10 +15,14 @@ const LANGS = [
   { label: 'English', value: 'en' },
 ]
 
-const Language = ({ className, pageContext: { locale, originalPath } }) => {
+const Language = ({
+  className,
+  pageContext: { locale, defaultLocale, originalPath },
+}) => {
   const handleChange = value => {
     if (typeof window !== 'undefined') {
-      window.location.href = `/${value}${originalPath}`
+      window.location.href =
+        value === defaultLocale ? originalPath : `/${value}${originalPath}`
     }
   }
 
