@@ -30,26 +30,40 @@ const BlogsPage = props => {
     <Layout {...props}>
       <div className="wrapper">
         {isPC() && <Tags options={tags} value={tag} onChange={setTag} />}
-        <BlogList data={props.data.allMarkdownRemark.edges} tag={tag} />
+        <BlogList
+          data={props.data.allMarkdownRemark.edges}
+          tag={tag}
+          pageContext={props.pageContext}
+        />
       </div>
     </Layout>
   )
 }
 
-const BlogList = ({ data, tag }) => (
+const BlogList = ({ data, tag, pageContext }) => (
   <div className="blog-list">
     {data.map(item => (
-      <BlogItem key={item.node.id} data={item} tag={tag} />
+      <BlogItem
+        key={item.node.id}
+        data={item}
+        tag={tag}
+        pageContext={pageContext}
+      />
     ))}
   </div>
 )
 
-const BlogItem = ({ data, tag }) => {
+const BlogItem = ({ data, tag, pageContext }) => {
   const tags = data.node.frontmatter.tag.split(',')
+
+  const { defaultLocale, locale } = pageContext
 
   if (tag && !tags.includes(tag)) {
     return null
   }
+
+  const convert =
+    defaultLocale === locale ? str => str.replace(`/${locale}`, '') : str => str
 
   return (
     <div key={data.node.id} className="blog-item">
@@ -59,7 +73,9 @@ const BlogItem = ({ data, tag }) => {
       <div className="blog-item-content">
         <div className="blog-item-time">{data.node.frontmatter.createTime}</div>
         <div className="blog-item-title">
-          <Link to={data.node.fields.slug}>{data.node.frontmatter.title}</Link>
+          <Link to={convert(data.node.fields.slug)}>
+            {data.node.frontmatter.title}
+          </Link>
         </div>
         <div className="blog-item-author">
           <PeopleIcon width={16} height={16} />
@@ -74,7 +90,7 @@ const BlogItem = ({ data, tag }) => {
           ))}
         </div>
       </div>
-      <Link to={data.node.fields.slug} className="blog-item-more">
+      <Link to={convert(data.node.fields.slug)} className="blog-item-more">
         <RightArrowIcon />
       </Link>
     </div>
@@ -94,10 +110,7 @@ export const query = graphql`
       filter: {
         fields: { framework: { eq: "blog" }, language: { eq: $locale } }
       }
-      sort: {
-        fields: [frontmatter___createTime]
-        order: DESC
-      }
+      sort: { fields: [frontmatter___createTime], order: DESC }
     ) {
       edges {
         node {

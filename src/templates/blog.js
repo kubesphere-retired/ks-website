@@ -110,7 +110,7 @@ class BlogPage extends React.Component {
   render() {
     const {
       t,
-      pageContext: { locale },
+      pageContext: { locale, defaultLocale },
     } = this.props
     const edge = this.props.data.allMarkdownRemark.edges[0]
     const framework = edge.node.fields.framework
@@ -119,12 +119,17 @@ class BlogPage extends React.Component {
       siteMetadata.title
     }`
 
+    const convert =
+      defaultLocale === locale
+        ? str => str.replace(`/${locale}`, '')
+        : str => str
+
     return (
       <Layout {...this.props}>
         <div className="wrapper">
           <div className="breadcrumbs">
             <div>
-              <Link to={`/${locale}/${FRAMEWORK_PATH[framework].path}`}>
+              <Link to={convert(`/${locale}/${FRAMEWORK_PATH[framework].path}`)}>
                 {t(FRAMEWORK_PATH[framework].title)}
               </Link>
               &nbsp;>&nbsp;
