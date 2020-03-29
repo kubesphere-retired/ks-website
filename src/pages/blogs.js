@@ -20,6 +20,7 @@ const BlogsPage = props => {
   props.data.allMarkdownRemark.edges.forEach(md => {
     const _tag = md.node.frontmatter.tag
     _tag.split(',').forEach(item => {
+      item = item.replace(/^\s+/, '').replace(/\s+$/, '')
       if (!tags.includes(item)) {
         tags.push(item)
       }
