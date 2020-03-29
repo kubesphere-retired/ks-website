@@ -1,7 +1,7 @@
 ---
 title: 'Monitoring Kubernetes Control Plane using KubeSphere'
 author: 'Feynman, Guangzhe'
-tag: 'kubernetes, monitoring, prometheus'
+tag: 'kubernetes, monitoring, prometheus, control plane'
 ---
 
 ## Introduction to Kubernetes Control Plane

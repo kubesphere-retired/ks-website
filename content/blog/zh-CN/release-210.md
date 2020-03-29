@@ -1,6 +1,6 @@
 ---
 title: 'KubeSphere 2.1.1 发布！全面支持 Kubernetes 1.17！多项功能与用户体验优化！'
-tag: 'release,KubeSphere'
+tag: 'release, KubeSphere'
 createTime: '2019-11-11'
 author: 'Feynman Zhou'
 snapshot: 'https://pek3b.qingstor.com/kubesphere-docs/png/20191112093503.png'

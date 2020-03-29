@@ -1,7 +1,7 @@
 ---
 title: 'OpenPitrix Insight'
 author: 'Ray Zhou'
-tag: '多云应用管理,Kubernetes'
+tag: '多云应用管理, Kubernetes'
 createTime: '2018-03-27'
 snapshot: 'https://pek3b.qingstor.com/kubesphere-docs/png/20190930131521.png'
 ---
