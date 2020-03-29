@@ -1,6 +1,6 @@
 ---
 title: '本来生活的 DevOps 升级之路'
-tag: 'DevOps, Kubernetes, kubesphere, Jenkins, CI/CD'
+tag: 'DevOps,Kubernetes,KubeSphere,Jenkins'
 createTime: '2020-03-28'
 author: 'YangYang'
 snapshot: 'https://pek3b.qingstor.com/kubesphere-docs/png/20200327132943.png'

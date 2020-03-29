@@ -1,6 +1,6 @@
 ---
 title: 'KubeSphere 前端开源，社区架构首次公布'
-tag: '开源, 前端'
+tag: '开源,前端'
 createTime: '2019-12-02'
 author: 'Feynman Zhou'
 snapshot: 'https://pek3b.qingstor.com/kubesphere-docs/png/20191202112003.png'

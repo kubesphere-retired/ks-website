@@ -1,6 +1,6 @@
 ---
 title: '微服务进阶之路 容器落地避坑指南'
-tag: 'Istio, 微服务'
+tag: 'Istio,微服务'
 createTime: '2018-04-16'
 author: 'Ray Zhou, Calvin'
 snapshot: 'https://pek3b.qingstor.com/kubesphere-docs/png/20190930131109.png'

@@ -1,6 +1,6 @@
 ---
 title: '手把手从零部署与运营生产级的 Kubernetes 集群与 KubeSphere'
-tag: 'DevOps, Kubernetes, kubesphere, Jenkins, CI/CD'
+tag: 'Kubernetes,kubesphere'
 createTime: '2020-03-26'
 author: 'Liu_wt'
 snapshot: 'https://92uu-blog.oss-cn-beijing.aliyuncs.com/2020-03-25-091655.png'

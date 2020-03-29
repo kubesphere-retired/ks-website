@@ -1,6 +1,6 @@
 ---
 title: '基于 Kubernetes 的 CI/CD 利器 — Prow 入门指南'
-tag: 'CI/CD, Kubernetes'
+tag: 'CI/CD,Kubernetes'
 createTime: '2019-08-20'
 author: 'Magic Song'
 snapshot: 'https://pek3b.qingstor.com/kubesphere-docs/png/20190930122613.png'

@@ -1,6 +1,6 @@
 ---
 title: '在 KubeSphere 安装 Orion vGPU 使用 TensorFlow 运行深度学习训练'
-tag: 'AI, Kubernetes, TensorFlow, kubesphere'
+tag: 'AI,Kubernetes,TensorFlow,KubeSphere'
 createTime: '2020-01-16'
 author: 'Ellaye, Feynman'
 snapshot: 'https://pek3b.qingstor.com/kubesphere-docs/png/20200116192941.png'

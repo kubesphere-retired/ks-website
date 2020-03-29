@@ -1,6 +1,6 @@
 ---
 title: 'KubeSphere 部署 SkyWalking 至 Kubernetes 开启无侵入 APM'
-tag: 'SkyWalking, Kubernetes, APM, kubesphere'
+tag: 'SkyWalking,Kubernetes,APM,KubeSphere'
 createTime: '2020-03-11'
 author: 'Feynman'
 snapshot: 'https://pek3b.qingstor.com/kubesphere-docs/png/20200311155321.png'

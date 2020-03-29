@@ -1,6 +1,6 @@
 ---
 title: 'NetApp 存储在 KubeSphere 上的实践'
-tag: 'NetApp, 存储'
+tag: 'NetApp,存储'
 createTime: '2019-09-12'
 author: 'Forest Li'
 snapshot: 'https://pek3b.qingstor.com/kubesphere-docs/png/20190930151339.png'
