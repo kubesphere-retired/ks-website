@@ -12,10 +12,10 @@ In a Kubernetes cluster, there are two machines roles including master nodes and
 
 As is shown in the graph, there are four components running in the Kubernetes control plane, each of them is critical for running a healthy Kubernetes cluster, they act as the different roles within the cluster:
 
-- kube-apiserver: a component of the Kubernetes control plane that exposes the Kubernetes API. The API server is the front end for the Kubernetes control plane.
-- etcd: Consistent and highly-available key value store used as Kubernetes’ backing store for all cluster data.
-- kube-scheduler: watches for newly created Pods with no assigned node, and selects a node for them to run on.
-- kube-controller-manager: watches the state of the cluster through API server watch feature and makes changes to move cluster towards the desired state.
+- **kube-apiserver**: a component of the Kubernetes control plane that exposes the Kubernetes API. The API server is the front end for the Kubernetes control plane.
+- **etcd**: Consistent and highly-available key value store used as Kubernetes’ backing store for all cluster data.
+- **kube-scheduler**: watches for newly created Pods with no assigned node, and selects a node for them to run on.
+- **kube-controller-manager**: watches the state of the cluster through API server watch feature and makes changes to move cluster towards the desired state.
 
 ## Why Monitoring Control Plane
 
