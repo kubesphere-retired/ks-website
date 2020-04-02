@@ -66,7 +66,7 @@ PORT                    # nodejs 服务端口, 默认3000
 SECRET                  # jwt token 的私钥
 ```
 
-#### 在项目根目录添加 Dockerfile: 
+#### 在项目根目录添加 Dockerfile:
 ```Dockerfile
 FROM mhart/alpine-node:8
 WORKDIR /root/demo
@@ -403,4 +403,3 @@ curl -X GET \
 
 <!-- ### 使用 KubeSphere UI 部署服务
 [KubeSphere](https://kubesphere.io/) 是一款简单易用的 kubernetes 开源发行版, 可视化的部署操作大大降低运维难度。 -->
-

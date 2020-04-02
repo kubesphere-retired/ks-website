@@ -38,7 +38,7 @@ Prow拥有自己的CI/CD系统，但是也能与我们常见的CI/CD一起协作
 
 1. 在想要用prow管理的仓库中将机器人账号设置为管理员。
 2. 在账号设置中添加一个[personal access token][1]，此token需要有以下权限：
-   
+
    + **必须**：`public_repo` 和 `repo:status`
    + **可选**：`repo`假如需要用于一些私有repo
    + **可选**：`admin_org:hook` 如果想要用于一个组织
@@ -122,14 +122,14 @@ bazel run //experiment/add-hook -- \
 plugins:
   github.com/kubesphere-test/prow-tutorial:
   - size
-  - cat 
+  - cat
   - dog
-  - pony 
-  - yuks 
+  - pony
+  - yuks
   - label
   - trigger
   - approve
-  - lgtm 
+  - lgtm
 ```
 2. 创建一个空白的`config.yaml`，这个文件将会在后续配置任务中使用，插件配置部分留空即可。
 3. 如果安装了bazel，那么进入`test-infra`这个目录，执行下面的命令(记得替换其中的相关文件的路径)，这个命令会检查`config.yaml`和`plugins.yaml`的配置是否正确：
@@ -208,5 +208,3 @@ kubectl create configmap config --from-file=config.yaml=${PWD}/samples/config.ya
 ## 高级配置
 
 Prow是一个高效的CI/CD系统，也是一个复杂的系统，本文无法阐述所有的高级配置，更深入的配置可以参考官方文档。本Repo整理了一些常用的脚本，方便后续使用Prow的时候进行配置。使用这些脚本时，请注意替换一些数据。更多的高级配置请参考 [OWNERS](https://github.com/magicsong/prow-tutorial/blob/master/owner.md)。
-
-

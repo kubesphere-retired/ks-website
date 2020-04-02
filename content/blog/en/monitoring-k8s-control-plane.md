@@ -1,7 +1,9 @@
 ---
 title: 'Monitoring Kubernetes Control Plane using KubeSphere'
+tag: 'kubernetes, monitoring'
+createTime: '2020-03-28'
 author: 'Feynman, Guangzhe'
-tag: 'kubernetes, monitoring, prometheus'
+snapshot: 'https://pek3b.qingstor.com/kubesphere-docs/png/20200328170549.png'
 ---
 
 ## Introduction to Kubernetes Control Plane
