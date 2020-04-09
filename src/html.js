@@ -10,6 +10,7 @@ export default function HTML(props) {
   return (
     <html {...props.htmlAttributes}>
       <head>
+        <meta name="baidu-site-verification" content="7UsUGA08f3" />
         <meta charSet="utf-8" />
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
         <meta
