@@ -73,4 +73,4 @@ KubeSphere 基于 Istio 提供了蓝绿部署、金丝雀发布、流量镜像�
 
 ## 如何安装 KubeSphere
 
-KubeSphere 支持在 Linux 与 Kubernetes 环境一键安装，可参考 [KubeSphere 官方文档](https://kubesphere.com.cn/docs/zh-CN/installation/intro/) 进行安装。
+KubeSphere 支持部署和运行在包括 公有云、私有云、虚机、物理机 和 Kubernetes 等任何基础设施之上，并支持在线与离线安装，可参考 [KubeSphere 官方文档](https://kubesphere.com.cn/docs/zh-CN/installation/intro/) 进行安装。
