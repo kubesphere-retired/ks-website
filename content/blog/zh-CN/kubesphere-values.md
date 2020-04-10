@@ -8,13 +8,13 @@ snapshot: 'https://pek3b.qingstor.com/kubesphere-docs/png/20200410130334.png'
 
 KubeSphere 作为云原生家族 **后起之秀**，开源这一年半多的时间来收获了诸多用户与开发者的认可。本文通过大白话从零诠释 KubeSphere 的定位与价值，以及不同团队为什么会选择 KubeSphere。
 
-<video controls="controls" style="width: 100% !important; height: auto !important;">
-  <source type="video/mp4" src="https://kubesphere-docs.pek3b.qingstor.com/website/%E4%BA%A7%E5%93%81%E4%BB%8B%E7%BB%8D/KubeSphere-2.1.1-demo.mp4">
-</video>
-
 ## 对于企业 KubeSphere 是什么
 
 KubeSphere 是在 Kubernetes 之上构建的 **多租户** 容器平台，以应用为中心，提供全栈的 IT 自动化运维的能力，简化企业的 DevOps 工作流。使用 KubeSphere 不仅能够帮助企业在公有云或私有化数据中心快速搭建 Kubernetes 集群，还提供了一套功能丰富的向导式操作界面。
+
+<video controls="controls" style="width: 100% !important; height: auto !important;">
+  <source type="video/mp4" src="https://kubesphere-docs.pek3b.qingstor.com/website/%E4%BA%A7%E5%93%81%E4%BB%8B%E7%BB%8D/KubeSphere-2.1.1-demo.mp4">
+</video>
 
 KubeSphere 能够帮助企业快速构建一个功能丰富的容器云平台。让企业在享受 Kubernetes 的弹性伸缩与敏捷部署的同时，还可以在容器平台拥有 IaaS 平台的存储与网络能力，获得与 IaaS 一样稳定的用户体验。比如在 KubeSphere 2.1.1 新增了对阿里云与腾讯云块存储插件的集成，支持为 Pod 挂载公有云的存储，为有状态应用提供更稳定的持久化存储的能力。
 
