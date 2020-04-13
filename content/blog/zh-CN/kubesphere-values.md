@@ -2,7 +2,7 @@
 title: '一文说清 KubeSphere 容器平台的价值'
 tag: 'DevOps,Kubernetes,KubeSphere,Observability,microservice'
 createTime: '2020-04-10'
-author: 'Feynman'
+author: 'Feynman, Ray'
 snapshot: 'https://pek3b.qingstor.com/kubesphere-docs/png/20200410130334.png'
 ---
 
