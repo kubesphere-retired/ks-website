@@ -1,7 +1,7 @@
-export const ACTIVITIES = [
+export const VIDEO = [
   {
-    title: 'Review KubeSphere Annual Meetup in Beijing',
-    link: 'https://kubesphere.com.cn/zh-CN/videos/',
+    title: 'See a video for quick preview of KubeSphere',
+    link: 'https://kubesphere.io/docs/introduction/what-is-kubesphere/#video-on-youtube',
   },
 ]
 
@@ -183,7 +183,7 @@ export const ROAD_MAPS = [
   },
   {
     name: 'KubeSphere 3.0.0',
-    time: '2020/3/1 00:00:00',
+    time: '2020/5/1 00:00:00',
     status: 'Planning',
   },
 ]

@@ -26,7 +26,7 @@ import CertifiedLogo from '../assets/certified.svg'
 
 import { ReactComponent as DownloadIcon } from '../assets/download.svg'
 
-import { ACTIVITIES, ROAD_MAPS, APPS } from '../data'
+import { VIDEO, ROAD_MAPS, APPS } from '../data'
 
 import './index.scss'
 
@@ -37,7 +37,7 @@ const Banner = ({ t, pageContext: { prefix } }) => {
         <div className="banner-activities">
           <span className="banner-tag">{t('Activities')}</span>
           <ul>
-            {ACTIVITIES.map(item => (
+            {VIDEO.map(item => (
               <li key={item.title}>
                 <a
                   href={item.link}
@@ -55,12 +55,12 @@ const Banner = ({ t, pageContext: { prefix } }) => {
           className="h1"
           dangerouslySetInnerHTML={{
             __html: t(
-              'Foreseeing the future. <br/>Going forward with KubeSphere'
+              'The Kubernetes Platform, <br/>tailored to the DevOps teams'
             ),
           }}
         />
         <div className="banner-sub-title">
-          {t('—— Future container orchestration platform')}
+          {t('—— KubeSphere Container Platform')}
         </div>
         <p>{t('what_is_kubesphere_io')}</p>
         <div className="banner-links">
@@ -82,10 +82,10 @@ const Banner = ({ t, pageContext: { prefix } }) => {
 
 const Features = ({ t }) => (
   <div className="wrapper section feature">
-    <div className="h1">{t('What is KubeSphere')}</div>
+    <div className="h1">{t('One Platform for full-stack solutions ')}</div>
     <p>
       {t(
-        'KubeSphere is an open source project, built on Kubernetes, which is a powerful production-grade container orchestration system. KubeSphere provides users with easy-to-use interface and wizard design, it reduces the complexity of development, testing and maintenance, as well as lower the learning cost of the container orchestration platform.'
+        'KubeSphere is also a multi-tenant enterprise-grade container platform with full-stack automated IT operation and streamlined DevOps workflows. It provides developer-friendly wizard web UI, helping enterprises to build out a more robust and feature-rich platform, which includes most common functionalities needed for enterprise Kubernetes strategy.'
       )}
     </p>
     <div className="feature-cards">
@@ -94,7 +94,7 @@ const Features = ({ t }) => (
         <div className="h2">{t('Easy')}</div>
         <p>
           {t(
-            'KubeSphere providing friendly UI and wizard-design experience to users who work at development, testing or operation. Kubernetes’ powerful features could be delivered to users in an easiest way through the KubeSphere console.'
+            'A CNCF certified Kubernetes platform, 100% open source, built and improved by the community. KubeSphere can be deployed on a Kubernetes cluster or Linux machines, supports online and air-gapped installation'
           )}
         </p>
       </div>
@@ -104,7 +104,7 @@ const Features = ({ t }) => (
         <p
           dangerouslySetInnerHTML={{
             __html: t(
-              'Besides the open source solutions, if users would like to realize higher demands for network and storage, <a href="//www.qingcloud.com" target="_blank" rel="noopener noreferrer">QingCloud</a> can be used as the underlying platform to integrate QingCloud SDN, block storage and NeonSAN with service-guaranteed network and storage solutions.'
+              'Delivers DevOps, service mesh, observability, application management, multi-tenancy, storage and networking management in an unified platform. These functionalities are loosely coupled with the platform since they are pluggable and optional. Other tools are easy to integrate and play '
             ),
           }}
         />
@@ -114,7 +114,7 @@ const Features = ({ t }) => (
         <div className="h2">{t('Efficient')}</div>
         <p>
           {t(
-            'No infrastructure dependencies, no Kubernetes dependencies, support for deployment across physical machines, virtual machines, cloud platforms, and enables Kubernetes clusters of different versions and vendors management.'
+            'KubeSphere delivers consolidated views while integrating a wide breadth of ecosystem tools around Kubernetes and offers consistent user experience to reduce complexity, enabling teams to easily get started with cloud native stack'
           )}
         </p>
       </div>
@@ -187,7 +187,7 @@ const Contribution = ({ t }) => (
       <div className="h1">{t('How to contribute')}</div>
       <p>
         {t(
-          'If you would like to participate in the development of KubeSphere upstream, or understand the progress of the project and report the bug, you can keep in touch with us through GitHub and Slack.'
+          'KubeSphere is 100% open source and available on GitHub where you can find all source code, documents and discussions. All developers are active on Slack, join us on the Slack channel. '
         )}
       </p>
       <div className="contrib-cards">
