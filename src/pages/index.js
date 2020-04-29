@@ -104,7 +104,7 @@ const Features = ({ t }) => (
         <p
           dangerouslySetInnerHTML={{
             __html: t(
-              'Delivers DevOps, service mesh, observability, application management, multi-tenancy, storage and networking management in an unified platform. These functionalities are loosely coupled with the platform since they are pluggable and optional. Other tools are easy to integrate and play '
+              'Delivers DevOps, service mesh, observability, application management, multi-tenancy, storage and networking management in an unified platform. These functionalities are loosely coupled with the platform since they are pluggable and optional. Other tools are easy to integrate and play'
             ),
           }}
         />
