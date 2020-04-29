@@ -65,7 +65,7 @@
   "Easy": "易用",
   "A CNCF certified Kubernetes platform, 100% open source, built and improved by the community. KubeSphere can be deployed on a Kubernetes cluster or Linux machines, supports online and air-gapped installation": "面向开发、测试、运维友好的 UI，向导式用户体验，通过 KubeSphere 控制台将 Kubernetes 的能力以一种极简的方式输送给用户。",
   "Flexible": "灵活",
-  "Besides the open source solutions, if users would like to realize higher demands for network and storage, <a href=\"//www.qingcloud.com\" target=\"_blank\" rel=\"noopener noreferrer\">QingCloud</a> can be used as the underlying platform to integrate QingCloud SDN, block storage and NeonSAN with service-guaranteed network and storage solutions.": "支持开源的存储与网络插件，如用户对网络和存储有更高要求，可选用 <a href=\"//www.qingcloud.com\" target=\"_blank\" rel=\"noopener noreferrer\">青云 QingCloud</a> 作为底层平台，可以使用商业化的网络和存储解决方案。",
+  "Delivers DevOps, service mesh, observability, application management, multi-tenancy, storage and networking management in an unified platform. These functionalities are loosely coupled with the platform since they are pluggable and optional. Other tools are easy to integrate and play": "提供 DevOps、应用商店、微服务治理、多租户管理、集群资源管理、监控日志告警、存储与网络管理等全栈的企业级功能，并且功能组件可插拔",
   "Efficient": "高效 ",
   "KubeSphere delivers consolidated views while integrating a wide breadth of ecosystem tools around Kubernetes and offers consistent user experience to reduce complexity, enabling teams to easily get started with cloud native stack": "无基础设施依赖，无 Kubernetes 依赖，支持跨物理机、虚拟机、云平台部署，可以纳管不同版本、不同厂商的 Kubernetes 集群。",
   "Enable one-click deployment for application.": "应用一键部署",
