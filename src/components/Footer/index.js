@@ -13,6 +13,12 @@ import { ReactComponent as GroupIcon } from '../../assets/group.svg'
 import { ReactComponent as VideoIcon } from '../../assets/video.svg'
 import { ReactComponent as SlackIcon } from '../../assets/slack.svg'
 import { ReactComponent as SlackColorIcon } from '../../assets/slack-color.svg'
+import { ReactComponent as FacebookIcon } from '../../assets/facebook-default.svg'
+import { ReactComponent as FacebookColorIcon } from '../../assets/facebook-hover.svg'
+import { ReactComponent as GithubIcon } from '../../assets/github-default.svg'
+import { ReactComponent as GithubColorIcon } from '../../assets/github-hover.svg'
+import { ReactComponent as TwitterIcon } from '../../assets/twitter-default.svg'
+import { ReactComponent as TwitterColorIcon } from '../../assets/twitter-hover.svg'
 import WechatCode from '../../assets/wechat_code.svg'
 import GroupCode from '../../assets/group_code.svg'
 
@@ -20,7 +26,36 @@ import styles from './index.module.scss'
 
 class Footer extends React.Component {
   state = {
-    hovered: false,
+    links: [
+      {
+        name: 'slack',
+        url: 'https://join.slack.com/t/kubesphere/shared_invite/enQtNTE3MDIxNzUxNzQ0LTZkNTdkYWNiYTVkMTM5ZThhODY1MjAyZmVlYWEwZmQ3ODQ1NmM1MGVkNWEzZTRhNzk0MzM5MmY4NDc3ZWVhMjE',
+        hovered: false,
+        defaultIcon: <SlackIcon />,
+        colorIcon: <SlackColorIcon />,
+      },
+      {
+        name: 'facebook',
+        url: 'https://www.facebook.com/kubesphere',
+        hovered: false,
+        defaultIcon: <FacebookIcon />,
+        colorIcon: <FacebookColorIcon />,
+      },
+      {
+        name: 'github',
+        url: 'https://github.com/kubesphere/kubesphere',
+        hovered: false,
+        defaultIcon: <GithubIcon />,
+        colorIcon: <GithubColorIcon />,
+      },
+      {
+        name: 'twitter',
+        url: 'https://twitter.com/KubeSphere',
+        hovered: false,
+        defaultIcon: <TwitterIcon />,
+        colorIcon: <TwitterColorIcon />,
+      },
+    ]
   }
 
   componentDidMount() {
@@ -40,17 +75,25 @@ class Footer extends React.Component {
     })
   }
 
-  handleMouseEnter = () => {
-    this.setState({ hovered: true })
+  handleMouseEnter = (index) => {
+    let links = this.state.links
+    links[index].hovered = true
+    this.setState({ 
+      links,
+    })
   }
 
-  handleMouseLeave = () => {
-    this.setState({ hovered: false })
+  handleMouseLeave = (index) => {
+    let links = this.state.links
+    links[index].hovered = false
+    this.setState({ 
+      links,
+    })
   }
 
   render() {
     const { className, t, pageContext } = this.props
-    const { hovered } = this.state
+    const { links } = this.state
 
     const showBeiAn =
       typeof window !== 'undefined' &&
@@ -195,21 +238,28 @@ class Footer extends React.Component {
             <WechatIcon id="wechat" className={styles.wechat} />
             <GroupIcon id="group" className={styles.wechat} />
             <a
-              href="https://www.youtube.com/channel/UCybIhsLg8P1xzCx97eELiwQ"
+              href="https://www.youtube.com/channel/UCyTdUQUYjf7XLjxECx63Hpw"
               target="_blank"
               rel="noopener noreferrer"
             >
               <VideoIcon className={styles.youtube} />
             </a>
-            <a
-              href="https://join.slack.com/t/kubesphere/shared_invite/enQtNTE3MDIxNzUxNzQ0LTZkNTdkYWNiYTVkMTM5ZThhODY1MjAyZmVlYWEwZmQ3ODQ1NmM1MGVkNWEzZTRhNzk0MzM5MmY4NDc3ZWVhMjE"
-              target="_blank"
-              onMouseEnter={this.handleMouseEnter}
-              onMouseLeave={this.handleMouseLeave}
-              rel="noopener noreferrer"
-            >
-              {hovered ? <SlackColorIcon /> : <SlackIcon />}
-            </a>
+            {
+              links.map((link, index) => {
+                return (
+                  <a
+                  href={link.url}
+                  key={link.name}
+                  target="_blank"
+                  onMouseEnter={() => this.handleMouseEnter(index)}
+                  onMouseLeave={() => this.handleMouseLeave(index)}
+                  rel="noopener noreferrer"
+                >
+                  {link.hovered ? link.colorIcon : link.defaultIcon}
+                </a>
+                )
+              })
+            }
           </div>
           <p className={styles.icp}>KubeSphere®️ 2019 All Rights Reserved.</p>
           {showBeiAn && (
