@@ -13,8 +13,8 @@ import { ReactComponent as GroupIcon } from '../../assets/group.svg'
 import { ReactComponent as VideoIcon } from '../../assets/video.svg'
 import { ReactComponent as SlackIcon } from '../../assets/slack.svg'
 import { ReactComponent as SlackColorIcon } from '../../assets/slack-color.svg'
-import { ReactComponent as FacebookIcon } from '../../assets/facebook-default.svg'
-import { ReactComponent as FacebookColorIcon } from '../../assets/facebook-hover.svg'
+// import { ReactComponent as FacebookIcon } from '../../assets/facebook-default.svg'
+// import { ReactComponent as FacebookColorIcon } from '../../assets/facebook-hover.svg'
 import { ReactComponent as GithubIcon } from '../../assets/github-default.svg'
 import { ReactComponent as GithubColorIcon } from '../../assets/github-hover.svg'
 import { ReactComponent as TwitterIcon } from '../../assets/twitter-default.svg'
@@ -34,13 +34,13 @@ class Footer extends React.Component {
         defaultIcon: <SlackIcon />,
         colorIcon: <SlackColorIcon />,
       },
-      {
-        name: 'facebook',
-        url: 'https://www.facebook.com/kubesphere',
-        hovered: false,
-        defaultIcon: <FacebookIcon />,
-        colorIcon: <FacebookColorIcon />,
-      },
+      // {
+      //   name: 'facebook',
+      //   url: 'https://www.facebook.com/kubesphere',
+      //   hovered: false,
+      //   defaultIcon: <FacebookIcon />,
+      //   colorIcon: <FacebookColorIcon />,
+      // },
       {
         name: 'github',
         url: 'https://github.com/kubesphere/kubesphere',
