@@ -261,7 +261,7 @@ class Footer extends React.Component {
               })
             }
           </div>
-          <p className={styles.icp}>KubeSphere®️ 2019 All Rights Reserved.</p>
+          <p className={styles.icp}>KubeSphere®️ 2020 All Rights Reserved.</p>
           {showBeiAn && (
             <p className={styles.beian}>
               <a
