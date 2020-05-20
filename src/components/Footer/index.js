@@ -265,6 +265,13 @@ class Footer extends React.Component {
           <p className={styles.icp}>KubeSphere®️ 2020 All Rights Reserved.</p>
           {showBeiAn && (
             <p className={styles.beian}>
+              <a
+                href="http://www.beian.miit.gov.cn/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>京ICP备13019086号</span>
+              </a>
               <a 
                 target="_blank"
                 rel="noopener noreferrer"
