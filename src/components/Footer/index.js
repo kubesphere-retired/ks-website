@@ -21,6 +21,7 @@ import { ReactComponent as TwitterIcon } from '../../assets/twitter-default.svg'
 import { ReactComponent as TwitterColorIcon } from '../../assets/twitter-hover.svg'
 import WechatCode from '../../assets/wechat_code.svg'
 import GroupCode from '../../assets/group_code.svg'
+import BeiAnIcon from '../../assets/备案图标.png'
 
 import styles from './index.module.scss'
 
@@ -264,12 +265,13 @@ class Footer extends React.Component {
           <p className={styles.icp}>KubeSphere®️ 2020 All Rights Reserved.</p>
           {showBeiAn && (
             <p className={styles.beian}>
-              <a
-                href="http://www.beian.miit.gov.cn/"
+              <a 
                 target="_blank"
                 rel="noopener noreferrer"
+                href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502041003"
               >
-                京ICP备13019086号
+                <img src={BeiAnIcon} alt="备案图标"/>
+                <span>京公网安备 11010502041003号</span>
               </a>
             </p>
           )}

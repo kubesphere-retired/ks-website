@@ -27,6 +27,11 @@
     letter-spacing: 1.1px;
     color: #242e42;
     text-align: center;
+
+    img, span {
+      display: inline-block;
+      vertical-align: middle;
+    }
   }
 
   .logo {
