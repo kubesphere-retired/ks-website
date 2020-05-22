@@ -21,6 +21,7 @@ import { ReactComponent as TwitterIcon } from '../../assets/twitter-default.svg'
 import { ReactComponent as TwitterColorIcon } from '../../assets/twitter-hover.svg'
 import WechatCode from '../../assets/wechat_code.svg'
 import GroupCode from '../../assets/group_code.svg'
+import BeiAnIcon from '../../assets/case-icon.png'
 
 import styles from './index.module.scss'
 
@@ -269,7 +270,15 @@ class Footer extends React.Component {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                京ICP备13019086号
+                <span>京ICP备13019086号</span>
+              </a>
+              <a 
+                target="_blank"
+                rel="noopener noreferrer"
+                href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502041003"
+              >
+                <img src={BeiAnIcon} alt="备案图标"/>
+                <span>京公网安备 11010502041003号</span>
               </a>
             </p>
           )}
