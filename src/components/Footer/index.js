@@ -21,7 +21,7 @@ import { ReactComponent as TwitterIcon } from '../../assets/twitter-default.svg'
 import { ReactComponent as TwitterColorIcon } from '../../assets/twitter-hover.svg'
 import WechatCode from '../../assets/wechat_code.svg'
 import GroupCode from '../../assets/group_code.svg'
-import BeiAnIcon from '../../assets/备案图标.png'
+import BeiAnIcon from '../../assets/case-icon.png'
 
 import styles from './index.module.scss'
 
