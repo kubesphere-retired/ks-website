@@ -6,7 +6,7 @@ createTime: '2019-06-24'
 snapshot: 'https://pek3b.qingstor.com/kubesphere-docs/png/20190930095713.png'
 ---
 
-We know that we can use the service of LoadBalancer in the Kubernetes cluster to expose backend workloads externally. Cloud providers often offer cloud LB plugins, which requires the cluster to be deployed on a specific IaaS platform. However, many enterprise users often deploy the Kubernetes cluster in a bare machine, especially when it is used for the production environment. For the local bare machine cluster, Kubernetes does not provide LB implementation. Porter is an open source load balancer designed specifically for the bare metal Kubernetes cluster, which serves as an excellent solution to this problem.
+We know that we can use the service of LoadBalancer in the Kubernetes cluster to expose backend workloads externally. Cloud providers often offer cloud LB plugins, which requires the cluster to be deployed on a specific IaaS platform. However, many enterprise users often deploy the Kubernetes cluster on bare metal, especially when it is used for the production environment. For the local bare metal cluster, Kubernetes does not provide LB implementation. Porter is an open source load balancer designed specifically for the bare metal Kubernetes cluster, which serves as an excellent solution to this problem.
 
 ## Kubernetes Service Introduction
 In the Kubernetes cluster, network represents a very basic and important part. For large-scale nodes and containers, it entails very complicated and delicate design if it is to ensure the connectivity and efficiency in the network. What’s more, IP addresses and ports need to be automatically assigned and managed in the network, with a user-friendly approach in place for the direct and quick access to applications in need.
@@ -31,7 +31,7 @@ LoadBalancer is a preferred solution by Kubernetes to service exposure. However,
 
 ![图片](https://uploader.shimo.im/f/CjKPrUhvUCYJVWby.png!thumbnail)
 
-The LoadBalancer service is achieved through the LB plugin offered by cloud providers. The package Kubernetes.io/cloud-provider will choose the appropriate backend service and expose it to the LB plugin, which creates a load balancer accordingly. That means network traffic will be distributed in the cloud service, avoiding a single point of failure and performance bottlenecks that may occur in NodePort. As mentioned above, LoadBalancer is a preferred solution by Kubernetes to service exposure, but it is only limited to the Kubernetes service offered by cloud providers. For the Kubernetes cluster that is deployed physically or in a non-cloud environment, this approach may not be applicable.
+The LoadBalancer service is achieved through the LB plugin offered by cloud providers. The package Kubernetes.io/cloud-provider will choose the appropriate backend service and expose it to the LB plugin, which creates a load balancer accordingly. That means network traffic will be distributed in the cloud service, avoiding a single point of failure and performance bottlenecks that may occur in NodePort. As mentioned above, LoadBalancer is a preferred solution by Kubernetes to service exposure, but it is only limited to the Kubernetes service offered by cloud providers. For the Kubernetes cluster that is deployed in a bare metal environment or in a non-cloud environment, this approach may not be applicable.
 ### Ingress
 Kubernetes itself does not provide the way to expose services through Ingress. Rather, Ingress exposes multiple services simultaneously with the help of applications just like a router. This plugin identifies different services through domains and uses annotations to control the way services are exposed externally. Here is how it works:
 
@@ -58,7 +58,7 @@ Porter is an open source cloud native load balancing plugin designed by the Kube
 3. VIP management
 
 All Porter codes are open source and documents are available in [GitHub](https://github.com/kubesphere/porter). You are welcome to star and use it.
-## Rapid Deployment
+## How to Install Porter
 
 Porter has been deployed and tested in two environments so far as below. You can see more details in GitHub about the deployment, test and process by clicking the link below. It is recommended to have a try:
 
@@ -72,7 +72,7 @@ Porter has been deployed and tested in two environments so far as below. You can
 Equal-Cost Multi-Path (ECMP) means the package forwarding to a same destination can occur along multiple paths of equal cost. When the device supports ECMP, the three-layer traffic that is sent to the target IP or network segment can be distributed by different paths, achieving network load balancing. Besides, once a certain path malfunctions, other paths can finish the forwarding process instead,  serving as the routing redundant backup. Please refer to the image below:
 ![图片](https://uploader.shimo.im/f/FfwaMcNCNY8glOhH.png!thumbnail)
 
-With the help of the virtual router, ECMP can select the next hop (Pod) according to Hash functions from the existing routing paths for a certain IP (the corresponding VIP of the service). This is how load balancing is achieved. As virtual routers support ECMP in general, Porter only needs to check the Kubernetes API server and deliver the corresponding information of backend Pod of a service to the router.
+With the help of the virtual router, ECMP can select the next hop (Pod) according to Hash algorithm from the existing routing paths for a certain IP (the corresponding VIP of the service). This is how load balancing is achieved. As virtual routers support ECMP in general, Porter only needs to check the Kubernetes API server and deliver the corresponding information of backend Pod of a service to the router.
 
 ### BGP
 A Pod may be scheduled to other nodes in Kubernetes. For a router, the next hop of a service VIP is not fixed as the equal-cost routing information will often be updated. Calico, for example, uses BGP (Border Gateway Protocol) to advertise routes. BGP is a commonly used essential decentralized protocol to exchange routing information among autonomous systems on the Internet. Unlike other routing protocols, BGP uses L4 to ensure the update security of routing information. As BGP is decentralized, it is very easy to establish a routing layer of high availability to ensure network continuity.
@@ -84,24 +84,24 @@ The image above briefly demonstrates how BGP works in Porter. At the bottom left
 
 ![图片](https://uploader.shimo.im/f/u8DjFjHZ2sU1aKSY.png!thumbnail)
 
-Porter has two components: a kernel controller and an agent deployed on each node. The main functions of the controller include:
+Porter has two components: a core controller and an agent deployed on each node. The main functions of the controller include:
 1. Monitor cluster Services and corresponding endpoints; acquire the Scheduling information of Pods
 2. VIP storage and assignment
 3. Establish BGP and advertise routes
 
 ![图片](https://uploader.shimo.im/f/WAQSHP8ottsYdBT3.png!thumbnail)
 
-The image above shows the working principle of Porter's kernel controller.
+The image above shows the working principle of Porter's core controller.
 
 Agent is a lightweight component to monitor VIP resources and add Iptables rules for external access to the VIP. By default, the kernel Forward table will drop any external access to VIP.
 
 ## Designed for Cloud Natives
 
-All resources in Porter are CRD, including VIP, BGPPeer and BGPConfig. Users who are used to Kubectl will find Porter very easy to use. For advanced users who want to customize Porter, Kubernetes API can be called directly for tailor-made development. The kernel controller of Porter will soon support high availability (HA).
+All resources in Porter are CRD, including VIP, BGPPeer and BGPConfig. Users who are used to Kubectl will find Porter very easy to use. For advanced users who want to customize Porter, Kubernetes API can be called directly for tailor-made development. The core controller of Porter will soon support high availability (HA).
 
 ## Cautions
 
-The VIP traffic of user access will go to a node in the Kubernetes cluster under BGP. This is because the routes advertised by Porter are also nodes instead of podip which is inaccessible externally. The path from a node to a pod is maintained by kube-proxy as below: 
+The VIP traffic of user access will go to a node in the Kubernetes cluster under BGP. This is because the routes advertised by Porter are also nodes instead of Pod IP which is inaccessible externally. The path from a node to a pod is maintained by kube-proxy as below: 
 
 ![图片](https://uploader.shimo.im/f/73Zsi604TUY7qqqj.png!thumbnail)
 
