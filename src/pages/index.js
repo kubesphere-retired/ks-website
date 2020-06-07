@@ -35,7 +35,7 @@ const Banner = ({ t, pageContext: { prefix } }) => {
     <div className="wrapper banner">
       <div className="banner-title">
         <div className="banner-activities">
-          <span className="banner-tag">{t('Activities')}</span>
+          <span className="banner-tag">{t('VIDEO')}</span>
           <ul>
             {VIDEO.map(item => (
               <li key={item.title}>
